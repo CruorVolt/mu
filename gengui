@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+java mujava.gui.GenMutantsMain;

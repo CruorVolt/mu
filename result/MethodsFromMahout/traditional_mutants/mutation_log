@@ -1,0 +1,1556 @@
+AORB_1:22:double_cosineDistance(double,double):p1[i] * p1[i] => p1[i] / p1[i]
+AORB_2:22:double_cosineDistance(double,double):p1[i] * p1[i] => p1[i] % p1[i]
+AORB_3:22:double_cosineDistance(double,double):p1[i] * p1[i] => p1[i] + p1[i]
+AORB_4:22:double_cosineDistance(double,double):p1[i] * p1[i] => p1[i] - p1[i]
+AORB_5:23:double_cosineDistance(double,double):p2[i] * p2[i] => p2[i] / p2[i]
+AORB_6:23:double_cosineDistance(double,double):p2[i] * p2[i] => p2[i] % p2[i]
+AORB_7:23:double_cosineDistance(double,double):p2[i] * p2[i] => p2[i] + p2[i]
+AORB_8:23:double_cosineDistance(double,double):p2[i] * p2[i] => p2[i] - p2[i]
+AORB_9:24:double_cosineDistance(double,double):p1[i] * p2[i] => p1[i] / p2[i]
+AORB_10:24:double_cosineDistance(double,double):p1[i] * p2[i] => p1[i] % p2[i]
+AORB_11:24:double_cosineDistance(double,double):p1[i] * p2[i] => p1[i] + p2[i]
+AORB_12:24:double_cosineDistance(double,double):p1[i] * p2[i] => p1[i] - p2[i]
+AORB_13:26:double_cosineDistance(double,double):Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ) => Math.sqrt( lengthSquaredp1 ) / Math.sqrt( lengthSquaredp2 )
+AORB_14:26:double_cosineDistance(double,double):Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ) => Math.sqrt( lengthSquaredp1 ) % Math.sqrt( lengthSquaredp2 )
+AORB_15:26:double_cosineDistance(double,double):Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ) => Math.sqrt( lengthSquaredp1 ) + Math.sqrt( lengthSquaredp2 )
+AORB_16:26:double_cosineDistance(double,double):Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ) => Math.sqrt( lengthSquaredp1 ) - Math.sqrt( lengthSquaredp2 )
+AORB_17:33:double_cosineDistance(double,double):dotProduct / denominator => dotProduct * denominator
+AORB_18:33:double_cosineDistance(double,double):dotProduct / denominator => dotProduct % denominator
+AORB_19:33:double_cosineDistance(double,double):dotProduct / denominator => dotProduct + denominator
+AORB_20:33:double_cosineDistance(double,double):dotProduct / denominator => dotProduct - denominator
+AORB_21:33:double_cosineDistance(double,double):1.0 - dotProduct / denominator => 1.0 * (dotProduct / denominator)
+AORB_22:33:double_cosineDistance(double,double):1.0 - dotProduct / denominator => 1.0 / (dotProduct / denominator)
+AORB_23:33:double_cosineDistance(double,double):1.0 - dotProduct / denominator => 1.0 % (dotProduct / denominator)
+AORB_24:33:double_cosineDistance(double,double):1.0 - dotProduct / denominator => 1.0 + dotProduct / denominator
+AORB_25:40:double_manhattanDistance(double,double):p2[i] - p1[i] => p2[i] * p1[i]
+AORB_26:40:double_manhattanDistance(double,double):p2[i] - p1[i] => p2[i] / p1[i]
+AORB_27:40:double_manhattanDistance(double,double):p2[i] - p1[i] => p2[i] % p1[i]
+AORB_28:40:double_manhattanDistance(double,double):p2[i] - p1[i] => p2[i] + p1[i]
+AORB_29:51:double_chebyshevDistance(double,double):p1[0] - p2[0] => p1[0] * p2[0]
+AORB_30:51:double_chebyshevDistance(double,double):p1[0] - p2[0] => p1[0] / p2[0]
+AORB_31:51:double_chebyshevDistance(double,double):p1[0] - p2[0] => p1[0] % p2[0]
+AORB_32:51:double_chebyshevDistance(double,double):p1[0] - p2[0] => p1[0] + p2[0]
+AORB_33:53:double_chebyshevDistance(double,double):p1[i] - p2[i] => p1[i] * p2[i]
+AORB_34:53:double_chebyshevDistance(double,double):p1[i] - p2[i] => p1[i] / p2[i]
+AORB_35:53:double_chebyshevDistance(double,double):p1[i] - p2[i] => p1[i] % p2[i]
+AORB_36:53:double_chebyshevDistance(double,double):p1[i] - p2[i] => p1[i] + p2[i]
+AORB_37:67:double_tanimotoDistance(double,double):p1[i] * p2[i] => p1[i] / p2[i]
+AORB_38:67:double_tanimotoDistance(double,double):p1[i] * p2[i] => p1[i] % p2[i]
+AORB_39:67:double_tanimotoDistance(double,double):p1[i] * p2[i] => p1[i] + p2[i]
+AORB_40:67:double_tanimotoDistance(double,double):p1[i] * p2[i] => p1[i] - p2[i]
+AORB_41:68:double_tanimotoDistance(double,double):p1[i] * p1[i] => p1[i] / p1[i]
+AORB_42:68:double_tanimotoDistance(double,double):p1[i] * p1[i] => p1[i] % p1[i]
+AORB_43:68:double_tanimotoDistance(double,double):p1[i] * p1[i] => p1[i] + p1[i]
+AORB_44:68:double_tanimotoDistance(double,double):p1[i] * p1[i] => p1[i] - p1[i]
+AORB_45:69:double_tanimotoDistance(double,double):p2[i] * p2[i] => p2[i] / p2[i]
+AORB_46:69:double_tanimotoDistance(double,double):p2[i] * p2[i] => p2[i] % p2[i]
+AORB_47:69:double_tanimotoDistance(double,double):p2[i] * p2[i] => p2[i] + p2[i]
+AORB_48:69:double_tanimotoDistance(double,double):p2[i] * p2[i] => p2[i] - p2[i]
+AORB_49:71:double_tanimotoDistance(double,double):aSq + bSq => aSq * bSq
+AORB_50:71:double_tanimotoDistance(double,double):aSq + bSq => aSq / bSq
+AORB_51:71:double_tanimotoDistance(double,double):aSq + bSq => aSq % bSq
+AORB_52:71:double_tanimotoDistance(double,double):aSq + bSq => aSq - bSq
+AORB_53:71:double_tanimotoDistance(double,double):aSq + bSq - ab => (aSq + bSq) * ab
+AORB_54:71:double_tanimotoDistance(double,double):aSq + bSq - ab => (aSq + bSq) / ab
+AORB_55:71:double_tanimotoDistance(double,double):aSq + bSq - ab => (aSq + bSq) % ab
+AORB_56:71:double_tanimotoDistance(double,double):aSq + bSq - ab => aSq + bSq + ab
+AORB_57:76:double_tanimotoDistance(double,double):ab / denominator => ab * denominator
+AORB_58:76:double_tanimotoDistance(double,double):ab / denominator => ab % denominator
+AORB_59:76:double_tanimotoDistance(double,double):ab / denominator => ab + denominator
+AORB_60:76:double_tanimotoDistance(double,double):ab / denominator => ab - denominator
+AORB_61:76:double_tanimotoDistance(double,double):1.0 - ab / denominator => 1.0 * (ab / denominator)
+AORB_62:76:double_tanimotoDistance(double,double):1.0 - ab / denominator => 1.0 / (ab / denominator)
+AORB_63:76:double_tanimotoDistance(double,double):1.0 - ab / denominator => 1.0 % (ab / denominator)
+AORB_64:76:double_tanimotoDistance(double,double):1.0 - ab / denominator => 1.0 + ab / denominator
+AORB_65:117:double_givens(double,double,double):-a / b => -a * b
+AORB_66:117:double_givens(double,double,double):-a / b => -a % b
+AORB_67:117:double_givens(double,double,double):-a / b => -a + b
+AORB_68:117:double_givens(double,double,double):-a / b => -a - b
+AORB_69:118:double_givens(double,double,double):tau * tau => tau / tau
+AORB_70:118:double_givens(double,double,double):tau * tau => tau % tau
+AORB_71:118:double_givens(double,double,double):tau * tau => tau + tau
+AORB_72:118:double_givens(double,double,double):tau * tau => tau - tau
+AORB_73:118:double_givens(double,double,double):1 + tau * tau => 1 * (tau * tau)
+AORB_74:118:double_givens(double,double,double):1 + tau * tau => 1 / (tau * tau)
+AORB_75:118:double_givens(double,double,double):1 + tau * tau => 1 % (tau * tau)
+AORB_76:118:double_givens(double,double,double):1 + tau * tau => 1 - tau * tau
+AORB_77:118:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => 1 * Math.sqrt( 1 + tau * tau )
+AORB_78:118:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => 1 % Math.sqrt( 1 + tau * tau )
+AORB_79:118:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => 1 + Math.sqrt( 1 + tau * tau )
+AORB_80:118:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => 1 - Math.sqrt( 1 + tau * tau )
+AORB_81:119:double_givens(double,double,double):csOut[1] * tau => csOut[1] / tau
+AORB_82:119:double_givens(double,double,double):csOut[1] * tau => csOut[1] % tau
+AORB_83:119:double_givens(double,double,double):csOut[1] * tau => csOut[1] + tau
+AORB_84:119:double_givens(double,double,double):csOut[1] * tau => csOut[1] - tau
+AORB_85:121:double_givens(double,double,double):-b / a => -b * a
+AORB_86:121:double_givens(double,double,double):-b / a => -b % a
+AORB_87:121:double_givens(double,double,double):-b / a => -b + a
+AORB_88:121:double_givens(double,double,double):-b / a => -b - a
+AORB_89:122:double_givens(double,double,double):tau * tau => tau / tau
+AORB_90:122:double_givens(double,double,double):tau * tau => tau % tau
+AORB_91:122:double_givens(double,double,double):tau * tau => tau + tau
+AORB_92:122:double_givens(double,double,double):tau * tau => tau - tau
+AORB_93:122:double_givens(double,double,double):1 + tau * tau => 1 * (tau * tau)
+AORB_94:122:double_givens(double,double,double):1 + tau * tau => 1 / (tau * tau)
+AORB_95:122:double_givens(double,double,double):1 + tau * tau => 1 % (tau * tau)
+AORB_96:122:double_givens(double,double,double):1 + tau * tau => 1 - tau * tau
+AORB_97:122:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => 1 * Math.sqrt( 1 + tau * tau )
+AORB_98:122:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => 1 % Math.sqrt( 1 + tau * tau )
+AORB_99:122:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => 1 + Math.sqrt( 1 + tau * tau )
+AORB_100:122:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => 1 - Math.sqrt( 1 + tau * tau )
+AORB_101:123:double_givens(double,double,double):csOut[0] * tau => csOut[0] / tau
+AORB_102:123:double_givens(double,double,double):csOut[0] * tau => csOut[0] % tau
+AORB_103:123:double_givens(double,double,double):csOut[0] * tau => csOut[0] + tau
+AORB_104:123:double_givens(double,double,double):csOut[0] * tau => csOut[0] - tau
+AORB_105:132:double_link(double):1.0 + s => 1.0 * s
+AORB_106:132:double_link(double):1.0 + s => 1.0 / s
+AORB_107:132:double_link(double):1.0 + s => 1.0 % s
+AORB_108:132:double_link(double):1.0 + s => 1.0 - s
+AORB_109:132:double_link(double):s / (1.0 + s) => s * (1.0 + s)
+AORB_110:132:double_link(double):s / (1.0 + s) => s % (1.0 + s)
+AORB_111:132:double_link(double):s / (1.0 + s) => s + (1.0 + s)
+AORB_112:132:double_link(double):s / (1.0 + s) => s - (1.0 + s)
+AORB_113:135:double_link(double):1.0 + s => 1.0 * s
+AORB_114:135:double_link(double):1.0 + s => 1.0 / s
+AORB_115:135:double_link(double):1.0 + s => 1.0 % s
+AORB_116:135:double_link(double):1.0 + s => 1.0 - s
+AORB_117:135:double_link(double):1.0 / (1.0 + s) => 1.0 * (1.0 + s)
+AORB_118:135:double_link(double):1.0 / (1.0 + s) => 1.0 % (1.0 + s)
+AORB_119:135:double_link(double):1.0 / (1.0 + s) => 1.0 + (1.0 + s)
+AORB_120:135:double_link(double):1.0 / (1.0 + s) => 1.0 - (1.0 + s)
+AORB_121:141:int_nbTrees(int,int,int):numTrees / numMaps => numTrees * numMaps
+AORB_122:141:int_nbTrees(int,int,int):numTrees / numMaps => numTrees % numMaps
+AORB_123:141:int_nbTrees(int,int,int):numTrees / numMaps => numTrees + numMaps
+AORB_124:141:int_nbTrees(int,int,int):numTrees / numMaps => numTrees - numMaps
+AORB_125:143:int_nbTrees(int,int,int):nbTrees * numMaps => nbTrees / numMaps
+AORB_126:143:int_nbTrees(int,int,int):nbTrees * numMaps => nbTrees % numMaps
+AORB_127:143:int_nbTrees(int,int,int):nbTrees * numMaps => nbTrees + numMaps
+AORB_128:143:int_nbTrees(int,int,int):nbTrees * numMaps => nbTrees - numMaps
+AORB_129:143:int_nbTrees(int,int,int):numTrees - nbTrees * numMaps => numTrees * (nbTrees * numMaps)
+AORB_130:143:int_nbTrees(int,int,int):numTrees - nbTrees * numMaps => numTrees / (nbTrees * numMaps)
+AORB_131:143:int_nbTrees(int,int,int):numTrees - nbTrees * numMaps => numTrees % (nbTrees * numMaps)
+AORB_132:143:int_nbTrees(int,int,int):numTrees - nbTrees * numMaps => numTrees + nbTrees * numMaps
+AORB_133:151:int_stepSize(int,double):multiplier * Math.log10( recordNumber ) => multiplier / Math.log10( recordNumber )
+AORB_134:151:int_stepSize(int,double):multiplier * Math.log10( recordNumber ) => multiplier % Math.log10( recordNumber )
+AORB_135:151:int_stepSize(int,double):multiplier * Math.log10( recordNumber ) => multiplier + Math.log10( recordNumber )
+AORB_136:151:int_stepSize(int,double):multiplier * Math.log10( recordNumber ) => multiplier - Math.log10( recordNumber )
+AORB_137:152:int_stepSize(int,double):(int) log % bumps.length => (int) log * bumps.length
+AORB_138:152:int_stepSize(int,double):(int) log % bumps.length => (int) log / bumps.length
+AORB_139:152:int_stepSize(int,double):(int) log % bumps.length => (int) log + bumps.length
+AORB_140:152:int_stepSize(int,double):(int) log % bumps.length => (int) log - bumps.length
+AORB_141:153:int_stepSize(int,double):log / bumps.length => log * bumps.length
+AORB_142:153:int_stepSize(int,double):log / bumps.length => log % bumps.length
+AORB_143:153:int_stepSize(int,double):log / bumps.length => log + bumps.length
+AORB_144:153:int_stepSize(int,double):log / bumps.length => log - bumps.length
+AORB_145:154:int_stepSize(int,double):bump * scale => bump / scale
+AORB_146:154:int_stepSize(int,double):bump * scale => bump % scale
+AORB_147:154:int_stepSize(int,double):bump * scale => bump + scale
+AORB_148:154:int_stepSize(int,double):bump * scale => bump - scale
+AORB_149:159:double_choose2(double):n - 1 => n * 1
+AORB_150:159:double_choose2(double):n - 1 => n / 1
+AORB_151:159:double_choose2(double):n - 1 => n % 1
+AORB_152:159:double_choose2(double):n - 1 => n + 1
+AORB_153:159:double_choose2(double):n * (n - 1) => n / (n - 1)
+AORB_154:159:double_choose2(double):n * (n - 1) => n % (n - 1)
+AORB_155:159:double_choose2(double):n * (n - 1) => n + (n - 1)
+AORB_156:159:double_choose2(double):n * (n - 1) => n - (n - 1)
+AORB_157:159:double_choose2(double):n * (n - 1) / 2 => n * (n - 1) * 2
+AORB_158:159:double_choose2(double):n * (n - 1) / 2 => n * (n - 1) % 2
+AORB_159:159:double_choose2(double):n * (n - 1) / 2 => n * (n - 1) + 2
+AORB_160:159:double_choose2(double):n * (n - 1) / 2 => n * (n - 1) - 2
+AORB_161:164:double_computeWeight(double,double,double,double):featureLabelWeight + alphaI => featureLabelWeight * alphaI
+AORB_162:164:double_computeWeight(double,double,double,double):featureLabelWeight + alphaI => featureLabelWeight / alphaI
+AORB_163:164:double_computeWeight(double,double,double,double):featureLabelWeight + alphaI => featureLabelWeight % alphaI
+AORB_164:164:double_computeWeight(double,double,double,double):featureLabelWeight + alphaI => featureLabelWeight - alphaI
+AORB_165:165:double_computeWeight(double,double,double,double):alphaI * numFeatures => alphaI / numFeatures
+AORB_166:165:double_computeWeight(double,double,double,double):alphaI * numFeatures => alphaI % numFeatures
+AORB_167:165:double_computeWeight(double,double,double,double):alphaI * numFeatures => alphaI + numFeatures
+AORB_168:165:double_computeWeight(double,double,double,double):alphaI * numFeatures => alphaI - numFeatures
+AORB_169:165:double_computeWeight(double,double,double,double):labelWeight + alphaI * numFeatures => labelWeight * (alphaI * numFeatures)
+AORB_170:165:double_computeWeight(double,double,double,double):labelWeight + alphaI * numFeatures => labelWeight / (alphaI * numFeatures)
+AORB_171:165:double_computeWeight(double,double,double,double):labelWeight + alphaI * numFeatures => labelWeight % (alphaI * numFeatures)
+AORB_172:165:double_computeWeight(double,double,double,double):labelWeight + alphaI * numFeatures => labelWeight - alphaI * numFeatures
+AORB_173:166:double_computeWeight(double,double,double,double):numerator / denominator => numerator * denominator
+AORB_174:166:double_computeWeight(double,double,double,double):numerator / denominator => numerator % denominator
+AORB_175:166:double_computeWeight(double,double,double,double):numerator / denominator => numerator + denominator
+AORB_176:166:double_computeWeight(double,double,double,double):numerator / denominator => numerator - denominator
+AORB_177:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight => featureWeight * featureLabelWeight
+AORB_178:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight => featureWeight / featureLabelWeight
+AORB_179:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight => featureWeight % featureLabelWeight
+AORB_180:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight => featureWeight + featureLabelWeight
+AORB_181:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight + alphaI => (featureWeight - featureLabelWeight) * alphaI
+AORB_182:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight + alphaI => (featureWeight - featureLabelWeight) / alphaI
+AORB_183:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight + alphaI => (featureWeight - featureLabelWeight) % alphaI
+AORB_184:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight + alphaI => featureWeight - featureLabelWeight - alphaI
+AORB_185:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight => totalWeight * labelWeight
+AORB_186:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight => totalWeight / labelWeight
+AORB_187:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight => totalWeight % labelWeight
+AORB_188:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight => totalWeight + labelWeight
+AORB_189:172:double_computeWeight(double,double,double,double,double,double):alphaI * numFeatures => alphaI / numFeatures
+AORB_190:172:double_computeWeight(double,double,double,double,double,double):alphaI * numFeatures => alphaI % numFeatures
+AORB_191:172:double_computeWeight(double,double,double,double,double,double):alphaI * numFeatures => alphaI + numFeatures
+AORB_192:172:double_computeWeight(double,double,double,double,double,double):alphaI * numFeatures => alphaI - numFeatures
+AORB_193:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight + alphaI * numFeatures => (totalWeight - labelWeight) * (alphaI * numFeatures)
+AORB_194:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight + alphaI * numFeatures => (totalWeight - labelWeight) / (alphaI * numFeatures)
+AORB_195:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight + alphaI * numFeatures => (totalWeight - labelWeight) % (alphaI * numFeatures)
+AORB_196:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight + alphaI * numFeatures => totalWeight - labelWeight - alphaI * numFeatures
+AORB_197:173:double_computeWeight(double,double,double,double,double,double):numerator / denominator => numerator * denominator
+AORB_198:173:double_computeWeight(double,double,double,double,double,double):numerator / denominator => numerator % denominator
+AORB_199:173:double_computeWeight(double,double,double,double,double,double):numerator / denominator => numerator + denominator
+AORB_200:173:double_computeWeight(double,double,double,double,double,double):numerator / denominator => numerator - denominator
+AORB_201:189:double_errorRate(double,double):nberrors / datasize => nberrors * datasize
+AORB_202:189:double_errorRate(double,double):nberrors / datasize => nberrors % datasize
+AORB_203:189:double_errorRate(double,double):nberrors / datasize => nberrors + datasize
+AORB_204:189:double_errorRate(double,double):nberrors / datasize => nberrors - datasize
+AORB_205:200:double_fromRho(double,double):2 * rho => 2 / rho
+AORB_206:200:double_fromRho(double,double):2 * rho => 2 % rho
+AORB_207:200:double_fromRho(double,double):2 * rho => 2 + rho
+AORB_208:200:double_fromRho(double,double):2 * rho => 2 - rho
+AORB_209:201:double_fromRho(double,double):csOut[1] * csOut[1] => csOut[1] / csOut[1]
+AORB_210:201:double_fromRho(double,double):csOut[1] * csOut[1] => csOut[1] % csOut[1]
+AORB_211:201:double_fromRho(double,double):csOut[1] * csOut[1] => csOut[1] + csOut[1]
+AORB_212:201:double_fromRho(double,double):csOut[1] * csOut[1] => csOut[1] - csOut[1]
+AORB_213:201:double_fromRho(double,double):1 - csOut[1] * csOut[1] => 1 * (csOut[1] * csOut[1])
+AORB_214:201:double_fromRho(double,double):1 - csOut[1] * csOut[1] => 1 / (csOut[1] * csOut[1])
+AORB_215:201:double_fromRho(double,double):1 - csOut[1] * csOut[1] => 1 % (csOut[1] * csOut[1])
+AORB_216:201:double_fromRho(double,double):1 - csOut[1] * csOut[1] => 1 + csOut[1] * csOut[1]
+AORB_217:204:double_fromRho(double,double):2 / rho => 2 * rho
+AORB_218:204:double_fromRho(double,double):2 / rho => 2 % rho
+AORB_219:204:double_fromRho(double,double):2 / rho => 2 + rho
+AORB_220:204:double_fromRho(double,double):2 / rho => 2 - rho
+AORB_221:205:double_fromRho(double,double):csOut[0] * csOut[0] => csOut[0] / csOut[0]
+AORB_222:205:double_fromRho(double,double):csOut[0] * csOut[0] => csOut[0] % csOut[0]
+AORB_223:205:double_fromRho(double,double):csOut[0] * csOut[0] => csOut[0] + csOut[0]
+AORB_224:205:double_fromRho(double,double):csOut[0] * csOut[0] => csOut[0] - csOut[0]
+AORB_225:205:double_fromRho(double,double):1 - csOut[0] * csOut[0] => 1 * (csOut[0] * csOut[0])
+AORB_226:205:double_fromRho(double,double):1 - csOut[0] * csOut[0] => 1 / (csOut[0] * csOut[0])
+AORB_227:205:double_fromRho(double,double):1 - csOut[0] * csOut[0] => 1 % (csOut[0] * csOut[0])
+AORB_228:205:double_fromRho(double,double):1 - csOut[0] * csOut[0] => 1 + csOut[0] * csOut[0]
+AORS_1:21:double_cosineDistance(double,double):i++ => i--
+AORS_2:39:double_manhattanDistance(double,double):i++ => i--
+AORS_3:52:double_chebyshevDistance(double,double):i++ => i--
+AORS_4:66:double_tanimotoDistance(double,double):i++ => i--
+AORS_5:94:int_add(int,int):index++ => index--
+AORS_6:103:int_dec(int,int):index++ => index--
+AORS_7:180:double_errorRate(double,double):index++ => index--
+AORS_8:185:double_errorRate(double,double):nberrors++ => nberrors--
+AORS_9:187:double_errorRate(double,double):datasize++ => datasize--
+AODU_1:49:double_chebyshevDistance(double,double):-1 => 1
+AODU_2:134:double_link(double):-r => r
+AODU_3:173:double_computeWeight(double,double,double,double,double,double):-Math.log( numerator / denominator ) => Math.log( numerator / denominator )
+AODS_1:185:double_errorRate(double,double):nberrors++ => nberrors
+AODS_2:187:double_errorRate(double,double):datasize++ => datasize
+AOIU_1:22:double_cosineDistance(double,double):i => -i
+AOIU_2:22:double_cosineDistance(double,double):i => -i
+AOIU_3:23:double_cosineDistance(double,double):i => -i
+AOIU_4:23:double_cosineDistance(double,double):i => -i
+AOIU_5:24:double_cosineDistance(double,double):i => -i
+AOIU_6:24:double_cosineDistance(double,double):i => -i
+AOIU_7:26:double_cosineDistance(double,double):lengthSquaredp1 => -lengthSquaredp1
+AOIU_8:26:double_cosineDistance(double,double):lengthSquaredp2 => -lengthSquaredp2
+AOIU_9:28:double_cosineDistance(double,double):dotProduct => -dotProduct
+AOIU_10:40:double_manhattanDistance(double,double):i => -i
+AOIU_11:42:double_manhattanDistance(double,double):result => -result
+AOIU_12:53:double_chebyshevDistance(double,double):i => -i
+AOIU_13:55:double_chebyshevDistance(double,double):diff => -diff
+AOIU_14:58:double_chebyshevDistance(double,double):maxDiff => -maxDiff
+AOIU_15:67:double_tanimotoDistance(double,double):i => -i
+AOIU_16:67:double_tanimotoDistance(double,double):i => -i
+AOIU_17:68:double_tanimotoDistance(double,double):i => -i
+AOIU_18:68:double_tanimotoDistance(double,double):i => -i
+AOIU_19:69:double_tanimotoDistance(double,double):i => -i
+AOIU_20:69:double_tanimotoDistance(double,double):i => -i
+AOIU_21:71:double_tanimotoDistance(double,double):aSq => -aSq
+AOIU_22:73:double_tanimotoDistance(double,double):ab => -ab
+AOIU_23:86:int_sum(int):value => -value
+AOIU_24:88:int_sum(int):sum => -sum
+AOIU_25:95:int_add(int,int):index => -index
+AOIU_26:104:int_dec(int,int):index => -index
+AOIU_27:117:double_givens(double,double,double):b => -b
+AOIU_28:119:double_givens(double,double,double):tau => -tau
+AOIU_29:121:double_givens(double,double,double):a => -a
+AOIU_30:123:double_givens(double,double,double):tau => -tau
+AOIU_31:131:double_link(double):r => -r
+AOIU_32:132:double_link(double):s => -s
+AOIU_33:141:int_nbTrees(int,int,int):numTrees => -numTrees
+AOIU_34:143:int_nbTrees(int,int,int):numTrees => -numTrees
+AOIU_35:145:int_nbTrees(int,int,int):nbTrees => -nbTrees
+AOIU_36:151:int_stepSize(int,double):multiplier => -multiplier
+AOIU_37:151:int_stepSize(int,double):recordNumber => -recordNumber
+AOIU_38:152:int_stepSize(int,double):log => -log
+AOIU_39:153:int_stepSize(int,double):log => -log
+AOIU_40:154:int_stepSize(int,double):bump => -bump
+AOIU_41:159:double_choose2(double):n => -n
+AOIU_42:159:double_choose2(double):n => -n
+AOIU_43:164:double_computeWeight(double,double,double,double):featureLabelWeight => -featureLabelWeight
+AOIU_44:165:double_computeWeight(double,double,double,double):labelWeight => -labelWeight
+AOIU_45:166:double_computeWeight(double,double,double,double):numerator => -numerator
+AOIU_46:171:double_computeWeight(double,double,double,double,double,double):featureWeight => -featureWeight
+AOIU_47:172:double_computeWeight(double,double,double,double,double,double):totalWeight => -totalWeight
+AOIU_48:189:double_errorRate(double,double):nberrors => -nberrors
+AOIU_49:200:double_fromRho(double,double):rho => -rho
+AOIU_50:204:double_fromRho(double,double):rho => -rho
+AOIS_1:21:double_cosineDistance(double,double):i => ++i
+AOIS_2:21:double_cosineDistance(double,double):i => --i
+AOIS_3:21:double_cosineDistance(double,double):i => i++
+AOIS_4:21:double_cosineDistance(double,double):i => i--
+AOIS_5:21:double_cosineDistance(double,double):p1.length => ++p1.length
+AOIS_6:21:double_cosineDistance(double,double):p1.length => --p1.length
+AOIS_7:21:double_cosineDistance(double,double):p1.length => p1.length++
+AOIS_8:21:double_cosineDistance(double,double):p1.length => p1.length--
+AOIS_9:22:double_cosineDistance(double,double):i => ++i
+AOIS_10:22:double_cosineDistance(double,double):i => --i
+AOIS_11:22:double_cosineDistance(double,double):i => i++
+AOIS_12:22:double_cosineDistance(double,double):i => i--
+AOIS_13:22:double_cosineDistance(double,double):i => ++i
+AOIS_14:22:double_cosineDistance(double,double):i => --i
+AOIS_15:22:double_cosineDistance(double,double):i => i++
+AOIS_16:22:double_cosineDistance(double,double):i => i--
+AOIS_17:23:double_cosineDistance(double,double):i => ++i
+AOIS_18:23:double_cosineDistance(double,double):i => --i
+AOIS_19:23:double_cosineDistance(double,double):i => i++
+AOIS_20:23:double_cosineDistance(double,double):i => i--
+AOIS_21:23:double_cosineDistance(double,double):i => ++i
+AOIS_22:23:double_cosineDistance(double,double):i => --i
+AOIS_23:23:double_cosineDistance(double,double):i => i++
+AOIS_24:23:double_cosineDistance(double,double):i => i--
+AOIS_25:24:double_cosineDistance(double,double):i => ++i
+AOIS_26:24:double_cosineDistance(double,double):i => --i
+AOIS_27:24:double_cosineDistance(double,double):i => i++
+AOIS_28:24:double_cosineDistance(double,double):i => i--
+AOIS_29:24:double_cosineDistance(double,double):i => ++i
+AOIS_30:24:double_cosineDistance(double,double):i => --i
+AOIS_31:24:double_cosineDistance(double,double):i => i++
+AOIS_32:24:double_cosineDistance(double,double):i => i--
+AOIS_33:26:double_cosineDistance(double,double):lengthSquaredp1 => ++lengthSquaredp1
+AOIS_34:26:double_cosineDistance(double,double):lengthSquaredp1 => --lengthSquaredp1
+AOIS_35:26:double_cosineDistance(double,double):lengthSquaredp1 => lengthSquaredp1++
+AOIS_36:26:double_cosineDistance(double,double):lengthSquaredp1 => lengthSquaredp1--
+AOIS_37:26:double_cosineDistance(double,double):lengthSquaredp2 => ++lengthSquaredp2
+AOIS_38:26:double_cosineDistance(double,double):lengthSquaredp2 => --lengthSquaredp2
+AOIS_39:26:double_cosineDistance(double,double):lengthSquaredp2 => lengthSquaredp2++
+AOIS_40:26:double_cosineDistance(double,double):lengthSquaredp2 => lengthSquaredp2--
+AOIS_41:27:double_cosineDistance(double,double):denominator => ++denominator
+AOIS_42:27:double_cosineDistance(double,double):denominator => --denominator
+AOIS_43:27:double_cosineDistance(double,double):denominator => denominator++
+AOIS_44:27:double_cosineDistance(double,double):denominator => denominator--
+AOIS_45:27:double_cosineDistance(double,double):dotProduct => ++dotProduct
+AOIS_46:27:double_cosineDistance(double,double):dotProduct => --dotProduct
+AOIS_47:27:double_cosineDistance(double,double):dotProduct => dotProduct++
+AOIS_48:27:double_cosineDistance(double,double):dotProduct => dotProduct--
+AOIS_49:28:double_cosineDistance(double,double):dotProduct => ++dotProduct
+AOIS_50:28:double_cosineDistance(double,double):dotProduct => --dotProduct
+AOIS_51:28:double_cosineDistance(double,double):dotProduct => dotProduct++
+AOIS_52:28:double_cosineDistance(double,double):dotProduct => dotProduct--
+AOIS_53:30:double_cosineDistance(double,double):denominator => ++denominator
+AOIS_54:30:double_cosineDistance(double,double):denominator => --denominator
+AOIS_55:30:double_cosineDistance(double,double):denominator => denominator++
+AOIS_56:30:double_cosineDistance(double,double):denominator => denominator--
+AOIS_57:30:double_cosineDistance(double,double):dotProduct => ++dotProduct
+AOIS_58:30:double_cosineDistance(double,double):dotProduct => --dotProduct
+AOIS_59:30:double_cosineDistance(double,double):dotProduct => dotProduct++
+AOIS_60:30:double_cosineDistance(double,double):dotProduct => dotProduct--
+AOIS_61:33:double_cosineDistance(double,double):dotProduct => ++dotProduct
+AOIS_62:33:double_cosineDistance(double,double):dotProduct => --dotProduct
+AOIS_63:33:double_cosineDistance(double,double):dotProduct => dotProduct++
+AOIS_64:33:double_cosineDistance(double,double):dotProduct => dotProduct--
+AOIS_65:33:double_cosineDistance(double,double):denominator => ++denominator
+AOIS_66:33:double_cosineDistance(double,double):denominator => --denominator
+AOIS_67:33:double_cosineDistance(double,double):denominator => denominator++
+AOIS_68:33:double_cosineDistance(double,double):denominator => denominator--
+AOIS_69:39:double_manhattanDistance(double,double):i => ++i
+AOIS_70:39:double_manhattanDistance(double,double):i => --i
+AOIS_71:39:double_manhattanDistance(double,double):i => i++
+AOIS_72:39:double_manhattanDistance(double,double):i => i--
+AOIS_73:39:double_manhattanDistance(double,double):p1.length => ++p1.length
+AOIS_74:39:double_manhattanDistance(double,double):p1.length => --p1.length
+AOIS_75:39:double_manhattanDistance(double,double):p1.length => p1.length++
+AOIS_76:39:double_manhattanDistance(double,double):p1.length => p1.length--
+AOIS_77:40:double_manhattanDistance(double,double):i => ++i
+AOIS_78:40:double_manhattanDistance(double,double):i => --i
+AOIS_79:40:double_manhattanDistance(double,double):i => i++
+AOIS_80:40:double_manhattanDistance(double,double):i => i--
+AOIS_81:40:double_manhattanDistance(double,double):i => ++i
+AOIS_82:40:double_manhattanDistance(double,double):i => --i
+AOIS_83:40:double_manhattanDistance(double,double):i => i++
+AOIS_84:40:double_manhattanDistance(double,double):i => i--
+AOIS_85:42:double_manhattanDistance(double,double):result => result++
+AOIS_86:42:double_manhattanDistance(double,double):result => result--
+AOIS_87:47:double_chebyshevDistance(double,double):p1.length => ++p1.length
+AOIS_88:47:double_chebyshevDistance(double,double):p1.length => --p1.length
+AOIS_89:47:double_chebyshevDistance(double,double):p1.length => p1.length++
+AOIS_90:47:double_chebyshevDistance(double,double):p1.length => p1.length--
+AOIS_91:47:double_chebyshevDistance(double,double):p2.length => ++p2.length
+AOIS_92:47:double_chebyshevDistance(double,double):p2.length => --p2.length
+AOIS_93:47:double_chebyshevDistance(double,double):p2.length => p2.length++
+AOIS_94:47:double_chebyshevDistance(double,double):p2.length => p2.length--
+AOIS_95:52:double_chebyshevDistance(double,double):i => ++i
+AOIS_96:52:double_chebyshevDistance(double,double):i => --i
+AOIS_97:52:double_chebyshevDistance(double,double):i => i++
+AOIS_98:52:double_chebyshevDistance(double,double):i => i--
+AOIS_99:52:double_chebyshevDistance(double,double):p1.length => ++p1.length
+AOIS_100:52:double_chebyshevDistance(double,double):p1.length => --p1.length
+AOIS_101:52:double_chebyshevDistance(double,double):p1.length => p1.length++
+AOIS_102:52:double_chebyshevDistance(double,double):p1.length => p1.length--
+AOIS_103:53:double_chebyshevDistance(double,double):i => ++i
+AOIS_104:53:double_chebyshevDistance(double,double):i => --i
+AOIS_105:53:double_chebyshevDistance(double,double):i => i++
+AOIS_106:53:double_chebyshevDistance(double,double):i => i--
+AOIS_107:53:double_chebyshevDistance(double,double):i => ++i
+AOIS_108:53:double_chebyshevDistance(double,double):i => --i
+AOIS_109:53:double_chebyshevDistance(double,double):i => i++
+AOIS_110:53:double_chebyshevDistance(double,double):i => i--
+AOIS_111:54:double_chebyshevDistance(double,double):maxDiff => ++maxDiff
+AOIS_112:54:double_chebyshevDistance(double,double):maxDiff => --maxDiff
+AOIS_113:54:double_chebyshevDistance(double,double):maxDiff => maxDiff++
+AOIS_114:54:double_chebyshevDistance(double,double):maxDiff => maxDiff--
+AOIS_115:54:double_chebyshevDistance(double,double):diff => ++diff
+AOIS_116:54:double_chebyshevDistance(double,double):diff => --diff
+AOIS_117:54:double_chebyshevDistance(double,double):diff => diff++
+AOIS_118:54:double_chebyshevDistance(double,double):diff => diff--
+AOIS_119:55:double_chebyshevDistance(double,double):diff => ++diff
+AOIS_120:55:double_chebyshevDistance(double,double):diff => --diff
+AOIS_121:55:double_chebyshevDistance(double,double):diff => diff++
+AOIS_122:55:double_chebyshevDistance(double,double):diff => diff--
+AOIS_123:58:double_chebyshevDistance(double,double):maxDiff => maxDiff++
+AOIS_124:58:double_chebyshevDistance(double,double):maxDiff => maxDiff--
+AOIS_125:66:double_tanimotoDistance(double,double):i => ++i
+AOIS_126:66:double_tanimotoDistance(double,double):i => --i
+AOIS_127:66:double_tanimotoDistance(double,double):i => i++
+AOIS_128:66:double_tanimotoDistance(double,double):i => i--
+AOIS_129:66:double_tanimotoDistance(double,double):p1.length => ++p1.length
+AOIS_130:66:double_tanimotoDistance(double,double):p1.length => --p1.length
+AOIS_131:66:double_tanimotoDistance(double,double):p1.length => p1.length++
+AOIS_132:66:double_tanimotoDistance(double,double):p1.length => p1.length--
+AOIS_133:67:double_tanimotoDistance(double,double):i => ++i
+AOIS_134:67:double_tanimotoDistance(double,double):i => --i
+AOIS_135:67:double_tanimotoDistance(double,double):i => i++
+AOIS_136:67:double_tanimotoDistance(double,double):i => i--
+AOIS_137:67:double_tanimotoDistance(double,double):i => ++i
+AOIS_138:67:double_tanimotoDistance(double,double):i => --i
+AOIS_139:67:double_tanimotoDistance(double,double):i => i++
+AOIS_140:67:double_tanimotoDistance(double,double):i => i--
+AOIS_141:68:double_tanimotoDistance(double,double):i => ++i
+AOIS_142:68:double_tanimotoDistance(double,double):i => --i
+AOIS_143:68:double_tanimotoDistance(double,double):i => i++
+AOIS_144:68:double_tanimotoDistance(double,double):i => i--
+AOIS_145:68:double_tanimotoDistance(double,double):i => ++i
+AOIS_146:68:double_tanimotoDistance(double,double):i => --i
+AOIS_147:68:double_tanimotoDistance(double,double):i => i++
+AOIS_148:68:double_tanimotoDistance(double,double):i => i--
+AOIS_149:69:double_tanimotoDistance(double,double):i => ++i
+AOIS_150:69:double_tanimotoDistance(double,double):i => --i
+AOIS_151:69:double_tanimotoDistance(double,double):i => i++
+AOIS_152:69:double_tanimotoDistance(double,double):i => i--
+AOIS_153:69:double_tanimotoDistance(double,double):i => ++i
+AOIS_154:69:double_tanimotoDistance(double,double):i => --i
+AOIS_155:69:double_tanimotoDistance(double,double):i => i++
+AOIS_156:69:double_tanimotoDistance(double,double):i => i--
+AOIS_157:71:double_tanimotoDistance(double,double):aSq => ++aSq
+AOIS_158:71:double_tanimotoDistance(double,double):aSq => --aSq
+AOIS_159:71:double_tanimotoDistance(double,double):aSq => aSq++
+AOIS_160:71:double_tanimotoDistance(double,double):aSq => aSq--
+AOIS_161:71:double_tanimotoDistance(double,double):bSq => ++bSq
+AOIS_162:71:double_tanimotoDistance(double,double):bSq => --bSq
+AOIS_163:71:double_tanimotoDistance(double,double):bSq => bSq++
+AOIS_164:71:double_tanimotoDistance(double,double):bSq => bSq--
+AOIS_165:71:double_tanimotoDistance(double,double):ab => ab++
+AOIS_166:71:double_tanimotoDistance(double,double):ab => ab--
+AOIS_167:72:double_tanimotoDistance(double,double):denominator => ++denominator
+AOIS_168:72:double_tanimotoDistance(double,double):denominator => --denominator
+AOIS_169:72:double_tanimotoDistance(double,double):denominator => denominator++
+AOIS_170:72:double_tanimotoDistance(double,double):denominator => denominator--
+AOIS_171:72:double_tanimotoDistance(double,double):ab => ++ab
+AOIS_172:72:double_tanimotoDistance(double,double):ab => --ab
+AOIS_173:72:double_tanimotoDistance(double,double):ab => ab++
+AOIS_174:72:double_tanimotoDistance(double,double):ab => ab--
+AOIS_175:73:double_tanimotoDistance(double,double):ab => ++ab
+AOIS_176:73:double_tanimotoDistance(double,double):ab => --ab
+AOIS_177:73:double_tanimotoDistance(double,double):ab => ab++
+AOIS_178:73:double_tanimotoDistance(double,double):ab => ab--
+AOIS_179:75:double_tanimotoDistance(double,double):denominator => ++denominator
+AOIS_180:75:double_tanimotoDistance(double,double):denominator => --denominator
+AOIS_181:75:double_tanimotoDistance(double,double):denominator => denominator++
+AOIS_182:75:double_tanimotoDistance(double,double):denominator => denominator--
+AOIS_183:76:double_tanimotoDistance(double,double):ab => ++ab
+AOIS_184:76:double_tanimotoDistance(double,double):ab => --ab
+AOIS_185:76:double_tanimotoDistance(double,double):ab => ab++
+AOIS_186:76:double_tanimotoDistance(double,double):ab => ab--
+AOIS_187:76:double_tanimotoDistance(double,double):denominator => ++denominator
+AOIS_188:76:double_tanimotoDistance(double,double):denominator => --denominator
+AOIS_189:76:double_tanimotoDistance(double,double):denominator => denominator++
+AOIS_190:76:double_tanimotoDistance(double,double):denominator => denominator--
+AOIS_191:86:int_sum(int):value => ++value
+AOIS_192:86:int_sum(int):value => --value
+AOIS_193:86:int_sum(int):value => value++
+AOIS_194:86:int_sum(int):value => value--
+AOIS_195:88:int_sum(int):sum => sum++
+AOIS_196:88:int_sum(int):sum => sum--
+AOIS_197:93:int_add(int,int):array1.length => ++array1.length
+AOIS_198:93:int_add(int,int):array1.length => --array1.length
+AOIS_199:93:int_add(int,int):array1.length => array1.length++
+AOIS_200:93:int_add(int,int):array1.length => array1.length--
+AOIS_201:93:int_add(int,int):array2.length => ++array2.length
+AOIS_202:93:int_add(int,int):array2.length => --array2.length
+AOIS_203:93:int_add(int,int):array2.length => array2.length++
+AOIS_204:93:int_add(int,int):array2.length => array2.length--
+AOIS_205:94:int_add(int,int):index => ++index
+AOIS_206:94:int_add(int,int):index => --index
+AOIS_207:94:int_add(int,int):index => index++
+AOIS_208:94:int_add(int,int):index => index--
+AOIS_209:94:int_add(int,int):array1.length => ++array1.length
+AOIS_210:94:int_add(int,int):array1.length => --array1.length
+AOIS_211:94:int_add(int,int):array1.length => array1.length++
+AOIS_212:94:int_add(int,int):array1.length => array1.length--
+AOIS_213:95:int_add(int,int):index => ++index
+AOIS_214:95:int_add(int,int):index => --index
+AOIS_215:95:int_add(int,int):index => index++
+AOIS_216:95:int_add(int,int):index => index--
+AOIS_217:102:int_dec(int,int):array1.length => ++array1.length
+AOIS_218:102:int_dec(int,int):array1.length => --array1.length
+AOIS_219:102:int_dec(int,int):array1.length => array1.length++
+AOIS_220:102:int_dec(int,int):array1.length => array1.length--
+AOIS_221:102:int_dec(int,int):array2.length => ++array2.length
+AOIS_222:102:int_dec(int,int):array2.length => --array2.length
+AOIS_223:102:int_dec(int,int):array2.length => array2.length++
+AOIS_224:102:int_dec(int,int):array2.length => array2.length--
+AOIS_225:103:int_dec(int,int):index => ++index
+AOIS_226:103:int_dec(int,int):index => --index
+AOIS_227:103:int_dec(int,int):index => index++
+AOIS_228:103:int_dec(int,int):index => index--
+AOIS_229:103:int_dec(int,int):array1.length => ++array1.length
+AOIS_230:103:int_dec(int,int):array1.length => --array1.length
+AOIS_231:103:int_dec(int,int):array1.length => array1.length++
+AOIS_232:103:int_dec(int,int):array1.length => array1.length--
+AOIS_233:104:int_dec(int,int):index => ++index
+AOIS_234:104:int_dec(int,int):index => --index
+AOIS_235:104:int_dec(int,int):index => index++
+AOIS_236:104:int_dec(int,int):index => index--
+AOIS_237:111:double_givens(double,double,double):b => ++b
+AOIS_238:111:double_givens(double,double,double):b => --b
+AOIS_239:111:double_givens(double,double,double):b => b++
+AOIS_240:111:double_givens(double,double,double):b => b--
+AOIS_241:116:double_givens(double,double,double):b => ++b
+AOIS_242:116:double_givens(double,double,double):b => --b
+AOIS_243:116:double_givens(double,double,double):b => b++
+AOIS_244:116:double_givens(double,double,double):b => b--
+AOIS_245:116:double_givens(double,double,double):a => ++a
+AOIS_246:116:double_givens(double,double,double):a => --a
+AOIS_247:116:double_givens(double,double,double):a => a++
+AOIS_248:116:double_givens(double,double,double):a => a--
+AOIS_249:117:double_givens(double,double,double):b => ++b
+AOIS_250:117:double_givens(double,double,double):b => --b
+AOIS_251:117:double_givens(double,double,double):b => b++
+AOIS_252:117:double_givens(double,double,double):b => b--
+AOIS_253:118:double_givens(double,double,double):tau => ++tau
+AOIS_254:118:double_givens(double,double,double):tau => --tau
+AOIS_255:118:double_givens(double,double,double):tau => tau++
+AOIS_256:118:double_givens(double,double,double):tau => tau--
+AOIS_257:118:double_givens(double,double,double):tau => ++tau
+AOIS_258:118:double_givens(double,double,double):tau => --tau
+AOIS_259:118:double_givens(double,double,double):tau => tau++
+AOIS_260:118:double_givens(double,double,double):tau => tau--
+AOIS_261:119:double_givens(double,double,double):tau => ++tau
+AOIS_262:119:double_givens(double,double,double):tau => --tau
+AOIS_263:119:double_givens(double,double,double):tau => tau++
+AOIS_264:119:double_givens(double,double,double):tau => tau--
+AOIS_265:121:double_givens(double,double,double):a => ++a
+AOIS_266:121:double_givens(double,double,double):a => --a
+AOIS_267:121:double_givens(double,double,double):a => a++
+AOIS_268:121:double_givens(double,double,double):a => a--
+AOIS_269:122:double_givens(double,double,double):tau => ++tau
+AOIS_270:122:double_givens(double,double,double):tau => --tau
+AOIS_271:122:double_givens(double,double,double):tau => tau++
+AOIS_272:122:double_givens(double,double,double):tau => tau--
+AOIS_273:122:double_givens(double,double,double):tau => ++tau
+AOIS_274:122:double_givens(double,double,double):tau => --tau
+AOIS_275:122:double_givens(double,double,double):tau => tau++
+AOIS_276:122:double_givens(double,double,double):tau => tau--
+AOIS_277:123:double_givens(double,double,double):tau => ++tau
+AOIS_278:123:double_givens(double,double,double):tau => --tau
+AOIS_279:123:double_givens(double,double,double):tau => tau++
+AOIS_280:123:double_givens(double,double,double):tau => tau--
+AOIS_281:130:double_link(double):r => ++r
+AOIS_282:130:double_link(double):r => --r
+AOIS_283:130:double_link(double):r => r++
+AOIS_284:130:double_link(double):r => r--
+AOIS_285:131:double_link(double):r => r++
+AOIS_286:131:double_link(double):r => r--
+AOIS_287:132:double_link(double):s => ++s
+AOIS_288:132:double_link(double):s => --s
+AOIS_289:132:double_link(double):s => s++
+AOIS_290:132:double_link(double):s => s--
+AOIS_291:132:double_link(double):s => ++s
+AOIS_292:132:double_link(double):s => --s
+AOIS_293:132:double_link(double):s => s++
+AOIS_294:132:double_link(double):s => s--
+AOIS_295:135:double_link(double):s => ++s
+AOIS_296:135:double_link(double):s => --s
+AOIS_297:135:double_link(double):s => s++
+AOIS_298:135:double_link(double):s => s--
+AOIS_299:141:int_nbTrees(int,int,int):numTrees => ++numTrees
+AOIS_300:141:int_nbTrees(int,int,int):numTrees => --numTrees
+AOIS_301:141:int_nbTrees(int,int,int):numTrees => numTrees++
+AOIS_302:141:int_nbTrees(int,int,int):numTrees => numTrees--
+AOIS_303:141:int_nbTrees(int,int,int):numMaps => ++numMaps
+AOIS_304:141:int_nbTrees(int,int,int):numMaps => --numMaps
+AOIS_305:141:int_nbTrees(int,int,int):numMaps => numMaps++
+AOIS_306:141:int_nbTrees(int,int,int):numMaps => numMaps--
+AOIS_307:142:int_nbTrees(int,int,int):partition => ++partition
+AOIS_308:142:int_nbTrees(int,int,int):partition => --partition
+AOIS_309:142:int_nbTrees(int,int,int):partition => partition++
+AOIS_310:142:int_nbTrees(int,int,int):partition => partition--
+AOIS_311:143:int_nbTrees(int,int,int):numTrees => ++numTrees
+AOIS_312:143:int_nbTrees(int,int,int):numTrees => --numTrees
+AOIS_313:143:int_nbTrees(int,int,int):numTrees => numTrees++
+AOIS_314:143:int_nbTrees(int,int,int):numTrees => numTrees--
+AOIS_315:143:int_nbTrees(int,int,int):nbTrees => ++nbTrees
+AOIS_316:143:int_nbTrees(int,int,int):nbTrees => --nbTrees
+AOIS_317:143:int_nbTrees(int,int,int):nbTrees => nbTrees++
+AOIS_318:143:int_nbTrees(int,int,int):nbTrees => nbTrees--
+AOIS_319:143:int_nbTrees(int,int,int):numMaps => ++numMaps
+AOIS_320:143:int_nbTrees(int,int,int):numMaps => --numMaps
+AOIS_321:143:int_nbTrees(int,int,int):numMaps => numMaps++
+AOIS_322:143:int_nbTrees(int,int,int):numMaps => numMaps--
+AOIS_323:145:int_nbTrees(int,int,int):nbTrees => nbTrees++
+AOIS_324:145:int_nbTrees(int,int,int):nbTrees => nbTrees--
+AOIS_325:151:int_stepSize(int,double):multiplier => ++multiplier
+AOIS_326:151:int_stepSize(int,double):multiplier => --multiplier
+AOIS_327:151:int_stepSize(int,double):multiplier => multiplier++
+AOIS_328:151:int_stepSize(int,double):multiplier => multiplier--
+AOIS_329:151:int_stepSize(int,double):recordNumber => ++recordNumber
+AOIS_330:151:int_stepSize(int,double):recordNumber => --recordNumber
+AOIS_331:151:int_stepSize(int,double):recordNumber => recordNumber++
+AOIS_332:151:int_stepSize(int,double):recordNumber => recordNumber--
+AOIS_333:152:int_stepSize(int,double):log => ++log
+AOIS_334:152:int_stepSize(int,double):log => --log
+AOIS_335:152:int_stepSize(int,double):log => log++
+AOIS_336:152:int_stepSize(int,double):log => log--
+AOIS_337:152:int_stepSize(int,double):bumps.length => ++bumps.length
+AOIS_338:152:int_stepSize(int,double):bumps.length => --bumps.length
+AOIS_339:152:int_stepSize(int,double):bumps.length => bumps.length++
+AOIS_340:152:int_stepSize(int,double):bumps.length => bumps.length--
+AOIS_341:153:int_stepSize(int,double):log => ++log
+AOIS_342:153:int_stepSize(int,double):log => --log
+AOIS_343:153:int_stepSize(int,double):log => log++
+AOIS_344:153:int_stepSize(int,double):log => log--
+AOIS_345:153:int_stepSize(int,double):bumps.length => ++bumps.length
+AOIS_346:153:int_stepSize(int,double):bumps.length => --bumps.length
+AOIS_347:153:int_stepSize(int,double):bumps.length => bumps.length++
+AOIS_348:153:int_stepSize(int,double):bumps.length => bumps.length--
+AOIS_349:154:int_stepSize(int,double):bump => ++bump
+AOIS_350:154:int_stepSize(int,double):bump => --bump
+AOIS_351:154:int_stepSize(int,double):bump => bump++
+AOIS_352:154:int_stepSize(int,double):bump => bump--
+AOIS_353:154:int_stepSize(int,double):scale => ++scale
+AOIS_354:154:int_stepSize(int,double):scale => --scale
+AOIS_355:154:int_stepSize(int,double):scale => scale++
+AOIS_356:154:int_stepSize(int,double):scale => scale--
+AOIS_357:159:double_choose2(double):n => ++n
+AOIS_358:159:double_choose2(double):n => --n
+AOIS_359:159:double_choose2(double):n => n++
+AOIS_360:159:double_choose2(double):n => n--
+AOIS_361:159:double_choose2(double):n => ++n
+AOIS_362:159:double_choose2(double):n => --n
+AOIS_363:159:double_choose2(double):n => n++
+AOIS_364:159:double_choose2(double):n => n--
+AOIS_365:164:double_computeWeight(double,double,double,double):featureLabelWeight => ++featureLabelWeight
+AOIS_366:164:double_computeWeight(double,double,double,double):featureLabelWeight => --featureLabelWeight
+AOIS_367:164:double_computeWeight(double,double,double,double):featureLabelWeight => featureLabelWeight++
+AOIS_368:164:double_computeWeight(double,double,double,double):featureLabelWeight => featureLabelWeight--
+AOIS_369:164:double_computeWeight(double,double,double,double):alphaI => ++alphaI
+AOIS_370:164:double_computeWeight(double,double,double,double):alphaI => --alphaI
+AOIS_371:164:double_computeWeight(double,double,double,double):alphaI => alphaI++
+AOIS_372:164:double_computeWeight(double,double,double,double):alphaI => alphaI--
+AOIS_373:165:double_computeWeight(double,double,double,double):labelWeight => ++labelWeight
+AOIS_374:165:double_computeWeight(double,double,double,double):labelWeight => --labelWeight
+AOIS_375:165:double_computeWeight(double,double,double,double):labelWeight => labelWeight++
+AOIS_376:165:double_computeWeight(double,double,double,double):labelWeight => labelWeight--
+AOIS_377:165:double_computeWeight(double,double,double,double):alphaI => ++alphaI
+AOIS_378:165:double_computeWeight(double,double,double,double):alphaI => --alphaI
+AOIS_379:165:double_computeWeight(double,double,double,double):alphaI => alphaI++
+AOIS_380:165:double_computeWeight(double,double,double,double):alphaI => alphaI--
+AOIS_381:165:double_computeWeight(double,double,double,double):numFeatures => ++numFeatures
+AOIS_382:165:double_computeWeight(double,double,double,double):numFeatures => --numFeatures
+AOIS_383:165:double_computeWeight(double,double,double,double):numFeatures => numFeatures++
+AOIS_384:165:double_computeWeight(double,double,double,double):numFeatures => numFeatures--
+AOIS_385:166:double_computeWeight(double,double,double,double):numerator => ++numerator
+AOIS_386:166:double_computeWeight(double,double,double,double):numerator => --numerator
+AOIS_387:166:double_computeWeight(double,double,double,double):numerator => numerator++
+AOIS_388:166:double_computeWeight(double,double,double,double):numerator => numerator--
+AOIS_389:166:double_computeWeight(double,double,double,double):denominator => ++denominator
+AOIS_390:166:double_computeWeight(double,double,double,double):denominator => --denominator
+AOIS_391:166:double_computeWeight(double,double,double,double):denominator => denominator++
+AOIS_392:166:double_computeWeight(double,double,double,double):denominator => denominator--
+AOIS_393:171:double_computeWeight(double,double,double,double,double,double):featureWeight => ++featureWeight
+AOIS_394:171:double_computeWeight(double,double,double,double,double,double):featureWeight => --featureWeight
+AOIS_395:171:double_computeWeight(double,double,double,double,double,double):featureWeight => featureWeight++
+AOIS_396:171:double_computeWeight(double,double,double,double,double,double):featureWeight => featureWeight--
+AOIS_397:171:double_computeWeight(double,double,double,double,double,double):featureLabelWeight => ++featureLabelWeight
+AOIS_398:171:double_computeWeight(double,double,double,double,double,double):featureLabelWeight => --featureLabelWeight
+AOIS_399:171:double_computeWeight(double,double,double,double,double,double):featureLabelWeight => featureLabelWeight++
+AOIS_400:171:double_computeWeight(double,double,double,double,double,double):featureLabelWeight => featureLabelWeight--
+AOIS_401:171:double_computeWeight(double,double,double,double,double,double):alphaI => alphaI++
+AOIS_402:171:double_computeWeight(double,double,double,double,double,double):alphaI => alphaI--
+AOIS_403:172:double_computeWeight(double,double,double,double,double,double):totalWeight => ++totalWeight
+AOIS_404:172:double_computeWeight(double,double,double,double,double,double):totalWeight => --totalWeight
+AOIS_405:172:double_computeWeight(double,double,double,double,double,double):totalWeight => totalWeight++
+AOIS_406:172:double_computeWeight(double,double,double,double,double,double):totalWeight => totalWeight--
+AOIS_407:172:double_computeWeight(double,double,double,double,double,double):labelWeight => ++labelWeight
+AOIS_408:172:double_computeWeight(double,double,double,double,double,double):labelWeight => --labelWeight
+AOIS_409:172:double_computeWeight(double,double,double,double,double,double):labelWeight => labelWeight++
+AOIS_410:172:double_computeWeight(double,double,double,double,double,double):labelWeight => labelWeight--
+AOIS_411:172:double_computeWeight(double,double,double,double,double,double):alphaI => ++alphaI
+AOIS_412:172:double_computeWeight(double,double,double,double,double,double):alphaI => --alphaI
+AOIS_413:172:double_computeWeight(double,double,double,double,double,double):alphaI => alphaI++
+AOIS_414:172:double_computeWeight(double,double,double,double,double,double):alphaI => alphaI--
+AOIS_415:172:double_computeWeight(double,double,double,double,double,double):numFeatures => ++numFeatures
+AOIS_416:172:double_computeWeight(double,double,double,double,double,double):numFeatures => --numFeatures
+AOIS_417:172:double_computeWeight(double,double,double,double,double,double):numFeatures => numFeatures++
+AOIS_418:172:double_computeWeight(double,double,double,double,double,double):numFeatures => numFeatures--
+AOIS_419:180:double_errorRate(double,double):index => ++index
+AOIS_420:180:double_errorRate(double,double):index => --index
+AOIS_421:180:double_errorRate(double,double):index => index++
+AOIS_422:180:double_errorRate(double,double):index => index--
+AOIS_423:180:double_errorRate(double,double):labels.length => ++labels.length
+AOIS_424:180:double_errorRate(double,double):labels.length => --labels.length
+AOIS_425:180:double_errorRate(double,double):labels.length => labels.length++
+AOIS_426:180:double_errorRate(double,double):labels.length => labels.length--
+AOIS_427:181:double_errorRate(double,double):index => ++index
+AOIS_428:181:double_errorRate(double,double):index => --index
+AOIS_429:181:double_errorRate(double,double):index => index++
+AOIS_430:181:double_errorRate(double,double):index => index--
+AOIS_431:184:double_errorRate(double,double):index => ++index
+AOIS_432:184:double_errorRate(double,double):index => --index
+AOIS_433:184:double_errorRate(double,double):index => index++
+AOIS_434:184:double_errorRate(double,double):index => index--
+AOIS_435:184:double_errorRate(double,double):index => ++index
+AOIS_436:184:double_errorRate(double,double):index => --index
+AOIS_437:184:double_errorRate(double,double):index => index++
+AOIS_438:184:double_errorRate(double,double):index => index--
+AOIS_439:189:double_errorRate(double,double):nberrors => ++nberrors
+AOIS_440:189:double_errorRate(double,double):nberrors => --nberrors
+AOIS_441:189:double_errorRate(double,double):nberrors => nberrors++
+AOIS_442:189:double_errorRate(double,double):nberrors => nberrors--
+AOIS_443:189:double_errorRate(double,double):datasize => ++datasize
+AOIS_444:189:double_errorRate(double,double):datasize => --datasize
+AOIS_445:189:double_errorRate(double,double):datasize => datasize++
+AOIS_446:189:double_errorRate(double,double):datasize => datasize--
+AOIS_447:194:double_fromRho(double,double):rho => ++rho
+AOIS_448:194:double_fromRho(double,double):rho => --rho
+AOIS_449:194:double_fromRho(double,double):rho => rho++
+AOIS_450:194:double_fromRho(double,double):rho => rho--
+AOIS_451:199:double_fromRho(double,double):rho => ++rho
+AOIS_452:199:double_fromRho(double,double):rho => --rho
+AOIS_453:199:double_fromRho(double,double):rho => rho++
+AOIS_454:199:double_fromRho(double,double):rho => rho--
+AOIS_455:200:double_fromRho(double,double):rho => ++rho
+AOIS_456:200:double_fromRho(double,double):rho => --rho
+AOIS_457:200:double_fromRho(double,double):rho => rho++
+AOIS_458:200:double_fromRho(double,double):rho => rho--
+AOIS_459:204:double_fromRho(double,double):rho => ++rho
+AOIS_460:204:double_fromRho(double,double):rho => --rho
+AOIS_461:204:double_fromRho(double,double):rho => rho++
+AOIS_462:204:double_fromRho(double,double):rho => rho--
+ROR_1:21:double_cosineDistance(double,double): i < p1.length  =>   i > p1.length
+ROR_2:21:double_cosineDistance(double,double): i < p1.length  =>   i >= p1.length
+ROR_3:21:double_cosineDistance(double,double): i < p1.length  =>   i <= p1.length
+ROR_4:21:double_cosineDistance(double,double): i < p1.length  =>   i == p1.length
+ROR_5:21:double_cosineDistance(double,double): i < p1.length  =>   i != p1.length
+ROR_6:21:double_cosineDistance(double,double): i < p1.length  =>   true
+ROR_7:21:double_cosineDistance(double,double): i < p1.length  =>   false
+ROR_8:27:double_cosineDistance(double,double): denominator < dotProduct  =>   denominator > dotProduct
+ROR_9:27:double_cosineDistance(double,double): denominator < dotProduct  =>   denominator >= dotProduct
+ROR_10:27:double_cosineDistance(double,double): denominator < dotProduct  =>   denominator <= dotProduct
+ROR_11:27:double_cosineDistance(double,double): denominator < dotProduct  =>   denominator == dotProduct
+ROR_12:27:double_cosineDistance(double,double): denominator < dotProduct  =>   denominator != dotProduct
+ROR_13:27:double_cosineDistance(double,double): denominator < dotProduct  =>   true
+ROR_14:27:double_cosineDistance(double,double): denominator < dotProduct  =>   false
+ROR_15:30:double_cosineDistance(double,double): denominator == 0  =>   denominator > 0
+ROR_16:30:double_cosineDistance(double,double): denominator == 0  =>   denominator >= 0
+ROR_17:30:double_cosineDistance(double,double): denominator == 0  =>   denominator < 0
+ROR_18:30:double_cosineDistance(double,double): denominator == 0  =>   denominator <= 0
+ROR_19:30:double_cosineDistance(double,double): denominator == 0  =>   denominator != 0
+ROR_20:30:double_cosineDistance(double,double): denominator == 0  =>   true
+ROR_21:30:double_cosineDistance(double,double): denominator == 0  =>   false
+ROR_22:30:double_cosineDistance(double,double): dotProduct == 0  =>   dotProduct > 0
+ROR_23:30:double_cosineDistance(double,double): dotProduct == 0  =>   dotProduct >= 0
+ROR_24:30:double_cosineDistance(double,double): dotProduct == 0  =>   dotProduct < 0
+ROR_25:30:double_cosineDistance(double,double): dotProduct == 0  =>   dotProduct <= 0
+ROR_26:30:double_cosineDistance(double,double): dotProduct == 0  =>   dotProduct != 0
+ROR_27:30:double_cosineDistance(double,double): dotProduct == 0  =>   true
+ROR_28:30:double_cosineDistance(double,double): dotProduct == 0  =>   false
+ROR_29:39:double_manhattanDistance(double,double): i < p1.length  =>   i > p1.length
+ROR_30:39:double_manhattanDistance(double,double): i < p1.length  =>   i >= p1.length
+ROR_31:39:double_manhattanDistance(double,double): i < p1.length  =>   i <= p1.length
+ROR_32:39:double_manhattanDistance(double,double): i < p1.length  =>   i == p1.length
+ROR_33:39:double_manhattanDistance(double,double): i < p1.length  =>   i != p1.length
+ROR_34:39:double_manhattanDistance(double,double): i < p1.length  =>   true
+ROR_35:39:double_manhattanDistance(double,double): i < p1.length  =>   false
+ROR_36:47:double_chebyshevDistance(double,double): p1.length != p2.length  =>   p1.length > p2.length
+ROR_37:47:double_chebyshevDistance(double,double): p1.length != p2.length  =>   p1.length >= p2.length
+ROR_38:47:double_chebyshevDistance(double,double): p1.length != p2.length  =>   p1.length < p2.length
+ROR_39:47:double_chebyshevDistance(double,double): p1.length != p2.length  =>   p1.length <= p2.length
+ROR_40:47:double_chebyshevDistance(double,double): p1.length != p2.length  =>   p1.length == p2.length
+ROR_41:47:double_chebyshevDistance(double,double): p1.length != p2.length  =>   true
+ROR_42:47:double_chebyshevDistance(double,double): p1.length != p2.length  =>   false
+ROR_43:52:double_chebyshevDistance(double,double): i < p1.length  =>   i > p1.length
+ROR_44:52:double_chebyshevDistance(double,double): i < p1.length  =>   i >= p1.length
+ROR_45:52:double_chebyshevDistance(double,double): i < p1.length  =>   i <= p1.length
+ROR_46:52:double_chebyshevDistance(double,double): i < p1.length  =>   i == p1.length
+ROR_47:52:double_chebyshevDistance(double,double): i < p1.length  =>   i != p1.length
+ROR_48:52:double_chebyshevDistance(double,double): i < p1.length  =>   true
+ROR_49:52:double_chebyshevDistance(double,double): i < p1.length  =>   false
+ROR_50:54:double_chebyshevDistance(double,double): maxDiff < diff  =>   maxDiff > diff
+ROR_51:54:double_chebyshevDistance(double,double): maxDiff < diff  =>   maxDiff >= diff
+ROR_52:54:double_chebyshevDistance(double,double): maxDiff < diff  =>   maxDiff <= diff
+ROR_53:54:double_chebyshevDistance(double,double): maxDiff < diff  =>   maxDiff == diff
+ROR_54:54:double_chebyshevDistance(double,double): maxDiff < diff  =>   maxDiff != diff
+ROR_55:54:double_chebyshevDistance(double,double): maxDiff < diff  =>   true
+ROR_56:54:double_chebyshevDistance(double,double): maxDiff < diff  =>   false
+ROR_57:66:double_tanimotoDistance(double,double): i < p1.length  =>   i > p1.length
+ROR_58:66:double_tanimotoDistance(double,double): i < p1.length  =>   i >= p1.length
+ROR_59:66:double_tanimotoDistance(double,double): i < p1.length  =>   i <= p1.length
+ROR_60:66:double_tanimotoDistance(double,double): i < p1.length  =>   i == p1.length
+ROR_61:66:double_tanimotoDistance(double,double): i < p1.length  =>   i != p1.length
+ROR_62:66:double_tanimotoDistance(double,double): i < p1.length  =>   true
+ROR_63:66:double_tanimotoDistance(double,double): i < p1.length  =>   false
+ROR_64:72:double_tanimotoDistance(double,double): denominator < ab  =>   denominator > ab
+ROR_65:72:double_tanimotoDistance(double,double): denominator < ab  =>   denominator >= ab
+ROR_66:72:double_tanimotoDistance(double,double): denominator < ab  =>   denominator <= ab
+ROR_67:72:double_tanimotoDistance(double,double): denominator < ab  =>   denominator == ab
+ROR_68:72:double_tanimotoDistance(double,double): denominator < ab  =>   denominator != ab
+ROR_69:72:double_tanimotoDistance(double,double): denominator < ab  =>   true
+ROR_70:72:double_tanimotoDistance(double,double): denominator < ab  =>   false
+ROR_71:75:double_tanimotoDistance(double,double): denominator > 0  =>   denominator >= 0
+ROR_72:75:double_tanimotoDistance(double,double): denominator > 0  =>   denominator < 0
+ROR_73:75:double_tanimotoDistance(double,double): denominator > 0  =>   denominator <= 0
+ROR_74:75:double_tanimotoDistance(double,double): denominator > 0  =>   denominator == 0
+ROR_75:75:double_tanimotoDistance(double,double): denominator > 0  =>   denominator != 0
+ROR_76:75:double_tanimotoDistance(double,double): denominator > 0  =>   true
+ROR_77:75:double_tanimotoDistance(double,double): denominator > 0  =>   false
+ROR_78:93:int_add(int,int): array1.length == array2.length  =>   array1.length > array2.length
+ROR_79:93:int_add(int,int): array1.length == array2.length  =>   array1.length >= array2.length
+ROR_80:93:int_add(int,int): array1.length == array2.length  =>   array1.length < array2.length
+ROR_81:93:int_add(int,int): array1.length == array2.length  =>   array1.length <= array2.length
+ROR_82:93:int_add(int,int): array1.length == array2.length  =>   array1.length != array2.length
+ROR_83:93:int_add(int,int): array1.length == array2.length  =>   true
+ROR_84:93:int_add(int,int): array1.length == array2.length  =>   false
+ROR_85:94:int_add(int,int): index < array1.length  =>   index > array1.length
+ROR_86:94:int_add(int,int): index < array1.length  =>   index >= array1.length
+ROR_87:94:int_add(int,int): index < array1.length  =>   index <= array1.length
+ROR_88:94:int_add(int,int): index < array1.length  =>   index == array1.length
+ROR_89:94:int_add(int,int): index < array1.length  =>   index != array1.length
+ROR_90:94:int_add(int,int): index < array1.length  =>   true
+ROR_91:94:int_add(int,int): index < array1.length  =>   false
+ROR_92:102:int_dec(int,int): array1.length == array2.length  =>   array1.length > array2.length
+ROR_93:102:int_dec(int,int): array1.length == array2.length  =>   array1.length >= array2.length
+ROR_94:102:int_dec(int,int): array1.length == array2.length  =>   array1.length < array2.length
+ROR_95:102:int_dec(int,int): array1.length == array2.length  =>   array1.length <= array2.length
+ROR_96:102:int_dec(int,int): array1.length == array2.length  =>   array1.length != array2.length
+ROR_97:102:int_dec(int,int): array1.length == array2.length  =>   true
+ROR_98:102:int_dec(int,int): array1.length == array2.length  =>   false
+ROR_99:103:int_dec(int,int): index < array1.length  =>   index > array1.length
+ROR_100:103:int_dec(int,int): index < array1.length  =>   index >= array1.length
+ROR_101:103:int_dec(int,int): index < array1.length  =>   index <= array1.length
+ROR_102:103:int_dec(int,int): index < array1.length  =>   index == array1.length
+ROR_103:103:int_dec(int,int): index < array1.length  =>   index != array1.length
+ROR_104:103:int_dec(int,int): index < array1.length  =>   true
+ROR_105:103:int_dec(int,int): index < array1.length  =>   false
+ROR_106:111:double_givens(double,double,double): b == 0  =>   b > 0
+ROR_107:111:double_givens(double,double,double): b == 0  =>   b >= 0
+ROR_108:111:double_givens(double,double,double): b == 0  =>   b < 0
+ROR_109:111:double_givens(double,double,double): b == 0  =>   b <= 0
+ROR_110:111:double_givens(double,double,double): b == 0  =>   b != 0
+ROR_111:111:double_givens(double,double,double): b == 0  =>   true
+ROR_112:111:double_givens(double,double,double): b == 0  =>   false
+ROR_113:116:double_givens(double,double,double): Math.abs( b ) > Math.abs( a )  =>   Math.abs( b ) >= Math.abs( a )
+ROR_114:116:double_givens(double,double,double): Math.abs( b ) > Math.abs( a )  =>   Math.abs( b ) < Math.abs( a )
+ROR_115:116:double_givens(double,double,double): Math.abs( b ) > Math.abs( a )  =>   Math.abs( b ) <= Math.abs( a )
+ROR_116:116:double_givens(double,double,double): Math.abs( b ) > Math.abs( a )  =>   Math.abs( b ) == Math.abs( a )
+ROR_117:116:double_givens(double,double,double): Math.abs( b ) > Math.abs( a )  =>   Math.abs( b ) != Math.abs( a )
+ROR_118:116:double_givens(double,double,double): Math.abs( b ) > Math.abs( a )  =>   true
+ROR_119:116:double_givens(double,double,double): Math.abs( b ) > Math.abs( a )  =>   false
+ROR_120:130:double_link(double): r < 0.0  =>   r > 0.0
+ROR_121:130:double_link(double): r < 0.0  =>   r >= 0.0
+ROR_122:130:double_link(double): r < 0.0  =>   r <= 0.0
+ROR_123:130:double_link(double): r < 0.0  =>   r == 0.0
+ROR_124:130:double_link(double): r < 0.0  =>   r != 0.0
+ROR_125:130:double_link(double): r < 0.0  =>   true
+ROR_126:130:double_link(double): r < 0.0  =>   false
+ROR_127:142:int_nbTrees(int,int,int): partition == 0  =>   partition > 0
+ROR_128:142:int_nbTrees(int,int,int): partition == 0  =>   partition >= 0
+ROR_129:142:int_nbTrees(int,int,int): partition == 0  =>   partition < 0
+ROR_130:142:int_nbTrees(int,int,int): partition == 0  =>   partition <= 0
+ROR_131:142:int_nbTrees(int,int,int): partition == 0  =>   partition != 0
+ROR_132:142:int_nbTrees(int,int,int): partition == 0  =>   true
+ROR_133:142:int_nbTrees(int,int,int): partition == 0  =>   false
+ROR_134:180:double_errorRate(double,double): index < labels.length  =>   index > labels.length
+ROR_135:180:double_errorRate(double,double): index < labels.length  =>   index >= labels.length
+ROR_136:180:double_errorRate(double,double): index < labels.length  =>   index <= labels.length
+ROR_137:180:double_errorRate(double,double): index < labels.length  =>   index == labels.length
+ROR_138:180:double_errorRate(double,double): index < labels.length  =>   index != labels.length
+ROR_139:180:double_errorRate(double,double): index < labels.length  =>   true
+ROR_140:180:double_errorRate(double,double): index < labels.length  =>   false
+ROR_141:181:double_errorRate(double,double): predictions[index] == -1  =>   predictions[index] > -1
+ROR_142:181:double_errorRate(double,double): predictions[index] == -1  =>   predictions[index] >= -1
+ROR_143:181:double_errorRate(double,double): predictions[index] == -1  =>   predictions[index] < -1
+ROR_144:181:double_errorRate(double,double): predictions[index] == -1  =>   predictions[index] <= -1
+ROR_145:181:double_errorRate(double,double): predictions[index] == -1  =>   predictions[index] != -1
+ROR_146:181:double_errorRate(double,double): predictions[index] == -1  =>   true
+ROR_147:181:double_errorRate(double,double): predictions[index] == -1  =>   false
+ROR_148:184:double_errorRate(double,double): predictions[index] != labels[index]  =>   predictions[index] > labels[index]
+ROR_149:184:double_errorRate(double,double): predictions[index] != labels[index]  =>   predictions[index] >= labels[index]
+ROR_150:184:double_errorRate(double,double): predictions[index] != labels[index]  =>   predictions[index] < labels[index]
+ROR_151:184:double_errorRate(double,double): predictions[index] != labels[index]  =>   predictions[index] <= labels[index]
+ROR_152:184:double_errorRate(double,double): predictions[index] != labels[index]  =>   predictions[index] == labels[index]
+ROR_153:184:double_errorRate(double,double): predictions[index] != labels[index]  =>   true
+ROR_154:184:double_errorRate(double,double): predictions[index] != labels[index]  =>   false
+ROR_155:194:double_fromRho(double,double): rho == 1  =>   rho > 1
+ROR_156:194:double_fromRho(double,double): rho == 1  =>   rho >= 1
+ROR_157:194:double_fromRho(double,double): rho == 1  =>   rho < 1
+ROR_158:194:double_fromRho(double,double): rho == 1  =>   rho <= 1
+ROR_159:194:double_fromRho(double,double): rho == 1  =>   rho != 1
+ROR_160:194:double_fromRho(double,double): rho == 1  =>   true
+ROR_161:194:double_fromRho(double,double): rho == 1  =>   false
+ROR_162:199:double_fromRho(double,double): Math.abs( rho ) < 1  =>   Math.abs( rho ) > 1
+ROR_163:199:double_fromRho(double,double): Math.abs( rho ) < 1  =>   Math.abs( rho ) >= 1
+ROR_164:199:double_fromRho(double,double): Math.abs( rho ) < 1  =>   Math.abs( rho ) <= 1
+ROR_165:199:double_fromRho(double,double): Math.abs( rho ) < 1  =>   Math.abs( rho ) == 1
+ROR_166:199:double_fromRho(double,double): Math.abs( rho ) < 1  =>   Math.abs( rho ) != 1
+ROR_167:199:double_fromRho(double,double): Math.abs( rho ) < 1  =>   true
+ROR_168:199:double_fromRho(double,double): Math.abs( rho ) < 1  =>   false
+COR_1:30:double_cosineDistance(double,double): denominator == 0 && dotProduct == 0  =>   denominator == 0 || dotProduct == 0
+COR_2:30:double_cosineDistance(double,double): denominator == 0 && dotProduct == 0  =>   denominator == 0 ^ dotProduct == 0
+COI_1:21:double_cosineDistance(double,double): i < p1.length  =>  !(i < p1.length)
+COI_2:27:double_cosineDistance(double,double): denominator < dotProduct  =>  !(denominator < dotProduct)
+COI_3:30:double_cosineDistance(double,double): denominator == 0  =>  !(denominator == 0)
+COI_4:30:double_cosineDistance(double,double): dotProduct == 0  =>  !(dotProduct == 0)
+COI_5:30:double_cosineDistance(double,double): denominator == 0 && dotProduct == 0  =>  !(denominator == 0 && dotProduct == 0)
+COI_6:39:double_manhattanDistance(double,double): i < p1.length  =>  !(i < p1.length)
+COI_7:47:double_chebyshevDistance(double,double): p1.length != p2.length  =>  !(p1.length != p2.length)
+COI_8:52:double_chebyshevDistance(double,double): i < p1.length  =>  !(i < p1.length)
+COI_9:54:double_chebyshevDistance(double,double): maxDiff < diff  =>  !(maxDiff < diff)
+COI_10:66:double_tanimotoDistance(double,double): i < p1.length  =>  !(i < p1.length)
+COI_11:72:double_tanimotoDistance(double,double): denominator < ab  =>  !(denominator < ab)
+COI_12:75:double_tanimotoDistance(double,double): denominator > 0  =>  !(denominator > 0)
+COI_13:93:int_add(int,int): array1.length == array2.length  =>  !(array1.length == array2.length)
+COI_14:94:int_add(int,int): index < array1.length  =>  !(index < array1.length)
+COI_15:102:int_dec(int,int): array1.length == array2.length  =>  !(array1.length == array2.length)
+COI_16:103:int_dec(int,int): index < array1.length  =>  !(index < array1.length)
+COI_17:111:double_givens(double,double,double): b == 0  =>  !(b == 0)
+COI_18:116:double_givens(double,double,double): Math.abs( b ) > Math.abs( a )  =>  !(Math.abs( b ) > Math.abs( a ))
+COI_19:130:double_link(double): r < 0.0  =>  !(r < 0.0)
+COI_20:142:int_nbTrees(int,int,int): partition == 0  =>  !(partition == 0)
+COI_21:180:double_errorRate(double,double): index < labels.length  =>  !(index < labels.length)
+COI_22:181:double_errorRate(double,double): predictions[index] == -1  =>  !(predictions[index] == -1)
+COI_23:184:double_errorRate(double,double): predictions[index] != labels[index]  =>  !(predictions[index] != labels[index])
+COI_24:194:double_fromRho(double,double): rho == 1  =>  !(rho == 1)
+COI_25:199:double_fromRho(double,double): Math.abs( rho ) < 1  =>  !(Math.abs( rho ) < 1)
+LOI_1:21:double_cosineDistance(double,double):i => ~i
+LOI_2:21:double_cosineDistance(double,double):p1.length => ~p1.length
+LOI_3:21:double_cosineDistance(double,double):i => ~i
+LOI_4:22:double_cosineDistance(double,double):i => ~i
+LOI_5:22:double_cosineDistance(double,double):i => ~i
+LOI_6:23:double_cosineDistance(double,double):i => ~i
+LOI_7:23:double_cosineDistance(double,double):i => ~i
+LOI_8:24:double_cosineDistance(double,double):i => ~i
+LOI_9:24:double_cosineDistance(double,double):i => ~i
+LOI_10:26:double_cosineDistance(double,double):lengthSquaredp1 => ~lengthSquaredp1
+LOI_11:26:double_cosineDistance(double,double):lengthSquaredp2 => ~lengthSquaredp2
+LOI_12:27:double_cosineDistance(double,double):denominator => ~denominator
+LOI_13:27:double_cosineDistance(double,double):dotProduct => ~dotProduct
+LOI_14:28:double_cosineDistance(double,double):dotProduct => ~dotProduct
+LOI_15:30:double_cosineDistance(double,double):denominator => ~denominator
+LOI_16:30:double_cosineDistance(double,double):dotProduct => ~dotProduct
+LOI_17:33:double_cosineDistance(double,double):dotProduct => ~dotProduct
+LOI_18:33:double_cosineDistance(double,double):denominator => ~denominator
+LOI_19:39:double_manhattanDistance(double,double):i => ~i
+LOI_20:39:double_manhattanDistance(double,double):p1.length => ~p1.length
+LOI_21:39:double_manhattanDistance(double,double):i => ~i
+LOI_22:40:double_manhattanDistance(double,double):i => ~i
+LOI_23:40:double_manhattanDistance(double,double):i => ~i
+LOI_24:42:double_manhattanDistance(double,double):result => ~result
+LOI_25:47:double_chebyshevDistance(double,double):p1.length => ~p1.length
+LOI_26:47:double_chebyshevDistance(double,double):p2.length => ~p2.length
+LOI_27:52:double_chebyshevDistance(double,double):i => ~i
+LOI_28:52:double_chebyshevDistance(double,double):p1.length => ~p1.length
+LOI_29:52:double_chebyshevDistance(double,double):i => ~i
+LOI_30:53:double_chebyshevDistance(double,double):i => ~i
+LOI_31:53:double_chebyshevDistance(double,double):i => ~i
+LOI_32:54:double_chebyshevDistance(double,double):maxDiff => ~maxDiff
+LOI_33:54:double_chebyshevDistance(double,double):diff => ~diff
+LOI_34:55:double_chebyshevDistance(double,double):diff => ~diff
+LOI_35:58:double_chebyshevDistance(double,double):maxDiff => ~maxDiff
+LOI_36:66:double_tanimotoDistance(double,double):i => ~i
+LOI_37:66:double_tanimotoDistance(double,double):p1.length => ~p1.length
+LOI_38:66:double_tanimotoDistance(double,double):i => ~i
+LOI_39:67:double_tanimotoDistance(double,double):i => ~i
+LOI_40:67:double_tanimotoDistance(double,double):i => ~i
+LOI_41:68:double_tanimotoDistance(double,double):i => ~i
+LOI_42:68:double_tanimotoDistance(double,double):i => ~i
+LOI_43:69:double_tanimotoDistance(double,double):i => ~i
+LOI_44:69:double_tanimotoDistance(double,double):i => ~i
+LOI_45:71:double_tanimotoDistance(double,double):aSq => ~aSq
+LOI_46:71:double_tanimotoDistance(double,double):bSq => ~bSq
+LOI_47:71:double_tanimotoDistance(double,double):ab => ~ab
+LOI_48:72:double_tanimotoDistance(double,double):denominator => ~denominator
+LOI_49:72:double_tanimotoDistance(double,double):ab => ~ab
+LOI_50:73:double_tanimotoDistance(double,double):ab => ~ab
+LOI_51:75:double_tanimotoDistance(double,double):denominator => ~denominator
+LOI_52:76:double_tanimotoDistance(double,double):ab => ~ab
+LOI_53:76:double_tanimotoDistance(double,double):denominator => ~denominator
+LOI_54:86:int_sum(int):value => ~value
+LOI_55:88:int_sum(int):sum => ~sum
+LOI_56:93:int_add(int,int):array1.length => ~array1.length
+LOI_57:93:int_add(int,int):array2.length => ~array2.length
+LOI_58:94:int_add(int,int):index => ~index
+LOI_59:94:int_add(int,int):array1.length => ~array1.length
+LOI_60:94:int_add(int,int):index => ~index
+LOI_61:95:int_add(int,int):index => ~index
+LOI_62:95:int_add(int,int):index => ~index
+LOI_63:102:int_dec(int,int):array1.length => ~array1.length
+LOI_64:102:int_dec(int,int):array2.length => ~array2.length
+LOI_65:103:int_dec(int,int):index => ~index
+LOI_66:103:int_dec(int,int):array1.length => ~array1.length
+LOI_67:103:int_dec(int,int):index => ~index
+LOI_68:104:int_dec(int,int):index => ~index
+LOI_69:104:int_dec(int,int):index => ~index
+LOI_70:111:double_givens(double,double,double):b => ~b
+LOI_71:116:double_givens(double,double,double):b => ~b
+LOI_72:116:double_givens(double,double,double):a => ~a
+LOI_73:117:double_givens(double,double,double):a => ~a
+LOI_74:117:double_givens(double,double,double):b => ~b
+LOI_75:118:double_givens(double,double,double):tau => ~tau
+LOI_76:118:double_givens(double,double,double):tau => ~tau
+LOI_77:119:double_givens(double,double,double):tau => ~tau
+LOI_78:121:double_givens(double,double,double):b => ~b
+LOI_79:121:double_givens(double,double,double):a => ~a
+LOI_80:122:double_givens(double,double,double):tau => ~tau
+LOI_81:122:double_givens(double,double,double):tau => ~tau
+LOI_82:123:double_givens(double,double,double):tau => ~tau
+LOI_83:130:double_link(double):r => ~r
+LOI_84:131:double_link(double):r => ~r
+LOI_85:132:double_link(double):s => ~s
+LOI_86:132:double_link(double):s => ~s
+LOI_87:134:double_link(double):r => ~r
+LOI_88:135:double_link(double):s => ~s
+LOI_89:141:int_nbTrees(int,int,int):numTrees => ~numTrees
+LOI_90:141:int_nbTrees(int,int,int):numMaps => ~numMaps
+LOI_91:142:int_nbTrees(int,int,int):partition => ~partition
+LOI_92:143:int_nbTrees(int,int,int):numTrees => ~numTrees
+LOI_93:143:int_nbTrees(int,int,int):nbTrees => ~nbTrees
+LOI_94:143:int_nbTrees(int,int,int):numMaps => ~numMaps
+LOI_95:145:int_nbTrees(int,int,int):nbTrees => ~nbTrees
+LOI_96:151:int_stepSize(int,double):multiplier => ~multiplier
+LOI_97:151:int_stepSize(int,double):recordNumber => ~recordNumber
+LOI_98:152:int_stepSize(int,double):log => ~log
+LOI_99:152:int_stepSize(int,double):bumps.length => ~bumps.length
+LOI_100:153:int_stepSize(int,double):log => ~log
+LOI_101:153:int_stepSize(int,double):bumps.length => ~bumps.length
+LOI_102:154:int_stepSize(int,double):bump => ~bump
+LOI_103:154:int_stepSize(int,double):scale => ~scale
+LOI_104:159:double_choose2(double):n => ~n
+LOI_105:159:double_choose2(double):n => ~n
+LOI_106:164:double_computeWeight(double,double,double,double):featureLabelWeight => ~featureLabelWeight
+LOI_107:164:double_computeWeight(double,double,double,double):alphaI => ~alphaI
+LOI_108:165:double_computeWeight(double,double,double,double):labelWeight => ~labelWeight
+LOI_109:165:double_computeWeight(double,double,double,double):alphaI => ~alphaI
+LOI_110:165:double_computeWeight(double,double,double,double):numFeatures => ~numFeatures
+LOI_111:166:double_computeWeight(double,double,double,double):numerator => ~numerator
+LOI_112:166:double_computeWeight(double,double,double,double):denominator => ~denominator
+LOI_113:171:double_computeWeight(double,double,double,double,double,double):featureWeight => ~featureWeight
+LOI_114:171:double_computeWeight(double,double,double,double,double,double):featureLabelWeight => ~featureLabelWeight
+LOI_115:171:double_computeWeight(double,double,double,double,double,double):alphaI => ~alphaI
+LOI_116:172:double_computeWeight(double,double,double,double,double,double):totalWeight => ~totalWeight
+LOI_117:172:double_computeWeight(double,double,double,double,double,double):labelWeight => ~labelWeight
+LOI_118:172:double_computeWeight(double,double,double,double,double,double):alphaI => ~alphaI
+LOI_119:172:double_computeWeight(double,double,double,double,double,double):numFeatures => ~numFeatures
+LOI_120:173:double_computeWeight(double,double,double,double,double,double):numerator => ~numerator
+LOI_121:173:double_computeWeight(double,double,double,double,double,double):denominator => ~denominator
+LOI_122:180:double_errorRate(double,double):index => ~index
+LOI_123:180:double_errorRate(double,double):labels.length => ~labels.length
+LOI_124:180:double_errorRate(double,double):index => ~index
+LOI_125:181:double_errorRate(double,double):index => ~index
+LOI_126:184:double_errorRate(double,double):index => ~index
+LOI_127:184:double_errorRate(double,double):index => ~index
+LOI_128:185:double_errorRate(double,double):nberrors => ~nberrors
+LOI_129:187:double_errorRate(double,double):datasize => ~datasize
+LOI_130:189:double_errorRate(double,double):nberrors => ~nberrors
+LOI_131:189:double_errorRate(double,double):datasize => ~datasize
+LOI_132:194:double_fromRho(double,double):rho => ~rho
+LOI_133:199:double_fromRho(double,double):rho => ~rho
+LOI_134:200:double_fromRho(double,double):rho => ~rho
+LOI_135:204:double_fromRho(double,double):rho => ~rho
+ASRS_1:22:double_cosineDistance(double,double):lengthSquaredp1 += p1[i] * p1[i] => lengthSquaredp1 /= p1[i] * p1[i]
+ASRS_2:22:double_cosineDistance(double,double):lengthSquaredp1 += p1[i] * p1[i] => lengthSquaredp1 *= p1[i] * p1[i]
+ASRS_3:22:double_cosineDistance(double,double):lengthSquaredp1 += p1[i] * p1[i] => lengthSquaredp1 -= p1[i] * p1[i]
+ASRS_4:22:double_cosineDistance(double,double):lengthSquaredp1 += p1[i] * p1[i] => lengthSquaredp1 %= p1[i] * p1[i]
+ASRS_5:23:double_cosineDistance(double,double):lengthSquaredp2 += p2[i] * p2[i] => lengthSquaredp2 /= p2[i] * p2[i]
+ASRS_6:23:double_cosineDistance(double,double):lengthSquaredp2 += p2[i] * p2[i] => lengthSquaredp2 *= p2[i] * p2[i]
+ASRS_7:23:double_cosineDistance(double,double):lengthSquaredp2 += p2[i] * p2[i] => lengthSquaredp2 -= p2[i] * p2[i]
+ASRS_8:23:double_cosineDistance(double,double):lengthSquaredp2 += p2[i] * p2[i] => lengthSquaredp2 %= p2[i] * p2[i]
+ASRS_9:24:double_cosineDistance(double,double):dotProduct += p1[i] * p2[i] => dotProduct /= p1[i] * p2[i]
+ASRS_10:24:double_cosineDistance(double,double):dotProduct += p1[i] * p2[i] => dotProduct *= p1[i] * p2[i]
+ASRS_11:24:double_cosineDistance(double,double):dotProduct += p1[i] * p2[i] => dotProduct -= p1[i] * p2[i]
+ASRS_12:24:double_cosineDistance(double,double):dotProduct += p1[i] * p2[i] => dotProduct %= p1[i] * p2[i]
+ASRS_13:40:double_manhattanDistance(double,double):result += Math.abs( p2[i] - p1[i] ) => result /= Math.abs( p2[i] - p1[i] )
+ASRS_14:40:double_manhattanDistance(double,double):result += Math.abs( p2[i] - p1[i] ) => result *= Math.abs( p2[i] - p1[i] )
+ASRS_15:40:double_manhattanDistance(double,double):result += Math.abs( p2[i] - p1[i] ) => result -= Math.abs( p2[i] - p1[i] )
+ASRS_16:40:double_manhattanDistance(double,double):result += Math.abs( p2[i] - p1[i] ) => result %= Math.abs( p2[i] - p1[i] )
+ASRS_17:67:double_tanimotoDistance(double,double):ab += p1[i] * p2[i] => ab /= p1[i] * p2[i]
+ASRS_18:67:double_tanimotoDistance(double,double):ab += p1[i] * p2[i] => ab *= p1[i] * p2[i]
+ASRS_19:67:double_tanimotoDistance(double,double):ab += p1[i] * p2[i] => ab -= p1[i] * p2[i]
+ASRS_20:67:double_tanimotoDistance(double,double):ab += p1[i] * p2[i] => ab %= p1[i] * p2[i]
+ASRS_21:68:double_tanimotoDistance(double,double):aSq += p1[i] * p1[i] => aSq /= p1[i] * p1[i]
+ASRS_22:68:double_tanimotoDistance(double,double):aSq += p1[i] * p1[i] => aSq *= p1[i] * p1[i]
+ASRS_23:68:double_tanimotoDistance(double,double):aSq += p1[i] * p1[i] => aSq -= p1[i] * p1[i]
+ASRS_24:68:double_tanimotoDistance(double,double):aSq += p1[i] * p1[i] => aSq %= p1[i] * p1[i]
+ASRS_25:69:double_tanimotoDistance(double,double):bSq += p2[i] * p2[i] => bSq /= p2[i] * p2[i]
+ASRS_26:69:double_tanimotoDistance(double,double):bSq += p2[i] * p2[i] => bSq *= p2[i] * p2[i]
+ASRS_27:69:double_tanimotoDistance(double,double):bSq += p2[i] * p2[i] => bSq -= p2[i] * p2[i]
+ASRS_28:69:double_tanimotoDistance(double,double):bSq += p2[i] * p2[i] => bSq %= p2[i] * p2[i]
+ASRS_29:86:int_sum(int):sum += value => sum /= value
+ASRS_30:86:int_sum(int):sum += value => sum *= value
+ASRS_31:86:int_sum(int):sum += value => sum -= value
+ASRS_32:86:int_sum(int):sum += value => sum %= value
+ASRS_33:95:int_add(int,int):array1[index] += array2[index] => array1[index] /= array2[index]
+ASRS_34:95:int_add(int,int):array1[index] += array2[index] => array1[index] *= array2[index]
+ASRS_35:95:int_add(int,int):array1[index] += array2[index] => array1[index] -= array2[index]
+ASRS_36:95:int_add(int,int):array1[index] += array2[index] => array1[index] %= array2[index]
+ASRS_37:104:int_dec(int,int):array1[index] -= array2[index] => array1[index] += array2[index]
+ASRS_38:104:int_dec(int,int):array1[index] -= array2[index] => array1[index] /= array2[index]
+ASRS_39:104:int_dec(int,int):array1[index] -= array2[index] => array1[index] *= array2[index]
+ASRS_40:104:int_dec(int,int):array1[index] -= array2[index] => array1[index] %= array2[index]
+ASRS_41:143:int_nbTrees(int,int,int):nbTrees += numTrees - nbTrees * numMaps => nbTrees /= numTrees - nbTrees * numMaps
+ASRS_42:143:int_nbTrees(int,int,int):nbTrees += numTrees - nbTrees * numMaps => nbTrees *= numTrees - nbTrees * numMaps
+ASRS_43:143:int_nbTrees(int,int,int):nbTrees += numTrees - nbTrees * numMaps => nbTrees -= numTrees - nbTrees * numMaps
+ASRS_44:143:int_nbTrees(int,int,int):nbTrees += numTrees - nbTrees * numMaps => nbTrees %= numTrees - nbTrees * numMaps
+SDL_1:29:double_cosineDistance(double,double): double dotProduct = 0.0; double lengthSquaredp1 = 0.0; double lengthSquaredp2 = 0.0; for (int i = 0; i < p1.length; i++) {     lengthSquaredp1 += p1[i] * p1[i];     lengthSquaredp2 += p2[i] * p2[i];     dotProduct += p1[i] * p2[i]; } double denominator = Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ); if (denominator < dotProduct) {     denominator = dotProduct; } if (denominator == 0 && dotProduct == 0) {     return 0; } return 1.0 - dotProduct / denominator;  =>   double dotProduct = 0.0; double lengthSquaredp1 = 0.0; double lengthSquaredp2 = 0.0; double denominator = Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ); if (denominator < dotProduct) {     denominator = dotProduct; } if (denominator == 0 && dotProduct == 0) {     return 0; } return 1.0 - dotProduct / denominator;
+SDL_2:31:double_cosineDistance(double,double): double dotProduct = 0.0; double lengthSquaredp1 = 0.0; double lengthSquaredp2 = 0.0; for (int i = 0; i < p1.length; i++) {     lengthSquaredp1 += p1[i] * p1[i];     lengthSquaredp2 += p2[i] * p2[i];     dotProduct += p1[i] * p2[i]; } double denominator = Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ); if (denominator < dotProduct) {     denominator = dotProduct; } if (denominator == 0 && dotProduct == 0) {     return 0; } return 1.0 - dotProduct / denominator;  =>   double dotProduct = 0.0; double lengthSquaredp1 = 0.0; double lengthSquaredp2 = 0.0; for (int i = 0; i < p1.length; i++) {     lengthSquaredp1 += p1[i] * p1[i];     lengthSquaredp2 += p2[i] * p2[i];     dotProduct += p1[i] * p2[i]; } double denominator = Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ); if (denominator == 0 && dotProduct == 0) {     return 0; } return 1.0 - dotProduct / denominator;
+SDL_3:31:double_cosineDistance(double,double): double dotProduct = 0.0; double lengthSquaredp1 = 0.0; double lengthSquaredp2 = 0.0; for (int i = 0; i < p1.length; i++) {     lengthSquaredp1 += p1[i] * p1[i];     lengthSquaredp2 += p2[i] * p2[i];     dotProduct += p1[i] * p2[i]; } double denominator = Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ); if (denominator < dotProduct) {     denominator = dotProduct; } if (denominator == 0 && dotProduct == 0) {     return 0; } return 1.0 - dotProduct / denominator;  =>   double dotProduct = 0.0; double lengthSquaredp1 = 0.0; double lengthSquaredp2 = 0.0; for (int i = 0; i < p1.length; i++) {     lengthSquaredp1 += p1[i] * p1[i];     lengthSquaredp2 += p2[i] * p2[i];     dotProduct += p1[i] * p2[i]; } double denominator = Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ); if (denominator < dotProduct) {     denominator = dotProduct; } return 1.0 - dotProduct / denominator;
+SDL_4:24:double_cosineDistance(double,double): lengthSquaredp1 += p1[i] * p1[i]; lengthSquaredp2 += p2[i] * p2[i]; dotProduct += p1[i] * p2[i];  =>   lengthSquaredp2 += p2[i] * p2[i]; dotProduct += p1[i] * p2[i];
+SDL_5:24:double_cosineDistance(double,double): lengthSquaredp1 += p1[i] * p1[i]; lengthSquaredp2 += p2[i] * p2[i]; dotProduct += p1[i] * p2[i];  =>   lengthSquaredp1 += p1[i] * p1[i]; dotProduct += p1[i] * p2[i];
+SDL_6:24:double_cosineDistance(double,double): lengthSquaredp1 += p1[i] * p1[i]; lengthSquaredp2 += p2[i] * p2[i]; dotProduct += p1[i] * p2[i];  =>   lengthSquaredp1 += p1[i] * p1[i]; lengthSquaredp2 += p2[i] * p2[i];
+SDL_7:26:double_cosineDistance(double,double): for (int i = 0; i < p1.length; i++) {     lengthSquaredp1 += p1[i] * p1[i];     lengthSquaredp2 += p2[i] * p2[i];     dotProduct += p1[i] * p2[i]; }  =>   for (int i = 0;; i++) {     lengthSquaredp1 += p1[i] * p1[i];     lengthSquaredp2 += p2[i] * p2[i];     dotProduct += p1[i] * p2[i]; }
+SDL_8:26:double_cosineDistance(double,double): for (int i = 0; i < p1.length; i++) {     lengthSquaredp1 += p1[i] * p1[i];     lengthSquaredp2 += p2[i] * p2[i];     dotProduct += p1[i] * p2[i]; }  =>   for (int i = 0; i < p1.length;) {     lengthSquaredp1 += p1[i] * p1[i];     lengthSquaredp2 += p2[i] * p2[i];     dotProduct += p1[i] * p2[i]; }
+SDL_9:28:double_cosineDistance(double,double): denominator = dotProduct;  =>  
+SDL_10:30:double_cosineDistance(double,double): if (denominator < dotProduct) {     denominator = dotProduct; }  =>   if (true) {     denominator = dotProduct; }
+SDL_11:33:double_cosineDistance(double,double): if (denominator == 0 && dotProduct == 0) {     return 0; }  =>   if (true) {     return 0; }
+SDL_12:34:double_cosineDistance(double,double): return 1.0 - dotProduct / denominator;  =>   return 0;
+SDL_13:40:double_manhattanDistance(double,double): double result = 0.0; for (int i = 0; i < p1.length; i++) {     result += Math.abs( p2[i] - p1[i] ); } return result;  =>   double result = 0.0; return result;
+SDL_14:40:double_manhattanDistance(double,double): result += Math.abs( p2[i] - p1[i] );  =>  
+SDL_15:42:double_manhattanDistance(double,double): for (int i = 0; i < p1.length; i++) {     result += Math.abs( p2[i] - p1[i] ); }  =>   for (int i = 0;; i++) {     result += Math.abs( p2[i] - p1[i] ); }
+SDL_16:42:double_manhattanDistance(double,double): for (int i = 0; i < p1.length; i++) {     result += Math.abs( p2[i] - p1[i] ); }  =>   for (int i = 0; i < p1.length;) {     result += Math.abs( p2[i] - p1[i] ); }
+SDL_17:43:double_manhattanDistance(double,double): return result;  =>   return 0;
+SDL_18:55:double_chebyshevDistance(double,double): if (p1.length != p2.length) {     System.out.println( \"Error!\" );     return -1; } double maxDiff = Math.abs( p1[0] - p2[0] ); for (int i = 1; i < p1.length; i++) {     double diff = Math.abs( p1[i] - p2[i] );     if (maxDiff < diff) {         maxDiff = diff;     } } return maxDiff;  =>   double maxDiff = Math.abs( p1[0] - p2[0] ); for (int i = 1; i < p1.length; i++) {     double diff = Math.abs( p1[i] - p2[i] );     if (maxDiff < diff) {         maxDiff = diff;     } } return maxDiff;
+SDL_19:53:double_chebyshevDistance(double,double): if (p1.length != p2.length) {     System.out.println( \"Error!\" );     return -1; } double maxDiff = Math.abs( p1[0] - p2[0] ); for (int i = 1; i < p1.length; i++) {     double diff = Math.abs( p1[i] - p2[i] );     if (maxDiff < diff) {         maxDiff = diff;     } } return maxDiff;  =>   if (p1.length != p2.length) {     System.out.println( \"Error!\" );     return -1; } double maxDiff = Math.abs( p1[0] - p2[0] ); return maxDiff;
+SDL_20:49:double_chebyshevDistance(double,double): System.out.println( \"Error!\" ); return -1;  =>   return -1;
+SDL_21:51:double_chebyshevDistance(double,double): if (p1.length != p2.length) {     System.out.println( \"Error!\" );     return -1; }  =>   if (true) {     System.out.println( \"Error!\" );     return -1; }
+SDL_22:50:double_chebyshevDistance(double,double): return -1;  =>   return 0;
+SDL_23:54:double_chebyshevDistance(double,double): double diff = Math.abs( p1[i] - p2[i] ); if (maxDiff < diff) {     maxDiff = diff; }  =>   double diff = Math.abs( p1[i] - p2[i] );
+SDL_24:58:double_chebyshevDistance(double,double): for (int i = 1; i < p1.length; i++) {     double diff = Math.abs( p1[i] - p2[i] );     if (maxDiff < diff) {         maxDiff = diff;     } }  =>   for (int i = 1;; i++) {     double diff = Math.abs( p1[i] - p2[i] );     if (maxDiff < diff) {         maxDiff = diff;     } }
+SDL_25:58:double_chebyshevDistance(double,double): for (int i = 1; i < p1.length; i++) {     double diff = Math.abs( p1[i] - p2[i] );     if (maxDiff < diff) {         maxDiff = diff;     } }  =>   for (int i = 1; i < p1.length;) {     double diff = Math.abs( p1[i] - p2[i] );     if (maxDiff < diff) {         maxDiff = diff;     } }
+SDL_26:55:double_chebyshevDistance(double,double): maxDiff = diff;  =>  
+SDL_27:57:double_chebyshevDistance(double,double): if (maxDiff < diff) {     maxDiff = diff; }  =>   if (true) {     maxDiff = diff; }
+SDL_28:59:double_chebyshevDistance(double,double): return maxDiff;  =>   return 0;
+SDL_29:75:double_tanimotoDistance(double,double): double ab = 0; double aSq = 0; double bSq = 0; for (int i = 0; i < p1.length; i++) {     ab += p1[i] * p2[i];     aSq += p1[i] * p1[i];     bSq += p2[i] * p2[i]; } double denominator = aSq + bSq - ab; if (denominator < ab) {     denominator = ab; } if (denominator > 0) {     return 1.0 - ab / denominator; } else {     return 0.0; }  =>   double ab = 0; double aSq = 0; double bSq = 0; double denominator = aSq + bSq - ab; if (denominator < ab) {     denominator = ab; } if (denominator > 0) {     return 1.0 - ab / denominator; } else {     return 0.0; }
+SDL_30:77:double_tanimotoDistance(double,double): double ab = 0; double aSq = 0; double bSq = 0; for (int i = 0; i < p1.length; i++) {     ab += p1[i] * p2[i];     aSq += p1[i] * p1[i];     bSq += p2[i] * p2[i]; } double denominator = aSq + bSq - ab; if (denominator < ab) {     denominator = ab; } if (denominator > 0) {     return 1.0 - ab / denominator; } else {     return 0.0; }  =>   double ab = 0; double aSq = 0; double bSq = 0; for (int i = 0; i < p1.length; i++) {     ab += p1[i] * p2[i];     aSq += p1[i] * p1[i];     bSq += p2[i] * p2[i]; } double denominator = aSq + bSq - ab; if (denominator > 0) {     return 1.0 - ab / denominator; } else {     return 0.0; }
+SDL_31:75:double_tanimotoDistance(double,double): double ab = 0; double aSq = 0; double bSq = 0; for (int i = 0; i < p1.length; i++) {     ab += p1[i] * p2[i];     aSq += p1[i] * p1[i];     bSq += p2[i] * p2[i]; } double denominator = aSq + bSq - ab; if (denominator < ab) {     denominator = ab; } if (denominator > 0) {     return 1.0 - ab / denominator; } else {     return 0.0; }  =>   double ab = 0; double aSq = 0; double bSq = 0; for (int i = 0; i < p1.length; i++) {     ab += p1[i] * p2[i];     aSq += p1[i] * p1[i];     bSq += p2[i] * p2[i]; } double denominator = aSq + bSq - ab; if (denominator < ab) {     denominator = ab; }
+SDL_32:69:double_tanimotoDistance(double,double): ab += p1[i] * p2[i]; aSq += p1[i] * p1[i]; bSq += p2[i] * p2[i];  =>   aSq += p1[i] * p1[i]; bSq += p2[i] * p2[i];
+SDL_33:69:double_tanimotoDistance(double,double): ab += p1[i] * p2[i]; aSq += p1[i] * p1[i]; bSq += p2[i] * p2[i];  =>   ab += p1[i] * p2[i]; bSq += p2[i] * p2[i];
+SDL_34:69:double_tanimotoDistance(double,double): ab += p1[i] * p2[i]; aSq += p1[i] * p1[i]; bSq += p2[i] * p2[i];  =>   ab += p1[i] * p2[i]; aSq += p1[i] * p1[i];
+SDL_35:71:double_tanimotoDistance(double,double): for (int i = 0; i < p1.length; i++) {     ab += p1[i] * p2[i];     aSq += p1[i] * p1[i];     bSq += p2[i] * p2[i]; }  =>   for (int i = 0;; i++) {     ab += p1[i] * p2[i];     aSq += p1[i] * p1[i];     bSq += p2[i] * p2[i]; }
+SDL_36:71:double_tanimotoDistance(double,double): for (int i = 0; i < p1.length; i++) {     ab += p1[i] * p2[i];     aSq += p1[i] * p1[i];     bSq += p2[i] * p2[i]; }  =>   for (int i = 0; i < p1.length;) {     ab += p1[i] * p2[i];     aSq += p1[i] * p1[i];     bSq += p2[i] * p2[i]; }
+SDL_37:73:double_tanimotoDistance(double,double): denominator = ab;  =>  
+SDL_38:75:double_tanimotoDistance(double,double): if (denominator < ab) {     denominator = ab; }  =>   if (true) {     denominator = ab; }
+SDL_39:80:double_tanimotoDistance(double,double): if (denominator > 0) {     return 1.0 - ab / denominator; } else {     return 0.0; }  =>   if (true) {     return 1.0 - ab / denominator; } else {     return 0.0; }
+SDL_40:77:double_tanimotoDistance(double,double): return 1.0 - ab / denominator;  =>   return 0;
+SDL_41:79:double_tanimotoDistance(double,double): return 0.0;  =>   return 0;
+SDL_42:86:int_sum(int): int sum = 0; for (; values;) {     sum += value; } return sum;  =>   int sum = 0; return sum;
+SDL_43:86:int_sum(int): sum += value;  =>  
+SDL_44:88:int_sum(int): for (; values;) {     sum += value; }  =>   for (;;) {     sum += value; }
+SDL_45:89:int_sum(int): return sum;  =>   return 0;
+SDL_46:97:int_add(int,int): Preconditions.checkArgument( array1.length == array2.length, \"array1.length != array2.length\" ); for (int index = 0; index < array1.length; index++) {     array1[index] += array2[index]; } return array1;  =>   for (int index = 0; index < array1.length; index++) {     array1[index] += array2[index]; } return array1;
+SDL_47:95:int_add(int,int): Preconditions.checkArgument( array1.length == array2.length, \"array1.length != array2.length\" ); for (int index = 0; index < array1.length; index++) {     array1[index] += array2[index]; } return array1;  =>   Preconditions.checkArgument( array1.length == array2.length, \"array1.length != array2.length\" ); return array1;
+SDL_48:95:int_add(int,int): array1[index] += array2[index];  =>  
+SDL_49:97:int_add(int,int): for (int index = 0; index < array1.length; index++) {     array1[index] += array2[index]; }  =>   for (int index = 0;; index++) {     array1[index] += array2[index]; }
+SDL_50:97:int_add(int,int): for (int index = 0; index < array1.length; index++) {     array1[index] += array2[index]; }  =>   for (int index = 0; index < array1.length;) {     array1[index] += array2[index]; }
+SDL_51:98:int_add(int,int): return array1;  =>   return 0;
+SDL_52:106:int_dec(int,int): Preconditions.checkArgument( array1.length == array2.length, \"array1.length != array2.length\" ); for (int index = 0; index < array1.length; index++) {     array1[index] -= array2[index]; } return array1;  =>   for (int index = 0; index < array1.length; index++) {     array1[index] -= array2[index]; } return array1;
+SDL_53:104:int_dec(int,int): Preconditions.checkArgument( array1.length == array2.length, \"array1.length != array2.length\" ); for (int index = 0; index < array1.length; index++) {     array1[index] -= array2[index]; } return array1;  =>   Preconditions.checkArgument( array1.length == array2.length, \"array1.length != array2.length\" ); return array1;
+SDL_54:104:int_dec(int,int): array1[index] -= array2[index];  =>  
+SDL_55:106:int_dec(int,int): for (int index = 0; index < array1.length; index++) {     array1[index] -= array2[index]; }  =>   for (int index = 0;; index++) {     array1[index] -= array2[index]; }
+SDL_56:106:int_dec(int,int): for (int index = 0; index < array1.length; index++) {     array1[index] -= array2[index]; }  =>   for (int index = 0; index < array1.length;) {     array1[index] -= array2[index]; }
+SDL_57:107:int_dec(int,int): return array1;  =>   return 0;
+SDL_58:121:double_givens(double,double,double): if (b == 0) {     csOut[0] = 1;     csOut[1] = 0;     return csOut; } if (Math.abs( b ) > Math.abs( a )) {     double tau = -a / b;     csOut[1] = 1 / Math.sqrt( 1 + tau * tau );     csOut[0] = csOut[1] * tau; } else {     double tau = -b / a;     csOut[0] = 1 / Math.sqrt( 1 + tau * tau );     csOut[1] = csOut[0] * tau; } return csOut;  =>   if (Math.abs( b ) > Math.abs( a )) {     double tau = -a / b;     csOut[1] = 1 / Math.sqrt( 1 + tau * tau );     csOut[0] = csOut[1] * tau; } else {     double tau = -b / a;     csOut[0] = 1 / Math.sqrt( 1 + tau * tau );     csOut[1] = csOut[0] * tau; } return csOut;
+SDL_59:117:double_givens(double,double,double): if (b == 0) {     csOut[0] = 1;     csOut[1] = 0;     return csOut; } if (Math.abs( b ) > Math.abs( a )) {     double tau = -a / b;     csOut[1] = 1 / Math.sqrt( 1 + tau * tau );     csOut[0] = csOut[1] * tau; } else {     double tau = -b / a;     csOut[0] = 1 / Math.sqrt( 1 + tau * tau );     csOut[1] = csOut[0] * tau; } return csOut;  =>   if (b == 0) {     csOut[0] = 1;     csOut[1] = 0;     return csOut; } return csOut;
+SDL_60:114:double_givens(double,double,double): csOut[0] = 1; csOut[1] = 0; return csOut;  =>   csOut[1] = 0; return csOut;
+SDL_61:114:double_givens(double,double,double): csOut[0] = 1; csOut[1] = 0; return csOut;  =>   csOut[0] = 1; return csOut;
+SDL_62:116:double_givens(double,double,double): if (b == 0) {     csOut[0] = 1;     csOut[1] = 0;     return csOut; }  =>   if (true) {     csOut[0] = 1;     csOut[1] = 0;     return csOut; }
+SDL_63:115:double_givens(double,double,double): return csOut;  =>   return 0;
+SDL_64:119:double_givens(double,double,double): double tau = -a / b; csOut[1] = 1 / Math.sqrt( 1 + tau * tau ); csOut[0] = csOut[1] * tau;  =>   double tau = -a / b; csOut[0] = csOut[1] * tau;
+SDL_65:119:double_givens(double,double,double): double tau = -a / b; csOut[1] = 1 / Math.sqrt( 1 + tau * tau ); csOut[0] = csOut[1] * tau;  =>   double tau = -a / b; csOut[1] = 1 / Math.sqrt( 1 + tau * tau );
+SDL_66:125:double_givens(double,double,double): if (Math.abs( b ) > Math.abs( a )) {     double tau = -a / b;     csOut[1] = 1 / Math.sqrt( 1 + tau * tau );     csOut[0] = csOut[1] * tau; } else {     double tau = -b / a;     csOut[0] = 1 / Math.sqrt( 1 + tau * tau );     csOut[1] = csOut[0] * tau; }  =>   if (true) {     double tau = -a / b;     csOut[1] = 1 / Math.sqrt( 1 + tau * tau );     csOut[0] = csOut[1] * tau; } else {     double tau = -b / a;     csOut[0] = 1 / Math.sqrt( 1 + tau * tau );     csOut[1] = csOut[0] * tau; }
+SDL_67:123:double_givens(double,double,double): double tau = -b / a; csOut[0] = 1 / Math.sqrt( 1 + tau * tau ); csOut[1] = csOut[0] * tau;  =>   double tau = -b / a; csOut[1] = csOut[0] * tau;
+SDL_68:123:double_givens(double,double,double): double tau = -b / a; csOut[0] = 1 / Math.sqrt( 1 + tau * tau ); csOut[1] = csOut[0] * tau;  =>   double tau = -b / a; csOut[0] = 1 / Math.sqrt( 1 + tau * tau );
+SDL_69:126:double_givens(double,double,double): return csOut;  =>   return 0;
+SDL_70:130:double_link(double): if (r < 0.0) {     double s = Math.exp( r );     return s / (1.0 + s); } else {     double s = Math.exp( -r );     return 1.0 / (1.0 + s); }  =>  
+SDL_71:137:double_link(double): if (r < 0.0) {     double s = Math.exp( r );     return s / (1.0 + s); } else {     double s = Math.exp( -r );     return 1.0 / (1.0 + s); }  =>   if (true) {     double s = Math.exp( r );     return s / (1.0 + s); } else {     double s = Math.exp( -r );     return 1.0 / (1.0 + s); }
+SDL_72:133:double_link(double): return s / (1.0 + s);  =>   return 0;
+SDL_73:136:double_link(double): return 1.0 / (1.0 + s);  =>   return 0;
+SDL_74:143:int_nbTrees(int,int,int): int nbTrees = numTrees / numMaps; if (partition == 0) {     nbTrees += numTrees - nbTrees * numMaps; } return nbTrees;  =>   int nbTrees = numTrees / numMaps; return nbTrees;
+SDL_75:143:int_nbTrees(int,int,int): nbTrees += numTrees - nbTrees * numMaps;  =>  
+SDL_76:145:int_nbTrees(int,int,int): if (partition == 0) {     nbTrees += numTrees - nbTrees * numMaps; }  =>   if (true) {     nbTrees += numTrees - nbTrees * numMaps; }
+SDL_77:146:int_nbTrees(int,int,int): return nbTrees;  =>   return 0;
+SDL_78:155:int_stepSize(int,double): return bump * scale;  =>   return 0;
+SDL_79:160:double_choose2(double): return n * (n - 1) / 2;  =>   return 0;
+SDL_80:167:double_computeWeight(double,double,double,double): return Math.log( numerator / denominator );  =>   return 0;
+SDL_81:174:double_computeWeight(double,double,double,double,double,double): return -Math.log( numerator / denominator );  =>   return 0;
+SDL_82:181:double_errorRate(double,double): double nberrors = 0; double datasize = 0; for (int index = 0; index < labels.length; index++) {     if (predictions[index] == -1) {         continue;     }     if (predictions[index] != labels[index]) {         nberrors++;     }     datasize++; } return nberrors / datasize;  =>   double nberrors = 0; double datasize = 0; return nberrors / datasize;
+SDL_83:185:double_errorRate(double,double): if (predictions[index] == -1) {     continue; } if (predictions[index] != labels[index]) {     nberrors++; } datasize++;  =>   if (predictions[index] != labels[index]) {     nberrors++; } datasize++;
+SDL_84:185:double_errorRate(double,double): if (predictions[index] == -1) {     continue; } if (predictions[index] != labels[index]) {     nberrors++; } datasize++;  =>   if (predictions[index] == -1) {     continue; } datasize++;
+SDL_85:187:double_errorRate(double,double): if (predictions[index] == -1) {     continue; } if (predictions[index] != labels[index]) {     nberrors++; } datasize++;  =>   if (predictions[index] == -1) {     continue; } if (predictions[index] != labels[index]) {     nberrors++; }
+SDL_86:189:double_errorRate(double,double): for (int index = 0; index < labels.length; index++) {     if (predictions[index] == -1) {         continue;     }     if (predictions[index] != labels[index]) {         nberrors++;     }     datasize++; }  =>   for (int index = 0;; index++) {     if (predictions[index] == -1) {         continue;     }     if (predictions[index] != labels[index]) {         nberrors++;     }     datasize++; }
+SDL_87:189:double_errorRate(double,double): for (int index = 0; index < labels.length; index++) {     if (predictions[index] == -1) {         continue;     }     if (predictions[index] != labels[index]) {         nberrors++;     }     datasize++; }  =>   for (int index = 0; index < labels.length;) {     if (predictions[index] == -1) {         continue;     }     if (predictions[index] != labels[index]) {         nberrors++;     }     datasize++; }
+SDL_88:182:double_errorRate(double,double): continue;  =>  
+SDL_89:184:double_errorRate(double,double): if (predictions[index] == -1) {     continue; }  =>   if (true) {     continue; }
+SDL_90:185:double_errorRate(double,double): nberrors++;  =>  
+SDL_91:187:double_errorRate(double,double): if (predictions[index] != labels[index]) {     nberrors++; }  =>   if (true) {     nberrors++; }
+SDL_92:190:double_errorRate(double,double): return nberrors / datasize;  =>   return 0;
+SDL_93:202:double_fromRho(double,double): if (rho == 1) {     csOut[0] = 0;     csOut[1] = 1;     return csOut; } if (Math.abs( rho ) < 1) {     csOut[1] = 2 * rho;     csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] );     return csOut; } csOut[0] = 2 / rho; csOut[1] = Math.sqrt( 1 - csOut[0] * csOut[0] ); return csOut;  =>   if (Math.abs( rho ) < 1) {     csOut[1] = 2 * rho;     csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] );     return csOut; } csOut[0] = 2 / rho; csOut[1] = Math.sqrt( 1 - csOut[0] * csOut[0] ); return csOut;
+SDL_94:202:double_fromRho(double,double): if (rho == 1) {     csOut[0] = 0;     csOut[1] = 1;     return csOut; } if (Math.abs( rho ) < 1) {     csOut[1] = 2 * rho;     csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] );     return csOut; } csOut[0] = 2 / rho; csOut[1] = Math.sqrt( 1 - csOut[0] * csOut[0] ); return csOut;  =>   if (rho == 1) {     csOut[0] = 0;     csOut[1] = 1;     return csOut; } csOut[0] = 2 / rho; csOut[1] = Math.sqrt( 1 - csOut[0] * csOut[0] ); return csOut;
+SDL_95:206:double_fromRho(double,double): if (rho == 1) {     csOut[0] = 0;     csOut[1] = 1;     return csOut; } if (Math.abs( rho ) < 1) {     csOut[1] = 2 * rho;     csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] );     return csOut; } csOut[0] = 2 / rho; csOut[1] = Math.sqrt( 1 - csOut[0] * csOut[0] ); return csOut;  =>   if (rho == 1) {     csOut[0] = 0;     csOut[1] = 1;     return csOut; } if (Math.abs( rho ) < 1) {     csOut[1] = 2 * rho;     csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] );     return csOut; } csOut[1] = Math.sqrt( 1 - csOut[0] * csOut[0] ); return csOut;
+SDL_96:206:double_fromRho(double,double): if (rho == 1) {     csOut[0] = 0;     csOut[1] = 1;     return csOut; } if (Math.abs( rho ) < 1) {     csOut[1] = 2 * rho;     csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] );     return csOut; } csOut[0] = 2 / rho; csOut[1] = Math.sqrt( 1 - csOut[0] * csOut[0] ); return csOut;  =>   if (rho == 1) {     csOut[0] = 0;     csOut[1] = 1;     return csOut; } if (Math.abs( rho ) < 1) {     csOut[1] = 2 * rho;     csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] );     return csOut; } csOut[0] = 2 / rho; return csOut;
+SDL_97:197:double_fromRho(double,double): csOut[0] = 0; csOut[1] = 1; return csOut;  =>   csOut[1] = 1; return csOut;
+SDL_98:197:double_fromRho(double,double): csOut[0] = 0; csOut[1] = 1; return csOut;  =>   csOut[0] = 0; return csOut;
+SDL_99:199:double_fromRho(double,double): if (rho == 1) {     csOut[0] = 0;     csOut[1] = 1;     return csOut; }  =>   if (true) {     csOut[0] = 0;     csOut[1] = 1;     return csOut; }
+SDL_100:198:double_fromRho(double,double): return csOut;  =>   return 0;
+SDL_101:202:double_fromRho(double,double): csOut[1] = 2 * rho; csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] ); return csOut;  =>   csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] ); return csOut;
+SDL_102:202:double_fromRho(double,double): csOut[1] = 2 * rho; csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] ); return csOut;  =>   csOut[1] = 2 * rho; return csOut;
+SDL_103:204:double_fromRho(double,double): if (Math.abs( rho ) < 1) {     csOut[1] = 2 * rho;     csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] );     return csOut; }  =>   if (true) {     csOut[1] = 2 * rho;     csOut[0] = Math.sqrt( 1 - csOut[1] * csOut[1] );     return csOut; }
+SDL_104:203:double_fromRho(double,double): return csOut;  =>   return 0;
+SDL_105:207:double_fromRho(double,double): return csOut;  =>   return 0;
+VDL_1:21:double_cosineDistance(double,double):i < p1.length => p1.length
+VDL_2:21:double_cosineDistance(double,double):i++ =>  
+VDL_3:22:double_cosineDistance(double,double):p1[i] * p1[i] => p1[i]
+VDL_4:22:double_cosineDistance(double,double):p1[i] * p1[i] => p1[i]
+VDL_5:23:double_cosineDistance(double,double):p2[i] * p2[i] => p2[i]
+VDL_6:23:double_cosineDistance(double,double):p2[i] * p2[i] => p2[i]
+VDL_7:24:double_cosineDistance(double,double):p1[i] * p2[i] => p2[i]
+VDL_8:24:double_cosineDistance(double,double):p1[i] * p2[i] => p1[i]
+VDL_9:27:double_cosineDistance(double,double):denominator < dotProduct => dotProduct
+VDL_10:27:double_cosineDistance(double,double):denominator < dotProduct => denominator
+VDL_11:30:double_cosineDistance(double,double):denominator == 0 => 0
+VDL_12:30:double_cosineDistance(double,double):dotProduct == 0 => 0
+VDL_13:33:double_cosineDistance(double,double):dotProduct / denominator => denominator
+VDL_14:33:double_cosineDistance(double,double):dotProduct / denominator => dotProduct
+VDL_15:39:double_manhattanDistance(double,double):i < p1.length => p1.length
+VDL_16:39:double_manhattanDistance(double,double):i++ =>  
+VDL_17:40:double_manhattanDistance(double,double):p2[i] - p1[i] => p1[i]
+VDL_18:40:double_manhattanDistance(double,double):p2[i] - p1[i] => p2[i]
+VDL_19:51:double_chebyshevDistance(double,double):p1[0] - p2[0] => p2[0]
+VDL_20:51:double_chebyshevDistance(double,double):p1[0] - p2[0] => p1[0]
+VDL_21:52:double_chebyshevDistance(double,double):i < p1.length => p1.length
+VDL_22:52:double_chebyshevDistance(double,double):i++ =>  
+VDL_23:53:double_chebyshevDistance(double,double):p1[i] - p2[i] => p2[i]
+VDL_24:53:double_chebyshevDistance(double,double):p1[i] - p2[i] => p1[i]
+VDL_25:54:double_chebyshevDistance(double,double):maxDiff < diff => diff
+VDL_26:54:double_chebyshevDistance(double,double):maxDiff < diff => maxDiff
+VDL_27:66:double_tanimotoDistance(double,double):i < p1.length => p1.length
+VDL_28:66:double_tanimotoDistance(double,double):i++ =>  
+VDL_29:67:double_tanimotoDistance(double,double):p1[i] * p2[i] => p2[i]
+VDL_30:67:double_tanimotoDistance(double,double):p1[i] * p2[i] => p1[i]
+VDL_31:68:double_tanimotoDistance(double,double):p1[i] * p1[i] => p1[i]
+VDL_32:68:double_tanimotoDistance(double,double):p1[i] * p1[i] => p1[i]
+VDL_33:69:double_tanimotoDistance(double,double):p2[i] * p2[i] => p2[i]
+VDL_34:69:double_tanimotoDistance(double,double):p2[i] * p2[i] => p2[i]
+VDL_35:71:double_tanimotoDistance(double,double):aSq + bSq => bSq
+VDL_36:71:double_tanimotoDistance(double,double):aSq + bSq => aSq
+VDL_37:71:double_tanimotoDistance(double,double):aSq + bSq - ab => aSq + bSq
+VDL_38:72:double_tanimotoDistance(double,double):denominator < ab => ab
+VDL_39:72:double_tanimotoDistance(double,double):denominator < ab => denominator
+VDL_40:75:double_tanimotoDistance(double,double):denominator > 0 => 0
+VDL_41:76:double_tanimotoDistance(double,double):ab / denominator => denominator
+VDL_42:76:double_tanimotoDistance(double,double):ab / denominator => ab
+VDL_43:94:int_add(int,int):index < array1.length => array1.length
+VDL_44:94:int_add(int,int):index++ =>  
+VDL_45:103:int_dec(int,int):index < array1.length => array1.length
+VDL_46:103:int_dec(int,int):index++ =>  
+VDL_47:111:double_givens(double,double,double):b == 0 => 0
+VDL_48:117:double_givens(double,double,double):-a =>  
+VDL_49:117:double_givens(double,double,double):-a / b => -a
+VDL_50:118:double_givens(double,double,double):tau * tau => tau
+VDL_51:118:double_givens(double,double,double):tau * tau => tau
+VDL_52:119:double_givens(double,double,double):csOut[1] * tau => tau
+VDL_53:119:double_givens(double,double,double):csOut[1] * tau => csOut[1]
+VDL_54:121:double_givens(double,double,double):-b =>  
+VDL_55:121:double_givens(double,double,double):-b / a => -b
+VDL_56:122:double_givens(double,double,double):tau * tau => tau
+VDL_57:122:double_givens(double,double,double):tau * tau => tau
+VDL_58:123:double_givens(double,double,double):csOut[0] * tau => tau
+VDL_59:123:double_givens(double,double,double):csOut[0] * tau => csOut[0]
+VDL_60:130:double_link(double):r < 0.0 => 0.0
+VDL_61:132:double_link(double):1.0 + s => 1.0
+VDL_62:132:double_link(double):s / (1.0 + s) => 1.0 + s
+VDL_63:134:double_link(double):-r =>  
+VDL_64:135:double_link(double):1.0 + s => 1.0
+VDL_65:141:int_nbTrees(int,int,int):numTrees / numMaps => numMaps
+VDL_66:141:int_nbTrees(int,int,int):numTrees / numMaps => numTrees
+VDL_67:142:int_nbTrees(int,int,int):partition == 0 => 0
+VDL_68:143:int_nbTrees(int,int,int):nbTrees * numMaps => numMaps
+VDL_69:143:int_nbTrees(int,int,int):nbTrees * numMaps => nbTrees
+VDL_70:143:int_nbTrees(int,int,int):numTrees - nbTrees * numMaps => nbTrees * numMaps
+VDL_71:151:int_stepSize(int,double):multiplier * Math.log10( recordNumber ) => Math.log10( recordNumber )
+VDL_72:153:int_stepSize(int,double):log / bumps.length => bumps.length
+VDL_73:154:int_stepSize(int,double):bump * scale => scale
+VDL_74:154:int_stepSize(int,double):bump * scale => bump
+VDL_75:159:double_choose2(double):n - 1 => 1
+VDL_76:159:double_choose2(double):n * (n - 1) => n - 1
+VDL_77:164:double_computeWeight(double,double,double,double):featureLabelWeight + alphaI => alphaI
+VDL_78:164:double_computeWeight(double,double,double,double):featureLabelWeight + alphaI => featureLabelWeight
+VDL_79:165:double_computeWeight(double,double,double,double):alphaI * numFeatures => numFeatures
+VDL_80:165:double_computeWeight(double,double,double,double):alphaI * numFeatures => alphaI
+VDL_81:165:double_computeWeight(double,double,double,double):labelWeight + alphaI * numFeatures => alphaI * numFeatures
+VDL_82:166:double_computeWeight(double,double,double,double):numerator / denominator => denominator
+VDL_83:166:double_computeWeight(double,double,double,double):numerator / denominator => numerator
+VDL_84:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight => featureLabelWeight
+VDL_85:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight => featureWeight
+VDL_86:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight + alphaI => featureWeight - featureLabelWeight
+VDL_87:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight => labelWeight
+VDL_88:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight => totalWeight
+VDL_89:172:double_computeWeight(double,double,double,double,double,double):alphaI * numFeatures => numFeatures
+VDL_90:172:double_computeWeight(double,double,double,double,double,double):alphaI * numFeatures => alphaI
+VDL_91:173:double_computeWeight(double,double,double,double,double,double):numerator / denominator => denominator
+VDL_92:173:double_computeWeight(double,double,double,double,double,double):numerator / denominator => numerator
+VDL_93:180:double_errorRate(double,double):index < labels.length => labels.length
+VDL_94:180:double_errorRate(double,double):index++ =>  
+VDL_95:181:double_errorRate(double,double):predictions[index] == -1 => -1
+VDL_96:184:double_errorRate(double,double):predictions[index] != labels[index] => labels[index]
+VDL_97:184:double_errorRate(double,double):predictions[index] != labels[index] => predictions[index]
+VDL_98:185:double_errorRate(double,double):nberrors++ =>  
+VDL_99:187:double_errorRate(double,double):datasize++ =>  
+VDL_100:189:double_errorRate(double,double):nberrors / datasize => datasize
+VDL_101:189:double_errorRate(double,double):nberrors / datasize => nberrors
+VDL_102:194:double_fromRho(double,double):rho == 1 => 1
+VDL_103:200:double_fromRho(double,double):2 * rho => 2
+VDL_104:201:double_fromRho(double,double):csOut[1] * csOut[1] => csOut[1]
+VDL_105:201:double_fromRho(double,double):csOut[1] * csOut[1] => csOut[1]
+VDL_106:204:double_fromRho(double,double):2 / rho => 2
+VDL_107:205:double_fromRho(double,double):csOut[0] * csOut[0] => csOut[0]
+VDL_108:205:double_fromRho(double,double):csOut[0] * csOut[0] => csOut[0]
+ODL_1:21:double_cosineDistance(double,double):i < p1.length => i
+ODL_2:21:double_cosineDistance(double,double):i < p1.length => p1.length
+ODL_3:21:double_cosineDistance(double,double):i++ => i
+ODL_4:22:double_cosineDistance(double,double):p1[i] * p1[i] => p1[i]
+ODL_5:22:double_cosineDistance(double,double):p1[i] * p1[i] => p1[i]
+ODL_6:22:double_cosineDistance(double,double):lengthSquaredp1 += p1[i] * p1[i] => lengthSquaredp1 = p1[i] * p1[i]
+ODL_7:23:double_cosineDistance(double,double):p2[i] * p2[i] => p2[i]
+ODL_8:23:double_cosineDistance(double,double):p2[i] * p2[i] => p2[i]
+ODL_9:23:double_cosineDistance(double,double):lengthSquaredp2 += p2[i] * p2[i] => lengthSquaredp2 = p2[i] * p2[i]
+ODL_10:24:double_cosineDistance(double,double):p1[i] * p2[i] => p1[i]
+ODL_11:24:double_cosineDistance(double,double):p1[i] * p2[i] => p2[i]
+ODL_12:24:double_cosineDistance(double,double):dotProduct += p1[i] * p2[i] => dotProduct = p1[i] * p2[i]
+ODL_13:26:double_cosineDistance(double,double):Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ) => Math.sqrt( lengthSquaredp1 )
+ODL_14:26:double_cosineDistance(double,double):Math.sqrt( lengthSquaredp1 ) * Math.sqrt( lengthSquaredp2 ) => Math.sqrt( lengthSquaredp2 )
+ODL_15:27:double_cosineDistance(double,double):denominator < dotProduct => denominator
+ODL_16:27:double_cosineDistance(double,double):denominator < dotProduct => dotProduct
+ODL_17:30:double_cosineDistance(double,double):denominator == 0 => denominator
+ODL_18:30:double_cosineDistance(double,double):denominator == 0 => 0
+ODL_19:30:double_cosineDistance(double,double):dotProduct == 0 => dotProduct
+ODL_20:30:double_cosineDistance(double,double):dotProduct == 0 => 0
+ODL_21:30:double_cosineDistance(double,double):denominator == 0 && dotProduct == 0 => denominator == 0
+ODL_22:30:double_cosineDistance(double,double):denominator == 0 && dotProduct == 0 => dotProduct == 0
+ODL_23:33:double_cosineDistance(double,double):dotProduct / denominator => dotProduct
+ODL_24:33:double_cosineDistance(double,double):dotProduct / denominator => denominator
+ODL_25:33:double_cosineDistance(double,double):1.0 - dotProduct / denominator => 1.0
+ODL_26:33:double_cosineDistance(double,double):1.0 - dotProduct / denominator => dotProduct / denominator
+ODL_27:39:double_manhattanDistance(double,double):i < p1.length => i
+ODL_28:39:double_manhattanDistance(double,double):i < p1.length => p1.length
+ODL_29:39:double_manhattanDistance(double,double):i++ => i
+ODL_30:40:double_manhattanDistance(double,double):p2[i] - p1[i] => p2[i]
+ODL_31:40:double_manhattanDistance(double,double):p2[i] - p1[i] => p1[i]
+ODL_32:40:double_manhattanDistance(double,double):result += Math.abs( p2[i] - p1[i] ) => result = Math.abs( p2[i] - p1[i] )
+ODL_33:47:double_chebyshevDistance(double,double):p1.length != p2.length => p1.length
+ODL_34:47:double_chebyshevDistance(double,double):p1.length != p2.length => p2.length
+ODL_35:49:double_chebyshevDistance(double,double):-1 => 1
+ODL_36:51:double_chebyshevDistance(double,double):p1[0] - p2[0] => p1[0]
+ODL_37:51:double_chebyshevDistance(double,double):p1[0] - p2[0] => p2[0]
+ODL_38:52:double_chebyshevDistance(double,double):i < p1.length => i
+ODL_39:52:double_chebyshevDistance(double,double):i < p1.length => p1.length
+ODL_40:52:double_chebyshevDistance(double,double):i++ => i
+ODL_41:53:double_chebyshevDistance(double,double):p1[i] - p2[i] => p1[i]
+ODL_42:53:double_chebyshevDistance(double,double):p1[i] - p2[i] => p2[i]
+ODL_43:54:double_chebyshevDistance(double,double):maxDiff < diff => maxDiff
+ODL_44:54:double_chebyshevDistance(double,double):maxDiff < diff => diff
+ODL_45:66:double_tanimotoDistance(double,double):i < p1.length => i
+ODL_46:66:double_tanimotoDistance(double,double):i < p1.length => p1.length
+ODL_47:66:double_tanimotoDistance(double,double):i++ => i
+ODL_48:67:double_tanimotoDistance(double,double):p1[i] * p2[i] => p1[i]
+ODL_49:67:double_tanimotoDistance(double,double):p1[i] * p2[i] => p2[i]
+ODL_50:67:double_tanimotoDistance(double,double):ab += p1[i] * p2[i] => ab = p1[i] * p2[i]
+ODL_51:68:double_tanimotoDistance(double,double):p1[i] * p1[i] => p1[i]
+ODL_52:68:double_tanimotoDistance(double,double):p1[i] * p1[i] => p1[i]
+ODL_53:68:double_tanimotoDistance(double,double):aSq += p1[i] * p1[i] => aSq = p1[i] * p1[i]
+ODL_54:69:double_tanimotoDistance(double,double):p2[i] * p2[i] => p2[i]
+ODL_55:69:double_tanimotoDistance(double,double):p2[i] * p2[i] => p2[i]
+ODL_56:69:double_tanimotoDistance(double,double):bSq += p2[i] * p2[i] => bSq = p2[i] * p2[i]
+ODL_57:71:double_tanimotoDistance(double,double):aSq + bSq => aSq
+ODL_58:71:double_tanimotoDistance(double,double):aSq + bSq => bSq
+ODL_59:71:double_tanimotoDistance(double,double):aSq + bSq - ab => aSq + bSq
+ODL_60:71:double_tanimotoDistance(double,double):aSq + bSq - ab => ab
+ODL_61:72:double_tanimotoDistance(double,double):denominator < ab => denominator
+ODL_62:72:double_tanimotoDistance(double,double):denominator < ab => ab
+ODL_63:75:double_tanimotoDistance(double,double):denominator > 0 => denominator
+ODL_64:75:double_tanimotoDistance(double,double):denominator > 0 => 0
+ODL_65:76:double_tanimotoDistance(double,double):ab / denominator => ab
+ODL_66:76:double_tanimotoDistance(double,double):ab / denominator => denominator
+ODL_67:76:double_tanimotoDistance(double,double):1.0 - ab / denominator => 1.0
+ODL_68:76:double_tanimotoDistance(double,double):1.0 - ab / denominator => ab / denominator
+ODL_69:86:int_sum(int):sum += value => sum = value
+ODL_70:93:int_add(int,int):array1.length == array2.length => array1.length
+ODL_71:93:int_add(int,int):array1.length == array2.length => array2.length
+ODL_72:94:int_add(int,int):index < array1.length => index
+ODL_73:94:int_add(int,int):index < array1.length => array1.length
+ODL_74:94:int_add(int,int):index++ => index
+ODL_75:95:int_add(int,int):array1[index] += array2[index] => array1[index] = array2[index]
+ODL_76:102:int_dec(int,int):array1.length == array2.length => array1.length
+ODL_77:102:int_dec(int,int):array1.length == array2.length => array2.length
+ODL_78:103:int_dec(int,int):index < array1.length => index
+ODL_79:103:int_dec(int,int):index < array1.length => array1.length
+ODL_80:103:int_dec(int,int):index++ => index
+ODL_81:104:int_dec(int,int):array1[index] -= array2[index] => array1[index] = array2[index]
+ODL_82:111:double_givens(double,double,double):b == 0 => b
+ODL_83:111:double_givens(double,double,double):b == 0 => 0
+ODL_84:116:double_givens(double,double,double):Math.abs( b ) > Math.abs( a ) => Math.abs( b )
+ODL_85:116:double_givens(double,double,double):Math.abs( b ) > Math.abs( a ) => Math.abs( a )
+ODL_86:117:double_givens(double,double,double):-a => a
+ODL_87:117:double_givens(double,double,double):-a / b => -a
+ODL_88:117:double_givens(double,double,double):-a / b => b
+ODL_89:118:double_givens(double,double,double):tau * tau => tau
+ODL_90:118:double_givens(double,double,double):tau * tau => tau
+ODL_91:118:double_givens(double,double,double):1 + tau * tau => 1
+ODL_92:118:double_givens(double,double,double):1 + tau * tau => tau * tau
+ODL_93:118:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => 1
+ODL_94:118:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => Math.sqrt( 1 + tau * tau )
+ODL_95:119:double_givens(double,double,double):csOut[1] * tau => csOut[1]
+ODL_96:119:double_givens(double,double,double):csOut[1] * tau => tau
+ODL_97:121:double_givens(double,double,double):-b => b
+ODL_98:121:double_givens(double,double,double):-b / a => -b
+ODL_99:121:double_givens(double,double,double):-b / a => a
+ODL_100:122:double_givens(double,double,double):tau * tau => tau
+ODL_101:122:double_givens(double,double,double):tau * tau => tau
+ODL_102:122:double_givens(double,double,double):1 + tau * tau => 1
+ODL_103:122:double_givens(double,double,double):1 + tau * tau => tau * tau
+ODL_104:122:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => 1
+ODL_105:122:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => Math.sqrt( 1 + tau * tau )
+ODL_106:123:double_givens(double,double,double):csOut[0] * tau => csOut[0]
+ODL_107:123:double_givens(double,double,double):csOut[0] * tau => tau
+ODL_108:130:double_link(double):r < 0.0 => r
+ODL_109:130:double_link(double):r < 0.0 => 0.0
+ODL_110:132:double_link(double):1.0 + s => 1.0
+ODL_111:132:double_link(double):1.0 + s => s
+ODL_112:132:double_link(double):s / (1.0 + s) => s
+ODL_113:132:double_link(double):s / (1.0 + s) => 1.0 + s
+ODL_114:134:double_link(double):-r => r
+ODL_115:135:double_link(double):1.0 + s => 1.0
+ODL_116:135:double_link(double):1.0 + s => s
+ODL_117:135:double_link(double):1.0 / (1.0 + s) => 1.0
+ODL_118:135:double_link(double):1.0 / (1.0 + s) => 1.0 + s
+ODL_119:141:int_nbTrees(int,int,int):numTrees / numMaps => numTrees
+ODL_120:141:int_nbTrees(int,int,int):numTrees / numMaps => numMaps
+ODL_121:142:int_nbTrees(int,int,int):partition == 0 => partition
+ODL_122:142:int_nbTrees(int,int,int):partition == 0 => 0
+ODL_123:143:int_nbTrees(int,int,int):nbTrees * numMaps => nbTrees
+ODL_124:143:int_nbTrees(int,int,int):nbTrees * numMaps => numMaps
+ODL_125:143:int_nbTrees(int,int,int):numTrees - nbTrees * numMaps => numTrees
+ODL_126:143:int_nbTrees(int,int,int):numTrees - nbTrees * numMaps => nbTrees * numMaps
+ODL_127:143:int_nbTrees(int,int,int):nbTrees += numTrees - nbTrees * numMaps => nbTrees = numTrees - nbTrees * numMaps
+ODL_128:151:int_stepSize(int,double):multiplier * Math.log10( recordNumber ) => multiplier
+ODL_129:151:int_stepSize(int,double):multiplier * Math.log10( recordNumber ) => Math.log10( recordNumber )
+ODL_130:152:int_stepSize(int,double):(int) log % bumps.length => (int) log
+ODL_131:152:int_stepSize(int,double):(int) log % bumps.length => bumps.length
+ODL_132:153:int_stepSize(int,double):log / bumps.length => log
+ODL_133:153:int_stepSize(int,double):log / bumps.length => bumps.length
+ODL_134:154:int_stepSize(int,double):bump * scale => bump
+ODL_135:154:int_stepSize(int,double):bump * scale => scale
+ODL_136:159:double_choose2(double):n - 1 => n
+ODL_137:159:double_choose2(double):n - 1 => 1
+ODL_138:159:double_choose2(double):n * (n - 1) => n
+ODL_139:159:double_choose2(double):n * (n - 1) => n - 1
+ODL_140:159:double_choose2(double):n * (n - 1) / 2 => n * (n - 1)
+ODL_141:159:double_choose2(double):n * (n - 1) / 2 => 2
+ODL_142:164:double_computeWeight(double,double,double,double):featureLabelWeight + alphaI => featureLabelWeight
+ODL_143:164:double_computeWeight(double,double,double,double):featureLabelWeight + alphaI => alphaI
+ODL_144:165:double_computeWeight(double,double,double,double):alphaI * numFeatures => alphaI
+ODL_145:165:double_computeWeight(double,double,double,double):alphaI * numFeatures => numFeatures
+ODL_146:165:double_computeWeight(double,double,double,double):labelWeight + alphaI * numFeatures => labelWeight
+ODL_147:165:double_computeWeight(double,double,double,double):labelWeight + alphaI * numFeatures => alphaI * numFeatures
+ODL_148:166:double_computeWeight(double,double,double,double):numerator / denominator => numerator
+ODL_149:166:double_computeWeight(double,double,double,double):numerator / denominator => denominator
+ODL_150:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight => featureWeight
+ODL_151:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight => featureLabelWeight
+ODL_152:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight + alphaI => featureWeight - featureLabelWeight
+ODL_153:171:double_computeWeight(double,double,double,double,double,double):featureWeight - featureLabelWeight + alphaI => alphaI
+ODL_154:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight => totalWeight
+ODL_155:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight => labelWeight
+ODL_156:172:double_computeWeight(double,double,double,double,double,double):alphaI * numFeatures => alphaI
+ODL_157:172:double_computeWeight(double,double,double,double,double,double):alphaI * numFeatures => numFeatures
+ODL_158:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight + alphaI * numFeatures => totalWeight - labelWeight
+ODL_159:172:double_computeWeight(double,double,double,double,double,double):totalWeight - labelWeight + alphaI * numFeatures => alphaI * numFeatures
+ODL_160:173:double_computeWeight(double,double,double,double,double,double):numerator / denominator => numerator
+ODL_161:173:double_computeWeight(double,double,double,double,double,double):numerator / denominator => denominator
+ODL_162:173:double_computeWeight(double,double,double,double,double,double):-Math.log( numerator / denominator ) => Math.log( numerator / denominator )
+ODL_163:180:double_errorRate(double,double):index < labels.length => index
+ODL_164:180:double_errorRate(double,double):index < labels.length => labels.length
+ODL_165:180:double_errorRate(double,double):index++ => index
+ODL_166:181:double_errorRate(double,double):-1 => 1
+ODL_167:181:double_errorRate(double,double):predictions[index] == -1 => predictions[index]
+ODL_168:181:double_errorRate(double,double):predictions[index] == -1 => -1
+ODL_169:184:double_errorRate(double,double):predictions[index] != labels[index] => predictions[index]
+ODL_170:184:double_errorRate(double,double):predictions[index] != labels[index] => labels[index]
+ODL_171:185:double_errorRate(double,double):nberrors++ => nberrors
+ODL_172:187:double_errorRate(double,double):datasize++ => datasize
+ODL_173:189:double_errorRate(double,double):nberrors / datasize => nberrors
+ODL_174:189:double_errorRate(double,double):nberrors / datasize => datasize
+ODL_175:194:double_fromRho(double,double):rho == 1 => rho
+ODL_176:194:double_fromRho(double,double):rho == 1 => 1
+ODL_177:199:double_fromRho(double,double):Math.abs( rho ) < 1 => Math.abs( rho )
+ODL_178:199:double_fromRho(double,double):Math.abs( rho ) < 1 => 1
+ODL_179:200:double_fromRho(double,double):2 * rho => 2
+ODL_180:200:double_fromRho(double,double):2 * rho => rho
+ODL_181:201:double_fromRho(double,double):csOut[1] * csOut[1] => csOut[1]
+ODL_182:201:double_fromRho(double,double):csOut[1] * csOut[1] => csOut[1]
+ODL_183:201:double_fromRho(double,double):1 - csOut[1] * csOut[1] => 1
+ODL_184:201:double_fromRho(double,double):1 - csOut[1] * csOut[1] => csOut[1] * csOut[1]
+ODL_185:204:double_fromRho(double,double):2 / rho => 2
+ODL_186:204:double_fromRho(double,double):2 / rho => rho
+ODL_187:205:double_fromRho(double,double):csOut[0] * csOut[0] => csOut[0]
+ODL_188:205:double_fromRho(double,double):csOut[0] * csOut[0] => csOut[0]
+ODL_189:205:double_fromRho(double,double):1 - csOut[0] * csOut[0] => 1
+ODL_190:205:double_fromRho(double,double):1 - csOut[0] * csOut[0] => csOut[0] * csOut[0]
+CDL_1:30:double_cosineDistance(double,double):denominator == 0 => denominator
+CDL_2:30:double_cosineDistance(double,double):dotProduct == 0 => dotProduct
+CDL_3:33:double_cosineDistance(double,double):1.0 - dotProduct / denominator => dotProduct / denominator
+CDL_4:49:double_chebyshevDistance(double,double):-1 =>  
+CDL_5:75:double_tanimotoDistance(double,double):denominator > 0 => denominator
+CDL_6:76:double_tanimotoDistance(double,double):1.0 - ab / denominator => ab / denominator
+CDL_7:111:double_givens(double,double,double):b == 0 => b
+CDL_8:118:double_givens(double,double,double):1 + tau * tau => tau * tau
+CDL_9:118:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => Math.sqrt( 1 + tau * tau )
+CDL_10:122:double_givens(double,double,double):1 + tau * tau => tau * tau
+CDL_11:122:double_givens(double,double,double):1 / Math.sqrt( 1 + tau * tau ) => Math.sqrt( 1 + tau * tau )
+CDL_12:130:double_link(double):r < 0.0 => r
+CDL_13:132:double_link(double):1.0 + s => s
+CDL_14:135:double_link(double):1.0 + s => s
+CDL_15:135:double_link(double):1.0 / (1.0 + s) => 1.0 + s
+CDL_16:142:int_nbTrees(int,int,int):partition == 0 => partition
+CDL_17:159:double_choose2(double):n - 1 => n
+CDL_18:159:double_choose2(double):n * (n - 1) / 2 => n * (n - 1)
+CDL_19:181:double_errorRate(double,double):-1 =>  
+CDL_20:194:double_fromRho(double,double):rho == 1 => rho
+CDL_21:199:double_fromRho(double,double):Math.abs( rho ) < 1 => Math.abs( rho )
+CDL_22:200:double_fromRho(double,double):2 * rho => rho
+CDL_23:201:double_fromRho(double,double):1 - csOut[1] * csOut[1] => csOut[1] * csOut[1]
+CDL_24:204:double_fromRho(double,double):2 / rho => rho
+CDL_25:205:double_fromRho(double,double):1 - csOut[0] * csOut[0] => csOut[0] * csOut[0]
