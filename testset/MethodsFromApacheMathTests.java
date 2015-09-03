@@ -1,44 +1,8 @@
-import java.util.Random;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import Test.MethodsFromApacheMath;
 
-public class MethodsFromApacheMathTests {
-
-    private static Random rand = new Random();
-    private static final int MAX = 10000;
-
-    private int getInt() {
-        return rand.nextInt();
-    }
-
-    private Boolean getBoolean() {
-        return rand.nextBoolean();
-    }
-
-    private int[] getIntArray() {
-        int size = rand.nextInt(MAX) + 1;
-        return rand.ints().limit(size).toArray();
-    }
-
-    private double getDouble() {
-        return rand.nextDouble();
-    }
-
-    private double[] getDoubleArray() {
-        int size = rand.nextInt(MAX) + 1;
-        return rand.doubles().limit(size).toArray();
-    }
-
-    private long[][] get2DLongArray() {
-        int size1 = rand.nextInt(MAX/10) + 1;
-        int size2 = rand.nextInt(MAX/10) + 1;
-        long[][] arr = new long[size1][size2];
-        for (int i = 0; i < size1; i++) {
-            arr[i] = rand.longs().limit(size2).toArray();
-        }
-        return arr;
-    }
+public class MethodsFromApacheMathTests extends TestClass {
 	 
     @Test
     public void distance_test() {
@@ -60,8 +24,10 @@ public class MethodsFromApacheMathTests {
     }
     @Test
     public void ebeAdd_test() {
-        double[] r1 = MethodsFromApacheMath.ebeAdd(getDoubleArray(), getDoubleArray());
-        double[] r2 = MethodsFromApacheMath.ebeAdd(getDoubleArray(), getDoubleArray());
+        //Most execution paths require arrays of matching size
+        int arraySize = getInt();
+        double[] r1 = MethodsFromApacheMath.ebeAdd(getDoubleArray(arraySize), getDoubleArray(arraySize));
+        double[] r2 = MethodsFromApacheMath.ebeAdd(getDoubleArray(arraySize), getDoubleArray(arraySize));
         assertEquals(1,1);
     }
     @Test

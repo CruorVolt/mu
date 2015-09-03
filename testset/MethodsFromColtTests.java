@@ -1,34 +1,8 @@
-import java.util.Random;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import Test.MethodsFromColt;
 
-public class MethodsFromColtTests {
-
-    private static Random rand = new Random();
-    private static final int MAX = 10000;
-
-    private int getInt() {
-        return rand.nextInt();
-    }
-
-    private long getLong() {
-        return rand.nextLong();
-    }
-
-    private int[] getIntArray() {
-        int size = rand.nextInt(MAX) + 1;
-        return rand.ints().limit(size).toArray();
-    }
-
-    private double getDouble() {
-        return rand.nextDouble();
-    }
-
-    private double[] getDoubleArray() {
-        int size = rand.nextInt(MAX) + 1;
-        return rand.doubles().limit(size).toArray();
-    }
+public class MethodsFromColtTests extends TestClass {
 
     @Test
     public void autoCorrelation_test() {
