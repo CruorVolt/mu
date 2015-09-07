@@ -6,26 +6,34 @@ public class MethodsFromMahoutTests extends TestClass {
 
     @Test
     public void cosinedistance_test() {
-        double r1 = MethodsFromMahout.cosineDistance(getDoubleArray(), getDoubleArray());
-        double r2 = MethodsFromMahout.cosineDistance(getDoubleArray(), getDoubleArray());
+        //array lengths should match
+        int size = getInt();
+        double r1 = MethodsFromMahout.cosineDistance(getDoubleArray(size), getDoubleArray(size));
+        double r2 = MethodsFromMahout.cosineDistance(getDoubleArray(size), getDoubleArray(size));
         assertEquals(1,1);
     }
     @Test
     public void manhattandistance_test() {
-        double r1 = MethodsFromMahout.manhattanDistance(getDoubleArray(), getDoubleArray());
-        double r2 = MethodsFromMahout.manhattanDistance(getDoubleArray(), getDoubleArray());
+        //array lengths should match
+        int size = getInt();
+        double r1 = MethodsFromMahout.manhattanDistance(getDoubleArray(size), getDoubleArray(size));
+        double r2 = MethodsFromMahout.manhattanDistance(getDoubleArray(size), getDoubleArray(size));
         assertEquals(1,1);
     }
     @Test
     public void chebyshevdistance_test() {
-        double r1 = MethodsFromMahout.chebyshevDistance(getDoubleArray(), getDoubleArray());
-        double r2 = MethodsFromMahout.chebyshevDistance(getDoubleArray(), getDoubleArray());
+        //array lengths should match
+        int size = getInt();
+        double r1 = MethodsFromMahout.chebyshevDistance(getDoubleArray(size), getDoubleArray(size));
+        double r2 = MethodsFromMahout.chebyshevDistance(getDoubleArray(size), getDoubleArray(size));
         assertEquals(1,1);
     }
     @Test
     public void tanimotodistance_test() {
-        double r1 = MethodsFromMahout.tanimotoDistance(getDoubleArray(), getDoubleArray());
-        double r2 = MethodsFromMahout.tanimotoDistance(getDoubleArray(), getDoubleArray());
+        //array lengths should match
+        int size = getInt();
+        double r1 = MethodsFromMahout.tanimotoDistance(getDoubleArray(size), getDoubleArray(size));
+        double r2 = MethodsFromMahout.tanimotoDistance(getDoubleArray(size), getDoubleArray(size));
         assertEquals(1,1);
     }
     @Test
@@ -36,20 +44,25 @@ public class MethodsFromMahoutTests extends TestClass {
     }
     @Test
     public void add_test() {
-        int[] r1 = MethodsFromMahout.add(getIntArray(), getIntArray());
-        int[] r2 = MethodsFromMahout.add(getIntArray(), getIntArray());
+        //array lengths should match
+        int size = getInt();
+        int[] r1 = MethodsFromMahout.add(getIntArray(size), getIntArray(size));
+        int[] r2 = MethodsFromMahout.add(getIntArray(size), getIntArray(size));
         assertEquals(1,1);
     }
     @Test
     public void dec_test() {
-        int[] r1 = MethodsFromMahout.dec(getIntArray(), getIntArray());
-        int[] r2 = MethodsFromMahout.dec(getIntArray(), getIntArray());
+        //array lengths should match
+        int size = getInt();
+        int[] r1 = MethodsFromMahout.dec(getIntArray(size), getIntArray(size));
+        int[] r2 = MethodsFromMahout.dec(getIntArray(size), getIntArray(size));
         assertEquals(1,1);
     }
     @Test
     public void givens_test() {
-        double[] r1 = MethodsFromMahout.givens(getDouble(), getDouble(), getDoubleArray());
-        double[] r2 = MethodsFromMahout.givens(getDouble(), getDouble(), getDoubleArray());
+        //input array should be size 2?
+        double[] r1 = MethodsFromMahout.givens(getDouble(), getDouble(), getDoubleArray(2));
+        double[] r2 = MethodsFromMahout.givens(getDouble(), getDouble(), getDoubleArray(2));
         assertEquals(1,1);
     }
     @Test
@@ -60,8 +73,9 @@ public class MethodsFromMahoutTests extends TestClass {
     }
     @Test
     public void nbtrees_test() {
-        int r1 = MethodsFromMahout.nbTrees(getInt(), getInt(), getInt());
-        int r2 = MethodsFromMahout.nbTrees(getInt(), getInt(), getInt());
+        //keep inputs small and nonzero
+        int r1 = MethodsFromMahout.nbTrees(getInt(10)+1, getInt(10)+1, getInt(10)+1);
+        int r2 = MethodsFromMahout.nbTrees(getInt(10)+1, getInt(10)+1, getInt(10)+1);
         assertEquals(1,1);
     }
     @Test
@@ -90,14 +104,17 @@ public class MethodsFromMahoutTests extends TestClass {
     }
     @Test
     public void errorrate_test() {
-        double r1 = MethodsFromMahout.errorRate(getDoubleArray(),getDoubleArray());
-        double r2 = MethodsFromMahout.errorRate(getDoubleArray(),getDoubleArray());
+        //arrays should be same size
+        int size = getInt();
+        double r1 = MethodsFromMahout.errorRate(getDoubleArray(size),getDoubleArray(size));
+        double r2 = MethodsFromMahout.errorRate(getDoubleArray(size),getDoubleArray(size));
         assertEquals(1,1);
     }
     @Test
     public void fromrho_test() {
-        double[] r1 = MethodsFromMahout.fromRho(getDouble(), getDoubleArray());
-        double[] r2 = MethodsFromMahout.fromRho(getDouble(), getDoubleArray());
+        //array should be size 2
+        double[] r1 = MethodsFromMahout.fromRho(getDouble(), getDoubleArray(2));
+        double[] r2 = MethodsFromMahout.fromRho(getDouble(), getDoubleArray(2));
         assertEquals(1,1);
     }
 
