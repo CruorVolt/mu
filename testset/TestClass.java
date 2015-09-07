@@ -1,50 +1,51 @@
 import java.util.Random;
 import java.util.Arrays;
+import java.lang.Math;
 
 public class TestClass {
 
     protected static Random rand = new Random();
     protected static final int MAX = 10000;
 
-    protected int getInt() {
+    protected static int getInt() {
         return rand.nextInt(MAX);
     }
 
-    protected int getInt(int max) {
+    protected static int getInt(int max) {
         return rand.nextInt(max);
     }
 
-    protected int[] getIntArray() {
+    protected static int[] getIntArray() {
         int size = rand.nextInt(MAX) + 1;
         return rand.ints().limit(size).toArray();
     }
 
-    protected int[] getIntArray(int size) {
-        return rand.ints().limit(size).toArray();
+    protected static int[] getIntArray(int size) {
+        return rand.ints(size, 0, MAX).toArray();
     }
 
-    protected double getDouble() {
+    protected static double getDouble() {
         return rand.nextDouble() * getInt() + 1;
     }
 
-    protected double getNextDouble() {
+    protected static double getNextDouble() {
         return rand.nextDouble();
     }
 
-    protected double[] getDoubleArray() {
+    protected static double[] getDoubleArray() {
         int size = rand.nextInt(MAX) + 1;
         return rand.doubles().limit(size).toArray();
     }
 
-    protected double[] getDoubleArray(int size) {
+    protected static double[] getDoubleArray(int size) {
         return rand.doubles().limit(size).toArray();
     }
 
-    protected long getLong() {
-        return rand.nextLong();
+    protected static long getLong() {
+        return Math.abs(rand.nextLong());
     }
 
-    protected Boolean getBoolean() {
+    protected static Boolean getBoolean() {
         return rand.nextBoolean();
     }
 
@@ -58,20 +59,55 @@ public class TestClass {
         return arr;
     }
 
-/*
-    protected static <T> T[] add(T[] original) {
+    protected static int[] add(int[] original) {
         //Additive: Add a positive constant. Expected: Increase or remain constant
-        T[] additive = new T[original.length];
+        int[] additive = new int[original.length];
         for (int i = 0; i < original.length; i++) {
-            additive[i] = original[i] + rand.nextInt();
+            additive[i] = original[i] + getInt();
         }
+        return additive;
     }
 
-    protected static ArrayList<T> exc(ArrayList<T> original) {
+    protected static double[] add(double[] original) {
+        //Additive: Add a positive constant. Expected: Increase or remain constant
+        double[] additive = new double[original.length];
+        for (int i = 0; i < original.length; i++) {
+            additive[i] = original[i] + getDouble();
+        }
+        return additive;
+    }
+
+    protected static int[] exc(int[] original) {
         //Exclusive: Remove an element. Expected: Decrease or remain constant
-        return new ArrayList<T>();
+        int[] excluded = new int[original.length - 1];
+        int excludeIndex = rand.nextInt(original.length);
+        int offset = 0;
+        for (int i = 0; i < original.length; i++) {
+            if (i != excludeIndex) {
+                excluded[i + offset] = original[i];
+            } else {
+                offset = -1;
+            }
+        }
+        return excluded;
     }
 
+    protected static double[] exc(double[] original) {
+        //Exclusive: Remove an element. Expected: Decrease or remain constant
+        double[] excluded = new double[original.length - 1];
+        int excludeIndex = rand.nextInt(original.length);
+        int offset = 0;
+        for (int i = 0; i < original.length; i++) {
+            if (i != excludeIndex) {
+                excluded[i + offset] = original[i];
+            } else {
+                offset = -1;
+            }
+        }
+        return excluded;
+    }
+
+/*
     protected static ArrayList<T> inc(ArrayList<T> original) {
         // Inclusive: Add a new element. Expected: Increase or remain constant
         return new ArrayList<T>();
@@ -92,4 +128,12 @@ public class TestClass {
         return new ArrayList<T>();
     }
     */
+
+    public static void main(String[] args) {
+        TestClass test = new TestClass();
+        int[] thing = test.getIntArray(8);
+        System.out.println("thing: " + Arrays.toString(thing));
+        int[] next = exc(thing);
+        System.out.println("next: " + Arrays.toString(next));
+    }
 }
