@@ -107,9 +107,40 @@ public class TestClass {
         return excluded;
     }
 
+    protected static int[] inc(int[] original) {
+        // Inclusive: Add a new element. Expected: Increase or remain constant
+        int[] included = new int[original.length + 1];
+        int includeIndex = rand.nextInt(original.length);
+        int offset = 0;
+        for (int i = 0; i <= original.length; i++) {
+            if (i != includeIndex) {
+                included[i] = original[i + offset];
+            } else {
+                included[i] = getInt();
+                offset = -1;
+            }
+        }
+        return included;
+    }
+
+    protected static double[] inc(double[] original) {
+        // Inclusive: Add a new element. Expected: Increase or remain constant
+        double[] included = new double[original.length + 1];
+        int includeIndex = rand.nextInt(original.length);
+        int offset = 0;
+        for (int i = 0; i <= original.length; i++) {
+            if (i != includeIndex) {
+                included[i] = original[i + offset];
+            } else {
+                included[i] = getDouble();
+                offset = -1;
+            }
+        }
+        return included;
+    }
+
 /*
     protected static ArrayList<T> inc(ArrayList<T> original) {
-        // Inclusive: Add a new element. Expected: Increase or remain constant
         return new ArrayList<T>();
     }
 
@@ -133,7 +164,7 @@ public class TestClass {
         TestClass test = new TestClass();
         int[] thing = test.getIntArray(8);
         System.out.println("thing: " + Arrays.toString(thing));
-        int[] next = exc(thing);
-        System.out.println("next: " + Arrays.toString(next));
+        int[] next = inc(thing);
+        System.out.println("next:  " + Arrays.toString(next));
     }
 }
