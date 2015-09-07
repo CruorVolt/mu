@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Arrays;
 
 public class TestClass {
 
@@ -24,6 +25,10 @@ public class TestClass {
 
     protected double getDouble() {
         return rand.nextDouble() * getInt() + 1;
+    }
+
+    protected double getNextDouble() {
+        return rand.nextDouble();
     }
 
     protected double[] getDoubleArray() {
@@ -53,4 +58,38 @@ public class TestClass {
         return arr;
     }
 
+/*
+    protected static <T> T[] add(T[] original) {
+        //Additive: Add a positive constant. Expected: Increase or remain constant
+        T[] additive = new T[original.length];
+        for (int i = 0; i < original.length; i++) {
+            additive[i] = original[i] + rand.nextInt();
+        }
+    }
+
+    protected static ArrayList<T> exc(ArrayList<T> original) {
+        //Exclusive: Remove an element. Expected: Decrease or remain constant
+        return new ArrayList<T>();
+    }
+
+    protected static ArrayList<T> inc(ArrayList<T> original) {
+        // Inclusive: Add a new element. Expected: Increase or remain constant
+        return new ArrayList<T>();
+    }
+
+    protected static ArrayList<T> inv(ArrayList<T> original) {
+        //Invertive: Take the inverse of each element. Expected: Decrease or remain constant
+        return new ArrayList<T>();
+    }
+
+    protected static ArrayList<T> mult(ArrayList<T> original) {
+        //Multiplicative: Multiply by a positive constant. Expected: Increase or remain constant
+        return new ArrayList<T>();
+    }
+
+    protected static ArrayList<T> perm(ArrayList<T> original) {
+        //Permutative: Randomly permute the elements. Expected: Remain constant
+        return new ArrayList<T>();
+    }
+    */
 }

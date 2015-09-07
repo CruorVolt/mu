@@ -1,0 +1,6 @@
+*.swp
+*.pdf
+.DS_STORE
+mujava.jar
+tools.jar
+openjava.jar
