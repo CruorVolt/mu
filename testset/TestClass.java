@@ -60,6 +60,14 @@ public class TestClass {
         return arr;
     }
 
+    protected static int add(int original) {
+        return original + getInt();
+    }
+
+    protected static double add(double original) {
+        return original + getDouble();
+    }
+
     protected static int[] add(int[] original) {
         //Additive: Add a positive constant. Expected: Increase or remain constant
         int constant = getInt();

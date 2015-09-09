@@ -28,9 +28,13 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void bubble_test() {
         System.out.println("TEST: bubble");
-        int[] r1 = MethodCollection2.bubble(getIntArray());
-        int[] r2 = MethodCollection2.bubble(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        int[] r1 = MethodCollection2.bubble(orig);
+
+        //add
+        int[] addIn = add(orig);
+        int[] addOut = MethodCollection2.bubble(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -144,9 +148,13 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void find_magnitude_test() {
         System.out.println("TEST: find_magnitude");
-        double r1 = MethodCollection2.find_magnitude(getIntArray());
-        double r2 = MethodCollection2.find_magnitude(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        double r1 = MethodCollection2.find_magnitude(orig);
+
+        //add
+        int[] addIn = add(orig);
+        double addOut = MethodCollection2.find_magnitude(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -162,9 +170,13 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void average_test() {
         System.out.println("TEST: average");
-        double r1 = MethodCollection2.average(getIntArray());
-        double r2 = MethodCollection2.average(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        double r1 = MethodCollection2.average(orig);
+   
+        //add
+        int[] addIn = add(orig);
+        double addOut = MethodCollection2.average(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -187,17 +199,25 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void find_max_test() {
         System.out.println("TEST: find_max");
-        int r1 = MethodCollection2.find_max(getIntArray());
-        int r2 = MethodCollection2.find_max(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        int r1 = MethodCollection2.find_max(orig);
+
+        //add
+        int[] addIn = add(orig);
+        int addOut = MethodCollection2.find_max(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
     public void find_max2_test() {
         System.out.println("TEST: find_max2");
-        int r1 = MethodCollection2.find_max2(getIntArray());
-        int r2 = MethodCollection2.find_max2(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        int r1 = MethodCollection2.find_max2(orig);
+
+        //add
+        int[] addIn = add(orig);
+        int addOut = MethodCollection2.find_max2(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -219,9 +239,13 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void geometric_mean_test() {
         System.out.println("TEST: geometric_mean");
-        double r1 = MethodCollection2.geometric_mean(getIntArray());
-        double r2 = MethodCollection2.geometric_mean(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        double r1 = MethodCollection2.geometric_mean(orig);
+
+        //add
+        int[] addIn = add(orig);
+        double addOut = MethodCollection2.geometric_mean(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -237,9 +261,13 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void find_median_test() {
         System.out.println("TEST: find_median");
-        double r1 = MethodCollection2.find_median(getIntArray());
-        double r2 = MethodCollection2.find_median(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        double r1 = MethodCollection2.find_median(orig);
+
+        //add
+        int[] addIn = add(orig);
+        double addOut = MethodCollection2.find_median(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -300,9 +328,15 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void clip_test() {
         System.out.println("TEST: clip");
-        int[] r1 = MethodCollection2.clip(getIntArray(), getInt(), getInt());
-        int[] r2 = MethodCollection2.clip(getIntArray(), getInt(), getInt());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        int secondArg = getInt();
+        int thirdArg = getInt();
+        int[] r1 = MethodCollection2.clip(orig, secondArg, thirdArg);
+
+        //add
+        int[] addIn = add(orig);
+        int[] addOut = MethodCollection2.clip(addIn, secondArg, thirdArg);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test

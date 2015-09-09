@@ -112,9 +112,13 @@ public class MethodsFromApacheMathTests extends TestClass {
     @Test
     public void calculateAbsoluteDifferences_test() {
         //length cannot be zero
-        double[] r1 = MethodsFromApacheMath.calculateAbsoluteDifferences(getDoubleArray());
-        double[] r2 = MethodsFromApacheMath.calculateAbsoluteDifferences(getDoubleArray());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        double[] r1 = MethodsFromApacheMath.calculateAbsoluteDifferences(orig);
+        
+        //add
+        double[] addIn = add(orig);
+        double[] addOut = MethodsFromApacheMath.calculateAbsoluteDifferences(addIn);
+        assertTrue("add failure", addTest(r1, addOut)); 
     }
 
     @Test
@@ -147,9 +151,14 @@ public class MethodsFromApacheMathTests extends TestClass {
     @Test
     public void evaluateHoners_test() {
         //Array length must be at least 1
-        double r1 = MethodsFromApacheMath.evaluateHoners(getDoubleArray(), getDouble());
-        double r2 = MethodsFromApacheMath.evaluateHoners(getDoubleArray(), getDouble());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        double secondArg = getDouble();
+        double r1 = MethodsFromApacheMath.evaluateHoners(orig, secondArg);
+
+        //add
+        double[] addIn = add(orig);
+        double addOut = MethodsFromApacheMath.evaluateHoners(addIn, secondArg);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -158,9 +167,15 @@ public class MethodsFromApacheMathTests extends TestClass {
         int length = getInt() + 2;
         double[] firstArg = getDoubleArray(length);
         Arrays.sort(firstArg);
-        double r1 = MethodsFromApacheMath.evaluateInternal(firstArg, getDoubleArray(length), getDouble());
-        double r2 = MethodsFromApacheMath.evaluateInternal(firstArg, getDoubleArray(length), getDouble());
-        assertEquals(1,1);
+        double[] secondArg = getDoubleArray(length);
+        double thirdArg = getDouble();
+        double r1 = MethodsFromApacheMath.evaluateInternal(firstArg, secondArg, thirdArg);
+
+        //add
+        double[] addIn1 = add(firstArg);
+        double[] addIn2 = add(secondArg);
+        double addOut = MethodsFromApacheMath.evaluateInternal(addIn1, addIn2, thirdArg);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
    @Test

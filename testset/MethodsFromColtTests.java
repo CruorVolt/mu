@@ -11,9 +11,14 @@ public class MethodsFromColtTests extends TestClass {
         //second arg should be less than length of first
         int lag = getInt();
         int size = getInt() + lag;
-        double r1 = MethodsFromColt.autoCorrelation(getDoubleArray(size), lag, getDouble(), getDouble());
-        double r2 = MethodsFromColt.autoCorrelation(getDoubleArray(size), lag, getDouble(), getDouble());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray(size);
+        double r1 = MethodsFromColt.autoCorrelation(orig, lag, getDouble(), getDouble());
+
+        //add
+        double[] addIn = add(orig);
+        double addOut = MethodsFromColt.autoCorrelation(addIn, lag, getDouble(), getDouble());
+        assertTrue("add failure", addTest(r1, addOut));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -35,9 +40,16 @@ public class MethodsFromColtTests extends TestClass {
         System.out.print("TEST: covariance");
         //array sizes should match and be > 0
         int size = getInt() + 1;
-        double r1 = MethodsFromColt.covariance(getDoubleArray(size), getDoubleArray(size));
-        double r2 = MethodsFromColt.covariance(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+        double[] orig1 = getDoubleArray(size);
+        double[] orig2 = getDoubleArray(size);
+        double r1 = MethodsFromColt.covariance(orig1, orig2);
+
+        //add
+        double[] addIn1 = add(orig1);
+        double[] addIn2 = add(orig2);
+        double addOut = MethodsFromColt.covariance(addIn1, addIn2);
+        assertTrue("add failure", addTest(r1, addOut));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -75,9 +87,15 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void meanDeviation_test() {
         System.out.print("TEST: meanDeviation");
-        double r1 = MethodsFromColt.meanDeviation(getDoubleArray(), getDouble());
-        double r2 = MethodsFromColt.meanDeviation(getDoubleArray(), getDouble());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        double secondArg = getDouble();
+        double r1 = MethodsFromColt.meanDeviation(orig, secondArg);
+
+        //add
+        double[] addIn = add(orig);
+        double addOut = MethodsFromColt.meanDeviation(addIn, secondArg);
+        assertTrue("add failure", addTest(r1, addOut));
+        
         System.out.println(" >>complete");
     }
     @Test
@@ -131,9 +149,18 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void sampleSkew_test() {
         System.out.print("TEST: sampleSkew");
-        double r1 = MethodsFromColt.sampleSkew(getInt(), getDouble(), getDouble());
-        double r2 = MethodsFromColt.sampleSkew(getInt(), getDouble(), getDouble());
-        assertEquals(1,1);
+        int firstArg = getInt();
+        double secondArg = getDouble();
+        double thirdArg = getDouble();
+        double r1 = MethodsFromColt.sampleSkew(firstArg, secondArg, thirdArg);
+
+        //add
+        int addIn1 = add(firstArg);
+        double addIn2 = add(secondArg);
+        double addIn3 = add(thirdArg);
+        double addOut = MethodsFromColt.sampleSkew(addIn1, addIn2, addIn3);
+        assertTrue("add failure", addTest(r1, addOut));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -147,9 +174,14 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void sumOfLogarithms_test() {
         System.out.print("TEST: sumOfLogarithms");
-        double r1 = MethodsFromColt.sumOfLogarithms(getDoubleArray());
-        double r2 = MethodsFromColt.sumOfLogarithms(getDoubleArray());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        double r1 = MethodsFromColt.sumOfLogarithms(orig);
+
+        //add
+        double[] addIn = add(orig);
+        double addOut = MethodsFromColt.sumOfLogarithms(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
+        
         System.out.println(" >>complete");
     }
     @Test
@@ -171,9 +203,16 @@ public class MethodsFromColtTests extends TestClass {
         System.out.print("TEST: weightedMean");
         //arrays should be same size
         int size = getInt();
-        double r1 = MethodsFromColt.weightedMean(getDoubleArray(size), getDoubleArray(size));
-        double r2 = MethodsFromColt.weightedMean(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+        double[] orig1 = getDoubleArray(size);
+        double[] orig2 = getDoubleArray(size);
+        double r1 = MethodsFromColt.weightedMean(orig1, orig2);
+
+        //add
+        double[] addIn1 = add(orig1);
+        double[] addIn2 = add(orig2);
+        double addOut = MethodsFromColt.weightedMean(addIn1, addIn2);
+        assertTrue("add failure", addTest(r1, addOut));
+        
         System.out.println(" >>complete");
     }
     @Test
@@ -216,8 +255,12 @@ public class MethodsFromColtTests extends TestClass {
         double[] arr = getDoubleArray(size);
         Arrays.sort(arr);
         double r1 = MethodsFromColt.winsorizedMean(arr, from, to);
-        double r2 = MethodsFromColt.winsorizedMean(arr, from, to);
-        assertEquals(1,1);
+
+        //add
+        double[] addIn = add(arr);
+        double addOut = MethodsFromColt.winsorizedMean(addIn, from, to);
+        assertTrue("add failure", addTest(r1, addOut));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -231,9 +274,14 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void kurtosis_test() {
         System.out.print("TEST: kurtosis");
-        double r1 = MethodsFromColt.kurtosis(getDoubleArray());
-        double r2 = MethodsFromColt.kurtosis(getDoubleArray());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        double r1 = MethodsFromColt.kurtosis(orig);
+        
+        //add
+        double[] addIn = add(orig);
+        double addOut = MethodsFromColt.kurtosis(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
+        
         System.out.println(" >>complete");
     }
     @Test
@@ -249,9 +297,16 @@ public class MethodsFromColtTests extends TestClass {
         System.out.print("TEST: pooledMean");
         //arrays should be same size
         int size = getInt();
-        double r1 = MethodsFromColt.pooledMean(getDoubleArray(size), getDoubleArray(size));
-        double r2 = MethodsFromColt.pooledMean(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+        double[] orig1 = getDoubleArray(size);
+        double[] orig2 = getDoubleArray(size);
+        double r1 = MethodsFromColt.pooledMean(orig1, orig2);
+
+        //add
+        double[] addIn1 = add(orig1);
+        double[] addIn2 = add(orig2);
+        double addOut = MethodsFromColt.pooledMean(addIn1, addIn2);
+        assertTrue("add failure", addTest(r1, addOut));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -269,9 +324,14 @@ public class MethodsFromColtTests extends TestClass {
         System.out.print("TEST: polevl");
         //array needs to be length of int param
         int size = getInt();
-        double r1 = MethodsFromColt.polevl(getDouble(), getDoubleArray(size+1), size);
-        double r2 = MethodsFromColt.polevl(getDouble(), getDoubleArray(size+1), size);
-        assertEquals(1,1);
+        double[] orig = getDoubleArray(size+1);
+        double r1 = MethodsFromColt.polevl(getDouble(), orig, size);
+
+        //add
+        double[] addIn = add(orig);
+        double addOut = MethodsFromColt.polevl(getDouble(), addIn, size);
+        assertTrue("add failure", addTest(r1, addOut));
+        
         System.out.println(" >>complete");
     }
     @Test
@@ -306,9 +366,14 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void standardize_test() {
         System.out.print("TEST: standardize");
-        double[] r1 = MethodsFromColt.standardize(getDoubleArray());
-        double[] r2 = MethodsFromColt.standardize(getDoubleArray());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        double[] r1 = MethodsFromColt.standardize(orig);
+
+        //add
+        double[] addIn = add(orig);
+        double[] addOut = MethodsFromColt.standardize(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -340,17 +405,28 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void power_test() {
         System.out.print("TEST: power");
-        double[] r1 = MethodsFromColt.power(getDoubleArray(), getInt());
-        double[] r2 = MethodsFromColt.power(getDoubleArray(), getInt());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        int secondArg = getInt();
+        double[] r1 = MethodsFromColt.power(orig, secondArg);
+        
+        //add
+        double[] addIn = add(orig);
+        double[] addOut = MethodsFromColt.power(addIn, secondArg);
+        assertTrue("add failure", addTest(r1, addOut));
+        
         System.out.println(" >>complete");
     }
     @Test
     public void square_test() {
         System.out.print("TEST: square");
-        double[] r1 = MethodsFromColt.square(getDoubleArray());
-        double[] r2 = MethodsFromColt.square(getDoubleArray());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        double[] r1 = MethodsFromColt.square(orig);
+
+        //add
+        double[] addIn = add(orig);
+        double[] addOut = MethodsFromColt.square(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
+        
         System.out.println(" >>complete");
     }
 

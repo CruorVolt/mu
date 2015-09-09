@@ -4,32 +4,32 @@ scale: 10 - DONE
 selection_sort: 10 - DONE
 safeNorm: 10 - DONE
 elementwise_not_equal: 7 - Done by not doing
-hamming_dist: 8
-product: 10
-calculateAbsoluteDifferences: 10
-standardize: 10
-kurtosis: 10
-square: 10
-evaluateInternal: 10
-autoCorrelation: 10
-covariance: 10
-weightedMean: 10
-winsorizedMean: 10
-bubble: 10
-sumOfLogarithms: 9
-find_median: 10
-find_magnitude: 10
-average: 10
-sampleSkew: 10
-evaluateHoners: 10
-find_max: 8
-meanDeviation: 10
-pooledMean: 10
-find_max2: 9
-polevl: 10
-clip: 10
-power: 10
-geometric_mean: 10
+hamming_dist: 8 - DONE
+product: 10 - DONE
+calculateAbsoluteDifferences: 10 - DONE
+standardize: 10 - DONE
+kurtosis: 10 - DONE
+square: 10 - DONE
+evaluateInternal: 10 - DONE
+autoCorrelation: 10 - DONE
+covariance: 10 - DONE
+weightedMean: 10 - DONE
+winsorizedMean: 10 - DONE
+bubble: 10 - DONE
+sumOfLogarithms: 9 - DONE
+find_median: 10 - DONE
+find_magnitude: 10 - DONE
+average: 10 - DONE
+sampleSkew: 10 - DONE
+evaluateHoners: 10 - DONE
+find_max: 8 - DONE
+meanDeviation: 10 - DONE
+pooledMean: 10 - DONE
+find_max2: 9 - DONE
+polevl: 10 - DONE
+clip: 10 - DONE
+power: 10 - DONE
+geometric_mean: 10 - DONE
 weighted_average: 6
 sum: 10
 checkNonNegative: 7
