@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.lang.Math;
 
 public class TestClass {
@@ -139,32 +140,64 @@ public class TestClass {
         return included;
     }
 
-/*
-    protected static ArrayList<T> inc(ArrayList<T> original) {
-        return new ArrayList<T>();
-    }
-
-    protected static ArrayList<T> inv(ArrayList<T> original) {
+    protected static int[] inv(int[] original) {
         //Invertive: Take the inverse of each element. Expected: Decrease or remain constant
-        return new ArrayList<T>();
+        int[] inverse = new int[original.length];
+        for (int i = 0; i < original.length; i++) {
+            inverse[i] = 1 / original[i]; //Integer arithmetic. Problem?
+        }
+        return inverse;
     }
 
-    protected static ArrayList<T> mult(ArrayList<T> original) {
-        //Multiplicative: Multiply by a positive constant. Expected: Increase or remain constant
-        return new ArrayList<T>();
+    protected static double[] inv(double[] original) {
+        //Invertive: Take the inverse of each element. Expected: Decrease or remain constant
+        double[] inverse = new double[original.length];
+        for (int i = 0; i < original.length; i++) {
+            inverse[i] = 1.0 / original[i];
+        }
+        return inverse;
     }
+
+    protected static int[] mult(int[] original) {
+        //Multiplicative: Multiply by a positive constant. Expected: Increase or remain constant
+        int constant = getInt() + 2;
+        int[] multiplied = new int[original.length];
+        for (int i = 0; i < original.length; i++) {
+            multiplied[i] = original[i] * constant;
+        }
+        return multiplied;
+    }
+
+    protected static double[] mult(double[] original) {
+        //Multiplicative: Multiply by a positive constant. Expected: Increase or remain constant
+        int constant = getInt() + 2;
+        double[] multiplied = new double[original.length];
+        for (int i = 0; i < original.length; i++) {
+            multiplied[i] = original[i] * constant;
+        }
+        return multiplied;
+    }
+
+    protected static int[] perm(int[] original) {
+        //Permutative: Randomly permute the elements. Expected: Remain constant
+        int[] permuted = new int[original.length];
+        ArrayList<int> range = new
+        for (int i = 0; i < original.length; i++) {
+        }
+        return permuted;
+    }
+/*
 
     protected static ArrayList<T> perm(ArrayList<T> original) {
-        //Permutative: Randomly permute the elements. Expected: Remain constant
         return new ArrayList<T>();
     }
     */
 
     public static void main(String[] args) {
         TestClass test = new TestClass();
-        int[] thing = test.getIntArray(8);
+        double[] thing = test.getDoubleArray(8);
         System.out.println("thing: " + Arrays.toString(thing));
-        int[] next = inc(thing);
+        double[] next = mult(thing);
         System.out.println("next:  " + Arrays.toString(next));
     }
 }
