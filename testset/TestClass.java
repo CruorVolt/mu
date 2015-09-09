@@ -62,21 +62,72 @@ public class TestClass {
 
     protected static int[] add(int[] original) {
         //Additive: Add a positive constant. Expected: Increase or remain constant
+        int constant = getInt();
         int[] additive = new int[original.length];
         for (int i = 0; i < original.length; i++) {
-            additive[i] = original[i] + getInt();
+            additive[i] = original[i] + constant;
         }
         return additive;
     }
 
     protected static double[] add(double[] original) {
         //Additive: Add a positive constant. Expected: Increase or remain constant
+        double constant = getDouble();
         double[] additive = new double[original.length];
         for (int i = 0; i < original.length; i++) {
-            additive[i] = original[i] + getDouble();
+            additive[i] = original[i] + constant;
         }
         return additive;
     }
+
+    protected static boolean addTest(int orig, int next) {
+        return orig <= next;
+    }
+
+    protected static boolean addTest(double orig, double next) {
+        return orig <= next;
+    }
+
+    protected static boolean addTest(int[] orig, int[] next) {
+        if (orig.length != next.length) {
+            System.out.println("PROBLEM WITH INPUT LENGTH (int addTest) <<<<<<<-----------------------");
+            return false;
+        }
+        for (int i = 0; i < orig.length; i++) {
+            if (next[i] < orig[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    protected static boolean addTest(double[] orig, double[] next) {
+        if (orig.length != next.length) {
+            System.out.println("PROBLEM WITH INPUT LENGTH (double addTest) <<<<<<<-----------------------");
+            return false;
+        }
+        for (int i = 0; i < orig.length; i++) {
+            if (next[i] < orig[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /* This doesn't really make sense
+    protected static boolean addTest(boolean[] orig, boolean[] next) {
+        if (orig.length != next.length) {
+            System.out.println("PROBLEM WITH INPUT LENGTH (boolean addTest) <<<<<<<-----------------------");
+            return false;
+        }
+        for (int i = 0; i < orig.length; i++) {
+            if (next[i] < orig[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    */
 
     protected static int[] exc(int[] original) {
         //Exclusive: Remove an element. Expected: Decrease or remain constant
@@ -180,24 +231,38 @@ public class TestClass {
 
     protected static int[] perm(int[] original) {
         //Permutative: Randomly permute the elements. Expected: Remain constant
-        int[] permuted = new int[original.length];
-        ArrayList<int> range = new
-        for (int i = 0; i < original.length; i++) {
+        int temp, index;
+        int[] permuted = Arrays.copyOf(original, original.length);
+        Random r = new Random();
+        for (int i = original.length - 1; i > 0; i--) {
+            index = r.nextInt(i+1);
+            temp = permuted[i];
+            permuted[i] = permuted[index];
+            permuted[index] = temp;
         }
         return permuted;
     }
-/*
 
-    protected static ArrayList<T> perm(ArrayList<T> original) {
-        return new ArrayList<T>();
+    protected static double[] perm(double[] original) {
+        //Permutative: Randomly permute the elements. Expected: Remain constant
+        int index;
+        double temp;
+        double[] permuted = Arrays.copyOf(original, original.length);
+        Random r = new Random();
+        for (int i = original.length - 1; i > 0; i--) {
+            index = r.nextInt(i+1);
+            temp = permuted[i];
+            permuted[i] = permuted[index];
+            permuted[index] = temp;
+        }
+        return permuted;
     }
-    */
 
     public static void main(String[] args) {
         TestClass test = new TestClass();
-        double[] thing = test.getDoubleArray(8);
+        int[] thing = test.getIntArray(8);
         System.out.println("thing: " + Arrays.toString(thing));
-        double[] next = mult(thing);
+        int[] next = perm(thing);
         System.out.println("next:  " + Arrays.toString(next));
     }
 }

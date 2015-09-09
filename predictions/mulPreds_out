@@ -1,5 +1,4 @@
 errorRate: 10
-computeDividedDifference: 5
 manhattanDistance: 8
 power: 10
 select: 10
@@ -20,7 +19,6 @@ sumOfLogarithms: 10
 find_euc_dist: 10
 shell_sort: 9
 selection_sort: 10
-weightedRMS: 5
 clip: 10
 g: 10
 ebeAdd: 8
@@ -75,8 +73,4 @@ distanceInf: 9
 evaluateWeightedProduct: 7
 sum: 10
 scale: 10
-lag1: 5
 binarySearchFromTo: 9
-sampleKurtosis: 5
-weightedMean: 5
-sampleSkew: 5

@@ -7,9 +7,14 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void add_values_test() {
         System.out.println("TEST: add_values");
-        int r1 = MethodCollection2.add_values(getIntArray());
-        int r2 = MethodCollection2.add_values(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        int r1 = MethodCollection2.add_values(orig);
+
+        //add
+        int[] mod = add(orig);
+        int out = MethodCollection2.add_values(mod);
+        assertTrue(addTest(r1,out));
+        
     }
 
     @Test
@@ -47,9 +52,13 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void selection_sort_test() {
         System.out.println("TEST: selection_sort");
-        int[] r1 = MethodCollection2.selection_sort(getIntArray());
-        int[] r2 = MethodCollection2.selection_sort(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        int[] r1 = MethodCollection2.selection_sort(orig);
+
+        //add
+        int[] addIn = add(orig);
+        int[] addOut = MethodCollection2.selection_sort(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -342,24 +351,39 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("SHOULD BE TRUE", true);
     }
 
+    /*
     @Test
     public void elementwise_not_equal_test() {
         System.out.println("TEST: elementwise_not_equal");
         //Arrays should be same size
         int arraySize = getInt();
-        boolean[] r1 = MethodCollection2.elementwise_not_equal(getIntArray(arraySize), getIntArray(arraySize));
-        boolean[] r2 = MethodCollection2.elementwise_not_equal(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig1 = getIntArray(arraySize);
+        int[] orig2 = getIntArray(arraySize);
+        boolean[] r1 = MethodCollection2.elementwise_not_equal(orig1, orig2);
+
+        //add - does this make any sense?
+        //int[] addIn1 = add(orig1);
+        //int[] addIn2 = add(orig2);
+        //boolean[] addOut = MethodCollection2.elementwise_not_equal(addIn1, addIn2);
+        //assertTrue("add failure", r1, addOut);
+
     }
+    */
 
     @Test
     public void hamming_dist_test() {
         System.out.println("TEST: hamming_dist");
         //Arrays should be same size
         int arraySize = getInt();
-        int r1 = MethodCollection2.hamming_dist(getIntArray(arraySize), getIntArray(arraySize));
-        int r2 = MethodCollection2.hamming_dist(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig1 = getIntArray(arraySize);
+        int[] orig2 = getIntArray(arraySize);
+        int r1 = MethodCollection2.hamming_dist(orig1, orig2);
+
+        //add
+        int[] addIn1 = add(orig1);
+        int[] addIn2 = add(orig2);
+        int addOut = MethodCollection2.hamming_dist(addIn1, addIn2);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
 }

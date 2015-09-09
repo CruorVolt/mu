@@ -12,7 +12,6 @@ hamming_dist: 10
 computeCanberraDistance: 10
 eucleadianDistance: 10
 find_euc_dist: 10
-find_min: 5
 sequential_search: 10
 sumOfLogarithms: 9
 distanceInf: 9
@@ -22,5 +21,3 @@ add_values: 10
 evaluateNewton: 10
 sumOfPowerOfDeviations: 10
 geometric_mean: 8
-find_max: 5
-min: 5

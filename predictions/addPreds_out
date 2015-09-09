@@ -1,9 +1,9 @@
-errorRate: 10
-lag1: 6
-scale: 10
-selection_sort: 10
-safeNorm: 10
-elementwise_not_equal: 7
+errorRate: 10 - DONE
+lag1: 6 - DONE
+scale: 10 - DONE
+selection_sort: 10 - DONE
+safeNorm: 10 - DONE
+elementwise_not_equal: 7 - Done by not doing
 hamming_dist: 8
 product: 10
 calculateAbsoluteDifferences: 10
@@ -33,8 +33,6 @@ geometric_mean: 10
 weighted_average: 6
 sum: 10
 checkNonNegative: 7
-meanDifference: 5
-get_array_value: 5
 variance: 10
 ebeAdd: 10
 ebeDivide: 9
@@ -42,7 +40,6 @@ sampleVariance: 10
 skew: 10
 select: 10
 entropy: 10
-durbinWatson: 5
 binarySearchFromTo: 10
 reverse: 10
 add: 10

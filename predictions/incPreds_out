@@ -18,7 +18,6 @@ polevl: 10
 sumOfLogarithms: 9
 distanceInf: 10
 find_max2: 9
-mean_absolute_error: 5
 min: 10
 cnt_zeroes: 8
 evaluateWeightedProduct: 10
@@ -29,4 +28,3 @@ hamming_dist: 10
 find_euc_dist: 10
 checkNonNegative: 10
 find_magnitude: 6
-find_max: 5

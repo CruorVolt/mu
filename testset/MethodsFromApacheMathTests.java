@@ -70,15 +70,26 @@ public class MethodsFromApacheMathTests extends TestClass {
 
     @Test
     public void safeNorm_test() {
-        double r1 = MethodsFromApacheMath.safeNorm(getDoubleArray());
-        double r2 = MethodsFromApacheMath.safeNorm(getDoubleArray());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        double r1 = MethodsFromApacheMath.safeNorm(orig);
+        
+        //add
+        double[] addIn = add(orig);
+        double addOut = MethodsFromApacheMath.safeNorm(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
     public void scale_test() {
-        double[] r1 = MethodsFromApacheMath.scale(getDouble(), getDoubleArray());
-        double[] r2 = MethodsFromApacheMath.scale(getDouble(), getDoubleArray());
+        double arg1 = getDouble();
+        double orig[] = getDoubleArray();
+        double[] r1 = MethodsFromApacheMath.scale(arg1, orig);
+
+        //add
+        double[] addIn = add(orig);
+        double[] addOut = MethodsFromApacheMath.scale(arg1, addIn);
+        assertTrue("add failure", addTest(r1, addOut));
+        
         assertEquals(1,1);
     }
 

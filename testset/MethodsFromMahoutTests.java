@@ -106,10 +106,17 @@ public class MethodsFromMahoutTests extends TestClass {
     public void errorrate_test() {
         //arrays should be same size
         int size = getInt();
-        double r1 = MethodsFromMahout.errorRate(getDoubleArray(size),getDoubleArray(size));
-        double r2 = MethodsFromMahout.errorRate(getDoubleArray(size),getDoubleArray(size));
-        assertEquals(1,1);
+        double[] orig1 = getDoubleArray(size);
+        double[] orig2 = getDoubleArray(size);
+        double r1 = MethodsFromMahout.errorRate(orig1, orig2);
+
+        //add
+        double[] add1 = add(orig1);
+        double[] add2 = add(orig2);
+        double addOut = MethodsFromMahout.errorRate(add1, add2);
+        assertTrue("add failure", addTest(r1, addOut));
     }
+
     @Test
     public void fromrho_test() {
         //array should be size 2

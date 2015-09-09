@@ -53,9 +53,15 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void lag1_test() {
         System.out.print("TEST: lag1");
-        double r1 = MethodsFromColt.lag1(getDoubleArray(), getDouble());
-        double r2 = MethodsFromColt.lag1(getDoubleArray(), getDouble());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        double arg2 = getDouble();
+        double r1 = MethodsFromColt.lag1(orig, arg2);
+
+        //add
+        double[] add = add(orig);
+        double addOut = MethodsFromColt.lag1(add, arg2);
+        assertTrue("add failure", addTest(r1, addOut));
+        
         System.out.println(" >>complete");
     }
     @Test
@@ -85,9 +91,14 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void product_test() {
         System.out.print("TEST: product");
-        double r1 = MethodsFromColt.product(getDoubleArray());
-        double r2 = MethodsFromColt.product(getDoubleArray());
-        assertEquals(1,1);
+        double[] orig = getDoubleArray();
+        double r1 = MethodsFromColt.product(orig);
+        
+        //add
+        double[] addIn = add(orig);
+        double addOut = MethodsFromColt.product(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
+
         System.out.println(" >>complete");
     }
     @Test

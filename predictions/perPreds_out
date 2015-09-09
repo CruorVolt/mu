@@ -13,7 +13,6 @@ sampleSkew: 10
 sum: 10
 find_max: 9
 find_min: 10
-winsorizedMean: 5
 sequential_search: 10
 checkNonNegative: 9
 product: 10
@@ -32,5 +31,4 @@ skew: 9
 sampleVariance: 10
 meanDeviation: 6
 count_k: 9
-reverse: 5
 pooledVariance: 6
