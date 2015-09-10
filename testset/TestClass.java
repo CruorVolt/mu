@@ -68,6 +68,10 @@ public class TestClass {
         return original + ( (double)constant);
     }
 
+    protected static long add(long original, int constant) {
+        return original + ( (long)constant);
+    }
+
     protected static int[] add(int[] original, int constant) {
         //Additive: Add a positive constant. Expected: Increase or remain constant
         int[] additive = new int[original.length];

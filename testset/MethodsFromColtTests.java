@@ -65,9 +65,8 @@ public class MethodsFromColtTests extends TestClass {
         System.out.print("TEST: durbinWatson");
         //array length should be > 2
         int size = getInt() + 2;
-        double r1 = MethodsFromColt.durbinWatson(getDoubleArray(size));
-        double r2 = MethodsFromColt.durbinWatson(getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+        double r1 = MethodsFromColt.durbinWatson(arg1);
         System.out.println(" >>complete");
     }
     @Test
@@ -117,9 +116,8 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void min_test() {
         System.out.print("TEST: min");
-        double r1 = MethodsFromColt.min(getDoubleArray());
-        double r2 = MethodsFromColt.min(getDoubleArray());
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray();
+        double r1 = MethodsFromColt.min(arg1);
         System.out.println(" >>complete");
     }
     @Test
@@ -175,9 +173,8 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void sampleKurtosisStandardError_test() {
         System.out.print("TEST: sampleKurtosisStandardError");
-        double r1 = MethodsFromColt.sampleKurtosisStandardError(getInt());
-        double r2 = MethodsFromColt.sampleKurtosisStandardError(getInt());
-        assertEquals(1,1);
+	int arg1 = getInt();
+        double r1 = MethodsFromColt.sampleKurtosisStandardError(arg1);
         System.out.println(" >>complete");
     }
     @Test
@@ -234,9 +231,8 @@ public class MethodsFromColtTests extends TestClass {
         int size = getInt() + from + to;
         double[] arr = getDoubleArray(size);
         Arrays.sort(arr);
-        double r1 = MethodsFromColt.trimmedMean(arr, getDouble(), from, to);
-        double r2 = MethodsFromColt.trimmedMean(arr, getDouble(), from, to);
-        assertEquals(1,1);
+	double arg2 = getDouble();
+        double r1 = MethodsFromColt.trimmedMean(arr, arg2, from, to);
         System.out.println(" >>complete");
     }
     @Test
@@ -264,9 +260,11 @@ public class MethodsFromColtTests extends TestClass {
         int minsize1 = getInt();
         int minsize2 = getInt();
         int size = getInt() + minsize1 + minsize2;
-        int r1 = MethodsFromColt.binarySearchFromTo(getIntArray(size), getInt(), getInt(minsize1), getInt(minsize2));
-        int r2 = MethodsFromColt.binarySearchFromTo(getIntArray(size), getInt(), getInt(minsize1), getInt(minsize2));
-        assertEquals(1,1);
+	int[] arg1 = getIntArray(size);
+	int arg2 = getInt();
+	int arg3 = getInt(minsize1);
+	int arg4 = getInt(minsize2);
+        int r1 = MethodsFromColt.binarySearchFromTo(arg1, arg2, arg3, arg4);
         System.out.println(" >>complete");
     }
     @Test
@@ -274,17 +272,16 @@ public class MethodsFromColtTests extends TestClass {
         //pass small values for reasonable completion times
         int max = 100;
         System.out.print("TEST: binomial");
-        double r1 = MethodsFromColt.binomial(getNextDouble(), (long)getNextDouble());
-        double r2 = MethodsFromColt.binomial(getNextDouble(), (long)getNextDouble());
-        assertEquals(1,1);
+	double arg1 = getNextDouble();
+	long arg2 = (long)getNextDouble();
+        double r1 = MethodsFromColt.binomial(arg1, arg2);
         System.out.println(" >>complete");
     }
     @Test
     public void link_test() {
         System.out.print("TEST: link");
-        double r1 = MethodsFromColt.link(getDouble());
-        double r2 = MethodsFromColt.link(getDouble());
-        assertEquals(1,1);
+	double arg1 = getDouble();
+        double r1 = MethodsFromColt.link(arg1);
         System.out.println(" >>complete");
     }
     @Test
@@ -309,9 +306,9 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void geometricPdf_test() {
         System.out.print("TEST: geometricPdf");
-        double r1 = MethodsFromColt.geometricPdf(getInt(), getDouble());
-        double r2 = MethodsFromColt.geometricPdf(getInt(), getDouble());
-        assertEquals(1,1);
+	int arg1 = getInt();
+	double arg2 = getDouble();
+        double r1 = MethodsFromColt.geometricPdf(arg1, arg2);
         System.out.println(" >>complete");
     }
     @Test
@@ -331,9 +328,8 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void logGamma_test() {
         System.out.print("TEST: logGamma");
-        double r1 = MethodsFromColt.logGamma(getDouble());
-        double r2 = MethodsFromColt.logGamma(getDouble());
-        assertEquals(1,1);
+	double arg1 = getDouble();
+        double r1 = MethodsFromColt.logGamma(arg1);
         System.out.println(" >>complete");
     }
     @Test
@@ -394,9 +390,9 @@ public class MethodsFromColtTests extends TestClass {
         //input array should be sorted
         double[] arr = getDoubleArray();
         Arrays.sort(arr);
-        double r1 = MethodsFromColt.rankInterpolated(arr, getDouble(), getInt());
-        double r2 = MethodsFromColt.rankInterpolated(arr, getDouble(), getInt());
-        assertEquals(1,1);
+	double arg2 = getDouble();
+	int arg3 = getInt();
+        double r1 = MethodsFromColt.rankInterpolated(arr, arg2, arg3);
         System.out.println(" >>complete");
     }
     @Test
@@ -404,9 +400,9 @@ public class MethodsFromColtTests extends TestClass {
         System.out.print("TEST: sampleWeightedVariance");
         //arrays should be same size
         int size = getInt();
-        double r1 = MethodsFromColt.sampleWeightedVariance(getDoubleArray(size), getDoubleArray(size));
-        double r2 = MethodsFromColt.sampleWeightedVariance(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        double r1 = MethodsFromColt.sampleWeightedVariance(arg1, arg2);
         System.out.println(" >>complete");
     }
     @Test
@@ -440,9 +436,9 @@ public class MethodsFromColtTests extends TestClass {
         System.out.print("TEST: weightedRMS");
         //arrays should be same size
         int size = getInt();
-        double r1 = MethodsFromColt.weightedRMS(getDoubleArray(size), getDoubleArray(size));
-        double r2 = MethodsFromColt.weightedRMS(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        double r1 = MethodsFromColt.weightedRMS(arg1, arg2);
         System.out.println(" >>complete");
     }
     @Test
@@ -462,9 +458,10 @@ public class MethodsFromColtTests extends TestClass {
     @Test
     public void sumOfPowerOfDeviations_test() {
         System.out.print("TEST: sumOfPowerOfDeviatons");
-        double r1 = MethodsFromColt.sumOfPowerOfDeviations(getDoubleArray(), getInt(), getDouble());
-        double r2 = MethodsFromColt.sumOfPowerOfDeviations(getDoubleArray(), getInt(), getDouble());
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray();
+	int arg2 = getInt();
+	double arg3 = getDouble();
+        double r1 = MethodsFromColt.sumOfPowerOfDeviations(arg1, arg2, arg3);
         System.out.println(" >>complete");
     }
     @Test

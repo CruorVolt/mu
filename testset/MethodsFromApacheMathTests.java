@@ -9,27 +9,27 @@ public class MethodsFromApacheMathTests extends TestClass {
     public void distance_test() {
         //arrays should be same size
         int size = getInt() + 1;
-        double r1 = MethodsFromApacheMath.distance(getDoubleArray(size), getDoubleArray(size));
-        double r2 = MethodsFromApacheMath.distance(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        double r1 = MethodsFromApacheMath.distance(arg1, arg2);
     }
 
     @Test
     public void distance1_test() {
         //arrays should be same size
         int size = getInt() + 1;
-        double r1 = MethodsFromApacheMath.distance1(getDoubleArray(size), getDoubleArray(size));
-        double r2 = MethodsFromApacheMath.distance1(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        double r1 = MethodsFromApacheMath.distance1(arg1, arg2);
     }
 
     @Test
     public void distanceInf_test() {
         //arrays should be same size
         int size = getInt() + 1;
-        double r1 = MethodsFromApacheMath.distanceInf(getDoubleArray(size), getDoubleArray(size));
-        double r2 = MethodsFromApacheMath.distanceInf(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        double r1 = MethodsFromApacheMath.distanceInf(arg1, arg2);
     }
 
     @Test
@@ -70,23 +70,23 @@ public class MethodsFromApacheMathTests extends TestClass {
         int arraySize = getInt();
         double[] firstArg = getDoubleArray(arraySize);
         double[] secondArg = getDoubleArray(arraySize);
-        double[] r2 = MethodsFromApacheMath.ebeMultiply(firstArg, secondArg);
+        double[] r1 = MethodsFromApacheMath.ebeMultiply(firstArg, secondArg);
 
         //add
         int c = getInt();
         double[] addIn1 = add(firstArg, c);
         double[] addIn2 = add(secondArg, c);
         double[] addOut = MethodsFromApacheMath.ebeMultiply(addIn1, addIn2);
-        assertTrue("add failure", addTest(r2, addOut));
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
     public void ebeSubtract_test() {
         //Most execution paths require arrays of matching size
         int arraySize = getInt();
-        double[] r1 = MethodsFromApacheMath.ebeSubtract(getDoubleArray(arraySize), getDoubleArray(arraySize));
-        double[] r2 = MethodsFromApacheMath.ebeSubtract(getDoubleArray(arraySize), getDoubleArray(arraySize));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(arraySize);
+	double[] arg2 = getDoubleArray(arraySize);
+        double[] r1 = MethodsFromApacheMath.ebeSubtract(arg1, arg2);
     }
 
     @Test
@@ -112,8 +112,6 @@ public class MethodsFromApacheMathTests extends TestClass {
         double[] addIn = add(orig, c);
         double[] addOut = MethodsFromApacheMath.scale(arg1, addIn);
         assertTrue("add failure", addTest(r1, addOut));
-        
-        assertEquals(1,1);
     }
 
     @Test
@@ -132,9 +130,9 @@ public class MethodsFromApacheMathTests extends TestClass {
     public void g_test() {
         //Input arrays must be same length and length must be >= 2
         int size = getInt() + 2;
-        double r1 = MethodsFromApacheMath.g(getDoubleArray(size), getDoubleArray(size));
-        double r2 = MethodsFromApacheMath.g(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        double r1 = MethodsFromApacheMath.g(arg1, arg2);
     }
 
     @Test
@@ -154,27 +152,27 @@ public class MethodsFromApacheMathTests extends TestClass {
     public void calculateDifferences_test() {
         //Arrays must be same length
         int size = getInt();
-        double[] r1 = MethodsFromApacheMath.calculateDifferences(getDoubleArray(size), getDoubleArray(size));
-        double[] r2 = MethodsFromApacheMath.calculateDifferences(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        double[] r1 = MethodsFromApacheMath.calculateDifferences(arg1, arg2);
     }
 
     @Test
     public void computeDividedDifference_test() {
         //Arrays must be same length
         int size = getInt();
-        double[] r1 = MethodsFromApacheMath.computeDividedDifference(getDoubleArray(size), getDoubleArray(size));
-        double[] r2 = MethodsFromApacheMath.computeDividedDifference(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        double[] r1 = MethodsFromApacheMath.computeDividedDifference(arg1, arg2);
     }
 
     @Test
     public void computeCanberraDistance_test() {
         //Arrays must be same length
         int size = getInt();
-        double r1 = MethodsFromApacheMath.computeCanberraDistance(getDoubleArray(size), getDoubleArray(size));
-        double r2 = MethodsFromApacheMath.computeCanberraDistance(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        double r1 = MethodsFromApacheMath.computeCanberraDistance(arg1, arg2);
     }
 
     @Test
@@ -231,27 +229,27 @@ public class MethodsFromApacheMathTests extends TestClass {
    public void meanDifference_test() {
        //inputs must have matching and positive lengths
        int size = getInt() + 1;
-       double r1 = MethodsFromApacheMath.meanDifference(getDoubleArray(size), getDoubleArray(size));
-       double r2 = MethodsFromApacheMath.meanDifference(getDoubleArray(size), getDoubleArray(size));
-       assertEquals(1,1);
+       double[] arg1 = getDoubleArray(size);
+       double[] arg2 = getDoubleArray(size);
+       double r1 = MethodsFromApacheMath.meanDifference(arg1, arg2);
    }
 
    @Test
    public void varianceDifference_test() {
        //inputs must have matching lengths of at least 2
        int size = getInt() + 2;
-       double r1 = MethodsFromApacheMath.varianceDifference(getDoubleArray(size), getDoubleArray(size));
-       double r2 = MethodsFromApacheMath.varianceDifference(getDoubleArray(size), getDoubleArray(size));
-       assertEquals(1,1);
+       double[] arg1 = getDoubleArray(size);
+       double[] arg2 = getDoubleArray(size);
+       double r1 = MethodsFromApacheMath.varianceDifference(arg1, arg2);
    }
 
    @Test
    public void equals_test() {
         //most code paths require same-length inputs
         int size = getInt();
-        boolean r1 = MethodsFromApacheMath.equals(getDoubleArray(size), getDoubleArray(size));
-        boolean r2 = MethodsFromApacheMath.equals(getDoubleArray(size), getDoubleArray(size));
-        assertEquals(1,1);
+        double[] arg1 = getDoubleArray(size);
+        double[] arg2 = getDoubleArray(size);
+        boolean r1 = MethodsFromApacheMath.equals(arg1, arg2);
    }
 
    /* Doesn't make sense
@@ -270,22 +268,20 @@ public class MethodsFromApacheMathTests extends TestClass {
 
    @Test
    public void checkPositive_test() {
-        boolean r1 = MethodsFromApacheMath.checkPositive(getDoubleArray());
-        boolean r2 = MethodsFromApacheMath.checkPositive(getDoubleArray());
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray();
+        boolean r1 = MethodsFromApacheMath.checkPositive(arg1);
    }
 
    @Test
    public void chiSquare_test() {
         //zero cannot be in the first argument and both arguments must be at least length 2
         int size = getInt() + 2;
-        double[] firstArg = getDoubleArray(size);
-        for (int i = 0; i < firstArg.length; i++) {
-            firstArg[i] = firstArg[i] + 1; //Ensure strictly positive
+        double[] arg1 = getDoubleArray(size);
+        for (int i = 0; i < arg1.length; i++) {
+            arg1[i] = arg1[i] + 1; //Ensure strictly positive
         }
-        double r1 = MethodsFromApacheMath.chiSquare(firstArg, getDoubleArray(size));
-        double r2 = MethodsFromApacheMath.chiSquare(firstArg, getDoubleArray(size));
-        assertEquals(1,1);
+	double[] arg2 = getDoubleArray(size);
+        double r1 = MethodsFromApacheMath.chiSquare(arg1, arg2);
    }
 
   @Test
@@ -293,9 +289,11 @@ public class MethodsFromApacheMathTests extends TestClass {
         int start = getInt();
         int length = getInt() + 2;
         int size = getInt() + start + length + 1;
-        double r1 = MethodsFromApacheMath.evaluateSemiVariance(getDoubleArray(size), getDouble(), getBoolean(), getBoolean(), start, length);
-        double r2 = MethodsFromApacheMath.evaluateSemiVariance(getDoubleArray(size), getDouble(), getBoolean(), getBoolean(), start, length);
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double arg2 = getDouble();
+	boolean arg3 = getBoolean();
+	boolean arg4 = getBoolean();
+        double r1 = MethodsFromApacheMath.evaluateSemiVariance(arg1, arg2, arg3, arg4, start, length);
   }
 
   @Test
@@ -323,9 +321,9 @@ public class MethodsFromApacheMathTests extends TestClass {
         int start = getInt();
         int length = getInt() + 2;
         int size = getInt() + start + length + 1;
-        double r1 = MethodsFromApacheMath.evaluateWeightedProduct(getDoubleArray(size), getDoubleArray(size), start, length);
-        double r2 = MethodsFromApacheMath.evaluateWeightedProduct(getDoubleArray(size), getDoubleArray(size), start, length);
-        assertEquals(1,1);
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        double r1 = MethodsFromApacheMath.evaluateWeightedProduct(arg1, arg2, start, length);
   }
 
 }

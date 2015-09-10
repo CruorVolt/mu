@@ -21,9 +21,10 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void add_two_array_values_test() {
         System.out.println("TEST: add_two_array_values");
-        double r1 = MethodCollection2.add_two_array_values(getIntArray(), getInt(), getInt());
-        double r2 = MethodCollection2.add_two_array_values(getIntArray(), getInt(), getInt());
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray();
+	int arg2 = getInt();
+	int arg3 = getInt();
+        double r1 = MethodCollection2.add_two_array_values(arg1, arg2, arg3);
     }
 
     @Test
@@ -42,17 +43,16 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void shell_sort_test() {
         System.out.println("TEST: shell_sort");
-        int[] r1 = MethodCollection2.shell_sort(getIntArray());
-        int[] r2 = MethodCollection2.shell_sort(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray();
+        int[] r1 = MethodCollection2.shell_sort(arg1);
     }
 
     @Test
     public void sequential_search_test() {
         System.out.println("TEST: sequential_search");
-        int r1 = MethodCollection2.sequential_search(getIntArray(), getInt());
-        int r2 = MethodCollection2.sequential_search(getIntArray(), getInt());
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray();
+	int arg2 = getInt();
+        int r1 = MethodCollection2.sequential_search(arg1, arg2);
     }
 
     @Test
@@ -73,9 +73,10 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: add_values_in_two_arrays");
         //Arrays should be same size
         int arraySize = getInt();
-        int r1 = MethodCollection2.add_values_in_two_arrays(getIntArray(arraySize), getIntArray(arraySize), getInt());
-        int r2 = MethodCollection2.add_values_in_two_arrays(getIntArray(arraySize), getIntArray(arraySize), getInt());
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
+	int arg3 = getInt();
+        int r1 = MethodCollection2.add_values_in_two_arrays(arg1, arg2, arg3);
     }
 
     @Test
@@ -83,9 +84,9 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: dot_product");
         //Arrays should be same size
         int arraySize = getInt();
-        int r1 = MethodCollection2.dot_product(getIntArray(arraySize), getIntArray(arraySize));
-        int r2 = MethodCollection2.dot_product(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
+        int r1 = MethodCollection2.dot_product(arg1, arg2);
     }
 
     @Test
@@ -121,8 +122,9 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void get_array_value_test() {
         System.out.println("TEST: get_array_value");
-        int r1 = MethodCollection2.get_array_value(getIntArray(), getInt());
-        int r2 = MethodCollection2.get_array_value(getIntArray(), getInt());
+	int[] arg1 = getIntArray();
+	int arg2 = getInt();
+        int r1 = MethodCollection2.get_array_value(arg1, arg2);
         assertTrue("SHOULD BE TRUE", true);
     }
 
@@ -144,9 +146,9 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: find_diff");
         //Arrays should be same size
         int arraySize = getInt();
-        int[] r1 = MethodCollection2.find_diff(getIntArray(arraySize), getIntArray(arraySize));
-        int[] r2 = MethodCollection2.find_diff(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
+        int[] r1 = MethodCollection2.find_diff(arg1, arg2);
     }
 
     @Test
@@ -167,9 +169,9 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: find_euc_dist");
         //Arrays should be same size
         int arraySize = getInt();
-        double r1 = MethodCollection2.find_euc_dist(getIntArray(arraySize), getIntArray(arraySize));
-        double r2 = MethodCollection2.find_euc_dist(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(arraysize);
+	int[] arg2 = getIntArray(arraysize);
+        double r1 = MethodCollection2.find_euc_dist(arg1, arg2);
     }
 
     @Test
@@ -190,9 +192,9 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: manhattan_dist");
         //Arrays should be same size
         int arraySize = getInt();
-        double r1 = MethodCollection2.manhattan_dist(getIntArray(arraySize), getIntArray(arraySize));
-        double r2 = MethodCollection2.manhattan_dist(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
+        double r1 = MethodCollection2.manhattan_dist(arg1, arg2);
     }
 
     @Test
@@ -211,18 +213,18 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void dec_array_test() {
         System.out.println("TEST: dec_array");
-        int[] r1 = MethodCollection2.dec_array(getIntArray(), getInt());
-        int[] r2 = MethodCollection2.dec_array(getIntArray(), getInt());
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray();
+	int arg2 = getInt();
+        int[] r1 = MethodCollection2.dec_array(arg1, arg2);
     }
 
     @Test
     public void expr1_test() {
         System.out.println("TEST: expr1");
         //First arg should be nonzero
-        double r1 = MethodCollection2.expr1(getDouble(), getDouble());
-        double r2 = MethodCollection2.expr1(getDouble(), getDouble());
-        assertTrue("SHOULD BE TRUE", true);
+	double arg1 = getDouble();
+	double arg2 = getDouble();
+        double r1 = MethodCollection2.expr1(arg1, arg2);
     }
 
     @Test
@@ -268,13 +270,13 @@ public class MethodCollection2Tests extends TestClass {
     public void insertion_sort_test() {
         System.out.println("TEST: insertion_sort");
         int[] orig = getIntArray();
-        int[] r2 = MethodCollection2.insertion_sort(orig);
+        int[] r1 = MethodCollection2.insertion_sort(orig);
 
         //add
         int c = getInt();
         int[] addIn = add(orig, c);
         int[] addOut = MethodCollection2.insertion_sort(addIn);
-        assertTrue("add failure", addTest(r2, addOut));
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -295,9 +297,9 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: mean_absolute_error");
         //Arrays should be same size
         int arraySize = getInt();
-        double r1 = MethodCollection2.mean_absolute_error(getIntArray(arraySize), getIntArray(arraySize));
-        double r2 = MethodCollection2.mean_absolute_error(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
+        double r1 = MethodCollection2.mean_absolute_error(arg1, arg2);
     }
 
     @Test
@@ -317,9 +319,9 @@ public class MethodCollection2Tests extends TestClass {
     public void cartesian_product_test() {
         //This method can be quite slow - use smaller inputs
         System.out.println("TEST: cartesian_product");
-        int[][] r1 = MethodCollection2.cartesian_product(getIntArray(MAX/10), getIntArray(MAX/10));
-        int[][] r2 = MethodCollection2.cartesian_product(getIntArray(MAX/10), getIntArray(MAX/10));
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(MAX/10);
+	int[] arg2 = getIntArray(MAX/10);
+        int[][] r1 = MethodCollection2.cartesian_product(arg1, arg2);
     }
 
     @Test
@@ -340,9 +342,10 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: check_equal_tolerance");
         //most execution paths require same size arrays
         int arraySize = getInt();
-        boolean r1 = MethodCollection2.check_equal_tolerance(getDoubleArray(arraySize), getDoubleArray(arraySize), getDouble());
-        boolean r2 = MethodCollection2.check_equal_tolerance(getDoubleArray(arraySize), getDoubleArray(arraySize), getDouble());
-        assertTrue("SHOULD BE TRUE", true);
+	double[] arg1 = getDoubleArray(arraySize);
+	double[] arg2 = getDoubleArray(arraySize);
+	double arg3 = getDouble();
+        boolean r1 = MethodCollection2.check_equal_tolerance(arg1, arg2, arg3);
     }
 
     @Test
@@ -350,9 +353,9 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: check_equal");
         //most execution paths require same size arrays
         int arraySize = getInt();
-        boolean r1 = MethodCollection2.check_equal(getIntArray(arraySize), getIntArray(arraySize));
-        boolean r2 = MethodCollection2.check_equal(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
+        boolean r1 = MethodCollection2.check_equal(arg1, arg2);
     }
 
     @Test
@@ -375,9 +378,9 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void count_k_test() {
         System.out.println("TEST: count_k");
-        int r1 = MethodCollection2.count_k(getIntArray(), getInt());
-        int r2 = MethodCollection2.count_k(getIntArray(), getInt());
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray();
+	int arg2 = getInt();
+        int r1 = MethodCollection2.count_k(arg1, arg2);
     }
 
     @Test
@@ -400,9 +403,9 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: elementwise_max");
         //Arrays should be same size
         int arraySize = getInt();
-        int[] r1 = MethodCollection2.elementwise_max(getIntArray(arraySize), getIntArray(arraySize));
-        int[] r2 = MethodCollection2.elementwise_max(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
+        int[] r1 = MethodCollection2.elementwise_max(arg1, arg2);
     }
 
     @Test
@@ -410,25 +413,23 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: elementwise_min");
         //Arrays should be same size
         int arraySize = getInt();
-        int[] r1 = MethodCollection2.elementwise_min(getIntArray(arraySize), getIntArray(arraySize));
-        int[] r2 = MethodCollection2.elementwise_min(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
+        int[] r1 = MethodCollection2.elementwise_min(arg1, arg2);
     }
 
     @Test
     public void count_non_zeroes_test() {
         System.out.println("TEST: count_non_zeroes");
-        int r1 = MethodCollection2.count_non_zeroes(getIntArray());
-        int r2 = MethodCollection2.count_non_zeroes(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray();
+        int r1 = MethodCollection2.count_non_zeroes(arg1);
     }
 
     @Test
     public void cnt_zeroes_test() {
         System.out.println("TEST: cnt_zeroes");
-        int r1 = MethodCollection2.cnt_zeroes(getIntArray());
-        int r2 = MethodCollection2.cnt_zeroes(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray();
+        int r1 = MethodCollection2.cnt_zeroes(arg1);
     }
 
     @Test
@@ -436,9 +437,9 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: elementwise_equal");
         //Arrays should be same size
         int arraySize = getInt();
-        boolean[] r1 = MethodCollection2.elementwise_equal(getIntArray(arraySize), getIntArray(arraySize));
-        boolean[] r2 = MethodCollection2.elementwise_equal(getIntArray(arraySize), getIntArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
+        boolean[] r1 = MethodCollection2.elementwise_equal(arg1, arg2);
     }
 
     /*
