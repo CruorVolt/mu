@@ -169,8 +169,8 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: find_euc_dist");
         //Arrays should be same size
         int arraySize = getInt();
-	int[] arg1 = getIntArray(arraysize);
-	int[] arg2 = getIntArray(arraysize);
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
         double r1 = MethodCollection2.find_euc_dist(arg1, arg2);
     }
 
@@ -371,7 +371,7 @@ public class MethodCollection2Tests extends TestClass {
         int c = getInt();
         double[] addIn1 = add(orig1, c);
         double[] addIn2 = add(orig2, c);
-        double addOut = MethodCollection2.weighted_average(orig1, orig2);
+        double addOut = MethodCollection2.weighted_average(addIn1, addIn2);
         assertTrue("add failure", addTest(r1, addOut));
     }
 
@@ -393,8 +393,10 @@ public class MethodCollection2Tests extends TestClass {
 
         //add
         int c = getInt();
-        int[] addIn = add(orig, c);
-        int[] addOut = MethodCollection2.clip(addIn, secondArg, thirdArg);
+        int[] addIn1 = add(orig, c);
+        int addIn2 = add(secondArg, c);
+        int addIn3 = add(thirdArg, c);
+        int[] addOut = MethodCollection2.clip(addIn1, addIn2, addIn3);
         assertTrue("add failure", addTest(r1, addOut));
     }
 

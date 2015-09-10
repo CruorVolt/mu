@@ -75,8 +75,8 @@ public class MethodsFromMahoutTests extends TestClass {
         //input array should be size 2?
 	double arg1 = getDouble();
 	double arg2 = getDouble();
-	double arg3 = getDoubleArray(2);
-        double[] r1 = MethodsFromMahout.givens(arg1, arg2, arg3):
+	double[] arg3 = getDoubleArray(2);
+        double[] r1 = MethodsFromMahout.givens(arg1, arg2, arg3);
     }
     @Test
     public void link_test() {

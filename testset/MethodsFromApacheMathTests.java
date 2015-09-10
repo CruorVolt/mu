@@ -104,13 +104,14 @@ public class MethodsFromApacheMathTests extends TestClass {
     @Test
     public void scale_test() {
         double arg1 = getDouble();
-        double orig[] = getDoubleArray();
+        double[] orig = getDoubleArray();
         double[] r1 = MethodsFromApacheMath.scale(arg1, orig);
 
         //add
         int c = getInt();
-        double[] addIn = add(orig, c);
-        double[] addOut = MethodsFromApacheMath.scale(arg1, addIn);
+        double addIn1 = add(arg1, c);
+        double[] addIn2 = add(orig, c);
+        double[] addOut = MethodsFromApacheMath.scale(addIn1, addIn2);
         assertTrue("add failure", addTest(r1, addOut));
     }
 
@@ -184,8 +185,9 @@ public class MethodsFromApacheMathTests extends TestClass {
 
         //add
         int c = getInt();
-        double[] addIn = add(orig, c);
-        double addOut = MethodsFromApacheMath.evaluateHoners(addIn, secondArg);
+        double[] addIn1 = add(orig, c);
+        double addIn2 = add(secondArg, c);
+        double addOut = MethodsFromApacheMath.evaluateHoners(addIn1, addIn2);
         assertTrue("add failure", addTest(r1, addOut));
     }
 
@@ -203,7 +205,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         int c = getInt();
         double[] addIn1 = add(firstArg, c);
         double[] addIn2 = add(secondArg, c);
-        double addOut = MethodsFromApacheMath.evaluateInternal(addIn1, addIn2, thirdArg);
+        double addIn3 = add(thirdArg, c);
+        double addOut = MethodsFromApacheMath.evaluateInternal(addIn1, addIn2, addIn3);
         assertTrue("add failure", addTest(r1, addOut));
     }
 
