@@ -38,17 +38,29 @@ public class MethodsFromMahoutTests extends TestClass {
     }
     @Test
     public void sum_test() {
-        int r1 = MethodsFromMahout.sum(getIntArray());
-        int r2 = MethodsFromMahout.sum(getIntArray());
-        assertEquals(1,1);
+        int[] orig = getIntArray();
+        int r1 = MethodsFromMahout.sum(orig);
+        
+        //add
+        int c = getInt();
+        int[] addIn = add(orig, c);
+        int addOut = MethodsFromMahout.sum(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
     @Test
     public void add_test() {
         //array lengths should match
         int size = getInt();
-        int[] r1 = MethodsFromMahout.add(getIntArray(size), getIntArray(size));
-        int[] r2 = MethodsFromMahout.add(getIntArray(size), getIntArray(size));
-        assertEquals(1,1);
+        int[] orig1 = getIntArray(size);
+        int[] orig2 = getIntArray(size);
+        int[] r1 = MethodsFromMahout.add(orig1, orig2);
+
+        //add
+        int c = getInt();
+        int[] addIn1 = add(orig1, c);
+        int[] addIn2 = add(orig2, c);
+        int[] addOut = MethodsFromMahout.add(addIn1, addIn2);
+        assertTrue("add failure", addTest(r1, addOut));
     }
     @Test
     public void dec_test() {
@@ -111,8 +123,9 @@ public class MethodsFromMahoutTests extends TestClass {
         double r1 = MethodsFromMahout.errorRate(orig1, orig2);
 
         //add
-        double[] add1 = add(orig1);
-        double[] add2 = add(orig2);
+        int c = getInt();
+        double[] add1 = add(orig1, c);
+        double[] add2 = add(orig2, c);
         double addOut = MethodsFromMahout.errorRate(add1, add2);
         assertTrue("add failure", addTest(r1, addOut));
     }

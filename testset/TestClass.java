@@ -60,17 +60,16 @@ public class TestClass {
         return arr;
     }
 
-    protected static int add(int original) {
-        return original + getInt();
+    protected static int add(int original, int constant) {
+        return original + constant;
     }
 
-    protected static double add(double original) {
-        return original + getDouble();
+    protected static double add(double original, int constant) {
+        return original + ( (double)constant);
     }
 
-    protected static int[] add(int[] original) {
+    protected static int[] add(int[] original, int constant) {
         //Additive: Add a positive constant. Expected: Increase or remain constant
-        int constant = getInt();
         int[] additive = new int[original.length];
         for (int i = 0; i < original.length; i++) {
             additive[i] = original[i] + constant;
@@ -78,12 +77,11 @@ public class TestClass {
         return additive;
     }
 
-    protected static double[] add(double[] original) {
+    protected static double[] add(double[] original, int constant) {
         //Additive: Add a positive constant. Expected: Increase or remain constant
-        double constant = getDouble();
         double[] additive = new double[original.length];
         for (int i = 0; i < original.length; i++) {
-            additive[i] = original[i] + constant;
+            additive[i] = original[i] + ( (double)constant);
         }
         return additive;
     }

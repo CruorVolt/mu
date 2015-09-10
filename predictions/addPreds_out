@@ -30,30 +30,30 @@ polevl: 10 - DONE
 clip: 10 - DONE
 power: 10 - DONE
 geometric_mean: 10 - DONE
-weighted_average: 6
-sum: 10
-checkNonNegative: 7
-variance: 10
-ebeAdd: 10
-ebeDivide: 9
-sampleVariance: 10
-skew: 10
-select: 10
-entropy: 10
-binarySearchFromTo: 10
-reverse: 10
-add: 10
-max: 9
-pooledVariance: 10
-sampleKurtosis: 10
-evaluateNewton: 10
-find_min: 10
-harmonicMean: 10
-ebeMultiply: 10
-add_values: 10
-array_copy: 10
-insertion_sort: 9
-quantile: 10
-partition: 8
-array_calc1: 9
-set_min_val: 8
+weighted_average: 6 - DONE
+sum: 10 - DONE
+checkNonNegative: 7 - DONE
+variance: 10 - DONE
+ebeAdd: 10 - DONE
+ebeDivide: 9 - DONE
+sampleVariance: 10 - DONE
+skew: 10 - DONE
+select: 10 - DOESN'T EXIST
+entropy: 10 - DONE
+binarySearchFromTo: 10 - DONE
+reverse: 10 - DONE
+add: 10 - DONE
+max: 9 - DONE
+pooledVariance: 10 - DONE
+sampleKurtosis: 10 - DONE
+evaluateNewton: 10 - DONE
+find_min: 10 - DONE
+harmonicMean: 10 - DONE
+ebeMultiply: 10 - DONE
+add_values: 10 - DONE
+array_copy: 10 - DONE
+insertion_sort: 9 - DONE
+quantile: 10 - DONE
+partition: 8 - DONE
+array_calc1: 9 - DONE
+set_min_val: 8 - DONE

@@ -11,7 +11,8 @@ public class MethodCollection2Tests extends TestClass {
         int r1 = MethodCollection2.add_values(orig);
 
         //add
-        int[] mod = add(orig);
+        int constant = getInt();
+        int[] mod = add(orig, constant);
         int out = MethodCollection2.add_values(mod);
         assertTrue(addTest(r1,out));
         
@@ -32,7 +33,8 @@ public class MethodCollection2Tests extends TestClass {
         int[] r1 = MethodCollection2.bubble(orig);
 
         //add
-        int[] addIn = add(orig);
+        int constant = getInt();
+        int[] addIn = add(orig, constant);
         int[] addOut = MethodCollection2.bubble(addIn);
         assertTrue("add failure", addTest(r1, addOut));
     }
@@ -60,7 +62,8 @@ public class MethodCollection2Tests extends TestClass {
         int[] r1 = MethodCollection2.selection_sort(orig);
 
         //add
-        int[] addIn = add(orig);
+        int c = getInt();
+        int[] addIn = add(orig, c);
         int[] addOut = MethodCollection2.selection_sort(addIn);
         assertTrue("add failure", addTest(r1, addOut));
     }
@@ -88,17 +91,31 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void array_calc1_test() {
         System.out.println("TEST: array_calc1");
-        int[] r1 = MethodCollection2.array_calc1(getIntArray(), getInt());
-        int[] r2 = MethodCollection2.array_calc1(getIntArray(), getInt());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] arg1 = getIntArray();
+        int arg2 = getInt();
+        int[] r1 = MethodCollection2.array_calc1(arg1, arg2);
+
+        //add
+        int c = getInt();
+        int[] a1 = add(arg1, c);
+        int a2 = add(arg2, c);
+        int[] addOut = MethodCollection2.array_calc1(a1, a2);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
     public void set_min_val_test() {
         System.out.println("TEST: set_min_val");
-        int[] r1 = MethodCollection2.set_min_val(getIntArray(), getInt());
-        int[] r2 = MethodCollection2.set_min_val(getIntArray(), getInt());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] arg1 = getIntArray();
+        int arg2 = getInt();
+        int[] r1 = MethodCollection2.set_min_val(arg1, arg2);
+        
+        //add
+        int c = getInt();
+        int[] a1 = add(arg1, c);
+        int a2 = add(arg2, c);
+        int[] addOut = MethodCollection2.set_min_val(a1, a2);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -112,9 +129,14 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void find_min_test() {
         System.out.println("TEST: find_min");
-        int r1 = MethodCollection2.find_min(getIntArray());
-        int r2 = MethodCollection2.find_min(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        int r1 = MethodCollection2.find_min(orig);
+
+        //add
+        int c = getInt();
+        int[] addIn = add(orig, c);
+        int addOut = MethodCollection2.find_min(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -130,9 +152,14 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void array_copy_test() {
         System.out.println("TEST: array_copy");
-        int[] r1 = MethodCollection2.array_copy(getIntArray());
-        int[] r2 = MethodCollection2.array_copy(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        int[] r1 = MethodCollection2.array_copy(orig);
+
+        //add
+        int c = getInt();
+        int[] addIn = add(orig, c);
+        int[] addOut = MethodCollection2.array_copy(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -152,7 +179,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.find_magnitude(orig);
 
         //add
-        int[] addIn = add(orig);
+        int c = getInt();
+        int[] addIn = add(orig, c);
         double addOut = MethodCollection2.find_magnitude(addIn);
         assertTrue("add failure", addTest(r1, addOut));
     }
@@ -174,7 +202,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.average(orig);
    
         //add
-        int[] addIn = add(orig);
+        int c = getInt();
+        int[] addIn = add(orig, c);
         double addOut = MethodCollection2.average(addIn);
         assertTrue("add failure", addTest(r1, addOut));
     }
@@ -203,7 +232,8 @@ public class MethodCollection2Tests extends TestClass {
         int r1 = MethodCollection2.find_max(orig);
 
         //add
-        int[] addIn = add(orig);
+        int c = getInt();
+        int[] addIn = add(orig, c);
         int addOut = MethodCollection2.find_max(addIn);
         assertTrue("add failure", addTest(r1, addOut));
     }
@@ -215,7 +245,8 @@ public class MethodCollection2Tests extends TestClass {
         int r1 = MethodCollection2.find_max2(orig);
 
         //add
-        int[] addIn = add(orig);
+        int c = getInt();
+        int[] addIn = add(orig, c);
         int addOut = MethodCollection2.find_max2(addIn);
         assertTrue("add failure", addTest(r1, addOut));
     }
@@ -223,17 +254,27 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void variance_test() {
         System.out.println("TEST: variance");
-        double r1 = MethodCollection2.variance(getDoubleArray());
-        double r2 = MethodCollection2.variance(getDoubleArray());
-        assertTrue("SHOULD BE TRUE", true);
+        double[] orig = getDoubleArray();
+        double r1 = MethodCollection2.variance(orig);
+
+        //add
+        int c = getInt();
+        double[] addIn = add(orig, c);
+        double addOut = MethodCollection2.variance(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
     public void insertion_sort_test() {
         System.out.println("TEST: insertion_sort");
-        int[] r1 = MethodCollection2.insertion_sort(getIntArray());
-        int[] r2 = MethodCollection2.insertion_sort(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        int[] r2 = MethodCollection2.insertion_sort(orig);
+
+        //add
+        int c = getInt();
+        int[] addIn = add(orig, c);
+        int[] addOut = MethodCollection2.insertion_sort(addIn);
+        assertTrue("add failure", addTest(r2, addOut));
     }
 
     @Test
@@ -243,7 +284,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.geometric_mean(orig);
 
         //add
-        int[] addIn = add(orig);
+        int c = getInt();
+        int[] addIn = add(orig, c);
         double addOut = MethodCollection2.geometric_mean(addIn);
         assertTrue("add failure", addTest(r1, addOut));
     }
@@ -265,7 +307,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.find_median(orig);
 
         //add
-        int[] addIn = add(orig);
+        int c = getInt();
+        int[] addIn = add(orig, c);
         double addOut = MethodCollection2.find_median(addIn);
         assertTrue("add failure", addTest(r1, addOut));
     }
@@ -282,9 +325,14 @@ public class MethodCollection2Tests extends TestClass {
     @Test
     public void reverse_test() {
         System.out.println("TEST: reverse");
-        int[] r1 = MethodCollection2.reverse(getIntArray());
-        int[] r2 = MethodCollection2.reverse(getIntArray());
-        assertTrue("SHOULD BE TRUE", true);
+        int[] orig = getIntArray();
+        int[] r1 = MethodCollection2.reverse(orig);
+        
+        //add
+        int c = getInt();
+        int[] addIn = add(orig, c);
+        int[] addOut = MethodCollection2.reverse(addIn);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -312,9 +360,16 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: weighted_average");
         //Arrays should be same size
         int arraySize = getInt();
-        double r1 = MethodCollection2.weighted_average(getDoubleArray(arraySize), getDoubleArray(arraySize));
-        double r2 = MethodCollection2.weighted_average(getDoubleArray(arraySize), getDoubleArray(arraySize));
-        assertTrue("SHOULD BE TRUE", true);
+        double[] orig1 = getDoubleArray(arraySize);
+        double[] orig2 = getDoubleArray(arraySize);
+        double r1 = MethodCollection2.weighted_average(orig1, orig2);
+
+        //add
+        int c = getInt();
+        double[] addIn1 = add(orig1, c);
+        double[] addIn2 = add(orig2, c);
+        double addOut = MethodCollection2.weighted_average(orig1, orig2);
+        assertTrue("add failure", addTest(r1, addOut));
     }
 
     @Test
@@ -334,7 +389,8 @@ public class MethodCollection2Tests extends TestClass {
         int[] r1 = MethodCollection2.clip(orig, secondArg, thirdArg);
 
         //add
-        int[] addIn = add(orig);
+        int c = getInt();
+        int[] addIn = add(orig, c);
         int[] addOut = MethodCollection2.clip(addIn, secondArg, thirdArg);
         assertTrue("add failure", addTest(r1, addOut));
     }
@@ -396,8 +452,9 @@ public class MethodCollection2Tests extends TestClass {
         boolean[] r1 = MethodCollection2.elementwise_not_equal(orig1, orig2);
 
         //add - does this make any sense?
-        //int[] addIn1 = add(orig1);
-        //int[] addIn2 = add(orig2);
+        //int c = getInt();
+        //int[] addIn1 = add(orig1, c);
+        //int[] addIn2 = add(orig2, c);
         //boolean[] addOut = MethodCollection2.elementwise_not_equal(addIn1, addIn2);
         //assertTrue("add failure", r1, addOut);
 
@@ -414,8 +471,9 @@ public class MethodCollection2Tests extends TestClass {
         int r1 = MethodCollection2.hamming_dist(orig1, orig2);
 
         //add
-        int[] addIn1 = add(orig1);
-        int[] addIn2 = add(orig2);
+        int c = getInt();
+        int[] addIn1 = add(orig1, c);
+        int[] addIn2 = add(orig2, c);
         int addOut = MethodCollection2.hamming_dist(addIn1, addIn2);
         assertTrue("add failure", addTest(r1, addOut));
     }
