@@ -26,13 +26,6 @@ public class MethodsFromMahoutTests extends TestClass {
 	double[] arg2 = getDoubleArray(size);
         double r1 = MethodsFromMahout.manhattanDistance(arg1, arg2);
 
-        //mult
-        //int m = getInt();
-	//double[] m1 = mult(arg1, m);
-	//double[] m2 = mult(arg2, m);
-        //double mo = MethodsFromMahout.manhattanDistance(m1, m2);
-        //assertTrue("mult failure", multTest(r1, mo));
-
         assertTrue("mult failure", testThis("mult", "manhattanDistance", arg1, arg2));
     }
     @Test
@@ -58,12 +51,7 @@ public class MethodsFromMahoutTests extends TestClass {
         int[] orig = getIntArray();
         int r1 = MethodsFromMahout.sum(orig);
         
-        //add
-        //int c = getInt();
-        //int[] addIn = add(orig, c);
-        //int addOut = MethodsFromMahout.sum(addIn);
-        //assertTrue("add failure", addTest(r1, addOut));
-        assertTrue("NOPE", true);
+        assertTrue("add failure", testThis("add", "sum", orig));
     }
     @Test
     public void add_test() {
@@ -73,13 +61,7 @@ public class MethodsFromMahoutTests extends TestClass {
         int[] orig2 = getIntArray(size);
         int[] r1 = MethodsFromMahout.add(orig1, orig2);
 
-        //add
-        //int c = getInt();
-        //int[] addIn1 = add(orig1, c);
-        //int[] addIn2 = add(orig2, c);
-        //int[] addOut = MethodsFromMahout.add(addIn1, addIn2);
-        //assertTrue("add failure", addTest(r1, addOut));
-        assertTrue("NOPE", true);
+        assertTrue("add failure", testThis("add", "add", orig1, orig2)); //this one only!
     }
     @Test
     public void dec_test() {
@@ -155,20 +137,9 @@ public class MethodsFromMahoutTests extends TestClass {
         double[] orig2 = getDoubleArray(size);
         double r1 = MethodsFromMahout.errorRate(orig1, orig2);
 
-        //add
-        //int c = getInt();
-        //double[] add1 = add(orig1, c);
-        //double[] add2 = add(orig2, c);
-        //double addOut = MethodsFromMahout.errorRate(add1, add2);
-        //assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "errorRate", orig1, orig2));
 
-        //mult
-        //int m = getInt();
-        //double[] m1 = mult(orig1, m);
-        //double[] m2 = mult(orig2, m);
-        //double mo = MethodsFromMahout.errorRate(m1, m2);
-        //assertTrue("mult failure", addTest(r1, mo));
-        assertTrue("NOPE", true);
+        assertTrue("mult failure", testThis("mult", "errorRate", orig1, orig2));
     }
 
     @Test

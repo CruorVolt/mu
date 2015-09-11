@@ -14,12 +14,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         int r1 = MethodCollection2.add_values(orig);
 
-        //add
-        int constant = getInt();
-        int[] mod = add(orig, constant);
-        int out = MethodCollection2.add_values(mod);
-        assertTrue(addTest(r1,out));
-        
+        assertTrue("add failure", testThis("add", "add_values", orig));
     }
 
     @Test
@@ -37,11 +32,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         int[] r1 = MethodCollection2.bubble(orig);
 
-        //add
-        int constant = getInt();
-        int[] addIn = add(orig, constant);
-        int[] addOut = MethodCollection2.bubble(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "bubble", orig));
     }
 
     @Test
@@ -50,11 +41,7 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray();
         int[] r1 = MethodCollection2.shell_sort(arg1);
 
-        //mult
-        int m = getInt();
-        int[] m1 = mult(arg1, m);
-        int[] multOut = MethodCollection2.shell_sort(m1);
-        assertTrue("mult failure", multTest(r1, multOut));
+        assertTrue("mult failure", testThis("mult", "shell_sort", arg1));
     }
 
     @Test
@@ -71,17 +58,9 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         int[] r1 = MethodCollection2.selection_sort(orig);
 
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        int[] addOut = MethodCollection2.selection_sort(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "selection_sort", orig));
 
-        //mult
-        int m = getInt();
-        int[] m1 = mult(orig, m);
-        int[] multOut = MethodCollection2.selection_sort(m1);
-        assertTrue("mult failure", multTest(r1, multOut));
+        assertTrue("mult failure", testThis("mult", "selection_sort", orig));
     }
 
     @Test
@@ -104,12 +83,7 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         int r1 = MethodCollection2.dot_product(arg1, arg2);
 
-        //mult
-        int m = getInt();
-        int[] m1 = mult(arg1, m);
-        int[] m2 = mult(arg2, m);
-        int multOut = MethodCollection2.dot_product(m1, m2);
-        assertTrue("mult failure", multTest(r1, multOut));
+        assertTrue("mult failure", testThis("mult", "dot_product", arg1, arg2));
     }
 
     @Test
@@ -119,12 +93,7 @@ public class MethodCollection2Tests extends TestClass {
         int arg2 = getInt();
         int[] r1 = MethodCollection2.array_calc1(arg1, arg2);
 
-        //add
-        int c = getInt();
-        int[] a1 = add(arg1, c);
-        int a2 = add(arg2, c);
-        int[] addOut = MethodCollection2.array_calc1(a1, a2);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "array_calc1", arg1, arg2));
     }
 
     @Test
@@ -134,19 +103,9 @@ public class MethodCollection2Tests extends TestClass {
         int arg2 = getInt();
         int[] r1 = MethodCollection2.set_min_val(arg1, arg2);
         
-        //add
-        int c = getInt();
-        int[] a1 = add(arg1, c);
-        int a2 = add(arg2, c);
-        int[] addOut = MethodCollection2.set_min_val(a1, a2);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "set_min_val", arg1, arg2));
         
-        //mult
-        int m = getInt();
-        int[] m1 = mult(arg1, m);
-        int m2 = mult(arg2, m);
-        int[] multOut = MethodCollection2.set_min_val(m1, m2);
-        assertTrue("mult failure", multTest(r1, multOut));
+        assertTrue("mult failure", testThis("mult", "set_min_val", arg1, arg2));
     }
 
     @Test
@@ -164,11 +123,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         int r1 = MethodCollection2.find_min(orig);
 
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        int addOut = MethodCollection2.find_min(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "find_min", orig));
     }
 
     @Test
@@ -187,17 +142,9 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         int[] r1 = MethodCollection2.array_copy(orig);
 
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        int[] addOut = MethodCollection2.array_copy(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "array_copy", orig));
 
-        //mult
-        int m = getInt();
-        int[] m1 = mult(orig, m);
-        int[] multOut = MethodCollection2.array_copy(m1);
-        assertTrue("mult failure", multTest(r1, m1));
+        assertTrue("mult failure", testThis("mult", "array_copy", orig));
     }
 
     @Test
@@ -209,12 +156,7 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         double r1 = MethodCollection2.find_euc_dist(arg1, arg2);
 
-        //mult
-        int m = getInt();
-	int[] m1 = mult(arg1, m);
-	int[] m2 = mult(arg2, m);
-        double multOut = MethodCollection2.find_euc_dist(m1, m2);
-        assertTrue("mult failure", multTest(r1, multOut));
+        assertTrue("mult failure", testThis("mult", "find_euc_dist", arg1, arg2));
     }
 
     @Test
@@ -223,11 +165,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         double r1 = MethodCollection2.find_magnitude(orig);
 
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        double addOut = MethodCollection2.find_magnitude(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "find_magnitude", orig));
     }
 
     @Test
@@ -246,11 +184,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         double r1 = MethodCollection2.average(orig);
    
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        double addOut = MethodCollection2.average(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "average", orig));
     }
 
     @Test
@@ -276,11 +210,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         int r1 = MethodCollection2.find_max(orig);
 
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        int addOut = MethodCollection2.find_max(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "find_max", orig));
     }
 
     @Test
@@ -289,11 +219,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         int r1 = MethodCollection2.find_max2(orig);
 
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        int addOut = MethodCollection2.find_max2(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "find_max2", orig));
     }
 
     @Test
@@ -302,11 +228,7 @@ public class MethodCollection2Tests extends TestClass {
         double[] orig = getDoubleArray();
         double r1 = MethodCollection2.variance(orig);
 
-        //add
-        int c = getInt();
-        double[] addIn = add(orig, c);
-        double addOut = MethodCollection2.variance(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "variance", orig));
     }
 
     @Test
@@ -315,11 +237,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         int[] r1 = MethodCollection2.insertion_sort(orig);
 
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        int[] addOut = MethodCollection2.insertion_sort(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "insertion_sort", orig));
     }
 
     @Test
@@ -328,11 +246,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         double r1 = MethodCollection2.geometric_mean(orig);
 
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        double addOut = MethodCollection2.geometric_mean(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "geometric_mean", orig));
     }
 
     @Test
@@ -344,12 +258,7 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         double r1 = MethodCollection2.mean_absolute_error(arg1, arg2);
 
-        //mult
-        int m = getInt();
-	int[] m1 = mult(arg1, m);
-	int[] m2 = mult(arg2, m);
-        double multOut = MethodCollection2.mean_absolute_error(m1,m2);
-        assertTrue("mult failure", multTest(r1, multOut));
+        assertTrue("mult failure", testThis("mult", "mean_absolute_error", arg1, arg2));
     }
 
     @Test
@@ -358,11 +267,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         double r1 = MethodCollection2.find_median(orig);
 
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        double addOut = MethodCollection2.find_median(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "find_median", orig));
     }
 
     @Test
@@ -380,11 +285,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         int[] r1 = MethodCollection2.reverse(orig);
         
-        //add
-        int c = getInt();
-        int[] addIn = add(orig, c);
-        int[] addOut = MethodCollection2.reverse(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "reverse", orig));
     }
 
     @Test
@@ -417,12 +318,7 @@ public class MethodCollection2Tests extends TestClass {
         double[] orig2 = getDoubleArray(arraySize);
         double r1 = MethodCollection2.weighted_average(orig1, orig2);
 
-        //add
-        int c = getInt();
-        double[] addIn1 = add(orig1, c);
-        double[] addIn2 = add(orig2, c);
-        double addOut = MethodCollection2.weighted_average(addIn1, addIn2);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "weighted_average", orig1, orig2));
     }
 
     @Test
@@ -441,21 +337,9 @@ public class MethodCollection2Tests extends TestClass {
         int thirdArg = getInt();
         int[] r1 = MethodCollection2.clip(orig, secondArg, thirdArg);
 
-        //add
-        int c = getInt();
-        int[] addIn1 = add(orig, c);
-        int addIn2 = add(secondArg, c);
-        int addIn3 = add(thirdArg, c);
-        int[] addOut = MethodCollection2.clip(addIn1, addIn2, addIn3);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "clip", orig, secondArg, thirdArg));
 
-        //mult
-        int m = getInt();
-        int[] m1 = mult(orig, m);
-        int m2 = mult(secondArg, m);
-        int m3 = mult(thirdArg, m);
-        int[] multOut = MethodCollection2.clip(m1, m2, m3);
-        assertTrue("mult failure", multTest(r1, multOut));
+        assertTrue("mult failure", testThis("mult", "clip", orig, secondArg, thirdArg));
     }
 
     @Test
@@ -477,12 +361,7 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         int[] r1 = MethodCollection2.elementwise_min(arg1, arg2);
 
-        //mult
-        int m = getInt();
-	int[] m1 = mult(arg1, m);
-	int[] m2 = mult(arg2, m);
-        int[] multOut = MethodCollection2.elementwise_min(m1, m2);
-        assertTrue("mult failure", multTest(r1, multOut));
+        assertTrue("mult failure", testThis("mult", "elementwise_min", arg1, arg2));
     }
 
     @Test
@@ -538,19 +417,9 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig2 = getIntArray(arraySize);
         int r1 = MethodCollection2.hamming_dist(orig1, orig2);
 
-        //add
-        int c = getInt();
-        int[] addIn1 = add(orig1, c);
-        int[] addIn2 = add(orig2, c);
-        int addOut = MethodCollection2.hamming_dist(addIn1, addIn2);
-        assertTrue("add failure", addTest(r1, addOut));
+        assertTrue("add failure", testThis("add", "hamming_dist", orig1, orig2));
 
-        //mult
-        int m = getInt();
-        int[] m1 = add(orig1, m);
-        int[] m2 = add(orig2, m);
-        int multOut = MethodCollection2.hamming_dist(m1, m2);
-        assertTrue("mult failure", addTest(r1, multOut));
+        assertTrue("mult failure", testThis("mult", "hamming_dist", orig1, orig2));
     }
 
 }
