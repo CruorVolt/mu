@@ -14,57 +14,11 @@ public class TestClass {
     public static Random rand = new Random();
     public static final int MAX = 10000;
 
-    public static int getInt() {
-        return rand.nextInt(MAX);
-    }
 
-    public static int getInt(int max) {
-        return rand.nextInt(max);
-    }
-
-    public static int[] getIntArray() {
-        int size = rand.nextInt(MAX) + 1;
-        return rand.ints().limit(size).toArray();
-    }
-
-    public static int[] getIntArray(int size) {
-        return rand.ints(size, 0, MAX).toArray();
-    }
-
-    public static double getDouble() {
-        return rand.nextDouble() * getInt() + 1;
-    }
-
-    public static double getNextDouble() {
-        return rand.nextDouble();
-    }
-
-    public static double[] getDoubleArray() {
-        int size = rand.nextInt(MAX) + 1;
-        return rand.doubles().limit(size).toArray();
-    }
-
-    public static double[] getDoubleArray(int size) {
-        return rand.doubles().limit(size).toArray();
-    }
-
-    public static long getLong() {
-        return Math.abs(rand.nextLong());
-    }
-
-    public static Boolean getBoolean() {
-        return rand.nextBoolean();
-    }
-
-    public long[][] get2DLongArray() {
-        int size1 = rand.nextInt(MAX/10) + 1;
-        int size2 = rand.nextInt(MAX/10) + 1;
-        long[][] arr = new long[size1][size2];
-        for (int i = 0; i < size1; i++) {
-            arr[i] = rand.longs().limit(size2).toArray();
-        }
-        return arr;
-    }
+/*//////////////////////////////////////////////////////
+    ADDITIVE: add a positive constant.
+        Expected result: increase or remain constant
+*///////////////////////////////////////////////////////
 
     public static int add(int original, int constant) {
         return original + constant;
@@ -79,7 +33,6 @@ public class TestClass {
     }
 
     public static int[] add(int[] original, int constant) {
-        //Additive: Add a positive constant. Expected: Increase or remain constant
         int[] additive = new int[original.length];
         for (int i = 0; i < original.length; i++) {
             additive[i] = original[i] + constant;
@@ -88,7 +41,6 @@ public class TestClass {
     }
 
     public static double[] add(double[] original, int constant) {
-        //Additive: Add a positive constant. Expected: Increase or remain constant
         double[] additive = new double[original.length];
         for (int i = 0; i < original.length; i++) {
             additive[i] = original[i] + ( (double)constant);
@@ -105,11 +57,8 @@ public class TestClass {
     }
 
     public static boolean addTest(int[] orig, int[] next) {
-        if (orig.length != next.length) {
-            System.out.println("PROBLEM WITH INPUT LENGTH (int addTest) <<<<<<<-----------------------");
-            return false;
-        }
-        for (int i = 0; i < orig.length; i++) {
+        int size = (orig.length < next.length) ? orig.length : next.length;
+        for (int i = 0; i < size; i++) {
             if (next[i] < orig[i]) {
                 return false;
             }
@@ -118,11 +67,8 @@ public class TestClass {
     }
 
     public static boolean addTest(double[] orig, double[] next) {
-        if (orig.length != next.length) {
-            System.out.println("PROBLEM WITH INPUT LENGTH (double addTest) <<<<<<<-----------------------");
-            return false;
-        }
-        for (int i = 0; i < orig.length; i++) {
+        int size = (orig.length < next.length) ? orig.length : next.length;
+        for (int i = 0; i < size.length; i++) {
             if (next[i] < orig[i]) {
                 return false;
             }
@@ -130,20 +76,11 @@ public class TestClass {
         return true;
     }
 
-    /* This doesn't really make sense
-    public static boolean addTest(boolean[] orig, boolean[] next) {
-        if (orig.length != next.length) {
-            System.out.println("PROBLEM WITH INPUT LENGTH (boolean addTest) <<<<<<<-----------------------");
-            return false;
-        }
-        for (int i = 0; i < orig.length; i++) {
-            if (next[i] < orig[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    */
+
+/*//////////////////////////////////////////////////////
+    EXCLUSIVE: remove an element
+        Expected result: decrease or remain constant
+*///////////////////////////////////////////////////////
 
     public static int[] exc(int[] original) {
         //Exclusive: Remove an element. Expected: Decrease or remain constant
@@ -175,8 +112,13 @@ public class TestClass {
         return excluded;
     }
 
+
+/*//////////////////////////////////////////////////////
+    INCLUSIVE: add a new element
+        Expected result: increase or remain constant
+*///////////////////////////////////////////////////////
+
     public static int[] inc(int[] original) {
-        // Inclusive: Add a new element. Expected: Increase or remain constant
         int[] included = new int[original.length + 1];
         int includeIndex = rand.nextInt(original.length);
         int offset = 0;
@@ -192,7 +134,6 @@ public class TestClass {
     }
 
     public static double[] inc(double[] original) {
-        // Inclusive: Add a new element. Expected: Increase or remain constant
         double[] included = new double[original.length + 1];
         int includeIndex = rand.nextInt(original.length);
         int offset = 0;
@@ -207,8 +148,13 @@ public class TestClass {
         return included;
     }
 
+
+/*//////////////////////////////////////////////////////
+    INVERTIVE: take the inverse of each element
+        Expected result: decrease or remain constant
+*///////////////////////////////////////////////////////
+
     public static int[] inv(int[] original) {
-        //Invertive: Take the inverse of each element. Expected: Decrease or remain constant
         int[] inverse = new int[original.length];
         for (int i = 0; i < original.length; i++) {
             inverse[i] = 1 / original[i]; //Integer arithmetic. Problem?
@@ -217,7 +163,6 @@ public class TestClass {
     }
 
     public static double[] inv(double[] original) {
-        //Invertive: Take the inverse of each element. Expected: Decrease or remain constant
         double[] inverse = new double[original.length];
         for (int i = 0; i < original.length; i++) {
             inverse[i] = 1.0 / original[i];
@@ -225,8 +170,13 @@ public class TestClass {
         return inverse;
     }
 
+
+/*//////////////////////////////////////////////////////
+    MULTIPLICATIVE: multiply by a positive constant
+        Expected result: increase or remain constant
+*///////////////////////////////////////////////////////
+
     public static int[] mult(int[] original, int constant) {
-        //Multiplicative: Multiply by a positive constant. Expected: Increase or remain constant
         int[] multiplied = new int[original.length];
         for (int i = 0; i < original.length; i++) {
             multiplied[i] = original[i] * constant;
@@ -235,7 +185,6 @@ public class TestClass {
     }
 
     public static double[] mult(double[] original, int constant) {
-        //Multiplicative: Multiply by a positive constant. Expected: Increase or remain constant
         double[] multiplied = new double[original.length];
         for (int i = 0; i < original.length; i++) {
             multiplied[i] = original[i] * constant;
@@ -256,8 +205,13 @@ public class TestClass {
     public static boolean multTest(int[] o, int[] n) { return addTest(o, n); }
     public static boolean multTest(double[] o, double[] n) { return addTest(o, n); }
 
+
+/*//////////////////////////////////////////////////////
+    PERMUTIVE: randomly permute the elements
+        Expected result: remain constant
+*///////////////////////////////////////////////////////
+
     public static int[] perm(int[] original) {
-        //Permutative: Randomly permute the elements. Expected: Remain constant
         int temp, index;
         int[] permuted = Arrays.copyOf(original, original.length);
         Random r = new Random();
@@ -271,7 +225,6 @@ public class TestClass {
     }
 
     public static double[] perm(double[] original) {
-        //Permutative: Randomly permute the elements. Expected: Remain constant
         int index;
         double temp;
         double[] permuted = Arrays.copyOf(original, original.length);
@@ -285,12 +238,19 @@ public class TestClass {
         return permuted;
     }
 
-// Determine function to invoke
-// Determine permutation function
-// Run original inputs
-// Run modified inputs
-// Determine test function and run
+/*//////////////////////////////////////////////////////////////////////
+    testThis(): test the given method on the given 
+                metamorphic relation.
+        
+    @param test      The relationship to test, ("add", "exc", etc.)
+    @param thisClass The class the test function belongs to, assumed to 
+                     be part of the Test package
+    @param function  The function name to be tested
+    @param args      The arguments to the function
 
+    @return boolean if the relation holds,
+            otherwise false
+*///////////////////////////////////////////////////////////////////////
     public static boolean testThis(String test, String thisClass, String function, Object... args) {
 
         boolean passed = false;
@@ -298,31 +258,9 @@ public class TestClass {
 
         //find the correct function to execute
         Class[] argClasses = new Class[args.length];
-        int i = 0;
-        for (Object o : args) {
-            switch (o.getClass().toString()) {
-                case "class java.lang.Integer":
-                    argClasses[i] = Integer.class;
-                    break;
-                case "class java.lang.Double":
-                    argClasses[i] = Double.class;
-                    break;
-                case "class java.lang.Long":
-                    argClasses[i] = Long.class;
-                    break;
-                case "class [I": //int array
-                    argClasses[i] = int[].class;
-                    break;
-                case "class [D": //double array
-                    argClasses[i] = double[].class;
-                    break;
-                case "class [J": //long array
-                    argClasses[i] = long[].class;
-                    break;
-            }
-            i++;
+        for (int i = 0; i < argClasses.length; i++) {
+            argClasses[i] = args[i].getClass();
         }
-
 
         //Get the method being tested
         try {
@@ -377,12 +315,74 @@ public class TestClass {
         return passed;
     }
 
-    public static void main(String[] args) {
-        int[] intarr = {1,2,3,4,5,4,5,4,};
-        if (testThis("mult", "MethodCollection2", "shell_sort", intarr)) {
-           System.out.println("Passed");
-        }else{
-           System.out.println("nope");
+
+/*//////////////////////////////////////////////////////
+    Random retreival methods
+        - Get input values for test instances
+*///////////////////////////////////////////////////////
+
+    public static int getInt() {
+        return rand.nextInt(MAX);
+    }
+
+    public static int getInt(int max) {
+        return rand.nextInt(max);
+    }
+
+    public static int[] getIntArray() {
+        int size = rand.nextInt(MAX) + 1;
+        return rand.ints().limit(size).toArray();
+    }
+
+    public static int[] getIntArray(int size) {
+        return rand.ints(size, 0, MAX).toArray();
+    }
+
+    public static double getDouble() {
+        return rand.nextDouble() * getInt() + 1;
+    }
+
+    public static double getNextDouble() {
+        return rand.nextDouble();
+    }
+
+    public static double[] getDoubleArray() {
+        int size = rand.nextInt(MAX) + 1;
+        return rand.doubles().limit(size).toArray();
+    }
+
+    public static double[] getDoubleArray(int size) {
+        return rand.doubles().limit(size).toArray();
+    }
+
+    public static long getLong() {
+        return Math.abs(rand.nextLong());
+    }
+
+    public static Boolean getBoolean() {
+        return rand.nextBoolean();
+    }
+
+    public long[][] get2DLongArray() {
+        int size1 = rand.nextInt(MAX/10) + 1;
+        int size2 = rand.nextInt(MAX/10) + 1;
+        long[][] arr = new long[size1][size2];
+        for (int i = 0; i < size1; i++) {
+            arr[i] = rand.longs().limit(size2).toArray();
         }
+        return arr;
+    }
+
+
+    public static void main(String[] args) {
+        int c = 2;
+        int[] intarr = {1,2,3,4,5};
+        double[] darr = {1.3,4.0};
+        int i = 5;
+        double d = 0.34;
+        add(intarr, c);
+        add(darr, c);
+        add(i, c);
+        add(d, c);
     }
 }
