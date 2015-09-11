@@ -293,6 +293,7 @@ public class TestClass {
 
     public static boolean testThis(String test, String thisClass, String function, Object... args) {
 
+        boolean passed = false;
         thisClass = "Test." + thisClass; //All /src classes are in Test package
 
         //find the correct function to execute
@@ -331,14 +332,13 @@ public class TestClass {
             Object inst = construct.newInstance();
 
             Method func = clazz.getMethod(function, argClasses);
-            Object returnVal = func.invoke(inst, args);
 
                 //Get the test support functions
                 try {
                     //takes arg classes as input - THERE MAY BE MORE THAN ONE PERMUTE FUNCTION PER TEST
                     Method[] permuteFuncs = new Method[argClasses.length];
                     for (int j = 0; j < argClasses.length; j++) {
-                        if ((test == "add") || (test == "mult")) { //These functions have two args
+                        if ((test == "add") || (test == "mult")) { //These functions have two args - 2nd always int
                             permuteFuncs[j] = TestClass.class.getMethod(test, argClasses[j], int.class); 
                         } else { //Other functions have only one arg
                             permuteFuncs[j] = TestClass.class.getMethod(test, argClasses[j]); 
@@ -347,6 +347,25 @@ public class TestClass {
                     //takes return types as input and all have two matching args
                     Class type = func.getReturnType();
                     Method MRTestFunc = TestClass.class.getMethod(test + "Test", type, type);
+
+                    //get original return value
+                    Object return1 = func.invoke(inst, args);
+                    //modify arguments
+                    Object[] permutedArgs = new Object[args.length];
+                    int constant = getInt(); //if required
+                    for (int j = 0; j < args.length; j++) {
+                        if ((test == "add") || (test == "mult")) { //requires constant arg
+                            permutedArgs[j] = permuteFuncs[j].invoke(null, args[j], constant);
+                        } else {
+                            permutedArgs[j] = permuteFuncs[j].invoke(null, args[j]);
+                        }
+                    }
+                    //get modified return value
+                    Object return2 = func.invoke(inst, permutedArgs);
+                    //run test
+                    if ((boolean)MRTestFunc.invoke(null, return1, return2)) {
+                        passed = true;
+                    }
                 } catch(NoSuchMethodException e) {
                     e.printStackTrace();
                 }
@@ -355,18 +374,15 @@ public class TestClass {
             e.printStackTrace();
         }
 
-
-        return true;
+        return passed;
     }
 
     public static void main(String[] args) {
-        //int[] ithing = new int[2];
-        //double[] dthing = new double[2];
-        //long[] lthing = new long[2];
-        //System.out.println(ithing.getClass().toString());
-        //System.out.println(dthing.getClass().toString());
-        //System.out.println(lthing.getClass().toString());
         int[] intarr = {1,2,3,4,5,4,5,4,};
-        testThis("mult", "MethodCollection2", "shell_sort", intarr);
+        if (testThis("mult", "MethodCollection2", "shell_sort", intarr)) {
+           System.out.println("Passed");
+        }else{
+           System.out.println("nope");
+        }
     }
 }
