@@ -4,3 +4,4 @@
 mujava.jar
 tools.jar
 openjava.jar
+*.class
