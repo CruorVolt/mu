@@ -219,9 +219,8 @@ public class TestClass {
         return inverse;
     }
 
-    protected static int[] mult(int[] original) {
+    protected static int[] mult(int[] original, int constant) {
         //Multiplicative: Multiply by a positive constant. Expected: Increase or remain constant
-        int constant = getInt() + 2;
         int[] multiplied = new int[original.length];
         for (int i = 0; i < original.length; i++) {
             multiplied[i] = original[i] * constant;
@@ -229,15 +228,27 @@ public class TestClass {
         return multiplied;
     }
 
-    protected static double[] mult(double[] original) {
+    protected static double[] mult(double[] original, int constant) {
         //Multiplicative: Multiply by a positive constant. Expected: Increase or remain constant
-        int constant = getInt() + 2;
         double[] multiplied = new double[original.length];
         for (int i = 0; i < original.length; i++) {
             multiplied[i] = original[i] * constant;
         }
         return multiplied;
     }
+
+    protected static double mult(double original, int constant) {
+        return original * (double)constant;
+    }
+
+    protected static int mult(int original, int constant) {
+        return original * constant;
+    }
+
+    protected static boolean multTest(int o, int n) { return addTest(o, n); }
+    protected static boolean multTest(double o, double n) { return addTest(o, n); }
+    protected static boolean multTest(int[] o, int[] n) { return addTest(o, n); }
+    protected static boolean multTest(double[] o, double[] n) { return addTest(o, n); }
 
     protected static int[] perm(int[] original) {
         //Permutative: Randomly permute the elements. Expected: Remain constant

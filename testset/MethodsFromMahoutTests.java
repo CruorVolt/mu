@@ -19,6 +19,13 @@ public class MethodsFromMahoutTests extends TestClass {
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
         double r1 = MethodsFromMahout.manhattanDistance(arg1, arg2);
+
+        //mult
+        int m = getInt();
+	double[] m1 = mult(arg1, m);
+	double[] m2 = mult(arg2, m);
+        double mo = MethodsFromMahout.manhattanDistance(m1, m2);
+        assertTrue("mult failure", multTest(r1, mo));
     }
     @Test
     public void chebyshevdistance_test() {
@@ -134,6 +141,13 @@ public class MethodsFromMahoutTests extends TestClass {
         double[] add2 = add(orig2, c);
         double addOut = MethodsFromMahout.errorRate(add1, add2);
         assertTrue("add failure", addTest(r1, addOut));
+
+        //mult
+        int m = getInt();
+        double[] m1 = mult(orig1, m);
+        double[] m2 = mult(orig2, m);
+        double mo = MethodsFromMahout.errorRate(m1, m2);
+        assertTrue("mult failure", addTest(r1, mo));
     }
 
     @Test

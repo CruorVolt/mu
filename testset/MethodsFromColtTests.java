@@ -67,6 +67,13 @@ public class MethodsFromColtTests extends TestClass {
         int size = getInt() + 2;
 	double[] arg1 = getDoubleArray(size);
         double r1 = MethodsFromColt.durbinWatson(arg1);
+
+        //mult
+        int m = getInt();
+        double[] m1 = mult(arg1, m);
+        double multOut = MethodsFromColt.durbinWatson(m1);
+        assertTrue("mult failure", multTest(r1, multOut));
+        
         System.out.println(" >>complete");
     }
     @Test
@@ -107,10 +114,18 @@ public class MethodsFromColtTests extends TestClass {
 
         //add
         int c = getInt();
-        double[] addIn = add(orig, c);
-        double addOut = MethodsFromColt.meanDeviation(addIn, secondArg);
+        double[] addIn1 = add(orig, c);
+        double addIn2 = add(secondArg, c);
+        double addOut = MethodsFromColt.meanDeviation(addIn1, addIn2);
         assertTrue("add failure", addTest(r1, addOut));
         
+        //mult
+        int m = getInt();
+        double[] m1 = mult(orig, m);
+        double m2 = mult(secondArg, m);
+        double multOut = MethodsFromColt.meanDeviation(m1, m2);
+        assertTrue("add failure", multTest(r1, multOut));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -131,6 +146,12 @@ public class MethodsFromColtTests extends TestClass {
         double[] addIn = add(orig, c);
         double addOut = MethodsFromColt.product(addIn);
         assertTrue("add failure", addTest(r1, addOut));
+
+        //mult
+        int m = getInt();
+        double[] m1 = mult(orig, m);
+        double multOut = MethodsFromColt.product(m1);
+        assertTrue("mult failure", multTest(r1, multOut));
 
         System.out.println(" >>complete");
     }
@@ -204,9 +225,17 @@ public class MethodsFromColtTests extends TestClass {
 
         //add
         int c = getInt();
-        double[] addIn = add(orig, c);
-        double addOut = MethodsFromColt.sampleVariance(addIn, secondArg);
+        double[] addIn1 = add(orig, c);
+        double addIn2 = add(secondArg, c);
+        double addOut = MethodsFromColt.sampleVariance(addIn1, addIn2);
         assertTrue("add failure", addTest(r1, addOut));
+
+        //mult
+        int m = getInt();
+        double[] m1 = mult(orig, m);
+        double m2 = mult(secondArg, m);
+        double multOut = MethodsFromColt.sampleVariance(m1, m2);
+        assertTrue("add failure", addTest(r1, multOut));
     }
     @Test
     public void sumOfLogarithms_test() {
@@ -219,6 +248,12 @@ public class MethodsFromColtTests extends TestClass {
         double[] addIn = add(orig, c);
         double addOut = MethodsFromColt.sumOfLogarithms(addIn);
         assertTrue("add failure", addTest(r1, addOut));
+
+        //mult
+        int m = getInt();
+        double[] m1 = add(orig, m);
+        double multOut = MethodsFromColt.sumOfLogarithms(m1);
+        assertTrue("mult failure", multTest(r1, multOut));
         
         System.out.println(" >>complete");
     }
@@ -322,6 +357,12 @@ public class MethodsFromColtTests extends TestClass {
         double[] addIn = add(orig, c);
         double addOut = MethodsFromColt.kurtosis(addIn);
         assertTrue("add failure", addTest(r1, addOut));
+
+        //mult
+        int m = getInt();
+        double[] m1 = add(orig, m);
+        double multOut = MethodsFromColt.kurtosis(m1);
+        assertTrue("mult failure", addTest(r1, multOut));
         
         System.out.println(" >>complete");
     }
@@ -347,6 +388,13 @@ public class MethodsFromColtTests extends TestClass {
         double[] addIn2 = add(orig2, c);
         double addOut = MethodsFromColt.pooledMean(addIn1, addIn2);
         assertTrue("add failure", addTest(r1, addOut));
+
+        //mult
+        int m = getInt();
+        double[] m1 = mult(orig1, m);
+        double[] m2 = mult(orig2, m);
+        double multOut = MethodsFromColt.pooledMean(m1, m2);
+        assertTrue("mult failure", multTest(r1, multOut));
 
         System.out.println(" >>complete");
     }
@@ -462,6 +510,15 @@ public class MethodsFromColtTests extends TestClass {
 	int arg2 = getInt();
 	double arg3 = getDouble();
         double r1 = MethodsFromColt.sumOfPowerOfDeviations(arg1, arg2, arg3);
+
+        //mult
+        int m = getInt();
+	double[] m1 = mult(arg1, m);
+	int m2 = mult(arg2, m);
+	double m3 = mult(arg3, m);
+        double multOut = MethodsFromColt.sumOfPowerOfDeviations(m1, m2, m3);
+        assertTrue("mult failure", multTest(r1, multOut));
+        
         System.out.println(" >>complete");
     }
     @Test
@@ -473,8 +530,9 @@ public class MethodsFromColtTests extends TestClass {
         
         //add
         int c = getInt();
-        double[] addIn = add(orig, c);
-        double[] addOut = MethodsFromColt.power(addIn, secondArg);
+        double[] addIn1 = add(orig, c);
+        int addIn2 = add(secondArg, c);
+        double[] addOut = MethodsFromColt.power(addIn1, addIn2);
         assertTrue("add failure", addTest(r1, addOut));
         
         System.out.println(" >>complete");
@@ -490,6 +548,12 @@ public class MethodsFromColtTests extends TestClass {
         double[] addIn = add(orig, c);
         double[] addOut = MethodsFromColt.square(addIn);
         assertTrue("add failure", addTest(r1, addOut));
+
+        //mult
+        int m = getInt();
+        double[] m1 = mult(orig, m);
+        double[] multOut = MethodsFromColt.square(m1);
+        assertTrue("add failure", multTest(r1, multOut));
         
         System.out.println(" >>complete");
     }
