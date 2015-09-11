@@ -188,6 +188,12 @@ public class MethodCollection2Tests extends TestClass {
         int[] addIn = add(orig, c);
         int[] addOut = MethodCollection2.array_copy(addIn);
         assertTrue("add failure", addTest(r1, addOut));
+
+        //mult
+        int m = getInt();
+        int[] m1 = mult(orig, m);
+        int[] multOut = MethodCollection2.array_copy(m1);
+        assertTrue("mult failure", multTest(r1, m1));
     }
 
     @Test

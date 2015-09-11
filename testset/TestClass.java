@@ -2,55 +2,61 @@ import java.util.Random;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.lang.Math;
+import java.lang.reflect.*;
+
+import Test.MethodCollection2;
+import Test.MethodsFromApacheMath;
+import Test.MethodsFromColt;
+import Test.MethodsFromMahout;
 
 public class TestClass {
 
-    protected static Random rand = new Random();
-    protected static final int MAX = 10000;
+    public static Random rand = new Random();
+    public static final int MAX = 10000;
 
-    protected static int getInt() {
+    public static int getInt() {
         return rand.nextInt(MAX);
     }
 
-    protected static int getInt(int max) {
+    public static int getInt(int max) {
         return rand.nextInt(max);
     }
 
-    protected static int[] getIntArray() {
+    public static int[] getIntArray() {
         int size = rand.nextInt(MAX) + 1;
         return rand.ints().limit(size).toArray();
     }
 
-    protected static int[] getIntArray(int size) {
+    public static int[] getIntArray(int size) {
         return rand.ints(size, 0, MAX).toArray();
     }
 
-    protected static double getDouble() {
+    public static double getDouble() {
         return rand.nextDouble() * getInt() + 1;
     }
 
-    protected static double getNextDouble() {
+    public static double getNextDouble() {
         return rand.nextDouble();
     }
 
-    protected static double[] getDoubleArray() {
+    public static double[] getDoubleArray() {
         int size = rand.nextInt(MAX) + 1;
         return rand.doubles().limit(size).toArray();
     }
 
-    protected static double[] getDoubleArray(int size) {
+    public static double[] getDoubleArray(int size) {
         return rand.doubles().limit(size).toArray();
     }
 
-    protected static long getLong() {
+    public static long getLong() {
         return Math.abs(rand.nextLong());
     }
 
-    protected static Boolean getBoolean() {
+    public static Boolean getBoolean() {
         return rand.nextBoolean();
     }
 
-    protected long[][] get2DLongArray() {
+    public long[][] get2DLongArray() {
         int size1 = rand.nextInt(MAX/10) + 1;
         int size2 = rand.nextInt(MAX/10) + 1;
         long[][] arr = new long[size1][size2];
@@ -60,19 +66,19 @@ public class TestClass {
         return arr;
     }
 
-    protected static int add(int original, int constant) {
+    public static int add(int original, int constant) {
         return original + constant;
     }
 
-    protected static double add(double original, int constant) {
+    public static double add(double original, int constant) {
         return original + ( (double)constant);
     }
 
-    protected static long add(long original, int constant) {
+    public static long add(long original, int constant) {
         return original + ( (long)constant);
     }
 
-    protected static int[] add(int[] original, int constant) {
+    public static int[] add(int[] original, int constant) {
         //Additive: Add a positive constant. Expected: Increase or remain constant
         int[] additive = new int[original.length];
         for (int i = 0; i < original.length; i++) {
@@ -81,7 +87,7 @@ public class TestClass {
         return additive;
     }
 
-    protected static double[] add(double[] original, int constant) {
+    public static double[] add(double[] original, int constant) {
         //Additive: Add a positive constant. Expected: Increase or remain constant
         double[] additive = new double[original.length];
         for (int i = 0; i < original.length; i++) {
@@ -90,15 +96,15 @@ public class TestClass {
         return additive;
     }
 
-    protected static boolean addTest(int orig, int next) {
+    public static boolean addTest(int orig, int next) {
         return orig <= next;
     }
 
-    protected static boolean addTest(double orig, double next) {
+    public static boolean addTest(double orig, double next) {
         return orig <= next;
     }
 
-    protected static boolean addTest(int[] orig, int[] next) {
+    public static boolean addTest(int[] orig, int[] next) {
         if (orig.length != next.length) {
             System.out.println("PROBLEM WITH INPUT LENGTH (int addTest) <<<<<<<-----------------------");
             return false;
@@ -111,7 +117,7 @@ public class TestClass {
         return true;
     }
 
-    protected static boolean addTest(double[] orig, double[] next) {
+    public static boolean addTest(double[] orig, double[] next) {
         if (orig.length != next.length) {
             System.out.println("PROBLEM WITH INPUT LENGTH (double addTest) <<<<<<<-----------------------");
             return false;
@@ -125,7 +131,7 @@ public class TestClass {
     }
 
     /* This doesn't really make sense
-    protected static boolean addTest(boolean[] orig, boolean[] next) {
+    public static boolean addTest(boolean[] orig, boolean[] next) {
         if (orig.length != next.length) {
             System.out.println("PROBLEM WITH INPUT LENGTH (boolean addTest) <<<<<<<-----------------------");
             return false;
@@ -139,7 +145,7 @@ public class TestClass {
     }
     */
 
-    protected static int[] exc(int[] original) {
+    public static int[] exc(int[] original) {
         //Exclusive: Remove an element. Expected: Decrease or remain constant
         int[] excluded = new int[original.length - 1];
         int excludeIndex = rand.nextInt(original.length);
@@ -154,7 +160,7 @@ public class TestClass {
         return excluded;
     }
 
-    protected static double[] exc(double[] original) {
+    public static double[] exc(double[] original) {
         //Exclusive: Remove an element. Expected: Decrease or remain constant
         double[] excluded = new double[original.length - 1];
         int excludeIndex = rand.nextInt(original.length);
@@ -169,7 +175,7 @@ public class TestClass {
         return excluded;
     }
 
-    protected static int[] inc(int[] original) {
+    public static int[] inc(int[] original) {
         // Inclusive: Add a new element. Expected: Increase or remain constant
         int[] included = new int[original.length + 1];
         int includeIndex = rand.nextInt(original.length);
@@ -185,7 +191,7 @@ public class TestClass {
         return included;
     }
 
-    protected static double[] inc(double[] original) {
+    public static double[] inc(double[] original) {
         // Inclusive: Add a new element. Expected: Increase or remain constant
         double[] included = new double[original.length + 1];
         int includeIndex = rand.nextInt(original.length);
@@ -201,7 +207,7 @@ public class TestClass {
         return included;
     }
 
-    protected static int[] inv(int[] original) {
+    public static int[] inv(int[] original) {
         //Invertive: Take the inverse of each element. Expected: Decrease or remain constant
         int[] inverse = new int[original.length];
         for (int i = 0; i < original.length; i++) {
@@ -210,7 +216,7 @@ public class TestClass {
         return inverse;
     }
 
-    protected static double[] inv(double[] original) {
+    public static double[] inv(double[] original) {
         //Invertive: Take the inverse of each element. Expected: Decrease or remain constant
         double[] inverse = new double[original.length];
         for (int i = 0; i < original.length; i++) {
@@ -219,7 +225,7 @@ public class TestClass {
         return inverse;
     }
 
-    protected static int[] mult(int[] original, int constant) {
+    public static int[] mult(int[] original, int constant) {
         //Multiplicative: Multiply by a positive constant. Expected: Increase or remain constant
         int[] multiplied = new int[original.length];
         for (int i = 0; i < original.length; i++) {
@@ -228,7 +234,7 @@ public class TestClass {
         return multiplied;
     }
 
-    protected static double[] mult(double[] original, int constant) {
+    public static double[] mult(double[] original, int constant) {
         //Multiplicative: Multiply by a positive constant. Expected: Increase or remain constant
         double[] multiplied = new double[original.length];
         for (int i = 0; i < original.length; i++) {
@@ -237,20 +243,20 @@ public class TestClass {
         return multiplied;
     }
 
-    protected static double mult(double original, int constant) {
+    public static double mult(double original, int constant) {
         return original * (double)constant;
     }
 
-    protected static int mult(int original, int constant) {
+    public static int mult(int original, int constant) {
         return original * constant;
     }
 
-    protected static boolean multTest(int o, int n) { return addTest(o, n); }
-    protected static boolean multTest(double o, double n) { return addTest(o, n); }
-    protected static boolean multTest(int[] o, int[] n) { return addTest(o, n); }
-    protected static boolean multTest(double[] o, double[] n) { return addTest(o, n); }
+    public static boolean multTest(int o, int n) { return addTest(o, n); }
+    public static boolean multTest(double o, double n) { return addTest(o, n); }
+    public static boolean multTest(int[] o, int[] n) { return addTest(o, n); }
+    public static boolean multTest(double[] o, double[] n) { return addTest(o, n); }
 
-    protected static int[] perm(int[] original) {
+    public static int[] perm(int[] original) {
         //Permutative: Randomly permute the elements. Expected: Remain constant
         int temp, index;
         int[] permuted = Arrays.copyOf(original, original.length);
@@ -264,7 +270,7 @@ public class TestClass {
         return permuted;
     }
 
-    protected static double[] perm(double[] original) {
+    public static double[] perm(double[] original) {
         //Permutative: Randomly permute the elements. Expected: Remain constant
         int index;
         double temp;
@@ -279,11 +285,88 @@ public class TestClass {
         return permuted;
     }
 
+// Determine function to invoke
+// Determine permutation function
+// Run original inputs
+// Run modified inputs
+// Determine test function and run
+
+    public static boolean testThis(String test, String thisClass, String function, Object... args) {
+
+        thisClass = "Test." + thisClass; //All /src classes are in Test package
+
+        //find the correct function to execute
+        Class[] argClasses = new Class[args.length];
+        int i = 0;
+        for (Object o : args) {
+            switch (o.getClass().toString()) {
+                case "class java.lang.Integer":
+                    argClasses[i] = Integer.class;
+                    break;
+                case "class java.lang.Double":
+                    argClasses[i] = Double.class;
+                    break;
+                case "class java.lang.Long":
+                    argClasses[i] = Long.class;
+                    break;
+                case "class [I": //int array
+                    argClasses[i] = int[].class;
+                    break;
+                case "class [D": //double array
+                    argClasses[i] = double[].class;
+                    break;
+                case "class [J": //long array
+                    argClasses[i] = long[].class;
+                    break;
+            }
+            i++;
+        }
+
+
+        //Get the method being tested
+        try {
+            Class<?> clazz = Class.forName(thisClass);
+            //All constructors should be default
+            Constructor<?> construct = clazz.getConstructor();
+            Object inst = construct.newInstance();
+
+            Method func = clazz.getMethod(function, argClasses);
+            Object returnVal = func.invoke(inst, args);
+
+                //Get the test support functions
+                try {
+                    //takes arg classes as input - THERE MAY BE MORE THAN ONE PERMUTE FUNCTION PER TEST
+                    Method[] permuteFuncs = new Method[argClasses.length];
+                    for (int j = 0; j < argClasses.length; j++) {
+                        if ((test == "add") || (test == "mult")) { //These functions have two args
+                            permuteFuncs[j] = TestClass.class.getMethod(test, argClasses[j], int.class); 
+                        } else { //Other functions have only one arg
+                            permuteFuncs[j] = TestClass.class.getMethod(test, argClasses[j]); 
+                        }
+                    }
+                    //takes return types as input and all have two matching args
+                    Class type = func.getReturnType();
+                    Method MRTestFunc = TestClass.class.getMethod(test + "Test", type, type);
+                } catch(NoSuchMethodException e) {
+                    e.printStackTrace();
+                }
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return true;
+    }
+
     public static void main(String[] args) {
-        TestClass test = new TestClass();
-        int[] thing = test.getIntArray(8);
-        System.out.println("thing: " + Arrays.toString(thing));
-        int[] next = perm(thing);
-        System.out.println("next:  " + Arrays.toString(next));
+        //int[] ithing = new int[2];
+        //double[] dthing = new double[2];
+        //long[] lthing = new long[2];
+        //System.out.println(ithing.getClass().toString());
+        //System.out.println(dthing.getClass().toString());
+        //System.out.println(lthing.getClass().toString());
+        int[] intarr = {1,2,3,4,5,4,5,4,};
+        testThis("mult", "MethodCollection2", "shell_sort", intarr);
     }
 }

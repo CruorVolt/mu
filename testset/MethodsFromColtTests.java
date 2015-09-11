@@ -133,6 +133,13 @@ public class MethodsFromColtTests extends TestClass {
         System.out.print("TEST: min");
 	double[] arg1 = getDoubleArray();
         double r1 = MethodsFromColt.min(arg1);
+
+        //mult
+        int m = getInt();
+        double[] m1 = mult(arg1);
+        double multOut = MethodsFromColt.min(m1);
+        assertTrue("mult failure", multTest(r1, multOut));
+
         System.out.println(" >>complete");
     }
     @Test
