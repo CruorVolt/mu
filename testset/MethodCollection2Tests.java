@@ -4,6 +4,10 @@ import Test.MethodCollection2;
 
 public class MethodCollection2Tests extends TestClass {
 
+    public boolean testThis(String test, String function, Object... args) {
+        return super.testThis(test, "MethodCollection2", function, args);
+    }    
+
     @Test
     public void add_values_test() {
         System.out.println("TEST: add_values");

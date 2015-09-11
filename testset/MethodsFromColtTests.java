@@ -5,6 +5,10 @@ import java.util.Arrays;
 
 public class MethodsFromColtTests extends TestClass {
 
+    public boolean testThis(String test, String function, Object... args) {
+        return super.testThis(test, "MethodsFromColt", function, args);
+    }    
+
     @Test
     public void autoCorrelation_test() {
         System.out.print("TEST: autoCorrelation");
@@ -136,7 +140,7 @@ public class MethodsFromColtTests extends TestClass {
 
         //mult
         int m = getInt();
-        double[] m1 = mult(arg1);
+        double[] m1 = mult(arg1, m);
         double multOut = MethodsFromColt.min(m1);
         assertTrue("mult failure", multTest(r1, multOut));
 

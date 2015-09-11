@@ -4,6 +4,10 @@ import Test.MethodsFromApacheMath;
 import java.util.Arrays;
 
 public class MethodsFromApacheMathTests extends TestClass {
+
+    public boolean testThis(String test, String function, Object... args) {
+        return super.testThis(test, "MethodsFromApacheMath", function, args);
+    }    
 	 
     @Test
     public void distance_test() {

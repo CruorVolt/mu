@@ -14,7 +14,6 @@ public class TestClass {
     public static Random rand = new Random();
     public static final int MAX = 10000;
 
-
 /*//////////////////////////////////////////////////////
     ADDITIVE: add a positive constant.
         Expected result: increase or remain constant
@@ -57,9 +56,9 @@ public class TestClass {
     }
 
     public static boolean addTest(int[] orig, int[] next) {
-        int size = (orig.length < next.length) ? orig.length : next.length;
-        for (int i = 0; i < size; i++) {
-            if (next[i] < orig[i]) {
+        if (orig.length != next.length) { return false; }
+        for (int i = 0; i < orig.length; i++) {
+            if (!addTest(orig[i], next[i])) {
                 return false;
             }
         }
@@ -67,9 +66,9 @@ public class TestClass {
     }
 
     public static boolean addTest(double[] orig, double[] next) {
-        int size = (orig.length < next.length) ? orig.length : next.length;
-        for (int i = 0; i < size.length; i++) {
-            if (next[i] < orig[i]) {
+        if (orig.length != next.length) { return false; }
+        for (int i = 0; i < orig.length; i++) {
+            if (!addTest(orig[i], next[i])) {
                 return false;
             }
         }
@@ -83,7 +82,6 @@ public class TestClass {
 *///////////////////////////////////////////////////////
 
     public static int[] exc(int[] original) {
-        //Exclusive: Remove an element. Expected: Decrease or remain constant
         int[] excluded = new int[original.length - 1];
         int excludeIndex = rand.nextInt(original.length);
         int offset = 0;
@@ -98,7 +96,6 @@ public class TestClass {
     }
 
     public static double[] exc(double[] original) {
-        //Exclusive: Remove an element. Expected: Decrease or remain constant
         double[] excluded = new double[original.length - 1];
         int excludeIndex = rand.nextInt(original.length);
         int offset = 0;
@@ -111,6 +108,35 @@ public class TestClass {
         }
         return excluded;
     }
+
+    public static boolean excTest(int pre, int post) {
+        return (post <= pre);
+    }
+
+    public static boolean excTest(int[] pre, int[] post) {
+        if (pre.length != post.length) { return false; }
+        for (int i = 0; i < pre.length; i++) {
+            if (!excTest(pre[i], post[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean excTest(double pre, double post) {
+        return (post <= pre);
+    }
+
+    public static boolean excTest(double[] pre, double[] post) {
+        if (pre.length != post.length) { return false; }
+        for (int i = 0; i < pre.length; i++) {
+            if (!excTest(pre[i], post[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 /*//////////////////////////////////////////////////////
@@ -148,6 +174,11 @@ public class TestClass {
         return included;
     }
 
+    public static boolean incTest(int o, int n) { return addTest(o, n); }
+    public static boolean incTest(double o, double n) { return addTest(o, n); }
+    public static boolean incTest(int[] o, int[] n) { return addTest(o, n); }
+    public static boolean incTest(double[] o, double[] n) { return addTest(o, n); }
+
 
 /*//////////////////////////////////////////////////////
     INVERTIVE: take the inverse of each element
@@ -169,6 +200,11 @@ public class TestClass {
         }
         return inverse;
     }
+
+    public static boolean invTest(int o, int n) { return excTest(o, n); }
+    public static boolean invTest(double o, double n) { return excTest(o, n); }
+    public static boolean invTest(int[] o, int[] n) { return excTest(o, n); }
+    public static boolean invTest(double[] o, double[] n) { return excTest(o, n); }
 
 
 /*//////////////////////////////////////////////////////
@@ -238,6 +274,34 @@ public class TestClass {
         return permuted;
     }
 
+    public static boolean permTest(int o, int n) {
+        return (o == n);
+    }
+
+    public static boolean permTest(double o, double n) {
+        return (Math.abs(o - n) > 0.0001);
+    }
+
+    public static boolean permTest(int[] o, int[] n) {
+        if (o.length != n.length) { return false; }
+        for (int i = 0; i < o.length; i++) {
+            if (!permTest(o[i], n[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean permTest(double[] o, double[] n) {
+        if (o.length != n.length) { return false; }
+        for (int i = 0; i < o.length; i++) {
+            if (!permTest(o[i], n[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 /*//////////////////////////////////////////////////////////////////////
     testThis(): test the given method on the given 
                 metamorphic relation.
@@ -251,7 +315,7 @@ public class TestClass {
     @return boolean if the relation holds,
             otherwise false
 *///////////////////////////////////////////////////////////////////////
-    public static boolean testThis(String test, String thisClass, String function, Object... args) {
+    public boolean testThis(String test, String thisClass, String function, Object... args) {
 
         boolean passed = false;
         thisClass = "Test." + thisClass; //All /src classes are in Test package
