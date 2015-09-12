@@ -39,6 +39,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("add failure", testThis("add", "binarySearchFromTo", arr, secondArg, low, high));
 
         assertTrue("mult failure", testThis("mult", "binarySearchFromTo", arr, secondArg, low, high));
+
+        assertTrue("inv failure", testThis("inv", "binarySearchFromTo", arr, secondArg, low, high));
         
         System.out.println(" >>complete");
     }
@@ -54,6 +56,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("add failure", testThis("add", "covariance", orig1, orig2));
 
         assertTrue("mult failure", testThis("mult", "covariance", orig1, orig2));
+
+        assertTrue("inv failure", testThis("inv", "covariance", orig1, orig2));
 
         System.out.println(" >>complete");
     }
@@ -89,6 +93,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("add failure", testThis("add", "max", orig));
 
         assertTrue("mult failure", testThis("mult", "max", orig));
+
+        assertTrue("inv failure", testThis("inv", "max", orig));
         
         System.out.println(" >>complete");
     }
@@ -105,6 +111,8 @@ public class MethodsFromColtTests extends TestClass {
         
         assertTrue("per failure", testThis("per", "meanDeviation", orig, secondArg));
 
+        assertTrue("inv failure", testThis("inv", "meanDeviation", orig, secondArg));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -118,6 +126,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("inc failure", testThis("inc", "min", arg1));
 
         assertTrue("per failure", testThis("per", "min", arg1));
+
+        assertTrue("inv failure", testThis("inv", "min", arg1));
 
         System.out.println(" >>complete");
     }
@@ -133,6 +143,8 @@ public class MethodsFromColtTests extends TestClass {
 
         assertTrue("per failure", testThis("per", "product", orig));
 
+        assertTrue("inv failure", testThis("inv", "product", orig));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -147,6 +159,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("add failure", testThis("add", "quantile", arr, secondArg));
 
         assertTrue("mult failure", testThis("mult", "quantile", arr, secondArg));
+
+        assertTrue("inv failure", testThis("inv", "quantile", arr, secondArg));
 
         System.out.println(" >>complete");
     }
@@ -183,6 +197,8 @@ public class MethodsFromColtTests extends TestClass {
 
         assertTrue("per failure", testThis("per", "sampleSkew", firstArg, secondArg, thirdArg));
 
+        assertTrue("inv failure", testThis("inv", "sampleSkew", firstArg, secondArg, thirdArg));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -197,6 +213,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "sampleVariance", orig, secondArg));
 
         assertTrue("per failure", testThis("per", "sampleVariance", orig, secondArg));
+
+        assertTrue("inv failure", testThis("inv", "sampleVariance", orig, secondArg));
     }
     @Test
     public void sumOfLogarithms_test() {
@@ -213,6 +231,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("inc failure", testThis("inc", "sumOfLogarithms", orig));
 
         assertTrue("per failure", testThis("per", "sumOfLogarithms", orig));
+
+        assertTrue("inv failure", testThis("inv", "sumOfLogarithms", orig));
         
         System.out.println(" >>complete");
     }
@@ -241,6 +261,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("add failure", testThis("add", "weightedMean", orig1, orig2));
 
         assertTrue("per failure", testThis("per", "weightedMean", orig1, orig2));
+
+        assertTrue("inv failure", testThis("inv", "weightedMean", orig1, orig2));
         
         System.out.println(" >>complete");
     }
@@ -260,6 +282,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("add failure", testThis("add", "binarySearchFromTo", arr, secondArg, low, high));
 
         assertTrue("mult failure", testThis("mult", "binarySearchFromTo", arr, secondArg, low, high));
+
+        assertTrue("inv failure", testThis("inv", "binarySearchFromTo", arr, secondArg, low, high));
 
         System.out.println(" >>complete");
     }
@@ -341,6 +365,8 @@ public class MethodsFromColtTests extends TestClass {
 
         assertTrue("per failure", testThis("per", "pooledMean", orig1, orig2));
 
+        assertTrue("inv failure", testThis("inv", "pooledMean", orig1, orig2));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -376,6 +402,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("exc failure", testThis("exc", "polevl", first, orig, size));
 
         assertTrue("inc failure", testThis("inc", "polevl", first, orig, size));
+
+        assertTrue("inv failure", testThis("inv", "polevl", first, orig, size));
         
         System.out.println(" >>complete");
     }
@@ -424,6 +452,8 @@ public class MethodsFromColtTests extends TestClass {
 
         assertTrue("per failure", testThis("per", "standardize", orig));
 
+        assertTrue("inv failure", testThis("inv", "standardize", orig));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -434,6 +464,8 @@ public class MethodsFromColtTests extends TestClass {
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
         double r1 = MethodsFromColt.weightedRMS(arg1, arg2);
+
+	assertTrue("inv failure", testThis("inv", "weightedRMS", arg1, arg2));
         System.out.println(" >>complete");
     }
     @Test
@@ -447,6 +479,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "harmonicMean", orig));
 
         assertTrue("per failure", testThis("per", "harmonicMean", orig));
+
+        assertTrue("inv failure", testThis("inv", "harmonicMean", orig));
         
         System.out.println(" >>complete");
     }
@@ -463,6 +497,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("exc failure", testThis("exc", "sumOfPowerOfDeviations", arg1, arg2, arg3));
 
         assertTrue("inc failure", testThis("inc", "sumOfPowerOfDeviations", arg1, arg2, arg3));
+
+        assertTrue("inv failure", testThis("inv", "sumOfPowerOfDeviations", arg1, arg2, arg3));
         
         System.out.println(" >>complete");
     }
@@ -474,6 +510,8 @@ public class MethodsFromColtTests extends TestClass {
         double[] r1 = MethodsFromColt.power(orig, secondArg);
         
         assertTrue("add failure", testThis("add", "power", orig, secondArg));
+
+        assertTrue("inv failure", testThis("inv", "power", orig, secondArg));
         
         System.out.println(" >>complete");
     }
@@ -486,6 +524,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("add failure", testThis("add", "square", orig));
 
         assertTrue("mult failure", testThis("mult", "square", orig));
+
+        assertTrue("inv failure", testThis("inv", "square", orig));
         
         System.out.println(" >>complete");
     }

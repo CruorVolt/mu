@@ -31,6 +31,8 @@ public class MethodsFromMahoutTests extends TestClass {
         assertTrue("exc failure", testThis("exc", "manhattanDistance", arg1, arg2));
 
         assertTrue("inc failure", testThis("inc", "manhattanDistance", arg1, arg2));
+
+        assertTrue("inv failure", testThis("inv", "manhattanDistance", arg1, arg2));
     }
     @Test
     public void chebyshevdistance_test() {
@@ -66,6 +68,8 @@ public class MethodsFromMahoutTests extends TestClass {
         assertTrue("inc failure", testThis("inc", "sum", orig));
         
         assertTrue("per failure", testThis("per", "sum", orig));
+
+        assertTrue("inv failure", testThis("inv", "sum", orig));
     }
     @Test
     public void add_test() {
@@ -78,6 +82,8 @@ public class MethodsFromMahoutTests extends TestClass {
         assertTrue("add failure", testThis("add", "add", orig1, orig2)); //this one only!
 
         assertTrue("mult failure", testThis("mult", "add", orig1, orig2)); //this one only!
+
+        assertTrue("inv failure", testThis("inv", "add", orig1, orig2)); //this one only!
     }
     @Test
     public void dec_test() {
@@ -158,6 +164,8 @@ public class MethodsFromMahoutTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "errorRate", orig1, orig2));
 
         assertTrue("per failure", testThis("per", "errorRate", orig1, orig2));
+
+        assertTrue("inv failure", testThis("inv", "errorRate", orig1, orig2));
     }
 
     @Test

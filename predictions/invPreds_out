@@ -1,67 +1,67 @@
-weightedRMS: 10
-binarySearchFromTo: 8
-eucleadianDistance: 10
-reverse: 10
-ebeAdd: 10
-add_values: 10
-find_min: 10
-quantile: 10
-clip: 10
-standardize: 9
-manhattanDistance: 10
-product: 10
-sumOfLogarithms: 10
-meanDeviation: 8
-add: 10
-set_min_val: 10
-ebeDivide: 9
-checkNonNegative: 10
-calculateAbsoluteDifferences: 10
-array_copy: 10
-find_euc_dist: 10
-evaluateInternal: 10
-insertion_sort: 10
-min: 10
-count_non_zeroes: 10
-sampleSkew: 10
-selection_sort: 10
-polevl: 8
-variance: 6
-find_magnitude: 10
-distance1: 10
-checkPositive: 10
-elementwise_not_equal: 10
-computeCanberraDistance: 10
-geometric_mean: 10
-ebeMultiply: 8
-power: 10
-sum: 10
-evaluateNewton: 10
-errorRate: 9
-hamming_dist: 9
-chiSquare: 10
-find_max2: 10
-partition: 10
-covariance: 10
-distanceInf: 10
-square: 10
-evaluateHoners: 10
-mean_absolute_error: 10
-bubble: 10
-meanDifference: 10
-entropy: 10
-sumOfPowerOfDeviations: 10
-select: 10
-pooledMean: 10
-manhattan_dist: 10
-find_median: 10
-scale: 10
-find_max: 10
-max: 10
-g: 10
-harmonicMean: 9
-sampleVariance: 8
-average: 9
-shell_sort: 9
-elementwise_equal: 7
-weightedMean: 6
+weightedRMS: 10 - DONE
+binarySearchFromTo: 8 - DONE
+eucleadianDistance: 10 - method doesn't exist
+reverse: 10 - DONE
+ebeAdd: 10 - DONE
+add_values: 10 - DONE
+find_min: 10 - DONE
+quantile: 10 - DONE
+clip: 10 - DONE
+standardize: 9 - DONE
+manhattanDistance: 10 - DONE
+product: 10 - DONE
+sumOfLogarithms: 10 - DONE
+meanDeviation: 8 - DONE
+add: 10 - DONE
+set_min_val: 10 - DONE
+ebeDivide: 9 - DONE
+checkNonNegative: 10 - boolean return - DONE
+calculateAbsoluteDifferences: 10 - DONE
+array_copy: 10 - DONE
+find_euc_dist: 10 - DONE
+evaluateInternal: 10 - DONE
+insertion_sort: 10 - DONE
+min: 10 - DONE
+count_non_zeroes: 10 - DONE
+sampleSkew: 10 - DONE
+selection_sort: 10 - DONE
+polevl: 8 - DONE
+variance: 6 - DONE
+find_magnitude: 10 - DONE
+distance1: 10 - DONE
+checkPositive: 10 - DONE
+elementwise_not_equal: 10 - boolean return
+computeCanberraDistance: 10 - DONE
+geometric_mean: 10 - DONE
+ebeMultiply: 8 - DONE
+power: 10 - DONE
+sum: 10 - DONE
+evaluateNewton: 10 - DONE
+errorRate: 9 - DONE
+hamming_dist: 9 - DONE
+chiSquare: 10 - DONE
+find_max2: 10 - DONE
+partition: 10 - DONE
+covariance: 10 - DONE
+distanceInf: 10 - DONE
+square: 10 - DONE
+evaluateHoners: 10 - DONE
+mean_absolute_error: 10 - DONE
+bubble: 10 - DONE
+meanDifference: 10 - DONE
+entropy: 10 - DONE
+sumOfPowerOfDeviations: 10 - DONE
+select: 10 - still doesn't exist
+pooledMean: 10 - DONE
+manhattan_dist: 10 - DONE
+find_median: 10 - DONE
+scale: 10 - DONE
+find_max: 10 - DONE
+max: 10 - DONE
+g: 10 - DONE
+harmonicMean: 9 - DONE
+sampleVariance: 8 - DONE
+average: 9 - DONE
+shell_sort: 9 - DONE
+elementwise_equal: 7 - DONE
+weightedMean: 6 - DONE

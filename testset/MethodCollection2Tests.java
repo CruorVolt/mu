@@ -23,6 +23,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("inc failure", testThis("inc", "add_values", orig));
 
         assertTrue("per failure", testThis("per", "add_values", orig));
+
+        assertTrue("inv failure", testThis("inv", "add_values", orig));
     }
 
     @Test
@@ -43,6 +45,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "bubble", orig));
 
         assertTrue("mult failure", testThis("mult", "bubble", orig));
+
+        assertTrue("inv failure", testThis("inv", "bubble", orig));
     }
 
     @Test
@@ -52,6 +56,8 @@ public class MethodCollection2Tests extends TestClass {
         int[] r1 = MethodCollection2.shell_sort(arg1);
 
         assertTrue("mult failure", testThis("mult", "shell_sort", arg1));
+
+        assertTrue("inv failure", testThis("inv", "shell_sort", arg1));
     }
 
     @Test
@@ -77,6 +83,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "selection_sort", orig));
 
         assertTrue("mult failure", testThis("mult", "selection_sort", orig));
+
+        assertTrue("inv failure", testThis("inv", "selection_sort", orig));
     }
 
     @Test
@@ -128,6 +136,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("mult failure", testThis("mult", "set_min_val", arg1, arg2));
         
         assertTrue("per failure", testThis("per", "set_min_val", arg1, arg2));
+
+        assertTrue("inv failure", testThis("inv", "set_min_val", arg1, arg2));
     }
 
     @Test
@@ -152,6 +162,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("inc failure", testThis("inc", "find_min", orig));
 
         assertTrue("per failure", testThis("per", "find_min", orig));
+
+        assertTrue("inv failure", testThis("inv", "find_min", orig));
     }
 
     @Test
@@ -173,6 +185,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "array_copy", orig));
 
         assertTrue("mult failure", testThis("mult", "array_copy", orig));
+
+        assertTrue("inv failure", testThis("inv", "array_copy", orig));
     }
 
     @Test
@@ -189,6 +203,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("exc failure", testThis("exc", "find_euc_dist", arg1, arg2));
 
         assertTrue("inc failure", testThis("inc", "find_euc_dist", arg1, arg2));
+
+        assertTrue("inv failure", testThis("inv", "find_euc_dist", arg1, arg2));
     }
 
     @Test
@@ -202,6 +218,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("mult failure", testThis("mult", "find_magnitude", orig));
 
         assertTrue("inc failure", testThis("inc", "find_magnitude", orig));
+
+        assertTrue("inv failure", testThis("inv", "find_magnitude", orig));
     }
 
     @Test
@@ -218,6 +236,8 @@ public class MethodCollection2Tests extends TestClass {
 	assertTrue("exc failure", testThis("exc", "manhattan_dist", arg1, arg2));
 
 	assertTrue("inc failure", testThis("inc", "manhattan_dist", arg1, arg2));
+
+	assertTrue("inv failure", testThis("inv", "manhattan_dist", arg1, arg2));
     }
 
     @Test
@@ -231,6 +251,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("mult failure", testThis("mult", "average", orig));
    
         assertTrue("per failure", testThis("per", "average", orig));
+
+        assertTrue("inv failure", testThis("inv", "average", orig));
     }
 
     @Test
@@ -261,6 +283,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("mult failure", testThis("mult", "find_max", orig));
 
         assertTrue("per failure", testThis("per", "find_max", orig));
+
+        assertTrue("inv failure", testThis("inv", "find_max", orig));
     }
 
     @Test
@@ -278,6 +302,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("inc failure", testThis("inc", "find_max2", orig));
 
         assertTrue("per failure", testThis("per", "find_max2", orig));
+
+        assertTrue("inv failure", testThis("inv", "find_max2", orig));
     }
 
     @Test
@@ -291,6 +317,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("mult failure", testThis("mult", "variance", orig));
 
         assertTrue("per failure", testThis("per", "variance", orig));
+
+        assertTrue("inv failure", testThis("inv", "variance", orig));
     }
 
     @Test
@@ -302,6 +330,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "insertion_sort", orig));
 
         assertTrue("mult failure", testThis("mult", "insertion_sort", orig));
+
+        assertTrue("inv failure", testThis("inv", "insertion_sort", orig));
     }
 
     @Test
@@ -319,6 +349,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("inc failure", testThis("inc", "geometric_mean", orig));
 
         assertTrue("per failure", testThis("per", "geometric_mean", orig));
+
+        assertTrue("inv failure", testThis("inv", "geometric_mean", orig));
     }
 
     @Test
@@ -331,6 +363,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.mean_absolute_error(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "mean_absolute_error", arg1, arg2));
+
+        assertTrue("inv failure", testThis("inv", "mean_absolute_error", arg1, arg2));
     }
 
     @Test
@@ -344,6 +378,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("mult failure", testThis("mult", "find_median", orig));
 
         assertTrue("per failure", testThis("per", "find_median", orig));
+
+        assertTrue("inv failure", testThis("inv", "find_median", orig));
     }
 
     @Test
@@ -364,6 +400,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "reverse", orig));
         
         assertTrue("mult failure", testThis("mult", "reverse", orig));
+        
+        assertTrue("inv failure", testThis("inv", "reverse", orig));
     }
 
     @Test
@@ -426,6 +464,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "clip", orig, secondArg, thirdArg));
 
         assertTrue("mult failure", testThis("mult", "clip", orig, secondArg, thirdArg));
+
+        assertTrue("inv failure", testThis("inv", "clip", orig, secondArg, thirdArg));
     }
 
     @Test
@@ -463,6 +503,8 @@ public class MethodCollection2Tests extends TestClass {
 	assertTrue("inc failure", testThis("inc", "count_non_zeroes", arg1));
 
 	assertTrue("per failure", testThis("per", "count_non_zeroes", arg1));
+
+	assertTrue("inv failure", testThis("inv", "count_non_zeroes", arg1));
     }
 
     @Test
@@ -486,6 +528,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
         boolean[] r1 = MethodCollection2.elementwise_equal(arg1, arg2);
+
+	assertTrue("inv failure", testThis("inv", "elementwise_equal", arg1, arg2));
     }
 
     /*
@@ -524,6 +568,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("exc failure", testThis("exc", "hamming_dist", orig1, orig2));
 
         assertTrue("inc failure", testThis("inc", "hamming_dist", orig1, orig2));
+
+        assertTrue("inv failure", testThis("inv", "hamming_dist", orig1, orig2));
     }
 
 }

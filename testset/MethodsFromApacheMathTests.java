@@ -31,6 +31,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("exc failure", testThis("exc", "distance", arg1, arg2));
 
         assertTrue("inc failure", testThis("inc", "distance", arg1, arg2));
+
+        assertTrue("inv failure", testThis("inv", "distance", arg1, arg2));
     }
 
     @Test
@@ -46,6 +48,8 @@ public class MethodsFromApacheMathTests extends TestClass {
 	assertTrue("exc failure", testThis("exc", "distanceInf", arg1, arg2));
 
 	assertTrue("inc failure", testThis("inc", "distanceInf", arg1, arg2));
+
+	assertTrue("inv failure", testThis("inv", "distanceInf", arg1, arg2));
     }
 
     @Test
@@ -59,6 +63,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("add failure", testThis("add", "ebeAdd", orig1, orig2));
 
         assertTrue("mult failure", testThis("mult", "ebeAdd", orig1, orig2));
+
+        assertTrue("inv failure", testThis("inv", "ebeAdd", orig1, orig2));
     }
 
     @Test
@@ -72,6 +78,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("add failure", testThis("add", "ebeDivide", orig1, orig2));
 
         assertTrue("mult failure", testThis("mult", "ebeDivide", orig1, orig2));
+
+        assertTrue("inv failure", testThis("inv", "ebeDivide", orig1, orig2));
     }
 
     @Test
@@ -85,6 +93,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("add failure", testThis("add", "ebeMultiply", firstArg, secondArg));
 
         assertTrue("mult failure", testThis("mult", "ebeMultiply", firstArg, secondArg));
+
+        assertTrue("inv failure", testThis("inv", "ebeMultiply", firstArg, secondArg));
     }
 
     @Test
@@ -117,6 +127,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("add failure", testThis("add", "scale", arg1, orig));
 
         assertTrue("mult failure", testThis("mult", "scale", arg1, orig));
+
+        assertTrue("inv failure", testThis("inv", "scale", arg1, orig));
     }
 
     @Test
@@ -129,6 +141,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "entropy", orig));
 
         assertTrue("per failure", testThis("per", "entropy", orig));
+
+        assertTrue("inv failure", testThis("inv", "entropy", orig));
     }
 
     @Test
@@ -140,6 +154,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         double r1 = MethodsFromApacheMath.g(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "g", arg1, arg2));
+
+        assertTrue("inv failure", testThis("inv", "g", arg1, arg2));
         
     }
 
@@ -152,6 +168,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("add failure", testThis("add", "calculateAbsoluteDifferences", orig));
         
         assertTrue("mult failure", testThis("mult", "calculateAbsoluteDifferences", orig));
+
+        assertTrue("inv failure", testThis("inv", "calculateAbsoluteDifferences", orig));
     }
 
     @Test
@@ -185,6 +203,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("exc failure", testThis("exc", "computeCanberraDistance", arg1, arg2));
 
         assertTrue("inc failure", testThis("inc", "computeCanberraDistance", arg1, arg2));
+
+        assertTrue("inv failure", testThis("inv", "computeCanberraDistance", arg1, arg2));
     }
 
     @Test
@@ -199,6 +219,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "evaluateHoners", orig, secondArg));
 
         assertTrue("inc failure", testThis("inc", "evaluateHoners", orig, secondArg));
+
+        assertTrue("inv failure", testThis("inv", "evaluateHoners", orig, secondArg));
     }
 
     @Test
@@ -214,6 +236,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("add failure", testThis("add", "evaluateInterval", firstArg, secondArg, thirdArg));
 
         assertTrue("mult failure", testThis("mult", "evaluateInterval", firstArg, secondArg, thirdArg));
+
+        assertTrue("inv failure", testThis("inv", "evaluateInterval", firstArg, secondArg, thirdArg));
     }
 
    @Test
@@ -232,6 +256,8 @@ public class MethodsFromApacheMathTests extends TestClass {
        assertTrue("exc failure", testThis("exc", "evaluateNewton", firstArg, secondArg, thirdArg));
 
        assertTrue("inc failure", testThis("inc", "evaluateNewton", firstArg, secondArg, thirdArg));
+
+       assertTrue("inv failure", testThis("inv", "evaluateNewton", firstArg, secondArg, thirdArg));
    }
 
    @Test
@@ -243,6 +269,8 @@ public class MethodsFromApacheMathTests extends TestClass {
        double r1 = MethodsFromApacheMath.meanDifference(arg1, arg2);
 
        assertTrue("mult failure", testThis("mult", "meanDifference", arg1, arg2));
+
+       assertTrue("inv failure", testThis("inv", "meanDifference", arg1, arg2));
    }
 
    @Test
@@ -289,6 +317,8 @@ public class MethodsFromApacheMathTests extends TestClass {
 	assertTrue("inc failure", testThis("inc", "checkPositive", arg1));
 	
 	assertTrue("per failure", testThis("per", "checkPositive", arg1));
+
+	assertTrue("inv failure", testThis("inv", "checkPositive", arg1));
    }
 
    @Test
@@ -307,6 +337,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("exc failure", testThis("exc", "chiSquare", arg1, arg2));
 
         assertTrue("inc failure", testThis("inc", "chiSquare", arg1, arg2));
+
+        assertTrue("inv failure", testThis("inv", "chiSquare", arg1, arg2));
    }
 
   @Test
@@ -333,6 +365,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("add failure", testThis("add", "partition", arr, begin, end, pivot));
 
         assertTrue("mult failure", testThis("mult", "partition", arr, begin, end, pivot));
+
+        assertTrue("inv failure", testThis("inv", "partition", arr, begin, end, pivot));
   }
 
   @Test
