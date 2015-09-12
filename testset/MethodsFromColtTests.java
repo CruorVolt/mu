@@ -37,6 +37,8 @@ public class MethodsFromColtTests extends TestClass {
         int r1 = MethodsFromColt.binarySearchFromTo(arr, secondArg, low, high);
 
         assertTrue("add failure", testThis("add", "binarySearchFromTo", arr, secondArg, low, high));
+
+        assertTrue("mult failure", testThis("mult", "binarySearchFromTo", arr, secondArg, low, high));
         
         System.out.println(" >>complete");
     }
@@ -50,6 +52,8 @@ public class MethodsFromColtTests extends TestClass {
         double r1 = MethodsFromColt.covariance(orig1, orig2);
 
         assertTrue("add failure", testThis("add", "covariance", orig1, orig2));
+
+        assertTrue("mult failure", testThis("mult", "covariance", orig1, orig2));
 
         System.out.println(" >>complete");
     }
@@ -83,6 +87,8 @@ public class MethodsFromColtTests extends TestClass {
         double r1 = MethodsFromColt.max(orig);
 
         assertTrue("add failure", testThis("add", "max", orig));
+
+        assertTrue("mult failure", testThis("mult", "max", orig));
         
         System.out.println(" >>complete");
     }
@@ -131,6 +137,8 @@ public class MethodsFromColtTests extends TestClass {
         double r1 = MethodsFromColt.quantile(arr, secondArg);
 
         assertTrue("add failure", testThis("add", "quantile", arr, secondArg));
+
+        assertTrue("mult failure", testThis("mult", "quantile", arr, secondArg));
 
         System.out.println(" >>complete");
     }
@@ -226,6 +234,11 @@ public class MethodsFromColtTests extends TestClass {
 	int arg3 = getInt(minsize1);
 	int arg4 = getInt(minsize2);
         int r1 = MethodsFromColt.binarySearchFromTo(arg1, arg2, arg3, arg4);
+
+        assertTrue("add failure", testThis("add", "binarySearchFromTo", arr, secondArg, low, high));
+
+        assertTrue("mult failure", testThis("mult", "binarySearchFromTo", arr, secondArg, low, high));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -257,6 +270,8 @@ public class MethodsFromColtTests extends TestClass {
         double r1 = MethodsFromColt.winsorizedMean(arr, from, to);
 
         assertTrue("add failure", testThis("add", "winsorizedMean", arr, from, to));
+
+        assertTrue("mult failure", testThis("mult", "winsorizedMean", arr, from, to));
 
         System.out.println(" >>complete");
     }
@@ -313,6 +328,8 @@ public class MethodsFromColtTests extends TestClass {
 
         assertTrue("add failure", testThis("add", "pooledVariance", orig1, orig2));
 
+        assertTrue("mult failure", testThis("mult", "pooledVariance", orig1, orig2));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -325,6 +342,8 @@ public class MethodsFromColtTests extends TestClass {
         double r1 = MethodsFromColt.polevl(first, orig, size);
 
         assertTrue("add failure", testThis("add", "polevl", first, orig, size));
+
+        assertTrue("mult failure", testThis("mult", "polevl", first, orig, size));
         
         System.out.println(" >>complete");
     }
@@ -356,6 +375,8 @@ public class MethodsFromColtTests extends TestClass {
         double r1 = MethodsFromColt.skew(orig);
 
         assertTrue("add failure", testThis("add", "skew", orig));
+
+        assertTrue("mult failure", testThis("mult", "skew", orig));
     }
     @Test
     public void standardize_test() {
@@ -364,6 +385,8 @@ public class MethodsFromColtTests extends TestClass {
         double[] r1 = MethodsFromColt.standardize(orig);
 
         assertTrue("add failure", testThis("add", "standardize", orig));
+
+        assertTrue("mult failure", testThis("mult", "standardize", orig));
 
         System.out.println(" >>complete");
     }
@@ -384,6 +407,8 @@ public class MethodsFromColtTests extends TestClass {
         double r1 = MethodsFromColt.harmonicMean(orig);
 
         assertTrue("add failure", testThis("add", "harmonicMean", orig));
+
+        assertTrue("mult failure", testThis("mult", "harmonicMean", orig));
         
         System.out.println(" >>complete");
     }

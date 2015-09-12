@@ -35,7 +35,8 @@ public class MethodsFromMahoutTests extends TestClass {
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
         double r1 = MethodsFromMahout.chebyshevDistance(arg1, arg2);
-        assertTrue("NOPE", true);
+
+	assertTrue("mult failure", testThis("mult", "chebyshevDistance", arg1, arg2));
     }
     @Test
     public void tanimotodistance_test() {
@@ -44,7 +45,8 @@ public class MethodsFromMahoutTests extends TestClass {
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
         double r1 = MethodsFromMahout.tanimotoDistance(arg1, arg2);
-        assertTrue("NOPE", true);
+
+	assertTrue("mult failure", testThis("mult", "tanimotoDist", arg1, arg2));
     }
     @Test
     public void sum_test() {
@@ -52,6 +54,8 @@ public class MethodsFromMahoutTests extends TestClass {
         int r1 = MethodsFromMahout.sum(orig);
         
         assertTrue("add failure", testThis("add", "sum", orig));
+        
+        assertTrue("mult failure", testThis("mult", "sum", orig));
     }
     @Test
     public void add_test() {
@@ -62,6 +66,8 @@ public class MethodsFromMahoutTests extends TestClass {
         int[] r1 = MethodsFromMahout.add(orig1, orig2);
 
         assertTrue("add failure", testThis("add", "add", orig1, orig2)); //this one only!
+
+        assertTrue("mult failure", testThis("mult", "add", orig1, orig2)); //this one only!
     }
     @Test
     public void dec_test() {

@@ -15,6 +15,8 @@ public class MethodCollection2Tests extends TestClass {
         int r1 = MethodCollection2.add_values(orig);
 
         assertTrue("add failure", testThis("add", "add_values", orig));
+
+        assertTrue("mult failure", testThis("mult", "add_values", orig));
     }
 
     @Test
@@ -33,6 +35,8 @@ public class MethodCollection2Tests extends TestClass {
         int[] r1 = MethodCollection2.bubble(orig);
 
         assertTrue("add failure", testThis("add", "bubble", orig));
+
+        assertTrue("mult failure", testThis("mult", "bubble", orig));
     }
 
     @Test
@@ -124,6 +128,8 @@ public class MethodCollection2Tests extends TestClass {
         int r1 = MethodCollection2.find_min(orig);
 
         assertTrue("add failure", testThis("add", "find_min", orig));
+
+        assertTrue("mult failure", testThis("mult", "find_min", orig));
     }
 
     @Test
@@ -166,6 +172,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.find_magnitude(orig);
 
         assertTrue("add failure", testThis("add", "find_magnitude", orig));
+
+        assertTrue("mult failure", testThis("mult", "find_magnitude", orig));
     }
 
     @Test
@@ -176,6 +184,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
         double r1 = MethodCollection2.manhattan_dist(arg1, arg2);
+
+	assertTrue("mult failure", testThis("mult", "manhattan_dist", arg1, arg2));
     }
 
     @Test
@@ -185,6 +195,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.average(orig);
    
         assertTrue("add failure", testThis("add", "average", orig));
+   
+        assertTrue("mult failure", testThis("mult", "average", orig));
     }
 
     @Test
@@ -211,6 +223,8 @@ public class MethodCollection2Tests extends TestClass {
         int r1 = MethodCollection2.find_max(orig);
 
         assertTrue("add failure", testThis("add", "find_max", orig));
+
+        assertTrue("mult failure", testThis("mult", "find_max", orig));
     }
 
     @Test
@@ -220,6 +234,8 @@ public class MethodCollection2Tests extends TestClass {
         int r1 = MethodCollection2.find_max2(orig);
 
         assertTrue("add failure", testThis("add", "find_max2", orig));
+
+        assertTrue("mult failure", testThis("mult", "find_max2", orig));
     }
 
     @Test
@@ -229,6 +245,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.variance(orig);
 
         assertTrue("add failure", testThis("add", "variance", orig));
+
+        assertTrue("mult failure", testThis("mult", "variance", orig));
     }
 
     @Test
@@ -238,6 +256,8 @@ public class MethodCollection2Tests extends TestClass {
         int[] r1 = MethodCollection2.insertion_sort(orig);
 
         assertTrue("add failure", testThis("add", "insertion_sort", orig));
+
+        assertTrue("mult failure", testThis("mult", "insertion_sort", orig));
     }
 
     @Test
@@ -247,6 +267,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.geometric_mean(orig);
 
         assertTrue("add failure", testThis("add", "geometric_mean", orig));
+
+        assertTrue("mult failure", testThis("mult", "geometric_mean", orig));
     }
 
     @Test
@@ -268,6 +290,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.find_median(orig);
 
         assertTrue("add failure", testThis("add", "find_median", orig));
+
+        assertTrue("mult failure", testThis("mult", "find_median", orig));
     }
 
     @Test
@@ -286,6 +310,8 @@ public class MethodCollection2Tests extends TestClass {
         int[] r1 = MethodCollection2.reverse(orig);
         
         assertTrue("add failure", testThis("add", "reverse", orig));
+        
+        assertTrue("mult failure", testThis("mult", "reverse", orig));
     }
 
     @Test
@@ -319,6 +345,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.weighted_average(orig1, orig2);
 
         assertTrue("add failure", testThis("add", "weighted_average", orig1, orig2));
+
+        assertTrue("mult failure", testThis("mult", "weighted_average", orig1, orig2));
     }
 
     @Test
@@ -350,6 +378,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
         int[] r1 = MethodCollection2.elementwise_max(arg1, arg2);
+	
+	assertTrue("mult failure", testThis("mult", "elementwise_max", arg1, arg2));
     }
 
     @Test

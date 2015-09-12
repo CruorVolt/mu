@@ -27,50 +27,50 @@ set_min_val: 10 - DONE
 sumOfPowerOfDeviations: 10 - DONE
 meanDifference: 10 - DONE
 sampleVariance: 10 - DONE
-array_copy: 10
-min: 10
-find_median: 10
-insertion_sort: 10
-elementwise_not_equal: 9
-reverse: 10
-harmonicMean: 10
-average: 10
-chebyshevDistance: 10
-calculateAbsoluteDifferences: 10
-ebeMultiply: 8
-find_max: 10
-eucleadianDistance: 10
-pooledVariance: 10
-add: 10
-covariance: 10
-autoCorrelation: 9
-weighted_average: 7
-evaluateHoners: 7
-entropy: 10
-manhattan_dist: 10
-add_values: 10
-checkPositive: 10
-partition: 6
-evaluateInternal: 10
-skew: 10
-bubble: 10
-safeNorm: 7
-find_max2: 10
-winsorizedMean: 10
-evaluateNewton: 10
-ebeDivide: 9
-tanimotoDistance: 10
-geometric_mean: 10
-elementwise_max: 7
-quantile: 10
-find_min: 10
-variance: 10
-polevl: 7
-standardize: 10
-find_magnitude: 10
-max: 9
-distanceInf: 9
-evaluateWeightedProduct: 7
-sum: 10
-scale: 10
-binarySearchFromTo: 9
+array_copy: 10 - DONE
+min: 10 - DONE
+find_median: 10 - DONE
+insertion_sort: 10 - DONE
+elementwise_not_equal: 9 - DONE
+reverse: 10 - DONE
+harmonicMean: 10 - DONE
+average: 10 - DONE
+chebyshevDistance: 10 - DONE
+calculateAbsoluteDifferences: 10 - DONE
+ebeMultiply: 8 - DONE
+find_max: 10 - DONE
+eucleadianDistance: 10 - no such method
+pooledVariance: 10 - DONE
+add: 10 - DONE
+covariance: 10 - DONE
+autoCorrelation: 9 - DONE
+weighted_average: 7 - DONE
+evaluateHoners: 7 - DONE
+entropy: 10 - DONE
+manhattan_dist: 10 - DONE
+add_values: 10 - DONE
+checkPositive: 10 - DONE
+partition: 6 - DONE
+evaluateInternal: 10 - DONE
+skew: 10 - DONE
+bubble: 10 - DONE
+safeNorm: 7 - DONE
+find_max2: 10 - DONE
+winsorizedMean: 10 - DONE
+evaluateNewton: 10 - DONE
+ebeDivide: 9 - DONE
+tanimotoDistance: 10 - DONE
+geometric_mean: 10 - DONE
+elementwise_max: 7 - DONE
+quantile: 10 - DONE
+find_min: 10 - DONE
+variance: 10 - DONE
+polevl: 7 - DONE
+standardize: 10 - DONE
+find_magnitude: 10 - DONE
+max: 9 - DONE
+distanceInf: 9 - DONE
+evaluateWeightedProduct: 7 - DONE
+sum: 10 - DONE
+scale: 10 - DONE
+binarySearchFromTo: 9 - DONE
