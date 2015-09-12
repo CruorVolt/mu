@@ -21,6 +21,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("exc failure", testThis("exc", "add_values", orig));
 
         assertTrue("inc failure", testThis("inc", "add_values", orig));
+
+        assertTrue("per failure", testThis("per", "add_values", orig));
     }
 
     @Test
@@ -62,6 +64,8 @@ public class MethodCollection2Tests extends TestClass {
 	assertTrue("exc failure", testThis("exc", "sequential_search", arg1, arg2));
 
 	assertTrue("inc failure", testThis("inc", "sequential_search", arg1, arg2));
+
+	assertTrue("per failure", testThis("per", "sequential_search", arg1, arg2));
     }
 
     @Test
@@ -122,6 +126,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "set_min_val", arg1, arg2));
         
         assertTrue("mult failure", testThis("mult", "set_min_val", arg1, arg2));
+        
+        assertTrue("per failure", testThis("per", "set_min_val", arg1, arg2));
     }
 
     @Test
@@ -144,6 +150,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("mult failure", testThis("mult", "find_min", orig));
 
         assertTrue("inc failure", testThis("inc", "find_min", orig));
+
+        assertTrue("per failure", testThis("per", "find_min", orig));
     }
 
     @Test
@@ -221,6 +229,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "average", orig));
    
         assertTrue("mult failure", testThis("mult", "average", orig));
+   
+        assertTrue("per failure", testThis("per", "average", orig));
     }
 
     @Test
@@ -249,6 +259,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "find_max", orig));
 
         assertTrue("mult failure", testThis("mult", "find_max", orig));
+
+        assertTrue("per failure", testThis("per", "find_max", orig));
     }
 
     @Test
@@ -264,6 +276,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("exc failure", testThis("exc", "find_max2", orig));
 
         assertTrue("inc failure", testThis("inc", "find_max2", orig));
+
+        assertTrue("per failure", testThis("per", "find_max2", orig));
     }
 
     @Test
@@ -275,6 +289,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "variance", orig));
 
         assertTrue("mult failure", testThis("mult", "variance", orig));
+
+        assertTrue("per failure", testThis("per", "variance", orig));
     }
 
     @Test
@@ -301,6 +317,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("exc failure", testThis("exc", "geometric_mean", orig));
 
         assertTrue("inc failure", testThis("inc", "geometric_mean", orig));
+
+        assertTrue("per failure", testThis("per", "geometric_mean", orig));
     }
 
     @Test
@@ -324,6 +342,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "find_median", orig));
 
         assertTrue("mult failure", testThis("mult", "find_median", orig));
+
+        assertTrue("per failure", testThis("per", "find_median", orig));
     }
 
     @Test
@@ -391,6 +411,8 @@ public class MethodCollection2Tests extends TestClass {
 	assertTrue("exc failure", testThis("exc", "count_k", arg1, arg2));
 
 	assertTrue("inc failure", testThis("inc", "count_k", arg1, arg2));
+
+	assertTrue("per failure", testThis("per", "count_k", arg1, arg2));
     }
 
     @Test
@@ -439,6 +461,8 @@ public class MethodCollection2Tests extends TestClass {
 	assertTrue("exc failure", testThis("exc", "count_non_zeroes", arg1));
 
 	assertTrue("inc failure", testThis("inc", "count_non_zeroes", arg1));
+
+	assertTrue("per failure", testThis("per", "count_non_zeroes", arg1));
     }
 
     @Test
@@ -450,6 +474,8 @@ public class MethodCollection2Tests extends TestClass {
 	assertTrue("exc failure", testThis("exc", "cnt_zeroes", arg1));
 
 	assertTrue("inc failure", testThis("inc", "cnt_zeroes", arg1));
+
+	assertTrue("per failure", testThis("per", "cnt_zeroes", arg1));
     }
 
     @Test

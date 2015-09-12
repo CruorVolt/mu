@@ -1,34 +1,34 @@
-weightedMean: 9
-sampleKurtosis: 10
-variance: 10
-errorRate: 8
-pooledMean: 9
-sumOfLogarithms: 10
-harmonicMean: 10
-safeNorm: 10
-find_median: 10
-kurtosis: 10
-standardize: 10
-sampleSkew: 10
-sum: 10
-find_max: 9
-find_min: 10
-sequential_search: 10
-checkNonNegative: 9
-product: 10
-entropy: 10
-geometric_mean: 10
-count_non_zeroes: 10
-add_values: 10
-set_min_val: 9
-find_max2: 9
-min: 9
-select: 10
-checkPositive: 9
-cnt_zeroes: 10
-average: 10
-skew: 9
-sampleVariance: 10
-meanDeviation: 6
-count_k: 9
-pooledVariance: 6
+weightedMean: 9 - DONE
+sampleKurtosis: 10 - DONE
+variance: 10 - DONE
+errorRate: 8 - DONE
+pooledMean: 9 - DONE
+sumOfLogarithms: 10 - DONE
+harmonicMean: 10 - DONE
+safeNorm: 10 - DONE
+find_median: 10 - DONE
+kurtosis: 10 - DONE
+standardize: 10 - DONE
+sampleSkew: 10 - DONE
+sum: 10 - DONE
+find_max: 9 - DONE
+find_min: 10 - DONE
+sequential_search: 10 - DONE
+checkNonNegative: 9 - boolean returns
+product: 10 - DONE
+entropy: 10 - DONE
+geometric_mean: 10 - DONE
+count_non_zeroes: 10 - DONE
+add_values: 10 - DONE
+set_min_val: 9 - DONE
+find_max2: 9 - DONE
+min: 9 - DONE
+select: 10 - method doesn't exist
+checkPositive: 9 - DONE
+cnt_zeroes: 10 - DONE
+average: 10 - DONE
+skew: 9 - DONE
+sampleVariance: 10 - DONE
+meanDeviation: 6 - DONE
+count_k: 9 - DONE
+pooledVariance: 6 - DONE

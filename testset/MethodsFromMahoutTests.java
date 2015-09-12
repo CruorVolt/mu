@@ -64,6 +64,8 @@ public class MethodsFromMahoutTests extends TestClass {
         assertTrue("exc failure", testThis("exc", "sum", orig));
         
         assertTrue("inc failure", testThis("inc", "sum", orig));
+        
+        assertTrue("per failure", testThis("per", "sum", orig));
     }
     @Test
     public void add_test() {
@@ -154,6 +156,8 @@ public class MethodsFromMahoutTests extends TestClass {
         assertTrue("add failure", testThis("add", "errorRate", orig1, orig2));
 
         assertTrue("mult failure", testThis("mult", "errorRate", orig1, orig2));
+
+        assertTrue("per failure", testThis("per", "errorRate", orig1, orig2));
     }
 
     @Test

@@ -104,6 +104,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("add failure", testThis("add", "safeNorm", orig));
         
         assertTrue("mult failure", testThis("mult", "safeNorm", orig));
+        
+        assertTrue("per failure", testThis("per", "safeNorm", orig));
     }
 
     @Test
@@ -125,6 +127,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("add failure", testThis("add", "entropy", orig));
 
         assertTrue("mult failure", testThis("mult", "entropy", orig));
+
+        assertTrue("per failure", testThis("per", "entropy", orig));
     }
 
     @Test
@@ -283,6 +287,8 @@ public class MethodsFromApacheMathTests extends TestClass {
 	assertTrue("mult failure", testThis("mult", "checkPositive", arg1));
 	
 	assertTrue("inc failure", testThis("inc", "checkPositive", arg1));
+	
+	assertTrue("per failure", testThis("per", "checkPositive", arg1));
    }
 
    @Test
