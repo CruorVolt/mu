@@ -17,6 +17,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "add_values", orig));
 
         assertTrue("mult failure", testThis("mult", "add_values", orig));
+
+        assertTrue("exc failure", testThis("exc", "add_values", orig));
     }
 
     @Test
@@ -54,6 +56,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray();
 	int arg2 = getInt();
         int r1 = MethodCollection2.sequential_search(arg1, arg2);
+
+	assertTrue("exc failure", testThis("exc", "sequential_search", arg1, arg2));
     }
 
     @Test
@@ -88,6 +92,8 @@ public class MethodCollection2Tests extends TestClass {
         int r1 = MethodCollection2.dot_product(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "dot_product", arg1, arg2));
+
+        assertTrue("exc failure", testThis("exc", "dot_product", arg1, arg2));
     }
 
     @Test
@@ -163,6 +169,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.find_euc_dist(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "find_euc_dist", arg1, arg2));
+
+        assertTrue("exc failure", testThis("exc", "find_euc_dist", arg1, arg2));
     }
 
     @Test
@@ -186,6 +194,8 @@ public class MethodCollection2Tests extends TestClass {
         double r1 = MethodCollection2.manhattan_dist(arg1, arg2);
 
 	assertTrue("mult failure", testThis("mult", "manhattan_dist", arg1, arg2));
+
+	assertTrue("exc failure", testThis("exc", "manhattan_dist", arg1, arg2));
     }
 
     @Test
@@ -236,6 +246,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "find_max2", orig));
 
         assertTrue("mult failure", testThis("mult", "find_max2", orig));
+
+        assertTrue("exc failure", testThis("exc", "find_max2", orig));
     }
 
     @Test
@@ -269,6 +281,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "geometric_mean", orig));
 
         assertTrue("mult failure", testThis("mult", "geometric_mean", orig));
+
+        assertTrue("exc failure", testThis("exc", "geometric_mean", orig));
     }
 
     @Test
@@ -355,6 +369,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray();
 	int arg2 = getInt();
         int r1 = MethodCollection2.count_k(arg1, arg2);
+
+	assertTrue("exc failure", testThis("exc", "count_k", arg1, arg2));
     }
 
     @Test
@@ -399,6 +415,8 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: count_non_zeroes");
 	int[] arg1 = getIntArray();
         int r1 = MethodCollection2.count_non_zeroes(arg1);
+
+	assertTrue("exc failure", testThis("exc", "count_non_zeroes", arg1));
     }
 
     @Test
@@ -406,6 +424,8 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: cnt_zeroes");
 	int[] arg1 = getIntArray();
         int r1 = MethodCollection2.cnt_zeroes(arg1);
+
+	assertTrue("exc failure", testThis("exc", "cnt_zeroes", arg1));
     }
 
     @Test
@@ -450,6 +470,8 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("add failure", testThis("add", "hamming_dist", orig1, orig2));
 
         assertTrue("mult failure", testThis("mult", "hamming_dist", orig1, orig2));
+
+        assertTrue("exc failure", testThis("exc", "hamming_dist", orig1, orig2));
     }
 
 }

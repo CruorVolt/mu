@@ -27,6 +27,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         double r1 = MethodsFromApacheMath.distance1(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "distance", arg1, arg2));
+
+        assertTrue("exc failure", testThis("exc", "distance", arg1, arg2));
     }
 
     @Test
@@ -38,6 +40,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         double r1 = MethodsFromApacheMath.distanceInf(arg1, arg2);
 
 	assertTrue("mult failure", testThis("mult", "distanceInf", arg1, arg2));
+
+	assertTrue("exc failure", testThis("exc", "distanceInf", arg1, arg2));
     }
 
     @Test
@@ -169,6 +173,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         double r1 = MethodsFromApacheMath.computeCanberraDistance(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "computeCanberraDistance", arg1, arg2));
+
+        assertTrue("exc failure", testThis("exc", "computeCanberraDistance", arg1, arg2));
     }
 
     @Test
@@ -210,6 +216,8 @@ public class MethodsFromApacheMathTests extends TestClass {
        assertTrue("add failure", testThis("add", "evaluateNewton", firstArg, secondArg, thirdArg));
 
        assertTrue("mult failure", testThis("mult", "evaluateNewton", firstArg, secondArg, thirdArg));
+
+       assertTrue("exc failure", testThis("exc", "evaluateNewton", firstArg, secondArg, thirdArg));
    }
 
    @Test
@@ -275,6 +283,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         double r1 = MethodsFromApacheMath.chiSquare(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "chiSquare", arg1, arg2));
+
+        assertTrue("exc failure", testThis("exc", "chiSquare", arg1, arg2));
    }
 
   @Test
@@ -314,6 +324,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         double r1 = MethodsFromApacheMath.evaluateWeightedProduct(arg1, arg2, start, length);
 
 	assertTrue("mult failure", testThis("mult", "evaluateWeightedProduct", arg1, arg2, start, length));
+
+	assertTrue("exc failure", testThis("exc", "evaluateWeightedProduct", arg1, arg2, start, length));
   }
 
 }

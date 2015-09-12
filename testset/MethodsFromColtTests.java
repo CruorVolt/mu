@@ -193,6 +193,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("add failure", testThis("add", "sumOfLogarithms", orig));
 
         assertTrue("mult failure", testThis("mult", "sumOfLogarithms", orig));
+
+        assertTrue("exc failure", testThis("exc", "sumOfLogarithms", orig));
         
         System.out.println(" >>complete");
     }
@@ -344,6 +346,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("add failure", testThis("add", "polevl", first, orig, size));
 
         assertTrue("mult failure", testThis("mult", "polevl", first, orig, size));
+
+        assertTrue("exc failure", testThis("exc", "polevl", first, orig, size));
         
         System.out.println(" >>complete");
     }
@@ -421,6 +425,8 @@ public class MethodsFromColtTests extends TestClass {
         double r1 = MethodsFromColt.sumOfPowerOfDeviations(arg1, arg2, arg3);
 
         assertTrue("mult failure", testThis("mult", "sumOfPowerOfDeviations", arg1, arg2, arg3));
+
+        assertTrue("exc failure", testThis("exc", "sumOfPowerOfDeviations", arg1, arg2, arg3));
         
         System.out.println(" >>complete");
     }
