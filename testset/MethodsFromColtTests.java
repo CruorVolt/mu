@@ -113,6 +113,8 @@ public class MethodsFromColtTests extends TestClass {
 
         assertTrue("mult failure", testThis("mult", "min", arg1));
 
+        assertTrue("inc failure", testThis("inc", "min", arg1));
+
         System.out.println(" >>complete");
     }
     @Test
@@ -195,6 +197,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "sumOfLogarithms", orig));
 
         assertTrue("exc failure", testThis("exc", "sumOfLogarithms", orig));
+
+        assertTrue("inc failure", testThis("inc", "sumOfLogarithms", orig));
         
         System.out.println(" >>complete");
     }
@@ -348,6 +352,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "polevl", first, orig, size));
 
         assertTrue("exc failure", testThis("exc", "polevl", first, orig, size));
+
+        assertTrue("inc failure", testThis("inc", "polevl", first, orig, size));
         
         System.out.println(" >>complete");
     }
@@ -427,6 +433,8 @@ public class MethodsFromColtTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "sumOfPowerOfDeviations", arg1, arg2, arg3));
 
         assertTrue("exc failure", testThis("exc", "sumOfPowerOfDeviations", arg1, arg2, arg3));
+
+        assertTrue("inc failure", testThis("inc", "sumOfPowerOfDeviations", arg1, arg2, arg3));
         
         System.out.println(" >>complete");
     }

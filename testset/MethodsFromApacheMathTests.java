@@ -29,6 +29,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "distance", arg1, arg2));
 
         assertTrue("exc failure", testThis("exc", "distance", arg1, arg2));
+
+        assertTrue("inc failure", testThis("inc", "distance", arg1, arg2));
     }
 
     @Test
@@ -42,6 +44,8 @@ public class MethodsFromApacheMathTests extends TestClass {
 	assertTrue("mult failure", testThis("mult", "distanceInf", arg1, arg2));
 
 	assertTrue("exc failure", testThis("exc", "distanceInf", arg1, arg2));
+
+	assertTrue("inc failure", testThis("inc", "distanceInf", arg1, arg2));
     }
 
     @Test
@@ -175,6 +179,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "computeCanberraDistance", arg1, arg2));
 
         assertTrue("exc failure", testThis("exc", "computeCanberraDistance", arg1, arg2));
+
+        assertTrue("inc failure", testThis("inc", "computeCanberraDistance", arg1, arg2));
     }
 
     @Test
@@ -187,6 +193,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("add failure", testThis("add", "evaluateHoners", orig, secondArg));
 
         assertTrue("mult failure", testThis("mult", "evaluateHoners", orig, secondArg));
+
+        assertTrue("inc failure", testThis("inc", "evaluateHoners", orig, secondArg));
     }
 
     @Test
@@ -218,6 +226,8 @@ public class MethodsFromApacheMathTests extends TestClass {
        assertTrue("mult failure", testThis("mult", "evaluateNewton", firstArg, secondArg, thirdArg));
 
        assertTrue("exc failure", testThis("exc", "evaluateNewton", firstArg, secondArg, thirdArg));
+
+       assertTrue("inc failure", testThis("inc", "evaluateNewton", firstArg, secondArg, thirdArg));
    }
 
    @Test
@@ -247,6 +257,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         double[] arg1 = getDoubleArray(size);
         double[] arg2 = getDoubleArray(size);
         boolean r1 = MethodsFromApacheMath.equals(arg1, arg2);
+
+	assertTrue("inc failure", testThis("inc", "equals", arg1, arg2));
    }
 
    /* Doesn't make sense
@@ -269,6 +281,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         boolean r1 = MethodsFromApacheMath.checkPositive(arg1);
 	
 	assertTrue("mult failure", testThis("mult", "checkPositive", arg1));
+	
+	assertTrue("inc failure", testThis("inc", "checkPositive", arg1));
    }
 
    @Test
@@ -285,6 +299,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "chiSquare", arg1, arg2));
 
         assertTrue("exc failure", testThis("exc", "chiSquare", arg1, arg2));
+
+        assertTrue("inc failure", testThis("inc", "chiSquare", arg1, arg2));
    }
 
   @Test
@@ -326,6 +342,8 @@ public class MethodsFromApacheMathTests extends TestClass {
 	assertTrue("mult failure", testThis("mult", "evaluateWeightedProduct", arg1, arg2, start, length));
 
 	assertTrue("exc failure", testThis("exc", "evaluateWeightedProduct", arg1, arg2, start, length));
+
+	assertTrue("inc failure", testThis("inc", "evaluateWeightedProduct", arg1, arg2, start, length));
   }
 
 }

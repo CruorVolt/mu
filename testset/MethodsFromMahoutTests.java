@@ -29,6 +29,8 @@ public class MethodsFromMahoutTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "manhattanDistance", arg1, arg2));
 
         assertTrue("exc failure", testThis("exc", "manhattanDistance", arg1, arg2));
+
+        assertTrue("inc failure", testThis("inc", "manhattanDistance", arg1, arg2));
     }
     @Test
     public void chebyshevdistance_test() {
@@ -60,6 +62,8 @@ public class MethodsFromMahoutTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "sum", orig));
         
         assertTrue("exc failure", testThis("exc", "sum", orig));
+        
+        assertTrue("inc failure", testThis("inc", "sum", orig));
     }
     @Test
     public void add_test() {
