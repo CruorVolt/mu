@@ -15,7 +15,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int size = getInt() + 1;
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
-        double r1 = MethodsFromApacheMath.distance(arg1, arg2);
+        //double r1 = MethodsFromApacheMath.distance(arg1, arg2);
     }
 
     @Test
@@ -24,7 +24,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int size = getInt() + 1;
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
-        double r1 = MethodsFromApacheMath.distance1(arg1, arg2);
+        //double r1 = MethodsFromApacheMath.distance1(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "distance", arg1, arg2));
 
@@ -41,7 +41,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int size = getInt() + 1;
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
-        double r1 = MethodsFromApacheMath.distanceInf(arg1, arg2);
+        //double r1 = MethodsFromApacheMath.distanceInf(arg1, arg2);
 
 	assertTrue("mult failure", testThis("mult", "distanceInf", arg1, arg2));
 
@@ -58,7 +58,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int arraySize = getInt();
         double[] orig1 = getDoubleArray(arraySize);
         double[] orig2 = getDoubleArray(arraySize);
-        double[] r1 = MethodsFromApacheMath.ebeAdd(orig1, orig2);
+        //double[] r1 = MethodsFromApacheMath.ebeAdd(orig1, orig2);
 
         assertTrue("add failure", testThis("add", "ebeAdd", orig1, orig2));
 
@@ -73,7 +73,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int arraySize = getInt();
         double[] orig1 = getDoubleArray(arraySize);
         double[] orig2 = getDoubleArray(arraySize);
-        double[] r1 = MethodsFromApacheMath.ebeDivide(orig1, orig2);
+        //double[] r1 = MethodsFromApacheMath.ebeDivide(orig1, orig2);
 
         assertTrue("add failure", testThis("add", "ebeDivide", orig1, orig2));
 
@@ -88,7 +88,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int arraySize = getInt();
         double[] firstArg = getDoubleArray(arraySize);
         double[] secondArg = getDoubleArray(arraySize);
-        double[] r1 = MethodsFromApacheMath.ebeMultiply(firstArg, secondArg);
+        //double[] r1 = MethodsFromApacheMath.ebeMultiply(firstArg, secondArg);
 
         assertTrue("add failure", testThis("add", "ebeMultiply", firstArg, secondArg));
 
@@ -103,13 +103,13 @@ public class MethodsFromApacheMathTests extends TestClass {
         int arraySize = getInt();
 	double[] arg1 = getDoubleArray(arraySize);
 	double[] arg2 = getDoubleArray(arraySize);
-        double[] r1 = MethodsFromApacheMath.ebeSubtract(arg1, arg2);
+        //double[] r1 = MethodsFromApacheMath.ebeSubtract(arg1, arg2);
     }
 
     @Test
     public void safeNorm_test() {
         double[] orig = getDoubleArray();
-        double r1 = MethodsFromApacheMath.safeNorm(orig);
+        //double r1 = MethodsFromApacheMath.safeNorm(orig);
         
         assertTrue("add failure", testThis("add", "safeNorm", orig));
         
@@ -122,7 +122,7 @@ public class MethodsFromApacheMathTests extends TestClass {
     public void scale_test() {
         double arg1 = getDouble();
         double[] orig = getDoubleArray();
-        double[] r1 = MethodsFromApacheMath.scale(arg1, orig);
+        //double[] r1 = MethodsFromApacheMath.scale(arg1, orig);
 
         assertTrue("add failure", testThis("add", "scale", arg1, orig));
 
@@ -134,7 +134,7 @@ public class MethodsFromApacheMathTests extends TestClass {
     @Test
     public void entropy_test() {
         double[] orig = getDoubleArray();
-        double r1 = MethodsFromApacheMath.entropy(orig);
+        //double r1 = MethodsFromApacheMath.entropy(orig);
 
         assertTrue("add failure", testThis("add", "entropy", orig));
 
@@ -151,7 +151,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int size = getInt() + 2;
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
-        double r1 = MethodsFromApacheMath.g(arg1, arg2);
+        //double r1 = MethodsFromApacheMath.g(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "g", arg1, arg2));
 
@@ -163,7 +163,7 @@ public class MethodsFromApacheMathTests extends TestClass {
     public void calculateAbsoluteDifferences_test() {
         //length cannot be zero
         double[] orig = getDoubleArray();
-        double[] r1 = MethodsFromApacheMath.calculateAbsoluteDifferences(orig);
+        //double[] r1 = MethodsFromApacheMath.calculateAbsoluteDifferences(orig);
         
         assertTrue("add failure", testThis("add", "calculateAbsoluteDifferences", orig));
         
@@ -178,7 +178,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int size = getInt();
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
-        double[] r1 = MethodsFromApacheMath.calculateDifferences(arg1, arg2);
+        //double[] r1 = MethodsFromApacheMath.calculateDifferences(arg1, arg2);
     }
 
     @Test
@@ -187,7 +187,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int size = getInt();
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
-        double[] r1 = MethodsFromApacheMath.computeDividedDifference(arg1, arg2);
+        //double[] r1 = MethodsFromApacheMath.computeDividedDifference(arg1, arg2);
     }
 
     @Test
@@ -196,7 +196,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int size = getInt();
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
-        double r1 = MethodsFromApacheMath.computeCanberraDistance(arg1, arg2);
+        //double r1 = MethodsFromApacheMath.computeCanberraDistance(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "computeCanberraDistance", arg1, arg2));
 
@@ -212,7 +212,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         //Array length must be at least 1
         double[] orig = getDoubleArray();
         double secondArg = getDouble();
-        double r1 = MethodsFromApacheMath.evaluateHoners(orig, secondArg);
+        //double r1 = MethodsFromApacheMath.evaluateHoners(orig, secondArg);
 
         assertTrue("add failure", testThis("add", "evaluateHoners", orig, secondArg));
 
@@ -231,7 +231,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         Arrays.sort(firstArg);
         double[] secondArg = getDoubleArray(length);
         double thirdArg = getDouble();
-        double r1 = MethodsFromApacheMath.evaluateInternal(firstArg, secondArg, thirdArg);
+        //double r1 = MethodsFromApacheMath.evaluateInternal(firstArg, secondArg, thirdArg);
 
         assertTrue("add failure", testThis("add", "evaluateInterval", firstArg, secondArg, thirdArg));
 
@@ -247,7 +247,7 @@ public class MethodsFromApacheMathTests extends TestClass {
        double[] firstArg = getDoubleArray(size);
        double[] secondArg = getDoubleArray(size - 1);
        double thirdArg = getDouble();
-       double r1 = MethodsFromApacheMath.evaluateNewton(firstArg, secondArg, thirdArg);
+       //double r1 = MethodsFromApacheMath.evaluateNewton(firstArg, secondArg, thirdArg);
 
        assertTrue("add failure", testThis("add", "evaluateNewton", firstArg, secondArg, thirdArg));
 
@@ -266,7 +266,7 @@ public class MethodsFromApacheMathTests extends TestClass {
        int size = getInt() + 1;
        double[] arg1 = getDoubleArray(size);
        double[] arg2 = getDoubleArray(size);
-       double r1 = MethodsFromApacheMath.meanDifference(arg1, arg2);
+       //double r1 = MethodsFromApacheMath.meanDifference(arg1, arg2);
 
        assertTrue("mult failure", testThis("mult", "meanDifference", arg1, arg2));
 
@@ -279,7 +279,7 @@ public class MethodsFromApacheMathTests extends TestClass {
        int size = getInt() + 2;
        double[] arg1 = getDoubleArray(size);
        double[] arg2 = getDoubleArray(size);
-       double r1 = MethodsFromApacheMath.varianceDifference(arg1, arg2);
+       //double r1 = MethodsFromApacheMath.varianceDifference(arg1, arg2);
    }
 
    @Test
@@ -288,7 +288,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int size = getInt();
         double[] arg1 = getDoubleArray(size);
         double[] arg2 = getDoubleArray(size);
-        boolean r1 = MethodsFromApacheMath.equals(arg1, arg2);
+        //boolean r1 = MethodsFromApacheMath.equals(arg1, arg2);
 
 	assertTrue("inc failure", testThis("inc", "equals", arg1, arg2));
    }
@@ -297,7 +297,7 @@ public class MethodsFromApacheMathTests extends TestClass {
    @Test
    public void checkNonNegative_test() {
         double[] orig = getDoubleArray();
-        boolean r1 = MethodsFromApacheMath.checkNonNegative(orig);
+        //boolean r1 = MethodsFromApacheMath.checkNonNegative(orig);
 
         //add
         int c = getInt();
@@ -310,7 +310,7 @@ public class MethodsFromApacheMathTests extends TestClass {
    @Test
    public void checkPositive_test() {
 	double[] arg1 = getDoubleArray();
-        boolean r1 = MethodsFromApacheMath.checkPositive(arg1);
+        //boolean r1 = MethodsFromApacheMath.checkPositive(arg1);
 	
 	assertTrue("mult failure", testThis("mult", "checkPositive", arg1));
 	
@@ -330,7 +330,7 @@ public class MethodsFromApacheMathTests extends TestClass {
             arg1[i] = arg1[i] + 1; //Ensure strictly positive
         }
 	double[] arg2 = getDoubleArray(size);
-        double r1 = MethodsFromApacheMath.chiSquare(arg1, arg2);
+        //double r1 = MethodsFromApacheMath.chiSquare(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "chiSquare", arg1, arg2));
 
@@ -350,7 +350,7 @@ public class MethodsFromApacheMathTests extends TestClass {
 	double arg2 = getDouble();
 	boolean arg3 = getBoolean();
 	boolean arg4 = getBoolean();
-        double r1 = MethodsFromApacheMath.evaluateSemiVariance(arg1, arg2, arg3, arg4, start, length);
+        //double r1 = MethodsFromApacheMath.evaluateSemiVariance(arg1, arg2, arg3, arg4, start, length);
   }
 
   @Test
@@ -360,7 +360,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int pivot =  end - begin;
         int size = end + begin + getInt();
         double[] arr = getDoubleArray(size);
-        int r1 = MethodsFromApacheMath.partition(arr, begin, end, pivot);
+        //int r1 = MethodsFromApacheMath.partition(arr, begin, end, pivot);
 
         assertTrue("add failure", testThis("add", "partition", arr, begin, end, pivot));
 
@@ -377,7 +377,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         int size = getInt() + start + length + 1;
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
-        double r1 = MethodsFromApacheMath.evaluateWeightedProduct(arg1, arg2, start, length);
+        //double r1 = MethodsFromApacheMath.evaluateWeightedProduct(arg1, arg2, start, length);
 
 	assertTrue("mult failure", testThis("mult", "evaluateWeightedProduct", arg1, arg2, start, length));
 

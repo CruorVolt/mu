@@ -12,7 +12,7 @@ public class MethodCollection2Tests extends TestClass {
     public void add_values_test() {
         System.out.println("TEST: add_values");
         int[] orig = getIntArray();
-        int r1 = MethodCollection2.add_values(orig);
+        //int r1 = MethodCollection2.add_values(orig);
 
         assertTrue("add failure", testThis("add", "add_values", orig));
 
@@ -33,14 +33,14 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray();
 	int arg2 = getInt();
 	int arg3 = getInt();
-        double r1 = MethodCollection2.add_two_array_values(arg1, arg2, arg3);
+        //double r1 = MethodCollection2.add_two_array_values(arg1, arg2, arg3);
     }
 
     @Test
     public void bubble_test() {
         System.out.println("TEST: bubble");
         int[] orig = getIntArray();
-        int[] r1 = MethodCollection2.bubble(orig);
+        //int[] r1 = MethodCollection2.bubble(orig);
 
         assertTrue("add failure", testThis("add", "bubble", orig));
 
@@ -53,7 +53,7 @@ public class MethodCollection2Tests extends TestClass {
     public void shell_sort_test() {
         System.out.println("TEST: shell_sort");
 	int[] arg1 = getIntArray();
-        int[] r1 = MethodCollection2.shell_sort(arg1);
+        //int[] r1 = MethodCollection2.shell_sort(arg1);
 
         assertTrue("mult failure", testThis("mult", "shell_sort", arg1));
 
@@ -65,7 +65,7 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: sequential_search");
 	int[] arg1 = getIntArray();
 	int arg2 = getInt();
-        int r1 = MethodCollection2.sequential_search(arg1, arg2);
+        //int r1 = MethodCollection2.sequential_search(arg1, arg2);
 
 	assertTrue("exc failure", testThis("exc", "sequential_search", arg1, arg2));
 
@@ -78,7 +78,7 @@ public class MethodCollection2Tests extends TestClass {
     public void selection_sort_test() {
         System.out.println("TEST: selection_sort");
         int[] orig = getIntArray();
-        int[] r1 = MethodCollection2.selection_sort(orig);
+        //int[] r1 = MethodCollection2.selection_sort(orig);
 
         assertTrue("add failure", testThis("add", "selection_sort", orig));
 
@@ -95,7 +95,7 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
 	int arg3 = getInt();
-        int r1 = MethodCollection2.add_values_in_two_arrays(arg1, arg2, arg3);
+        //int r1 = MethodCollection2.add_values_in_two_arrays(arg1, arg2, arg3);
     }
 
     @Test
@@ -105,7 +105,7 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
-        int r1 = MethodCollection2.dot_product(arg1, arg2);
+        //int r1 = MethodCollection2.dot_product(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "dot_product", arg1, arg2));
 
@@ -119,7 +119,7 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: array_calc1");
         int[] arg1 = getIntArray();
         int arg2 = getInt();
-        int[] r1 = MethodCollection2.array_calc1(arg1, arg2);
+        //int[] r1 = MethodCollection2.array_calc1(arg1, arg2);
 
         assertTrue("add failure", testThis("add", "array_calc1", arg1, arg2));
     }
@@ -129,7 +129,7 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: set_min_val");
         int[] arg1 = getIntArray();
         int arg2 = getInt();
-        int[] r1 = MethodCollection2.set_min_val(arg1, arg2);
+        //int[] r1 = MethodCollection2.set_min_val(arg1, arg2);
         
         assertTrue("add failure", testThis("add", "set_min_val", arg1, arg2));
         
@@ -145,7 +145,7 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: get_array_value");
 	int[] arg1 = getIntArray();
 	int arg2 = getInt();
-        int r1 = MethodCollection2.get_array_value(arg1, arg2);
+        //int r1 = MethodCollection2.get_array_value(arg1, arg2);
         assertTrue("SHOULD BE TRUE", true);
     }
 
@@ -153,7 +153,7 @@ public class MethodCollection2Tests extends TestClass {
     public void find_min_test() {
         System.out.println("TEST: find_min");
         int[] orig = getIntArray();
-        int r1 = MethodCollection2.find_min(orig);
+        //int r1 = MethodCollection2.find_min(orig);
 
         assertTrue("add failure", testThis("add", "find_min", orig));
 
@@ -173,14 +173,14 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
-        int[] r1 = MethodCollection2.find_diff(arg1, arg2);
+        //int[] r1 = MethodCollection2.find_diff(arg1, arg2);
     }
 
     @Test
     public void array_copy_test() {
         System.out.println("TEST: array_copy");
         int[] orig = getIntArray();
-        int[] r1 = MethodCollection2.array_copy(orig);
+        //int[] r1 = MethodCollection2.array_copy(orig);
 
         assertTrue("add failure", testThis("add", "array_copy", orig));
 
@@ -196,7 +196,7 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
-        double r1 = MethodCollection2.find_euc_dist(arg1, arg2);
+        //double r1 = MethodCollection2.find_euc_dist(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "find_euc_dist", arg1, arg2));
 
@@ -211,7 +211,7 @@ public class MethodCollection2Tests extends TestClass {
     public void find_magnitude_test() {
         System.out.println("TEST: find_magnitude");
         int[] orig = getIntArray();
-        double r1 = MethodCollection2.find_magnitude(orig);
+        //double r1 = MethodCollection2.find_magnitude(orig);
 
         assertTrue("add failure", testThis("add", "find_magnitude", orig));
 
@@ -229,7 +229,7 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
-        double r1 = MethodCollection2.manhattan_dist(arg1, arg2);
+        //double r1 = MethodCollection2.manhattan_dist(arg1, arg2);
 
 	assertTrue("mult failure", testThis("mult", "manhattan_dist", arg1, arg2));
 
@@ -244,7 +244,7 @@ public class MethodCollection2Tests extends TestClass {
     public void average_test() {
         System.out.println("TEST: average");
         int[] orig = getIntArray();
-        double r1 = MethodCollection2.average(orig);
+        //double r1 = MethodCollection2.average(orig);
    
         assertTrue("add failure", testThis("add", "average", orig));
    
@@ -260,7 +260,7 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: dec_array");
 	int[] arg1 = getIntArray();
 	int arg2 = getInt();
-        int[] r1 = MethodCollection2.dec_array(arg1, arg2);
+        //int[] r1 = MethodCollection2.dec_array(arg1, arg2);
     }
 
     @Test
@@ -269,14 +269,14 @@ public class MethodCollection2Tests extends TestClass {
         //First arg should be nonzero
 	double arg1 = getDouble();
 	double arg2 = getDouble();
-        double r1 = MethodCollection2.expr1(arg1, arg2);
+        //double r1 = MethodCollection2.expr1(arg1, arg2);
     }
 
     @Test
     public void find_max_test() {
         System.out.println("TEST: find_max");
         int[] orig = getIntArray();
-        int r1 = MethodCollection2.find_max(orig);
+        //int r1 = MethodCollection2.find_max(orig);
 
         assertTrue("add failure", testThis("add", "find_max", orig));
 
@@ -291,7 +291,7 @@ public class MethodCollection2Tests extends TestClass {
     public void find_max2_test() {
         System.out.println("TEST: find_max2");
         int[] orig = getIntArray();
-        int r1 = MethodCollection2.find_max2(orig);
+        //int r1 = MethodCollection2.find_max2(orig);
 
         assertTrue("add failure", testThis("add", "find_max2", orig));
 
@@ -310,7 +310,7 @@ public class MethodCollection2Tests extends TestClass {
     public void variance_test() {
         System.out.println("TEST: variance");
         double[] orig = getDoubleArray();
-        double r1 = MethodCollection2.variance(orig);
+        //double r1 = MethodCollection2.variance(orig);
 
         assertTrue("add failure", testThis("add", "variance", orig));
 
@@ -325,7 +325,7 @@ public class MethodCollection2Tests extends TestClass {
     public void insertion_sort_test() {
         System.out.println("TEST: insertion_sort");
         int[] orig = getIntArray();
-        int[] r1 = MethodCollection2.insertion_sort(orig);
+        //int[] r1 = MethodCollection2.insertion_sort(orig);
 
         assertTrue("add failure", testThis("add", "insertion_sort", orig));
 
@@ -338,7 +338,7 @@ public class MethodCollection2Tests extends TestClass {
     public void geometric_mean_test() {
         System.out.println("TEST: geometric_mean");
         int[] orig = getIntArray();
-        double r1 = MethodCollection2.geometric_mean(orig);
+        //double r1 = MethodCollection2.geometric_mean(orig);
 
         assertTrue("add failure", testThis("add", "geometric_mean", orig));
 
@@ -360,7 +360,7 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
-        double r1 = MethodCollection2.mean_absolute_error(arg1, arg2);
+        //double r1 = MethodCollection2.mean_absolute_error(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "mean_absolute_error", arg1, arg2));
 
@@ -371,7 +371,7 @@ public class MethodCollection2Tests extends TestClass {
     public void find_median_test() {
         System.out.println("TEST: find_median");
         int[] orig = getIntArray();
-        double r1 = MethodCollection2.find_median(orig);
+        //double r1 = MethodCollection2.find_median(orig);
 
         assertTrue("add failure", testThis("add", "find_median", orig));
 
@@ -388,14 +388,14 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: cartesian_product");
 	int[] arg1 = getIntArray(MAX/10);
 	int[] arg2 = getIntArray(MAX/10);
-        int[][] r1 = MethodCollection2.cartesian_product(arg1, arg2);
+        //int[][] r1 = MethodCollection2.cartesian_product(arg1, arg2);
     }
 
     @Test
     public void reverse_test() {
         System.out.println("TEST: reverse");
         int[] orig = getIntArray();
-        int[] r1 = MethodCollection2.reverse(orig);
+        //int[] r1 = MethodCollection2.reverse(orig);
         
         assertTrue("add failure", testThis("add", "reverse", orig));
         
@@ -412,7 +412,7 @@ public class MethodCollection2Tests extends TestClass {
 	double[] arg1 = getDoubleArray(arraySize);
 	double[] arg2 = getDoubleArray(arraySize);
 	double arg3 = getDouble();
-        boolean r1 = MethodCollection2.check_equal_tolerance(arg1, arg2, arg3);
+        //boolean r1 = MethodCollection2.check_equal_tolerance(arg1, arg2, arg3);
     }
 
     @Test
@@ -422,7 +422,7 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
-        boolean r1 = MethodCollection2.check_equal(arg1, arg2);
+        //boolean r1 = MethodCollection2.check_equal(arg1, arg2);
     }
 
     @Test
@@ -432,7 +432,7 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
         double[] orig1 = getDoubleArray(arraySize);
         double[] orig2 = getDoubleArray(arraySize);
-        double r1 = MethodCollection2.weighted_average(orig1, orig2);
+        //double r1 = MethodCollection2.weighted_average(orig1, orig2);
 
         assertTrue("add failure", testThis("add", "weighted_average", orig1, orig2));
 
@@ -444,7 +444,7 @@ public class MethodCollection2Tests extends TestClass {
         System.out.println("TEST: count_k");
 	int[] arg1 = getIntArray();
 	int arg2 = getInt();
-        int r1 = MethodCollection2.count_k(arg1, arg2);
+        //int r1 = MethodCollection2.count_k(arg1, arg2);
 
 	assertTrue("exc failure", testThis("exc", "count_k", arg1, arg2));
 
@@ -459,7 +459,7 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         int secondArg = getInt();
         int thirdArg = getInt();
-        int[] r1 = MethodCollection2.clip(orig, secondArg, thirdArg);
+        //int[] r1 = MethodCollection2.clip(orig, secondArg, thirdArg);
 
         assertTrue("add failure", testThis("add", "clip", orig, secondArg, thirdArg));
 
@@ -475,7 +475,7 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
-        int[] r1 = MethodCollection2.elementwise_max(arg1, arg2);
+        //int[] r1 = MethodCollection2.elementwise_max(arg1, arg2);
 	
 	assertTrue("mult failure", testThis("mult", "elementwise_max", arg1, arg2));
     }
@@ -487,7 +487,7 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
-        int[] r1 = MethodCollection2.elementwise_min(arg1, arg2);
+        //int[] r1 = MethodCollection2.elementwise_min(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "elementwise_min", arg1, arg2));
     }
@@ -496,7 +496,7 @@ public class MethodCollection2Tests extends TestClass {
     public void count_non_zeroes_test() {
         System.out.println("TEST: count_non_zeroes");
 	int[] arg1 = getIntArray();
-        int r1 = MethodCollection2.count_non_zeroes(arg1);
+        //int r1 = MethodCollection2.count_non_zeroes(arg1);
 
 	assertTrue("exc failure", testThis("exc", "count_non_zeroes", arg1));
 
@@ -511,7 +511,7 @@ public class MethodCollection2Tests extends TestClass {
     public void cnt_zeroes_test() {
         System.out.println("TEST: cnt_zeroes");
 	int[] arg1 = getIntArray();
-        int r1 = MethodCollection2.cnt_zeroes(arg1);
+        //int r1 = MethodCollection2.cnt_zeroes(arg1);
 
 	assertTrue("exc failure", testThis("exc", "cnt_zeroes", arg1));
 
@@ -527,7 +527,7 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
 	int[] arg1 = getIntArray(arraySize);
 	int[] arg2 = getIntArray(arraySize);
-        boolean[] r1 = MethodCollection2.elementwise_equal(arg1, arg2);
+        //boolean[] r1 = MethodCollection2.elementwise_equal(arg1, arg2);
 
 	assertTrue("inv failure", testThis("inv", "elementwise_equal", arg1, arg2));
     }
@@ -559,7 +559,7 @@ public class MethodCollection2Tests extends TestClass {
         int arraySize = getInt();
         int[] orig1 = getIntArray(arraySize);
         int[] orig2 = getIntArray(arraySize);
-        int r1 = MethodCollection2.hamming_dist(orig1, orig2);
+        //int r1 = MethodCollection2.hamming_dist(orig1, orig2);
 
         assertTrue("add failure", testThis("add", "hamming_dist", orig1, orig2));
 
