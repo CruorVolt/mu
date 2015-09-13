@@ -279,11 +279,11 @@ public class MethodsFromColtTests extends TestClass {
 	int arg4 = getInt(minsize2);
         int r1 = MethodsFromColt.binarySearchFromTo(arg1, arg2, arg3, arg4);
 
-        assertTrue("add failure", testThis("add", "binarySearchFromTo", arr, secondArg, low, high));
+        assertTrue("add failure", testThis("add", "binarySearchFromTo", arg1, arg2, arg3, arg4));
 
-        assertTrue("mult failure", testThis("mult", "binarySearchFromTo", arr, secondArg, low, high));
+        assertTrue("mult failure", testThis("mult", "binarySearchFromTo", arg1, arg2, arg3, arg4));
 
-        assertTrue("inv failure", testThis("inv", "binarySearchFromTo", arr, secondArg, low, high));
+        assertTrue("inv failure", testThis("inv", "binarySearchFromTo", arg1, arg2, arg3, arg4));
 
         System.out.println(" >>complete");
     }
