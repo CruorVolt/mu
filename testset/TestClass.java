@@ -8,11 +8,13 @@ import Test.MethodCollection2;
 import Test.MethodsFromApacheMath;
 import Test.MethodsFromColt;
 import Test.MethodsFromMahout;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TestClass {
 
     public static Random rand = new Random();
-    public static final int MAX = 10000;
+    public static final int MAX = 100;
 
 /*//////////////////////////////////////////////////////
     ADDITIVE: add a positive constant.
@@ -48,10 +50,14 @@ public class TestClass {
     }
 
     public static boolean addTest(int orig, int next) {
+        orig = orig >= 0 ? orig : Integer.MAX_VALUE;
+        next = next >= 0 ? next : Integer.MAX_VALUE;
         return orig <= next;
     }
 
     public static boolean addTest(double orig, double next) {
+        orig = orig >= 0 ? orig : Double.MAX_VALUE;
+        next = next >= 0 ? next : Double.MAX_VALUE;
         return orig <= next;
     }
 
@@ -110,6 +116,8 @@ public class TestClass {
     }
 
     public static boolean excTest(int pre, int post) {
+        pre = pre >= 0 ? pre : Integer.MAX_VALUE;
+        post = post >= 0 ? post : Integer.MAX_VALUE;
         return (post <= pre);
     }
 
@@ -124,6 +132,8 @@ public class TestClass {
     }
 
     public static boolean excTest(double pre, double post) {
+        pre = pre >= 0 ? pre : Double.MAX_VALUE;
+        post = post >= 0 ? post : Double.MAX_VALUE;
         return (post <= pre);
     }
 
@@ -317,6 +327,8 @@ public class TestClass {
 *///////////////////////////////////////////////////////////////////////
     public boolean testThis(String test, String thisClass, String function, Object... args) {
 
+        System.out.println("testThis() Entering <<<<<<");
+
         boolean passed = false;
         thisClass = "Test." + thisClass; //All /src classes are in Test package
 
@@ -350,8 +362,16 @@ public class TestClass {
                     Class type = func.getReturnType();
                     Method MRTestFunc = TestClass.class.getMethod(test + "Test", type, type);
 
+                    //System.out.println("Original Inputs:");
+                    //for (Object in: args) {
+                        //System.out.println(Arrays.toString( (int[]) in));
+                    //}
+
                     //get original return value
                     Object return1 = func.invoke(inst, args);
+
+                    //System.out.println("Original Output: " + return1);
+
                     //modify arguments
                     Object[] permutedArgs = new Object[args.length];
                     int constant = getInt(); //if required
@@ -362,8 +382,19 @@ public class TestClass {
                             permutedArgs[j] = permuteFuncs[j].invoke(null, args[j]);
                         }
                     }
+
+                    //System.out.println("Modified Inputs:");
+                    //for (Object in: permutedArgs) {
+                        //System.out.println(Arrays.toString((int[])in));
+                    //}
+        
                     //get modified return value
                     Object return2 = func.invoke(inst, permutedArgs);
+
+                    //System.out.println("Modified Output: " + return2);
+
+                    //System.out.println ("Running test: " + MRTestFunc);
+
                     //run test
                     if ((boolean)MRTestFunc.invoke(null, return1, return2)) {
                         passed = true;
@@ -376,6 +407,7 @@ public class TestClass {
             e.printStackTrace();
         }
 
+        System.out.println("testThis() Exiting with " + passed + " >>>>>>");
         return passed;
     }
 
@@ -386,20 +418,20 @@ public class TestClass {
 *///////////////////////////////////////////////////////
 
     public static int getInt() {
-        return rand.nextInt(MAX);
+        return rand.nextInt(MAX) + 1;
     }
 
     public static int getInt(int max) {
-        return rand.nextInt(max);
+        return rand.nextInt(max) + 1;
     }
 
     public static int[] getIntArray() {
-        int size = rand.nextInt(MAX) + 1;
+        int size = rand.nextInt(9) + 1;
         return rand.ints().limit(size).toArray();
     }
 
     public static int[] getIntArray(int size) {
-        return rand.ints(size, 0, MAX).toArray();
+        return rand.ints(size, 1, MAX).toArray();
     }
 
     public static double getDouble() {
@@ -411,7 +443,7 @@ public class TestClass {
     }
 
     public static double[] getDoubleArray() {
-        int size = rand.nextInt(MAX) + 1;
+        int size = rand.nextInt(9) + 1;
         return rand.doubles().limit(size).toArray();
     }
 
@@ -428,8 +460,8 @@ public class TestClass {
     }
 
     public long[][] get2DLongArray() {
-        int size1 = rand.nextInt(MAX/10) + 1;
-        int size2 = rand.nextInt(MAX/10) + 1;
+        int size1 = rand.nextInt(MAX) + 1;
+        int size2 = rand.nextInt(MAX) + 1;
         long[][] arr = new long[size1][size2];
         for (int i = 0; i < size1; i++) {
             arr[i] = rand.longs().limit(size2).toArray();
@@ -439,14 +471,15 @@ public class TestClass {
 
 
     public static void main(String[] args) {
-        int c = 2;
-        int[] intarr = {1,2,3,4,5};
-        double[] darr = {1.3,4.0};
-        int i = 5;
-        double d = 0.34;
-        add(intarr, c);
-        add(darr, c);
-        add(i, c);
-        add(d, c);
+        System.out.println("TEST: dot_product");
+        //Arrays should be same size
+        int arraySize = getInt();
+	int[] arg1 = getIntArray(arraySize);
+	int[] arg2 = getIntArray(arraySize);
+        //int r1 = MethodCollection2.dot_product(arg1, arg2);
+
+        TestClass tester = new TestClass();
+
+        tester.testThis("mult", "MethodCollection2", "dot_product", arg1, arg2);
     }
 }

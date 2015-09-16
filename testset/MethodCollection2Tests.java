@@ -15,18 +15,14 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.add_values(orig);
 
         assertTrue("add failure", testThis("add", "add_values", orig));
-
         assertTrue("mult failure", testThis("mult", "add_values", orig));
-
         assertTrue("exc failure", testThis("exc", "add_values", orig));
-
         assertTrue("inc failure", testThis("inc", "add_values", orig));
-
         assertTrue("per failure", testThis("per", "add_values", orig));
-
         assertTrue("inv failure", testThis("inv", "add_values", orig));
     }
 
+    /*
     @Test
     public void add_two_array_values_test() {
         System.out.println("TEST: add_two_array_values");
@@ -35,6 +31,8 @@ public class MethodCollection2Tests extends TestClass {
 	int arg3 = getInt();
         //double r1 = MethodCollection2.add_two_array_values(arg1, arg2, arg3);
     }
+    */
+
 
     @Test
     public void bubble_test() {
@@ -43,9 +41,7 @@ public class MethodCollection2Tests extends TestClass {
         //int[] r1 = MethodCollection2.bubble(orig);
 
         assertTrue("add failure", testThis("add", "bubble", orig));
-
         assertTrue("mult failure", testThis("mult", "bubble", orig));
-
         assertTrue("inv failure", testThis("inv", "bubble", orig));
     }
 
@@ -56,7 +52,6 @@ public class MethodCollection2Tests extends TestClass {
         //int[] r1 = MethodCollection2.shell_sort(arg1);
 
         assertTrue("mult failure", testThis("mult", "shell_sort", arg1));
-
         assertTrue("inv failure", testThis("inv", "shell_sort", arg1));
     }
 
@@ -68,9 +63,7 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.sequential_search(arg1, arg2);
 
 	assertTrue("exc failure", testThis("exc", "sequential_search", arg1, arg2));
-
 	assertTrue("inc failure", testThis("inc", "sequential_search", arg1, arg2));
-
 	assertTrue("per failure", testThis("per", "sequential_search", arg1, arg2));
     }
 
@@ -81,12 +74,11 @@ public class MethodCollection2Tests extends TestClass {
         //int[] r1 = MethodCollection2.selection_sort(orig);
 
         assertTrue("add failure", testThis("add", "selection_sort", orig));
-
         assertTrue("mult failure", testThis("mult", "selection_sort", orig));
-
         assertTrue("inv failure", testThis("inv", "selection_sort", orig));
     }
 
+    /*
     @Test
     public void add_values_in_two_arrays_test() {
         System.out.println("TEST: add_values_in_two_arrays");
@@ -97,6 +89,8 @@ public class MethodCollection2Tests extends TestClass {
 	int arg3 = getInt();
         //int r1 = MethodCollection2.add_values_in_two_arrays(arg1, arg2, arg3);
     }
+    */
+
 
     @Test
     public void dot_product_test() {
@@ -108,9 +102,7 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.dot_product(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "dot_product", arg1, arg2));
-
         assertTrue("exc failure", testThis("exc", "dot_product", arg1, arg2));
-
         assertTrue("inc failure", testThis("inc", "dot_product", arg1, arg2));
     }
 
@@ -132,14 +124,12 @@ public class MethodCollection2Tests extends TestClass {
         //int[] r1 = MethodCollection2.set_min_val(arg1, arg2);
         
         assertTrue("add failure", testThis("add", "set_min_val", arg1, arg2));
-        
         assertTrue("mult failure", testThis("mult", "set_min_val", arg1, arg2));
-        
         assertTrue("per failure", testThis("per", "set_min_val", arg1, arg2));
-
         assertTrue("inv failure", testThis("inv", "set_min_val", arg1, arg2));
     }
 
+    /*
     @Test
     public void get_array_value_test() {
         System.out.println("TEST: get_array_value");
@@ -148,6 +138,8 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.get_array_value(arg1, arg2);
         assertTrue("SHOULD BE TRUE", true);
     }
+    */
+
 
     @Test
     public void find_min_test() {
@@ -156,16 +148,13 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.find_min(orig);
 
         assertTrue("add failure", testThis("add", "find_min", orig));
-
         assertTrue("mult failure", testThis("mult", "find_min", orig));
-
         assertTrue("inc failure", testThis("inc", "find_min", orig));
-
         assertTrue("per failure", testThis("per", "find_min", orig));
-
         assertTrue("inv failure", testThis("inv", "find_min", orig));
     }
 
+    /*
     @Test
     public void find_diff_test() {
         System.out.println("TEST: find_diff");
@@ -175,6 +164,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         //int[] r1 = MethodCollection2.find_diff(arg1, arg2);
     }
+    */
+
 
     @Test
     public void array_copy_test() {
@@ -183,9 +174,7 @@ public class MethodCollection2Tests extends TestClass {
         //int[] r1 = MethodCollection2.array_copy(orig);
 
         assertTrue("add failure", testThis("add", "array_copy", orig));
-
         assertTrue("mult failure", testThis("mult", "array_copy", orig));
-
         assertTrue("inv failure", testThis("inv", "array_copy", orig));
     }
 
@@ -199,11 +188,8 @@ public class MethodCollection2Tests extends TestClass {
         //double r1 = MethodCollection2.find_euc_dist(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "find_euc_dist", arg1, arg2));
-
         assertTrue("exc failure", testThis("exc", "find_euc_dist", arg1, arg2));
-
         assertTrue("inc failure", testThis("inc", "find_euc_dist", arg1, arg2));
-
         assertTrue("inv failure", testThis("inv", "find_euc_dist", arg1, arg2));
     }
 
@@ -214,11 +200,8 @@ public class MethodCollection2Tests extends TestClass {
         //double r1 = MethodCollection2.find_magnitude(orig);
 
         assertTrue("add failure", testThis("add", "find_magnitude", orig));
-
         assertTrue("mult failure", testThis("mult", "find_magnitude", orig));
-
         assertTrue("inc failure", testThis("inc", "find_magnitude", orig));
-
         assertTrue("inv failure", testThis("inv", "find_magnitude", orig));
     }
 
@@ -232,11 +215,8 @@ public class MethodCollection2Tests extends TestClass {
         //double r1 = MethodCollection2.manhattan_dist(arg1, arg2);
 
 	assertTrue("mult failure", testThis("mult", "manhattan_dist", arg1, arg2));
-
 	assertTrue("exc failure", testThis("exc", "manhattan_dist", arg1, arg2));
-
 	assertTrue("inc failure", testThis("inc", "manhattan_dist", arg1, arg2));
-
 	assertTrue("inv failure", testThis("inv", "manhattan_dist", arg1, arg2));
     }
 
@@ -247,14 +227,12 @@ public class MethodCollection2Tests extends TestClass {
         //double r1 = MethodCollection2.average(orig);
    
         assertTrue("add failure", testThis("add", "average", orig));
-   
         assertTrue("mult failure", testThis("mult", "average", orig));
-   
         assertTrue("per failure", testThis("per", "average", orig));
-
         assertTrue("inv failure", testThis("inv", "average", orig));
     }
 
+    /*
     @Test
     public void dec_array_test() {
         System.out.println("TEST: dec_array");
@@ -262,7 +240,10 @@ public class MethodCollection2Tests extends TestClass {
 	int arg2 = getInt();
         //int[] r1 = MethodCollection2.dec_array(arg1, arg2);
     }
+    */
 
+
+    /*
     @Test
     public void expr1_test() {
         System.out.println("TEST: expr1");
@@ -271,6 +252,8 @@ public class MethodCollection2Tests extends TestClass {
 	double arg2 = getDouble();
         //double r1 = MethodCollection2.expr1(arg1, arg2);
     }
+    */
+
 
     @Test
     public void find_max_test() {
@@ -279,11 +262,8 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.find_max(orig);
 
         assertTrue("add failure", testThis("add", "find_max", orig));
-
         assertTrue("mult failure", testThis("mult", "find_max", orig));
-
         assertTrue("per failure", testThis("per", "find_max", orig));
-
         assertTrue("inv failure", testThis("inv", "find_max", orig));
     }
 
@@ -294,15 +274,10 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.find_max2(orig);
 
         assertTrue("add failure", testThis("add", "find_max2", orig));
-
         assertTrue("mult failure", testThis("mult", "find_max2", orig));
-
         assertTrue("exc failure", testThis("exc", "find_max2", orig));
-
         assertTrue("inc failure", testThis("inc", "find_max2", orig));
-
         assertTrue("per failure", testThis("per", "find_max2", orig));
-
         assertTrue("inv failure", testThis("inv", "find_max2", orig));
     }
 
@@ -313,11 +288,8 @@ public class MethodCollection2Tests extends TestClass {
         //double r1 = MethodCollection2.variance(orig);
 
         assertTrue("add failure", testThis("add", "variance", orig));
-
         assertTrue("mult failure", testThis("mult", "variance", orig));
-
         assertTrue("per failure", testThis("per", "variance", orig));
-
         assertTrue("inv failure", testThis("inv", "variance", orig));
     }
 
@@ -328,9 +300,7 @@ public class MethodCollection2Tests extends TestClass {
         //int[] r1 = MethodCollection2.insertion_sort(orig);
 
         assertTrue("add failure", testThis("add", "insertion_sort", orig));
-
         assertTrue("mult failure", testThis("mult", "insertion_sort", orig));
-
         assertTrue("inv failure", testThis("inv", "insertion_sort", orig));
     }
 
@@ -341,15 +311,10 @@ public class MethodCollection2Tests extends TestClass {
         //double r1 = MethodCollection2.geometric_mean(orig);
 
         assertTrue("add failure", testThis("add", "geometric_mean", orig));
-
         assertTrue("mult failure", testThis("mult", "geometric_mean", orig));
-
         assertTrue("exc failure", testThis("exc", "geometric_mean", orig));
-
         assertTrue("inc failure", testThis("inc", "geometric_mean", orig));
-
         assertTrue("per failure", testThis("per", "geometric_mean", orig));
-
         assertTrue("inv failure", testThis("inv", "geometric_mean", orig));
     }
 
@@ -363,7 +328,6 @@ public class MethodCollection2Tests extends TestClass {
         //double r1 = MethodCollection2.mean_absolute_error(arg1, arg2);
 
         assertTrue("mult failure", testThis("mult", "mean_absolute_error", arg1, arg2));
-
         assertTrue("inv failure", testThis("inv", "mean_absolute_error", arg1, arg2));
     }
 
@@ -374,14 +338,12 @@ public class MethodCollection2Tests extends TestClass {
         //double r1 = MethodCollection2.find_median(orig);
 
         assertTrue("add failure", testThis("add", "find_median", orig));
-
         assertTrue("mult failure", testThis("mult", "find_median", orig));
-
         assertTrue("per failure", testThis("per", "find_median", orig));
-
         assertTrue("inv failure", testThis("inv", "find_median", orig));
     }
 
+    /*
     @Test
     public void cartesian_product_test() {
         //This method can be quite slow - use smaller inputs
@@ -390,6 +352,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(MAX/10);
         //int[][] r1 = MethodCollection2.cartesian_product(arg1, arg2);
     }
+    */
+
 
     @Test
     public void reverse_test() {
@@ -398,12 +362,11 @@ public class MethodCollection2Tests extends TestClass {
         //int[] r1 = MethodCollection2.reverse(orig);
         
         assertTrue("add failure", testThis("add", "reverse", orig));
-        
         assertTrue("mult failure", testThis("mult", "reverse", orig));
-        
         assertTrue("inv failure", testThis("inv", "reverse", orig));
     }
 
+    /*
     @Test
     public void check_equal_tolerance_test() {
         System.out.println("TEST: check_equal_tolerance");
@@ -414,7 +377,10 @@ public class MethodCollection2Tests extends TestClass {
 	double arg3 = getDouble();
         //boolean r1 = MethodCollection2.check_equal_tolerance(arg1, arg2, arg3);
     }
+    */
 
+
+    /*
     @Test
     public void check_equal_test() {
         System.out.println("TEST: check_equal");
@@ -424,6 +390,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         //boolean r1 = MethodCollection2.check_equal(arg1, arg2);
     }
+    */
+
 
     @Test
     public void weighted_average_test() {
@@ -435,7 +403,6 @@ public class MethodCollection2Tests extends TestClass {
         //double r1 = MethodCollection2.weighted_average(orig1, orig2);
 
         assertTrue("add failure", testThis("add", "weighted_average", orig1, orig2));
-
         assertTrue("mult failure", testThis("mult", "weighted_average", orig1, orig2));
     }
 
@@ -447,9 +414,7 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.count_k(arg1, arg2);
 
 	assertTrue("exc failure", testThis("exc", "count_k", arg1, arg2));
-
 	assertTrue("inc failure", testThis("inc", "count_k", arg1, arg2));
-
 	assertTrue("per failure", testThis("per", "count_k", arg1, arg2));
     }
 
@@ -462,9 +427,7 @@ public class MethodCollection2Tests extends TestClass {
         //int[] r1 = MethodCollection2.clip(orig, secondArg, thirdArg);
 
         assertTrue("add failure", testThis("add", "clip", orig, secondArg, thirdArg));
-
         assertTrue("mult failure", testThis("mult", "clip", orig, secondArg, thirdArg));
-
         assertTrue("inv failure", testThis("inv", "clip", orig, secondArg, thirdArg));
     }
 
@@ -499,11 +462,8 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.count_non_zeroes(arg1);
 
 	assertTrue("exc failure", testThis("exc", "count_non_zeroes", arg1));
-
 	assertTrue("inc failure", testThis("inc", "count_non_zeroes", arg1));
-
 	assertTrue("per failure", testThis("per", "count_non_zeroes", arg1));
-
 	assertTrue("inv failure", testThis("inv", "count_non_zeroes", arg1));
     }
 
@@ -514,9 +474,7 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.cnt_zeroes(arg1);
 
 	assertTrue("exc failure", testThis("exc", "cnt_zeroes", arg1));
-
 	assertTrue("inc failure", testThis("inc", "cnt_zeroes", arg1));
-
 	assertTrue("per failure", testThis("per", "cnt_zeroes", arg1));
     }
 
@@ -562,13 +520,9 @@ public class MethodCollection2Tests extends TestClass {
         //int r1 = MethodCollection2.hamming_dist(orig1, orig2);
 
         assertTrue("add failure", testThis("add", "hamming_dist", orig1, orig2));
-
         assertTrue("mult failure", testThis("mult", "hamming_dist", orig1, orig2));
-
         assertTrue("exc failure", testThis("exc", "hamming_dist", orig1, orig2));
-
         assertTrue("inc failure", testThis("inc", "hamming_dist", orig1, orig2));
-
         assertTrue("inv failure", testThis("inv", "hamming_dist", orig1, orig2));
     }
 
