@@ -7,7 +7,6 @@ import com.google.common.collect.Lists;
 
 public class MethodsFromMahout {
 	
-/*
 	public static double cosineDistance(double[] p1, double[] p2) {
 	    double dotProduct = 0.0;
 	    double lengthSquaredp1 = 0.0;
@@ -31,9 +30,7 @@ public class MethodsFromMahout {
 	    
 	    return 1.0 - dotProduct / denominator;
 	  }
-*/
 	
-/*
 	 public static double manhattanDistance(double[] p1, double[] p2) {
 		    double result = 0.0;
 		    for (int i = 0; i < p1.length; i++) {
@@ -41,9 +38,7 @@ public class MethodsFromMahout {
 		    }
 		    return result;
 		  }
-*/
 	 //this was implemented by me since Mahout implementation relies on oo design
-/*
 	 public static double chebyshevDistance(double[] p1, double[] p2)
 	 {
 		 if (p1.length != p2.length) {
@@ -63,7 +58,6 @@ public class MethodsFromMahout {
 			 }
 		 return maxDiff;
 	 }
-*/
 	 
 	//this was implemented by me since Mahout implementation relies on oo design
 	 /**
@@ -75,7 +69,6 @@ public class MethodsFromMahout {
 	   * 
 	   * @return 0 for perfect match, > 0 for greater distance
 	   */
-/*
 	 public static double tanimotoDistance(double[] p1, double[] p2)
 	 {
 		 	double ab=0,aSq=0,bSq=0;
@@ -98,7 +91,6 @@ public class MethodsFromMahout {
 		      return 0.0;
 		    }
 	 }
-*/
 	 /*
 	 public static int binarySearchFromTo(int[] array, int value, int from, int to) {
 		    int mid = -1;
@@ -119,7 +111,6 @@ public class MethodsFromMahout {
 		  }
 		  */
 	 
-/*
 	 public static int sum(int[] values) {
 		    int sum = 0;
 		    for (int value : values) {
@@ -128,12 +119,10 @@ public class MethodsFromMahout {
 		    
 		    return sum;
 		  }
-*/
 		  
 	 /**
 	   * foreach i : array1[i] += array2[i]
 	   */
-/*
 	  public static int[] add(int[] array1, int[] array2) {
 	    Preconditions.checkArgument(array1.length == array2.length, "array1.length != array2.length");
 	    for (int index = 0; index < array1.length; index++) {
@@ -141,12 +130,10 @@ public class MethodsFromMahout {
 	    }
 	    return array1;
 	  }
-*/
 
 	  /**
 	   * foreach i : array1[i] -= array2[i]
 	   */
-/*
 	  public static int[] dec(int[] array1, int[] array2) {
 	    Preconditions.checkArgument(array1.length == array2.length, "array1.length != array2.length");
 	    for (int index = 0; index < array1.length; index++) {
@@ -154,7 +141,6 @@ public class MethodsFromMahout {
 	    }
 	    return array1;
 	  }
-*/
 	  
 	  /**
 	   * return the index of the maximum of the array, breaking ties randomly
@@ -316,7 +302,6 @@ public class MethodsFromMahout {
 	    return ans;
 	  }*/
 	  
-/*
 	  public static double[] givens(double a, double b, double[] csOut) {
 		    if (b == 0) {
 		      csOut[0] = 1;
@@ -334,7 +319,6 @@ public class MethodsFromMahout {
 		    }
 		    return csOut;
 		  }
-*/
 	  
 	  /**
 	   * Computes the binomial logistic inverse link function.
@@ -342,7 +326,6 @@ public class MethodsFromMahout {
 	   * @param r The value to transform.
 	   * @return The logit of r.
 	   */
-/*
 	  public static double link(double r) {
 	    if (r < 0.0) {
 	      double s = Math.exp(r);
@@ -352,7 +335,6 @@ public class MethodsFromMahout {
 	      return 1.0 / (1.0 + s);
 	    }
 	  }
-*/
 	  
 	  /**
 	   * Computes the likelihood that a given output sequence was computed by a
@@ -389,7 +371,6 @@ public class MethodsFromMahout {
 	   * @param partition
 	   *          partition to compute the number of trees for
 	   */
-/*
 	  public static int nbTrees(int numMaps, int numTrees, int partition) {
 	    int nbTrees = numTrees / numMaps;
 	    if (partition == 0) {
@@ -398,7 +379,6 @@ public class MethodsFromMahout {
 	    
 	    return nbTrees;
 	  }
-*/
 	  /*
 	  
 	  public static void orthonormalizeColumns(Matrix mx) {
@@ -423,7 +403,6 @@ public class MethodsFromMahout {
 		  }
 		  */
 	  
-/*
 	  public static int stepSize(int recordNumber, double multiplier) {
 		    int[] bumps = {1, 2, 5};
 		    double log = Math.floor(multiplier * Math.log10(recordNumber));
@@ -432,7 +411,6 @@ public class MethodsFromMahout {
 
 		    return bump * scale;
 		  }
-*/
 	  /*
 	  public static void applyGivensInPlace(double c, double s, double[] row1,
 		      double[] row2, int offset, int len) {
@@ -445,31 +423,22 @@ public class MethodsFromMahout {
 		      row2[j] = s * tau1 + c * tau2;
 		    }
 		  }*/
-/*
 	  public static double choose2(double n) {
 		    return n * (n - 1) / 2;
 		  }
-*/
 	  
-/*
 	  public static double computeWeight(double featureLabelWeight, double labelWeight, double alphaI,
 		      double numFeatures) {
 		    double numerator = featureLabelWeight + alphaI;
 		    double denominator = labelWeight + alphaI * numFeatures;
 		    return Math.log(numerator / denominator);
 		  }
-*/
-
-/*
 	  public static double computeWeight(double featureWeight, double featureLabelWeight,
 		      double totalWeight, double labelWeight, double alphaI, double numFeatures) {
 		    double numerator = featureWeight - featureLabelWeight + alphaI;
 		    double denominator = totalWeight - labelWeight + alphaI * numFeatures;
 		    return -Math.log(numerator / denominator);
 		  }
-*/
-
-/*
 	  public static double errorRate(double[] labels, double[] predictions) {
 		    //Preconditions.checkArgument(labels.length == predictions.length, "labels.length != predictions.length");
 		    double nberrors = 0; // number of instance that got bad predictions
@@ -489,9 +458,7 @@ public class MethodsFromMahout {
 
 		    return nberrors / datasize;
 		  }
-*/
 
-/*
 	  public static double[] fromRho(double rho, double[] csOut) {
 		    if (rho == 1) {
 		      csOut[0] = 0;
@@ -507,7 +474,6 @@ public class MethodsFromMahout {
 		    csOut[1] = Math.sqrt(1 - csOut[0] * csOut[0]);
 		    return csOut;
 		  }
-*/
 
 	  
 

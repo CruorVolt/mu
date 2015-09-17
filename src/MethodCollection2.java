@@ -2,7 +2,6 @@ package Test;
 
 public class MethodCollection2 {
 
-/*
     public static int add_values( int[] a )
     {
         int sum = 0;
@@ -11,9 +10,7 @@ public class MethodCollection2 {
         }
         return sum;
     }
-*/
 
-    /*
     public static double add_two_array_values( int[] a, int i, int j )
     {
         if (i < 0 || i >= a.length || j < 0 || j >= a.length) {
@@ -22,9 +19,7 @@ public class MethodCollection2 {
             return a[i] + a[j] / 2.0;
         }
     }
-    */
 
-/*
     public static int[] bubble( int[] a )
     {
         int i;
@@ -41,9 +36,7 @@ public class MethodCollection2 {
         }
         return a;
     }
-*/
 
-    /*
     public static int[] shell_sort( int[] a )
     {
         int j;
@@ -66,11 +59,9 @@ public class MethodCollection2 {
         }
         return a;
     }
-    */
 
    
 
-    /*
     public static int sequential_search( int[] a, int key )
     {
         int i;
@@ -81,9 +72,7 @@ public class MethodCollection2 {
         }
         return -1;
     }
-    */
 
-/*
     public static int[] selection_sort( int[] list )
     {
         int i;
@@ -102,9 +91,7 @@ public class MethodCollection2 {
         }
         return list;
     }
-*/
 
-    /*
     public static int add_values_in_two_arrays( int[] a, int[] b, int i )
     {
         if (i < 0 || i >= a.length || i >= b.length) {
@@ -113,9 +100,7 @@ public class MethodCollection2 {
             return a[i] + b[i];
         }
     }
-    */
 
-    /*
     public static int dot_product( int[] a, int[] b )
     {
         int sum = 0;
@@ -125,9 +110,7 @@ public class MethodCollection2 {
         }
         return sum;
     }
-    */
 
-/*
     public static int[] array_calc1( int[] a, int k )
     {
         int i;
@@ -137,9 +120,7 @@ public class MethodCollection2 {
         }
         return b;
     }
-*/
 
-/*
     public static int[] set_min_val( int[] a, int k )
     {
         int i;
@@ -150,9 +131,7 @@ public class MethodCollection2 {
         }
         return a;
     }
-*/
 
-    /*
     public static int get_array_value( int[] a, int k )
     {
         if (k - 1 >= a.length || k - 1 < 0) {
@@ -161,9 +140,7 @@ public class MethodCollection2 {
             return a[k - 1];
         }
     }
-    */
 
-/*
     public static int find_min( int[] a )
     {
         int min = a[0];
@@ -175,9 +152,7 @@ public class MethodCollection2 {
         }
         return min;
     }
-*/
 
-    /*
     public static int[] find_diff( int[] a, int[] b )
     {
         int i;
@@ -187,9 +162,7 @@ public class MethodCollection2 {
         }
         return c;
     }
-    */
 
-/*
     public static int[] array_copy( int[] a )
     {
         int i;
@@ -199,10 +172,8 @@ public class MethodCollection2 {
         }
         return b;
     }
-*/
 
 
-    /*
     public static double find_euc_dist( int[] a, int[] b )
     {
         int i;
@@ -213,9 +184,7 @@ public class MethodCollection2 {
         double result = Math.sqrt( sum );
         return result;
     }
-    */
 
-/*
     public static double find_magnitude( int[] a )
     {
         int i;
@@ -226,9 +195,7 @@ public class MethodCollection2 {
         double result = Math.sqrt( sum );
         return result;
     }
-*/
 
-    /*
     public static double manhattan_dist( int[] a, int[] b )
     {
         int i;
@@ -238,9 +205,7 @@ public class MethodCollection2 {
         }
         return sum;
     }
-    */
 
-/*
     public static double average( int[] a )
     {
         double sum = 0;
@@ -249,9 +214,7 @@ public class MethodCollection2 {
         }
         return sum / a.length;
     }
-*/
 
-    /*
     public static int[] dec_array( int[] a, int k )
     {
         int i;
@@ -260,17 +223,13 @@ public class MethodCollection2 {
         }
         return a;
     }
-    */
 
-    /*
     public static double expr1( double a, double b )
     {
         double result = (b - a) / a;
         return result;
     }
-    */
 
-/*
     public static int find_max( int[] a )
     {
         int max = a[0];
@@ -281,9 +240,7 @@ public class MethodCollection2 {
         }
         return max;
     }
-*/
 
-/*
     public static int find_max2( int[] a )
     {
         int max = a[0] + a[1];
@@ -294,12 +251,10 @@ public class MethodCollection2 {
         }
         return max;
     }
-*/
 
    
 
 
-/*
     public static double variance( double[] x )
     {
     	double sum = 0;
@@ -316,9 +271,7 @@ public class MethodCollection2 {
         var = sum1 / (double) x.length;
         return var;
     }
-*/
 
-/*
     public static int[] insertion_sort( int[] array )
     {
         for (int i = 1; i < array.length; i++) {
@@ -332,12 +285,10 @@ public class MethodCollection2 {
         }
         return array;
     }
-*/
 
    
 
     //only applies to positive numbers
-/*
     public static double geometric_mean( int[] a )
     {
         long product = 1;
@@ -346,9 +297,7 @@ public class MethodCollection2 {
         }
         return Math.pow( product, (double) 1 / a.length );
     }
-*/
 
-    /*
     public static double mean_absolute_error( int[] a, int[] b )
     {
         int sum = 0;
@@ -357,11 +306,9 @@ public class MethodCollection2 {
         }
         return (double) sum / a.length;
     }
-    */
 
  
 
-/*
     public static double find_median( int[] a )
     {
         int k = a.length / 2 + 1;
@@ -386,9 +333,7 @@ public class MethodCollection2 {
             return a[a.length / 2];
         }
     }
-*/
 
-    /*
     public static int[][] cartesian_product( int[] a, int[] b )
     {
         int[][] result = new int[a.length * b.length][2];
@@ -402,9 +347,7 @@ public class MethodCollection2 {
         }
         return result;
     }
-    */
 
-/*
     public static int[] reverse( int[] a )
     {
         int[] r = new int[a.length];
@@ -415,9 +358,7 @@ public class MethodCollection2 {
         }
         return r;
     }
-*/
 
-    /*
     public static boolean check_equal_tolerance( double[] a, double[] b, double tol )
     {
         if (a.length != b.length) {
@@ -430,9 +371,7 @@ public class MethodCollection2 {
         }
         return true;
     }
-    */
 
-    /*
     public static boolean check_equal( int[] a, int[] b )
     {
         if (a.length != b.length) {
@@ -445,9 +384,7 @@ public class MethodCollection2 {
         }
         return true;
     }
-    */
 
-/*
     public static double weighted_average( double[] a, double[] b )
     {
         double sum1 = 0;
@@ -458,9 +395,7 @@ public class MethodCollection2 {
         }
         return sum1 / sum2;
     }
-*/
 
-    /*
     public static int count_k( int[] a, int k )
     {
         int cnt = 0;
@@ -471,11 +406,9 @@ public class MethodCollection2 {
         }
         return cnt;
     }
-    */
 
     
 
-/*
     public static int[] clip( int[] a, int lowerLim, int upperLim )
     {
         int[] r = new int[a.length];
@@ -492,9 +425,7 @@ public class MethodCollection2 {
         }
         return r;
     }
-*/
 
-    /*
     public static int[] elementwise_max( int[] a, int[] b )
     {
         int[] r = new int[a.length];
@@ -507,9 +438,7 @@ public class MethodCollection2 {
         }
         return r;
     }
-    */
 
-    /*
     public static int[] elementwise_min( int[] a, int[] b )
     {
         int[] r = new int[a.length];
@@ -522,9 +451,7 @@ public class MethodCollection2 {
         }
         return r;
     }
-    */
 
-    /*
     public static int count_non_zeroes( int[] a )
     {
         int cnt = 0;
@@ -535,9 +462,7 @@ public class MethodCollection2 {
         }
         return cnt;
     }
-    */
 
-    /*
     public static int cnt_zeroes( int[] a )
     {
         int cnt = 0;
@@ -548,9 +473,7 @@ public class MethodCollection2 {
         }
         return cnt;
     }
-    */
 
-    /*
     public static boolean[] elementwise_equal( int[] a, int[] b )
     {
         boolean[] r = new boolean[a.length];
@@ -563,9 +486,7 @@ public class MethodCollection2 {
         }
         return r;
     }
-    */
 
-    /*
     public static boolean[] elementwise_not_equal( int[] a, int[] b )
     {
         boolean[] r = new boolean[a.length];
@@ -578,9 +499,7 @@ public class MethodCollection2 {
         }
         return r;
     }
-    */
 
-/*
     public static int hamming_dist( int[] a, int[] b )
     {
         int cnt = 0;
@@ -591,7 +510,6 @@ public class MethodCollection2 {
         }
         return cnt;
     }
-*/
 
     
 

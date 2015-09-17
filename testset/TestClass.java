@@ -50,15 +50,13 @@ public class TestClass {
     }
 
     public static boolean addTest(int orig, int next) {
-        orig = orig >= 0 ? orig : Integer.MAX_VALUE;
-        next = next >= 0 ? next : Integer.MAX_VALUE;
+        orig = Math.abs(orig);
+        next = Math.abs(orig);
         return orig <= next;
     }
 
     public static boolean addTest(double orig, double next) {
-        orig = orig >= 0 ? orig : Double.MAX_VALUE;
-        next = next >= 0 ? next : Double.MAX_VALUE;
-        return orig <= next;
+        return (Double.compare(orig, next) <= 0);
     }
 
     public static boolean addTest(int[] orig, int[] next) {
@@ -89,35 +87,27 @@ public class TestClass {
 
     public static int[] exc(int[] original) {
         int[] excluded = new int[original.length - 1];
-        int excludeIndex = rand.nextInt(original.length);
-        int offset = 0;
-        for (int i = 0; i < original.length; i++) {
-            if (i != excludeIndex) {
-                excluded[i + offset] = original[i];
-            } else {
-                offset = -1;
-            }
+        for (int i = 0; i < excluded.length; i++) { //output excludes final element
+            excluded[i] = original[i];
         }
         return excluded;
     }
 
     public static double[] exc(double[] original) {
         double[] excluded = new double[original.length - 1];
-        int excludeIndex = rand.nextInt(original.length);
-        int offset = 0;
-        for (int i = 0; i < original.length; i++) {
-            if (i != excludeIndex) {
-                excluded[i + offset] = original[i];
-            } else {
-                offset = -1;
-            }
+        for (int i = 0; i < excluded.length; i++) { //output excludes final element
+            excluded[i] = original[i];
         }
         return excluded;
     }
 
+    public static int exc(int original) { return original; }
+
+    public static double exc(double original) { return original; }
+
     public static boolean excTest(int pre, int post) {
-        pre = pre >= 0 ? pre : Integer.MAX_VALUE;
-        post = post >= 0 ? post : Integer.MAX_VALUE;
+        pre = Math.abs(pre);
+        post = Math.abs(post);
         return (post <= pre);
     }
 
@@ -132,9 +122,7 @@ public class TestClass {
     }
 
     public static boolean excTest(double pre, double post) {
-        pre = pre >= 0 ? pre : Double.MAX_VALUE;
-        post = post >= 0 ? post : Double.MAX_VALUE;
-        return (post <= pre);
+        return (Double.compare(pre, post) >= 0);
     }
 
     public static boolean excTest(double[] pre, double[] post) {
@@ -156,33 +144,25 @@ public class TestClass {
 
     public static int[] inc(int[] original) {
         int[] included = new int[original.length + 1];
-        int includeIndex = rand.nextInt(original.length);
-        int offset = 0;
-        for (int i = 0; i <= original.length; i++) {
-            if (i != includeIndex) {
-                included[i] = original[i + offset];
-            } else {
-                included[i] = getInt();
-                offset = -1;
-            }
+        for (int i = 0; i < original.length; i++) {
+            included[i] = original[i];
         }
+        included[original.length] = getInt(); //new final element
         return included;
     }
 
     public static double[] inc(double[] original) {
         double[] included = new double[original.length + 1];
-        int includeIndex = rand.nextInt(original.length);
-        int offset = 0;
-        for (int i = 0; i <= original.length; i++) {
-            if (i != includeIndex) {
-                included[i] = original[i + offset];
-            } else {
-                included[i] = getDouble();
-                offset = -1;
-            }
+        for (int i = 0; i < original.length; i++) {
+            included[i] = original[i];
         }
+        included[original.length] = getDouble(); //new final element
         return included;
     }
+
+    public static int inc(int original) { return original; }
+
+    public static double inc(double original) { return original; }
 
     public static boolean incTest(int o, int n) { return addTest(o, n); }
     public static boolean incTest(double o, double n) { return addTest(o, n); }
@@ -209,6 +189,14 @@ public class TestClass {
             inverse[i] = 1.0 / original[i];
         }
         return inverse;
+    }
+
+    public static double inv(double original) {
+        return 1.0 / original;
+    }
+
+    public static int inv(int original) {
+        return 1 / original;
     }
 
     public static boolean invTest(int o, int n) { return excTest(o, n); }
@@ -289,7 +277,7 @@ public class TestClass {
     }
 
     public static boolean permTest(double o, double n) {
-        return (Math.abs(o - n) > 0.0001);
+        return (Math.abs(o - n) < 0.0001);
     }
 
     public static boolean permTest(int[] o, int[] n) {
@@ -332,10 +320,25 @@ public class TestClass {
         boolean passed = false;
         thisClass = "Test." + thisClass; //All /src classes are in Test package
 
-        //find the correct function to execute
+        //find the correct function to execute - That long function is going to cause problems
         Class[] argClasses = new Class[args.length];
+        Class argClass;
         for (int i = 0; i < argClasses.length; i++) {
-            argClasses[i] = args[i].getClass();
+            argClass = args[i].getClass();
+            //System.out.println("Class: " + argClass);
+            //System.out.println("Component: " + argClass.getComponentType());
+            if (argClass == Integer.class) {
+                argClasses[i] = int.class;
+            } else if (argClass == Double.class) {
+                argClasses[i] = double.class;
+            } else if (argClass.getComponentType() == int.class) {
+                argClasses[i] = int[].class;
+            } else if (argClass.getComponentType() == double.class) {
+                argClasses[i] = double[].class;
+            } else {
+                System.out.println("PROBLEM - NO CLASS ASSIGNED");
+            }
+                
         }
 
         //Get the method being tested
@@ -362,15 +365,15 @@ public class TestClass {
                     Class type = func.getReturnType();
                     Method MRTestFunc = TestClass.class.getMethod(test + "Test", type, type);
 
-                    //System.out.println("Original Inputs:");
-                    //for (Object in: args) {
-                        //System.out.println(Arrays.toString( (int[]) in));
-                    //}
+                    System.out.println("Original Inputs:");
+                    for (Object in: args) {
+                        System.out.println(in);
+                    }
 
                     //get original return value
                     Object return1 = func.invoke(inst, args);
 
-                    //System.out.println("Original Output: " + return1);
+                    System.out.println("Original Output: " + return1);
 
                     //modify arguments
                     Object[] permutedArgs = new Object[args.length];
@@ -391,23 +394,25 @@ public class TestClass {
                     //get modified return value
                     Object return2 = func.invoke(inst, permutedArgs);
 
-                    //System.out.println("Modified Output: " + return2);
+                    System.out.println("Modified Output: " + return2);
 
-                    //System.out.println ("Running test: " + MRTestFunc);
+                    System.out.println ("Running test: " + MRTestFunc);
 
                     //run test
                     if ((boolean)MRTestFunc.invoke(null, return1, return2)) {
                         passed = true;
                     }
                 } catch(NoSuchMethodException e) {
+                    System.out.println("TESTTHIS EXCEPTION 1");
                     e.printStackTrace();
                 }
 
         } catch(Exception e) {
+            System.out.println("TESTTHIS EXCEPTION 2");
             e.printStackTrace();
         }
 
-        System.out.println("testThis() Exiting with " + passed + " >>>>>>");
+        System.out.println("testThis() Exiting with " + passed);
         return passed;
     }
 
@@ -426,8 +431,8 @@ public class TestClass {
     }
 
     public static int[] getIntArray() {
-        int size = rand.nextInt(9) + 1;
-        return rand.ints().limit(size).toArray();
+        int size = rand.nextInt(8) + 2;
+        return getIntArray(size);
     }
 
     public static int[] getIntArray(int size) {
@@ -444,11 +449,11 @@ public class TestClass {
 
     public static double[] getDoubleArray() {
         int size = rand.nextInt(9) + 1;
-        return rand.doubles().limit(size).toArray();
+        return rand.doubles(size, 1.0, MAX).toArray();
     }
 
     public static double[] getDoubleArray(int size) {
-        return rand.doubles().limit(size).toArray();
+        return rand.doubles(size, 1.0, MAX).toArray();
     }
 
     public static long getLong() {
@@ -471,15 +476,19 @@ public class TestClass {
 
 
     public static void main(String[] args) {
-        System.out.println("TEST: dot_product");
-        //Arrays should be same size
-        int arraySize = getInt();
-	int[] arg1 = getIntArray(arraySize);
-	int[] arg2 = getIntArray(arraySize);
-        //int r1 = MethodCollection2.dot_product(arg1, arg2);
 
         TestClass tester = new TestClass();
 
-        tester.testThis("mult", "MethodCollection2", "dot_product", arg1, arg2);
+        //First two args must be same length and have one or more elements, second two args must be valid start and length indices
+        int start = getInt();
+        int length = getInt() + 2;
+        int size = getInt() + start + length + 1;
+	double[] arg1 = getDoubleArray(size);
+	double[] arg2 = getDoubleArray(size);
+        //double r1 = MethodsFromApacheMath.evaluateWeightedProduct(arg1, arg2, start, length);
+
+        tester.testThis("mult", "MethodsFromApacheMath", "evaluateWeightedProduct", arg1, arg2, start, length);
+        tester.testThis("exc", "MethodsFromApacheMath", "evaluateWeightedProduct", arg1, arg2, start, length);
+        tester.testThis("inc", "MethodsFromApacheMath", "evaluateWeightedProduct", arg1, arg2, start, length);
     }
 }

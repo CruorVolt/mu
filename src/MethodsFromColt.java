@@ -16,7 +16,6 @@ public class MethodsFromColt {
 	 * Returns the auto-correlation of a data sequence.
 	 */
 	
-/*
 	public static double autoCorrelation(double[] data, int lag, double mean, double variance) {
 		int N = data.length;
 		//if (lag >= N) throw new IllegalArgumentException("Lag is too large");
@@ -28,7 +27,6 @@ public class MethodsFromColt {
 	  
 		return (run/(N-lag)) / variance;
 	}
-*/
 	
 	/**
 	 * Searches the receiver for the specified value using
@@ -56,7 +54,6 @@ public class MethodsFromColt {
 	 * @see java.util.Arrays
 	 */
 	
-/*
 	public static int binarySearchFromTo(double[] elements,double key, int from, int to) {
 		int low = from;
 		int high = to;
@@ -76,7 +73,6 @@ public class MethodsFromColt {
 		}
 		return -(low + 1);  // key not found.
 	}
-*/
 
 
 	/**
@@ -109,7 +105,6 @@ public class MethodsFromColt {
 	 * @throws IllegalArgumentException if <tt>size() &gt; other.size()</tt>.
 	 */
 	/*
-/*
 	public void andNot(long[] theBits,long[] otherBits) {
 		//checkSize(other);
 		//final long[] theBits = this.bits; // cached for speed.
@@ -124,7 +119,6 @@ public class MethodsFromColt {
 	 * <tt>cov(x,y) = (1/(size()-1)) * Sum((x[i]-mean(x)) * (y[i]-mean(y)))</tt>.
 	 * See the <A HREF="http://www.cquest.utoronto.ca/geog/ggr270y/notes/not05efg.html"> math definition</A>.
 	 */
-/*
 	public static double covariance(double[] elements1, double[] elements2) {
 		int size = elements1.length;
 		//if (size != elements2.length || size == 0) throw new IllegalArgumentException();
@@ -142,12 +136,10 @@ public class MethodsFromColt {
 		}
 		return Sxy/(size-1);
 	}
-*/
 	
 	/**
 	 * Durbin-Watson computation.
 	 */
-/*
 	public static double durbinWatson(double[] elements) {
 		int size = elements.length;
 		//if (size < 2) throw new IllegalArgumentException("data sequence must contain at least two values.");
@@ -164,13 +156,11 @@ public class MethodsFromColt {
 		return run;
 		//return run / run_sq;
 	}
-*/
 	
 	/**
 	 * Returns the lag-1 autocorrelation of a dataset; 
 	 * Note that this method has semantics different from <tt>autoCorrelation(..., 1)</tt>;
 	 */
-/*
 	public static double lag1(double[] elements, double mean) {
 		int size = elements.length;
 		//double[]  = data.elements();
@@ -188,11 +178,9 @@ public class MethodsFromColt {
 		r1 = q / v ;
 		return r1;
 	}
-*/
 	/**
 	 * Returns the largest member of a data sequence.
 	 */
-/*
 	public static double max(double[] elements) {
 		int size = elements.length;
 		//if (size==0) throw new IllegalArgumentException();
@@ -205,13 +193,11 @@ public class MethodsFromColt {
 
 		return max;
 	}
-*/
 	
 	/**
 	 * Returns the mean deviation of a dataset.
 	 * That is <tt>Sum (Math.abs(data[i]-mean)) / data.size())</tt>.
 	 */
-/*
 	public static double meanDeviation(double[] elements, double mean) {
 		//double[] elements = data.elements();
 		int size = elements.length;
@@ -219,12 +205,10 @@ public class MethodsFromColt {
 		for (int i=size; --i >= 0;) sum += Math.abs(elements[i]-mean);
 		return sum/size;
 	}
-*/
 	
 	/**
 	 * Returns the smallest member of a data sequence.
 	 */
-/*
 	public static double min(double[] elements) {
 		int size = elements.length;
 		//if (size==0) throw new IllegalArgumentException();
@@ -237,14 +221,12 @@ public class MethodsFromColt {
 
 		return min;
 	}
-*/
 	
 	/**
 	 * Returns the product of a data sequence, which is <tt>Prod( data[i] )</tt>.
 	 * In other words: <tt>data[0]*data[1]*...*data[data.size()-1]</tt>.
 	 * Note that you may easily get numeric overflows.
 	 */
-/*
 	public static double product(double[] elements) {
 		int size =elements.length;
 		//double[] elements = data.elements();
@@ -254,7 +236,6 @@ public class MethodsFromColt {
 		
 		return product;
 	}
-*/
 	/**
 	 * Returns the <tt>phi-</tt>quantile; that is, an element <tt>elem</tt> for which holds that <tt>phi</tt> percent of data elements are less than <tt>elem</tt>.
 	 * The quantile need not necessarily be contained in the data sequence, it can be a linear interpolation.
@@ -262,7 +243,6 @@ public class MethodsFromColt {
 	 * @param phi the percentage; must satisfy <tt>0 &lt;= phi &lt;= 1</tt>.
 	 */
 	
-/*
 	public static double quantile( double[] sortedElements, double phi) {
 		//double[] sortedElements = sortedData.elements();
 		int n = sortedElements.length;
@@ -283,7 +263,6 @@ public class MethodsFromColt {
 
 		return result ;
 	}
-*/
 	
 	
 	/**
@@ -297,7 +276,6 @@ public class MethodsFromColt {
 	 * @param moment4 the fourth central moment, which is <tt>moment(data,4,mean)</tt>.
 	 * @param sampleVariance the <b>sample variance</b>.
 	 */
-/*
 	public static double sampleKurtosis(int size, double moment4, double sampleVariance) {
 		 int    n=size;
 		 double s2=sampleVariance; // (y-ymean)^2/(n-1)
@@ -305,7 +283,6 @@ public class MethodsFromColt {
 		 return m4*n*(n+1) / ((n-1)*(n-2)*(n-3)*s2*s2)
 			  - 3.0*(n-1)*(n-1)/((n-2)*(n-3));
 	}
-*/
 	/**
 	 * Return the standard error of the sample kurtosis.
 	 *
@@ -315,12 +292,10 @@ public class MethodsFromColt {
 	 *
 	 * @param size the number of elements of the data sequence.
 	 */
-/*
 	public static double sampleKurtosisStandardError(int size) {
 		 int n=size;
 		 return Math.sqrt( 24.0*n*(n-1)*(n-1)/((n-3)*(n-2)*(n+3)*(n+5)) );
 	}
-*/
 	/**
 	 * Returns the sample skew of a data sequence.
 	 *
@@ -332,19 +307,16 @@ public class MethodsFromColt {
 	 * @param moment3 the third central moment, which is <tt>moment(data,3,mean)</tt>.
 	 * @param sampleVariance the <b>sample variance</b>.
 	 */
-/*
 	public static double sampleSkew(int size, double moment3, double sampleVariance) {
 		 int    n=size;
 		 double s=Math.sqrt(sampleVariance); // sqrt( (y-ymean)^2/(n-1) )
 		 double m3 = moment3*n;    // (y-ymean)^3
 		 return n*m3 / ((n-1)*(n-2)*s*s*s);
 	}
-*/
 	/**
 	 * Returns the sample variance of a data sequence.
 	 * That is <tt>Sum ( (data[i]-mean)^2 ) / (data.size()-1)</tt>.
 	 */
-/*
 	public static double sampleVariance(double[] elements, double mean) {
 		//double[] elements = data.elements();
 		int size = elements.length;	
@@ -357,7 +329,6 @@ public class MethodsFromColt {
 
 		return sum / (size-1);
 	}
-*/
 	/**
 	 * Returns the sum of logarithms of a data sequence, which is <tt>Sum( Log(data[i])</tt>.
 	 * @param data the data sequence.
@@ -365,14 +336,12 @@ public class MethodsFromColt {
 	 * @param to the index of the last data element (inclusive).
 	 */
 	
-/*
 	public static double sumOfLogarithms(double[] elements) {
 		//double[] elements = data.elements();
 		double logsum = 0;
 		for (int i=0;i<elements.length;i++) logsum += Math.log(elements[i]);
 		return logsum;
 	}
-*/
 	
 	/**
 	 * Returns the trimmed mean of a sorted data sequence.
@@ -383,7 +352,6 @@ public class MethodsFromColt {
 	 * @right the number of trailing elements to trim.
 	 */
 	
-/*
 	public static double trimmedMean(double[] sortedElements, double mean, int left, int right) {
 		int N = sortedElements.length;
 		//if (N==0) throw new IllegalArgumentException("Empty data.");
@@ -397,14 +365,12 @@ public class MethodsFromColt {
 			mean += (mean-sortedElements[N0-1-i])/(--N);
 		return mean;
 	}
-*/
 	
 	
 	/**
 	 * Returns the weighted mean of a data sequence.
 	 * That is <tt> Sum (data[i] * weights[i]) / Sum ( weights[i] )</tt>.
 	 */
-/*
 	public static double weightedMean(double[] elements, double[] theWeights) {
 		int size = elements.length;
 		//if (size != theWeights.length || size == 0) throw new IllegalArgumentException();
@@ -421,7 +387,6 @@ public class MethodsFromColt {
 
 		return sum/weightsSum;
 	}
-*/
 	
 	/**
 	 * Searches the list for the specified value using
@@ -447,7 +412,6 @@ public class MethodsFromColt {
 	 * @see java.util.Arrays
 	 */
 	
-/*
 	public static int binarySearchFromTo(int[] list, int key, int from, int to) {
 		int midVal;
 		while (from <= to) {
@@ -458,7 +422,6 @@ public class MethodsFromColt {
 			else return mid; // key found
 		}
 		return -(from + 1);  // key not found.
-*/
 
 		/*
 		// even for very short lists (0,1,2,3 elems) this is only 10% faster
@@ -468,7 +431,7 @@ public class MethodsFromColt {
 		}
 		return -(from + 1);
 		*/
-	//}
+	}
 	
 	/**
 	 * Efficiently returns the binomial coefficient, often also referred to as "n over k" or "n choose k".
@@ -482,7 +445,6 @@ public class MethodsFromColt {
 	 * @return the binomial coefficient.
 	 */
 	
-/*
 	public static double binomial(double n, long k) {
 		if (k<0) return 0;
 		if (k==0) return 1;
@@ -497,7 +459,6 @@ public class MethodsFromColt {
 		}
 		return binomial;
 	}
-*/
 	
 	/**
 	 * Evaluates the series of Chebyshev polynomials Ti at argument x/2.
@@ -577,7 +538,6 @@ public class MethodsFromColt {
 	   * @param r The value to transform.
 	   * @return The logit of r.
 	   */
-/*
 	  public static double link(double r) {
 	    if (r < 0.0) {
 	      double s = Math.exp(r);
@@ -587,7 +547,6 @@ public class MethodsFromColt {
 	      return 1.0 / (1.0 + s);
 	    }
 	  }
-*/
 	  
 	  /**
 	   * Returns the winsorized mean of a sorted data sequence.
@@ -597,7 +556,6 @@ public class MethodsFromColt {
 	   * @left the number of leading elements to trim.
 	   * @right the number of trailing elements to trim.
 	   */
-/*
 	  public static double winsorizedMean(double[] sortedElements, int left, int right) {
 	  	int N = sortedElements.length;
 	  	//if (N==0) throw new IllegalArgumentException("Empty data.");
@@ -623,7 +581,6 @@ public class MethodsFromColt {
 
 	  	return mean;
 	  }
-*/
 	  /**
 	   * Returns the probability distribution function of the discrete geometric distribution.
 	   * <p>
@@ -632,19 +589,16 @@ public class MethodsFromColt {
 	   * @param k the argument to the probability distribution function.
 	   * @param p the parameter of the probability distribution function.
 	   */
-/*
 	  public static double geometricPdf(int k, double p) {
 	  	//if (k<0) throw new IllegalArgumentException();
 	  	return p * Math.pow(1-p,k);
 	  }
-*/
 	  
 	  /**
 	   * Returns the kurtosis (aka excess) of a data sequence.
 	   * @param moment4 the fourth central moment, which is <tt>moment(data,4,mean)</tt>.
 	   * @param standardDeviation the standardDeviation.
 	   */
-/*
 	  public static double kurtosis(double[] data) {
 		  double sum=0;
 		  double sumPD=0;
@@ -665,14 +619,12 @@ public class MethodsFromColt {
 		  double moment4= sumPD / data.length;
 	  	return -3 + moment4 / (standardDeviation * standardDeviation * standardDeviation * standardDeviation);
 	  }
-*/
 	  
 	  /**
 	   * Returns the value ln(Gamma(xx) for xx > 0.  Full accuracy is obtained for 
 	   * xx > 1. For 0 < xx < 1. the reflection formula (6.1.4) can be used first.
 	   * (Adapted from Numerical Recipes in C)
 	   */
-/*
 	  public static double logGamma(double xx) {
 		  double[] cof = { // for method logGamma() 
 					76.18009172947146,-86.50532032941677,
@@ -690,7 +642,6 @@ public class MethodsFromColt {
 	  	}
 	  	return -tmp + Math.log(2.5066282746310005*ser);
 	  }
-*/
 	  /**
 	   * Returns the pooled mean of two data sequences.
 	   * That is <tt>(size1 * mean1 + size2 * mean2) / (size1 + size2)</tt>.
@@ -700,7 +651,6 @@ public class MethodsFromColt {
 	   * @param size2 the number of elements in data sequence 2.
 	   * @param mean2 the mean of data sequence 2.
 	   */
-/*
 	  public static double pooledMean(double[] data1, double[] data2) {
 	  	
 		  double sum1=0;
@@ -720,7 +670,6 @@ public class MethodsFromColt {
 		  double mean2 = sum2 / data2.length;
 		  return (data1.length * mean1 + data2.length * mean2) / (data1.length + data2.length);
 	  }
-*/
 	  /**
 	   * Returns the pooled variance of two data sequences.
 	   * That is <tt>(size1 * variance1 + size2 * variance2) / (size1 + size2)</tt>;
@@ -730,7 +679,6 @@ public class MethodsFromColt {
 	   * @param size2 the number of elements in data sequence 2.
 	   * @param variance2 the variance of data sequence 2.
 	   */
-/*
 	  public static double pooledVariance(double[] data1, double[] data2) {
 	  	
 		  double sum1=0;
@@ -756,7 +704,6 @@ public class MethodsFromColt {
 		  double var2=(sumSq2-mean2*sum2)/data2.length;
 		  return (data1.length * var1 + data2.length * var2) / (data1.length + data2.length);
 	  }
-*/
 	  
 	  /**
 	   * Evaluates the given polynomial of degree <tt>N</tt> at <tt>x</tt>.
@@ -776,7 +723,6 @@ public class MethodsFromColt {
 	   * @param coef the coefficients of the polynomial.
 	   * @param N the degree of the polynomial.
 	   */
-/*
 	  public static double polevl( double x, double coef[], int N ) throws ArithmeticException {
 	  	double ans;
 	  	ans = coef[0];
@@ -785,7 +731,6 @@ public class MethodsFromColt {
 
 	  	return ans;
 	  }
-*/
 	  
 	  /**
 	   * Returns the linearly interpolated number of elements in a list less or equal to a given element.
@@ -798,7 +743,6 @@ public class MethodsFromColt {
 	   * @param element the element to search for.
 	   * @return the rank of the element.
 	   */
-/*
 	  public static double rankInterpolated(double[] sortedList, double element,int index) {
 	  	//int index = sortedList.binarySearch(element);
 	  	if (index >= 0) { // element found
@@ -818,7 +762,6 @@ public class MethodsFromColt {
 	  	double delta = (element-from) / (to-from); //linear interpolation
 	  	return insertionPoint + delta;
 	  }
-*/
 	  /**
 	   * Returns the sample weighted variance of a data sequence.
 	   * That is <tt>(sumOfSquaredProducts  -  sumOfProducts * sumOfProducts / sumOfWeights) / (sumOfWeights - 1)</tt>.
@@ -827,7 +770,6 @@ public class MethodsFromColt {
 	   * @param sumOfProducts <tt>== Sum( data[i] * weights[i] )</tt>.
 	   * @param sumOfSquaredProducts <tt>== Sum( data[i] * data[i] * weights[i] )</tt>.
 	   */
-/*
 	  public static double sampleWeightedVariance(double[] data, double[] weights) {
 		  double sumOfWeights=0;
 		  double sumOfProducts=0;
@@ -841,14 +783,12 @@ public class MethodsFromColt {
 		  
 		  return (sumOfSquaredProducts  -  sumOfProducts * sumOfProducts / sumOfWeights) / (sumOfWeights - 1);
 	  }
-*/
 	
 	  /**
 	   * Returns the skew of a data sequence.
 	   * @param moment3 the third central moment, which is <tt>moment(data,3,mean)</tt>.
 	   * @param standardDeviation the standardDeviation.
 	   */
-/*
 	  public static double skew(double[] data) {
 		  double sum=0;
 		  double sumPD=0;
@@ -869,13 +809,11 @@ public class MethodsFromColt {
 		  double moment3= sumPD / data.length;
 	  	  return moment3 / (standardDeviation * standardDeviation * standardDeviation);
 	  }
-*/
 	  
 	  /**
 	   * Modifies a data sequence to be standardized.
 	   * Changes each element <tt>data[i]</tt> as follows: <tt>data[i] = (data[i]-mean)/standardDeviation</tt>.
 	   */
-/*
 	  public static double[] standardize(double[] data) {
 	  	//double[] elements = data.elements();
 		  double sum=0;
@@ -891,7 +829,6 @@ public class MethodsFromColt {
 	  	for (int i=0; i< data.length;i++) data[i] = (data[i]-mean)/sd;
 	  	return data;
 	  }
-*/
 	  
 	  /**
 	   * Returns the weighted RMS (Root-Mean-Square) of a data sequence.
@@ -901,7 +838,6 @@ public class MethodsFromColt {
 	   * @param sumOfProducts <tt>== Sum( data[i] * weights[i] )</tt>.
 	   * @param sumOfSquaredProducts <tt>== Sum( data[i] * data[i] * weights[i] )</tt>.
 	   */
-/*
 	  public static double weightedRMS(double[] data, double[] weights) {
 		  double sumOfProducts=0;
 		  double sumOfSquaredProducts=0;
@@ -913,14 +849,12 @@ public class MethodsFromColt {
 			  
 		  	return sumOfProducts / sumOfSquaredProducts;
 	}
-*/
 	  /*
 	  * Returns the harmonic mean of a data sequence.
 	  *
 	  * @param size the number of elements in the data sequence.
 	  * @param sumOfInversions <tt>Sum( 1.0 / data[i])</tt>.
 	  */
-/*
 	 public static double harmonicMean(double[] data) {
 		 double sumOfInversions=0;
 		 for(int i=0;i<data.length;i++)
@@ -930,9 +864,7 @@ public class MethodsFromColt {
 		 
 	 	return data.length / sumOfInversions;
 	 }
-*/
 	 
-/*
 	 public static double sumOfPowerOfDeviations(double[] data,int k,double c)
 	 {
 		 double sum=0;
@@ -942,8 +874,6 @@ public class MethodsFromColt {
 		 }
 		 return sum;
 	 }
-*/
-/*
 	 public static double[] power(double[] data,int k)
 	 {
 		 for(int i=0;i<data.length;i++)
@@ -952,8 +882,6 @@ public class MethodsFromColt {
 		 }
 		 return data;
 	 }
-*/
-/*
 	 public static double[] square(double[] data)
 	 {
 		 for(int i=0;i<data.length;i++)
@@ -962,16 +890,15 @@ public class MethodsFromColt {
 		 }
 		 return data;
 	 }
-*/
 	 
 	
 	public static void main(String[] args)
 	{
 		double[] d={12,13,25,11,10};
-		//System.out.println(durbinWatson(d));
+		System.out.println(durbinWatson(d));
 		
 		double[] d1={25,11,12,13,10};
-		//System.out.println(durbinWatson(d1));
+		System.out.println(durbinWatson(d1));
 
 		/*
 		//for (MRChecker.MR mr : MRChecker.MR.values())
