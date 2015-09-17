@@ -272,6 +272,9 @@ public class TestClass {
         return permuted;
     }
 
+    public static double perm(double original) { return original; }
+    public static int perm(int original) { return original; }
+
     public static boolean permTest(int o, int n) {
         return (o == n);
     }
