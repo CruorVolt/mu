@@ -458,6 +458,7 @@ public class MethodsFromColt {
 			else return mid; // key found
 		}
 		return -(from + 1);  // key not found.
+*/
 
 		/*
 		// even for very short lists (0,1,2,3 elems) this is only 10% faster
@@ -467,8 +468,7 @@ public class MethodsFromColt {
 		}
 		return -(from + 1);
 		*/
-	}
-*/
+	//}
 	
 	/**
 	 * Efficiently returns the binomial coefficient, often also referred to as "n over k" or "n choose k".
