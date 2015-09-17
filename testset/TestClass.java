@@ -56,7 +56,7 @@ public class TestClass {
     }
 
     public static boolean addTest(double orig, double next) {
-        return (Double.compare(orig, next) <= 0);
+        return ((Double.compare(orig, next) <= 0) || ((next - orig) > -0.0001));
     }
 
     public static boolean addTest(int[] orig, int[] next) {
@@ -122,7 +122,7 @@ public class TestClass {
     }
 
     public static boolean excTest(double pre, double post) {
-        return (Double.compare(pre, post) >= 0);
+        return ( (Double.compare(pre, post) >= 0) || ((pre - post) > -0.0001) );
     }
 
     public static boolean excTest(double[] pre, double[] post) {
@@ -280,7 +280,7 @@ public class TestClass {
     }
 
     public static boolean permTest(double o, double n) {
-        return (Math.abs(o - n) < 0.0001);
+        return ((Double.compare(o,n) == 0) || (Math.abs(o - n) < 0.0001));
     }
 
     public static boolean permTest(int[] o, int[] n) {
@@ -482,16 +482,12 @@ public class TestClass {
 
         TestClass tester = new TestClass();
 
-        //First two args must be same length and have one or more elements, second two args must be valid start and length indices
-        int start = getInt();
-        int length = getInt() + 2;
-        int size = getInt() + start + length + 1;
+        //array lengths should match
+        int size = getInt();
 	double[] arg1 = getDoubleArray(size);
 	double[] arg2 = getDoubleArray(size);
-        //double r1 = MethodsFromApacheMath.evaluateWeightedProduct(arg1, arg2, start, length);
+        //double r1 = MethodsFromMahout.tanimotoDistance(arg1, arg2);
 
-        tester.testThis("mult", "MethodsFromApacheMath", "evaluateWeightedProduct", arg1, arg2, start, length);
-        tester.testThis("exc", "MethodsFromApacheMath", "evaluateWeightedProduct", arg1, arg2, start, length);
-        tester.testThis("inc", "MethodsFromApacheMath", "evaluateWeightedProduct", arg1, arg2, start, length);
+        tester.testThis("mult", "MethodsFromMahout", "tanimotoDistance", arg1, arg2);
     }
 }
