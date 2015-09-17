@@ -9,6 +9,7 @@ public class MethodsFromApacheMath {
      * @param p2 the second point
      * @return the L<sub>2</sub> distance between the two points
      */
+/*
     public static double distance(double[] p1, double[] p2) {
         double sum = 0;
         for (int i = 0; i < p1.length; i++) {
@@ -17,6 +18,7 @@ public class MethodsFromApacheMath {
         }
         return Math.sqrt(sum);
     }
+*/
     
     /**
      * Calculates the L<sub>1</sub> (sum of abs) distance between two points.
@@ -25,6 +27,7 @@ public class MethodsFromApacheMath {
      * @param p2 the second point
      * @return the L<sub>1</sub> distance between the two points
      */
+/*
     public static double distance1(double[] p1, double[] p2) {
         double sum = 0;
         for (int i = 0; i < p1.length; i++) {
@@ -32,6 +35,7 @@ public class MethodsFromApacheMath {
         }
         return sum;
     }
+*/
     /**
      * Calculates the L<sub>&infin;</sub> (max of abs) distance between two points.
      *
@@ -39,6 +43,7 @@ public class MethodsFromApacheMath {
      * @param p2 the second point
      * @return the L<sub>&infin;</sub> distance between the two points
      */
+/*
     public static double distanceInf(double[] p1, double[] p2) {
         double max = 0;
         for (int i = 0; i < p1.length; i++) {
@@ -46,6 +51,7 @@ public class MethodsFromApacheMath {
         }
         return max;
     }
+*/
     /**
      * Creates an array whose contents will be the element-by-element
      * addition of the arguments.
@@ -56,6 +62,7 @@ public class MethodsFromApacheMath {
      * @throws DimensionMismatchException if the array lengths differ.
      * @since 3.1
      */
+/*
     public static double[] ebeAdd(double[] a, double[] b) {
         if (a.length != b.length) {
             return null;
@@ -67,6 +74,7 @@ public class MethodsFromApacheMath {
         }
         return result;
     }
+*/
     
     /**
      * Creates an array whose contents will be the element-by-element
@@ -78,6 +86,7 @@ public class MethodsFromApacheMath {
      * @throws DimensionMismatchException if the array lengths differ.
      * @since 3.1
      */
+/*
     public static double[] ebeDivide(double[] a, double[] b) {
         if (a.length != b.length) {
             return null;
@@ -89,6 +98,7 @@ public class MethodsFromApacheMath {
         }
         return result;
     }
+*/
     /**
      * Creates an array whose contents will be the element-by-element
      * multiplication of the arguments.
@@ -99,6 +109,7 @@ public class MethodsFromApacheMath {
      * @throws DimensionMismatchException if the array lengths differ.
      * @since 3.1
      */
+/*
     public static double[] ebeMultiply(double[] a, double[] b) {
         if (a.length != b.length) {
             return null;
@@ -110,6 +121,7 @@ public class MethodsFromApacheMath {
         }
         return result;
     }
+*/
     /**
      * Creates an array whose contents will be the element-by-element
      * subtraction of the second argument from the first.
@@ -120,6 +132,7 @@ public class MethodsFromApacheMath {
      * @throws DimensionMismatchException if the array lengths differ.
      * @since 3.1
      */
+/*
     public static double[] ebeSubtract(double[] a, double[] b)
         {
         if (a.length != b.length) {
@@ -132,7 +145,9 @@ public class MethodsFromApacheMath {
         }
         return result;
     }
+*/
     
+/*
     public static double safeNorm(double[] v) {
         double rdwarf = 3.834e-20;
         double rgiant = 1.304e+19;
@@ -187,6 +202,7 @@ public class MethodsFromApacheMath {
         }
         return norm;
     }
+*/
     /**
      * Create a copy of an array scaled by a value.
      *
@@ -195,6 +211,7 @@ public class MethodsFromApacheMath {
      * @return scaled copy of array with each entry multiplied by val.
      * @since 3.2
      */
+/*
     public static double[] scale(double val, final double[] arr) {
         double[] newArr = new double[arr.length];
         for (int i = 0; i < arr.length; i++) {
@@ -202,6 +219,7 @@ public class MethodsFromApacheMath {
         }
         return newArr;
     }
+*/
     
     
     /**
@@ -246,6 +264,7 @@ public class MethodsFromApacheMath {
      * @return Shannon Entropy of the given Vector
      *
      */
+/*
     public static double entropy(final double[] k) {
         double h = 0d;
         double sum_k = 0d;
@@ -260,6 +279,7 @@ public class MethodsFromApacheMath {
         }
         return -h;
     }
+*/
     /**
      * Computes the <a href="http://en.wikipedia.org/wiki/G-test">G statistic
      * for Goodness of Fit</a> comparing {@code observed} and {@code expected}
@@ -291,6 +311,7 @@ public class MethodsFromApacheMath {
      * @throws DimensionMismatchException if the array lengths do not match or
      * are less than 2.
      */
+/*
     public static double g(final double[] expected, final double[] observed){
             //throws NotPositiveException, NotStrictlyPositiveException,
            // DimensionMismatchException {
@@ -303,7 +324,7 @@ public class MethodsFromApacheMath {
         }
         MathArrays.checkPositive(expected);
         MathArrays.checkNonNegative(observed);*/
-
+/*
         double sumExpected = 0d;
         double sumObserved = 0d;
         for (int i = 0; i < observed.length; i++) {
@@ -325,6 +346,7 @@ public class MethodsFromApacheMath {
         }
         return 2d * sum;
     }
+*/
     /**
      * Calculates |z[i]| for all i
      *
@@ -333,6 +355,7 @@ public class MethodsFromApacheMath {
      * @throws NullArgumentException if {@code z} is {@code null}
      * @throws NoDataException if {@code z} is zero-length.
      */
+/*
     public static double[] calculateAbsoluteDifferences(double[] z){
        // throws NullArgumentException, NoDataException {
 
@@ -352,6 +375,7 @@ public class MethodsFromApacheMath {
 
         return zAbs;
     }
+*/
     /**
      * Calculates y[i] - x[i] for all i
      *
@@ -359,6 +383,7 @@ public class MethodsFromApacheMath {
      * @param y second sample
      * @return z = y - x
      */
+/*
     public static double[] calculateDifferences(final double[] x, final double[] y) {
 
         final double[] z = new double[x.length];
@@ -369,6 +394,7 @@ public class MethodsFromApacheMath {
 
         return z;
     }
+*/
     
 
     /**
@@ -389,6 +415,7 @@ public class MethodsFromApacheMath {
      * @throws NonMonotonicSequenceException
      * if {@code x} is not sorted in strictly increasing order.
      */
+/*
     public static double[] computeDividedDifference(final double x[], final double y[]){
         //throws DimensionMismatchException,
         //       NumberIsTooSmallException,
@@ -410,7 +437,9 @@ public class MethodsFromApacheMath {
 
         return a;
     }
+*/
     /** {@inheritDoc} */
+/*
     public static double computeCanberraDistance(double[] a, double[] b) {
         double sum = 0;
         for (int i = 0; i < a.length; i++) {
@@ -420,6 +449,7 @@ public class MethodsFromApacheMath {
         }
         return sum;
     }
+*/
     /**
      * Uses Horner's Method to evaluate the polynomial with the given coefficients at
      * the argument.
@@ -430,6 +460,7 @@ public class MethodsFromApacheMath {
      * @throws NoDataException if {@code coefficients} is empty.
      * @throws NullArgumentException if {@code coefficients} is {@code null}.
      */
+/*
     public static double evaluateHoners(double[] coefficients, double argument){
         //throws NullArgumentException, NoDataException {
        // MathUtils.checkNotNull(coefficients);
@@ -440,6 +471,7 @@ public class MethodsFromApacheMath {
         }
         return result;
     }
+*/
     /**
      * Evaluate the Lagrange polynomial using
      * <a href="http://mathworld.wolfram.com/NevillesAlgorithm.html">
@@ -456,6 +488,7 @@ public class MethodsFromApacheMath {
      * @throws NumberIsTooSmallException if the size of {@code x} is less
      * than 2.
      */
+/*
     public static double evaluateInternal(double x[], double y[], double z) {
         int nearest = 0;
         final int n = x.length;
@@ -498,6 +531,7 @@ public class MethodsFromApacheMath {
 
         return value;
     }
+*/
     /**
      * Evaluate the Newton polynomial using nested multiplication. It is
      * also called <a href="http://mathworld.wolfram.com/HornersRule.html">
@@ -512,6 +546,7 @@ public class MethodsFromApacheMath {
      * @throws DimensionMismatchException if the size difference between
      * {@code a} and {@code c} is not equal to 1.
      */
+/*
     public static double evaluateNewton(double a[], double c[], double z){
         //throws NullArgumentException, DimensionMismatchException, NoDataException {
         //verifyInputArray(a, c);
@@ -524,6 +559,7 @@ public class MethodsFromApacheMath {
 
         return value;
     }
+*/
    
   
    
@@ -539,6 +575,7 @@ public class MethodsFromApacheMath {
     * (positive) length.
     * @throws NoDataException if the sample arrays are empty.
     */
+/*
    public static double meanDifference(final double[] sample1, final double[] sample2){
    //throws DimensionMismatchException, NoDataException{
 	   
@@ -562,6 +599,7 @@ public class MethodsFromApacheMath {
     * length.
     * @throws NumberIsTooSmallException if the arrays length is less than 2.
     */
+/*
    public static double varianceDifference(final double[] sample1,
            final double[] sample2){ 
         		   //throws DimensionMismatchException,NumberIsTooSmallException {
@@ -576,6 +614,7 @@ public class MethodsFromApacheMath {
        if (n < 2) {
            throw new NumberIsTooSmallException(n, 2, true);
        }*/
+/*
        double sumDifference=0;
 	   for(int i=0;i<n;i++)
 	   {
@@ -589,6 +628,7 @@ public class MethodsFromApacheMath {
        }
        return (sum1 - (sum2 * sum2 / n)) / (n - 1);
    }
+*/
    /**
     * Returns {@code true} iff both arguments are {@code null} or have same
     * dimensions and all their elements are equal as defined by
@@ -599,6 +639,7 @@ public class MethodsFromApacheMath {
     * @return {@code true} if the values are both {@code null} or have same
     * dimension and equal elements.
     */
+/*
    public static boolean equals(double[] x, double[] y) {
        if ((x == null) || (y == null)) {
            return !((x == null) ^ (y == null));
@@ -613,6 +654,7 @@ public class MethodsFromApacheMath {
        }
        return true;
    }
+*/
    /**
     * Check that all entries of the input array are >= 0.
     *
@@ -620,6 +662,7 @@ public class MethodsFromApacheMath {
     * @throws NotPositiveException if any array entries are less than 0.
     * @since 3.1
     */
+/*
    public static boolean checkNonNegative(final double[] in){
        for (int i = 0; i < in.length; i++) {
            if (in[i] < 0) {
@@ -628,6 +671,7 @@ public class MethodsFromApacheMath {
        }
    	return true;
    }
+*/
    /**
     * Check that all entries of the input array are strictly positive.
     *
@@ -636,6 +680,7 @@ public class MethodsFromApacheMath {
     * strictly positive.
     * @since 3.1
     */
+/*
    public static boolean checkPositive(final double[] in){
        for (int i = 0; i < in.length; i++) {
            if (in[i] <= 0) {
@@ -644,6 +689,7 @@ public class MethodsFromApacheMath {
        }
        return true;
    }
+*/
    /**
     * Computes the <a href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm">
     * Chi-Square statistic</a> comparing <code>observed</code> and <code>expected</code>
@@ -674,6 +720,7 @@ public class MethodsFromApacheMath {
     * not strictly positive
     * @throws DimensionMismatchException if the arrays length is less than 2
     */
+/*
    public static double chiSquare(double[] expected, double[] observed){
       // throws NotPositiveException, NotStrictlyPositiveException,
       // DimensionMismatchException 
@@ -686,6 +733,7 @@ public class MethodsFromApacheMath {
        }
        MathArrays.checkPositive(expected);
        MathArrays.checkNonNegative(observed);*/
+/*
 
        double sumExpected = 0d;
        double sumObserved = 0d;
@@ -712,6 +760,7 @@ public class MethodsFromApacheMath {
        return sumSq;
 
    }
+*/
    /**
     * Algorithm inspired by
     * http://www.fon.hum.uva.nl/Service/Statistics/Signed_Rank_Algorihms.html#C
@@ -723,6 +772,7 @@ public class MethodsFromApacheMath {
     * @return two-sided exact p-value
     */
    /*
+/*
    public static double calculateExactPValue(final double Wmax, final int N) {
 
        // Total number of outcomes (equal to 2^N but a lot faster)
@@ -767,6 +817,7 @@ public class MethodsFromApacheMath {
     * @throws MathIllegalArgumentException if the parameters are not valid
     *
     */
+/*
   public static double evaluateSemiVariance(final double[] values, final double cutoff, final boolean direction,
           final boolean corrected, final int start, final int length){
 	   //throws MathIllegalArgumentException {
@@ -798,6 +849,7 @@ public class MethodsFromApacheMath {
           }
       }
   }
+*/
   /**
    * Partition an array slice around a pivot
    * <p>
@@ -811,6 +863,7 @@ public class MethodsFromApacheMath {
    * @param pivot initial index of the pivot
    * @return index of the pivot after partition
    */
+/*
   public static int partition(final double[] work, final int begin, final int end, final int pivot) {
 
       final double value = work[pivot];
@@ -841,6 +894,7 @@ public class MethodsFromApacheMath {
       return i;
 
   }
+*/
   /**
    * <p>Returns the weighted product of the entries in the specified portion of
    * the input array, or <code>Double.NaN</code> if the designated subarray
@@ -869,6 +923,7 @@ public class MethodsFromApacheMath {
    * @throws MathIllegalArgumentException if the parameters are not valid
    * @since 2.1
    */
+/*
   public static double evaluateWeightedProduct(final double[] values, final double[] weights,
       final int begin, final int length){ 
    		   //throws MathIllegalArgumentException {
@@ -881,6 +936,7 @@ public class MethodsFromApacheMath {
       //}
       return product;
   }
+*/
   
   
 
