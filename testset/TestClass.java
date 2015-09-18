@@ -318,7 +318,7 @@ public class TestClass {
 *///////////////////////////////////////////////////////////////////////
     public boolean testThis(String test, String thisClass, String function, Object... args) {
 
-        System.out.println("testThis() Entering <<<<<<");
+        //System.out.println("testThis() Entering <<<<<<");
 
         boolean passed = false;
         thisClass = "Test." + thisClass; //All /src classes are in Test package
@@ -368,15 +368,15 @@ public class TestClass {
                     Class type = func.getReturnType();
                     Method MRTestFunc = TestClass.class.getMethod(test + "Test", type, type);
 
-                    System.out.println("Original Inputs:");
-                    for (Object in: args) {
-                        System.out.println(in);
-                    }
+                    //System.out.println("Original Inputs:");
+                    //for (Object in: args) {
+                        //System.out.println(in);
+                    //}
 
                     //get original return value
                     Object return1 = func.invoke(inst, args);
 
-                    System.out.println("Original Output: " + return1);
+                    //System.out.println("Original Output: " + return1);
 
                     //modify arguments
                     Object[] permutedArgs = new Object[args.length];
@@ -397,25 +397,25 @@ public class TestClass {
                     //get modified return value
                     Object return2 = func.invoke(inst, permutedArgs);
 
-                    System.out.println("Modified Output: " + return2);
+                    //System.out.println("Modified Output: " + return2);
 
-                    System.out.println ("Running test: " + MRTestFunc);
+                    //System.out.println ("Running test: " + MRTestFunc);
 
                     //run test
                     if ((boolean)MRTestFunc.invoke(null, return1, return2)) {
                         passed = true;
                     }
                 } catch(NoSuchMethodException e) {
-                    System.out.println("TESTTHIS EXCEPTION 1");
+                    System.out.println("TESTTHIS EXCEPTION: NO SUCH METHOD ");
                     e.printStackTrace();
                 }
 
         } catch(Exception e) {
-            System.out.println("TESTTHIS EXCEPTION 2");
+            System.out.println("TESTTHIS EXCEPTION OKAY");
             e.printStackTrace();
         }
 
-        System.out.println("testThis() Exiting with " + passed);
+        //System.out.println("testThis() Exiting with " + passed);
         return passed;
     }
 

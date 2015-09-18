@@ -193,5 +193,4 @@ public class MethodsFromMahoutTests extends TestClass {
     }
     */
 
-
 }

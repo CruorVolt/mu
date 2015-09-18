@@ -1,14 +1,14 @@
-MethodsFromMahoutTests.class: MethodsFromMahoutTests.java
+MethodsFromMahoutTests: MethodsFromMahoutTests.java
 	javac MethodsFromMahoutTests.java
 
-MethodsFromApacheMathTest.class: MethodsFromApacheMathTests.java
+MethodsFromApacheMathTest: MethodsFromApacheMathTests.java
 	javac MethodsFromApacheMathTests.java
 
-MethodsFromColtTests.class: MethodsFromColtTests.java
+MethodsFromColtTests: MethodsFromColtTests.java
 	javac MethodsFromColtTests.java
 
-MethodCollection2Tests.class: MethodCollection2Tests.java
+MethodCollection2Tests: MethodCollection2Tests.java
 	javac MethodCollection2Tests.java
 
-TestClass.class: TestClass.java
+TestClass: TestClass.java
 	javac TestClass.java
