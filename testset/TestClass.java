@@ -14,37 +14,42 @@ import static org.junit.Assert.*;
 public class TestClass {
 
     public static Random rand = new Random();
+    public static int CONSTANT_INT = TestClass.getInt(); //dependent on rand
     public static final int MAX = 100;
+
+    public static void mutConst() {
+        CONSTANT_INT = getInt();
+    }
 
 /*//////////////////////////////////////////////////////
     ADDITIVE: add a positive constant.
         Expected result: increase or remain constant
 *///////////////////////////////////////////////////////
 
-    public static int add(int original, int constant) {
-        return original + constant;
+    public static int add(int original) {
+        return original + CONSTANT_INT;
     }
 
-    public static double add(double original, int constant) {
-        return original + ( (double)constant);
+    public static double add(double original) {
+        return original + ( (double)CONSTANT_INT);
     }
 
-    public static long add(long original, int constant) {
-        return original + ( (long)constant);
+    public static long add(long original) {
+        return original + ( (long)CONSTANT_INT);
     }
 
-    public static int[] add(int[] original, int constant) {
+    public static int[] add(int[] original) {
         int[] additive = new int[original.length];
         for (int i = 0; i < original.length; i++) {
-            additive[i] = original[i] + constant;
+            additive[i] = original[i] + CONSTANT_INT;
         }
         return additive;
     }
 
-    public static double[] add(double[] original, int constant) {
+    public static double[] add(double[] original) {
         double[] additive = new double[original.length];
         for (int i = 0; i < original.length; i++) {
-            additive[i] = original[i] + ( (double)constant);
+            additive[i] = original[i] + ( (double)CONSTANT_INT);
         }
         return additive;
     }
@@ -210,28 +215,28 @@ public class TestClass {
         Expected result: increase or remain constant
 *///////////////////////////////////////////////////////
 
-    public static int[] mult(int[] original, int constant) {
+    public static int[] mult(int[] original) {
         int[] multiplied = new int[original.length];
         for (int i = 0; i < original.length; i++) {
-            multiplied[i] = original[i] * constant;
+            multiplied[i] = original[i] * CONSTANT_INT;
         }
         return multiplied;
     }
 
-    public static double[] mult(double[] original, int constant) {
+    public static double[] mult(double[] original) {
         double[] multiplied = new double[original.length];
         for (int i = 0; i < original.length; i++) {
-            multiplied[i] = original[i] * constant;
+            multiplied[i] = original[i] * CONSTANT_INT;
         }
         return multiplied;
     }
 
-    public static double mult(double original, int constant) {
-        return original * (double)constant;
+    public static double mult(double original) {
+        return original * (double)CONSTANT_INT;
     }
 
-    public static int mult(int original, int constant) {
-        return original * constant;
+    public static int mult(int original) {
+        return original * CONSTANT_INT;
     }
 
     public static boolean multTest(int o, int n) { return addTest(o, n); }
@@ -358,11 +363,7 @@ public class TestClass {
                     //takes arg classes as input - THERE MAY BE MORE THAN ONE PERMUTE FUNCTION PER TEST
                     Method[] permuteFuncs = new Method[argClasses.length];
                     for (int j = 0; j < argClasses.length; j++) {
-                        if ((test == "add") || (test == "mult")) { //These functions have two args - 2nd always int
-                            permuteFuncs[j] = TestClass.class.getMethod(test, argClasses[j], int.class); 
-                        } else { //Other functions have only one arg
-                            permuteFuncs[j] = TestClass.class.getMethod(test, argClasses[j]); 
-                        }
+                        permuteFuncs[j] = TestClass.class.getMethod(test, argClasses[j]); 
                     }
                     //takes return types as input and all have two matching args
                     Class type = func.getReturnType();
@@ -380,13 +381,8 @@ public class TestClass {
 
                     //modify arguments
                     Object[] permutedArgs = new Object[args.length];
-                    int constant = getInt(); //if required
                     for (int j = 0; j < args.length; j++) {
-                        if ((test == "add") || (test == "mult")) { //requires constant arg
-                            permutedArgs[j] = permuteFuncs[j].invoke(null, args[j], constant);
-                        } else {
-                            permutedArgs[j] = permuteFuncs[j].invoke(null, args[j]);
-                        }
+                        permutedArgs[j] = permuteFuncs[j].invoke(null, args[j]);
                     }
 
                     //System.out.println("Modified Inputs:");
