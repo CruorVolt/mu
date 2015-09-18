@@ -50,8 +50,8 @@ public class TestClass {
     }
 
     public static boolean addTest(int orig, int next) {
-        orig = Math.abs(orig);
-        next = Math.abs(orig);
+        //orig = Math.abs(orig);
+        //next = Math.abs(orig);
         return orig <= next;
     }
 
@@ -106,8 +106,8 @@ public class TestClass {
     public static double exc(double original) { return original; }
 
     public static boolean excTest(int pre, int post) {
-        pre = Math.abs(pre);
-        post = Math.abs(post);
+        //pre = Math.abs(pre);
+        //post = Math.abs(post);
         return (post <= pre);
     }
 
@@ -482,12 +482,14 @@ public class TestClass {
 
         TestClass tester = new TestClass();
 
-        //array lengths should match
-        int size = getInt();
-	double[] arg1 = getDoubleArray(size);
-	double[] arg2 = getDoubleArray(size);
-        //double r1 = MethodsFromMahout.tanimotoDistance(arg1, arg2);
+        //arrays should be same size
+        int[] orig = getIntArray();
 
-        tester.testThis("mult", "MethodsFromMahout", "tanimotoDistance", arg1, arg2);
+        tester.testThis("add", "MethodsFromMahout", "sum", orig);
+        tester.testThis("mult", "MethodsFromMahout", "sum", orig);
+        tester.testThis("perm", "MethodsFromMahout", "sum", orig);
+        tester.testThis("inv", "MethodsFromMahout", "sum", orig);
+        tester.testThis("exc", "MethodsFromMahout", "sum", orig);
+        tester.testThis("inc", "MethodsFromMahout", "sum", orig);
     }
 }
