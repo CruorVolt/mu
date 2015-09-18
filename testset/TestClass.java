@@ -341,8 +341,10 @@ public class TestClass {
                 argClasses[i] = double.class;
             } else if (argClass.getComponentType() == int.class) {
                 argClasses[i] = int[].class;
+                args[i] = Arrays.copyOf((int[])args[i], ((int[])args[i]).length);
             } else if (argClass.getComponentType() == double.class) {
                 argClasses[i] = double[].class;
+                args[i] = Arrays.copyOf((double[])args[i], ((double[])args[i]).length);
             } else {
                 System.out.println("PROBLEM - NO CLASS ASSIGNED");
             }
