@@ -4,18 +4,58 @@ import java.util.ArrayList;
 import java.lang.Math;
 import java.lang.reflect.*;
 
+import org.junit.*;
+import static org.junit.Assert.*;
+
 import Test.MethodCollection2;
 import Test.MethodsFromApacheMath;
 import Test.MethodsFromColt;
 import Test.MethodsFromMahout;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class TestClass {
 
     public static Random rand = new Random();
     public static int CONSTANT_INT = TestClass.getInt(); //dependent on rand
     public static final int MAX = 100;
+
+    public static int[] iarr1;
+    public static int[] ipair1;
+    public static int[] ipair2;
+    public static double[] darr1;
+    public static double[] dpair1;
+    public static double[] dpair2;
+
+    public static int iarg1;
+    public static int iarg2;
+    public static int iarg3;
+
+    public static double darg1;
+    public static double darg2;
+    public static double darg3;
+
+    @BeforeClass
+    public static void oneTimeSetup() {
+
+        System.out.println("I MADE THIS");
+
+        int arraySize = getInt();
+
+        iarr1 = getIntArray();
+        ipair1 = getIntArray(arraySize);
+        ipair2 = getIntArray(arraySize);
+        darr1 = getDoubleArray();
+        dpair1 = getDoubleArray(arraySize);
+        dpair2 = getDoubleArray(arraySize);
+
+        iarg1 = getInt();
+        iarg2 = getInt();
+        iarg3 = getInt();
+
+        darg1 = getDouble();
+        darg2 = getDouble();
+        darg3 = getDouble();
+
+    }
 
     public static void mutConst() {
         CONSTANT_INT = getInt();
@@ -342,6 +382,8 @@ public class TestClass {
             } else if (argClass.getComponentType() == int.class) {
                 argClasses[i] = int[].class;
                 args[i] = Arrays.copyOf((int[])args[i], ((int[])args[i]).length);
+                System.out.println("INT ARR INPUT:");
+                System.out.println(Arrays.toString((int[])args[i]));
             } else if (argClass.getComponentType() == double.class) {
                 argClasses[i] = double[].class;
                 args[i] = Arrays.copyOf((double[])args[i], ((double[])args[i]).length);
@@ -371,11 +413,6 @@ public class TestClass {
                     Class type = func.getReturnType();
                     Method MRTestFunc = TestClass.class.getMethod(test + "Test", type, type);
 
-                    //System.out.println("Original Inputs:");
-                    //for (Object in: args) {
-                        //System.out.println(in);
-                    //}
-
                     //get original return value
                     Object return1 = func.invoke(inst, args);
 
@@ -386,11 +423,6 @@ public class TestClass {
                     for (int j = 0; j < args.length; j++) {
                         permutedArgs[j] = permuteFuncs[j].invoke(null, args[j]);
                     }
-
-                    //System.out.println("Modified Inputs:");
-                    //for (Object in: permutedArgs) {
-                        //System.out.println(Arrays.toString((int[])in));
-                    //}
         
                     //get modified return value
                     Object return2 = func.invoke(inst, permutedArgs);
@@ -432,7 +464,7 @@ public class TestClass {
     }
 
     public static int[] getIntArray() {
-        int size = rand.nextInt(8) + 2;
+        int size = rand.nextInt(8) + 3;
         return getIntArray(size);
     }
 
