@@ -25,6 +25,9 @@ public class TestClass {
     public static double[] dpair1;
     public static double[] dpair2;
 
+    public static double[] dsortedpair1;
+    public static double[] dsortedpair2;
+
     public static int iarg1;
     public static int iarg2;
     public static int iarg3;
@@ -55,6 +58,10 @@ public class TestClass {
         darg2 = getDouble();
         darg3 = getDouble();
 
+	dsortedpair1 = getDoubleArray(arraySize);
+	dsortedpair2 = getDoubleArray(arraySize);
+	Arrays.sort(dsortedpair1);
+	Arrays.sort(dsortedpair2);
     }
 
     public static void mutConst() {
@@ -481,7 +488,7 @@ public class TestClass {
     }
 
     public static double[] getDoubleArray() {
-        int size = rand.nextInt(9) + 1;
+        int size = rand.nextInt(9) + 2;
         return rand.doubles(size, 1.0, MAX).toArray();
     }
 
