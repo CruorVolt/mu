@@ -1,0 +1,280 @@
+MethodsFromMahoutTests
+
+
+======================================== Generating Original Test Results ========================================
+{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+
+
+======================================== Executing Mutants ========================================
+  AOIS_191{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_192{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_193{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_194{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_195{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_196{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_23{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_24{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_29{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_30{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_31{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_32{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_54{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_55{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ODL_69{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_42{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_43{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_45{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+test report: {errorrate_test=, add_test=, sum_test=, manhattandistance_test=, chebyshevdistance_test=, tanimotodistance_test=}
+mutant report: {SDL_45=, SDL_42=, SDL_43=, ASRS_30=, AOIS_191=, ASRS_32=, AOIS_192=, ASRS_31=, AOIS_193=, AOIS_194=, AOIS_195=, AOIS_196=, ASRS_29=, LOI_54=, LOI_55=, AOIU_23=, AOIU_24=, ODL_69=}
+MethodsFromMahoutTests
+
+
+======================================== Generating Original Test Results ========================================
+{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+
+
+======================================== Executing Mutants ========================================
+  AOIS_191{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_192{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_193{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_194{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_195{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_196{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_23{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_24{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_29{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_30{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_31{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_32{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_54{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_55{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ODL_69{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_42{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_43{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_45{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+test report: {errorrate_test=, add_test=, sum_test=, manhattandistance_test=, chebyshevdistance_test=, tanimotodistance_test=}
+mutant report: {SDL_45=, SDL_42=, SDL_43=, ASRS_30=, AOIS_191=, ASRS_32=, AOIS_192=, ASRS_31=, AOIS_193=, AOIS_194=, AOIS_195=, AOIS_196=, ASRS_29=, LOI_54=, LOI_55=, AOIU_23=, AOIU_24=, ODL_69=}
+MethodsFromMahoutTests
+
+
+======================================== Generating Original Test Results ========================================
+{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+
+
+======================================== Executing Mutants ========================================
+  AOIS_191{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_192{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_193{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_194{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_195{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_196{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_23{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_24{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_29{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_30{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_31{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_32{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_54{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_55{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ODL_69{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_42{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_43{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_45{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+test report: {errorrate_test=, add_test=, sum_test=, manhattandistance_test=, chebyshevdistance_test=, tanimotodistance_test=}
+mutant report: {SDL_45=, SDL_42=, SDL_43=, ASRS_30=, AOIS_191=, ASRS_32=, AOIS_192=, ASRS_31=, AOIS_193=, AOIS_194=, AOIS_195=, AOIS_196=, ASRS_29=, LOI_54=, LOI_55=, AOIU_23=, AOIU_24=, ODL_69=}
+MethodsFromMahoutTests
+
+
+======================================== Generating Original Test Results ========================================
+{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+
+
+======================================== Executing Mutants ========================================
+  AOIS_191{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_192{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_193{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_194{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_195{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_196{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_23{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_24{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_29{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_30{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_31{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_32{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_54{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_55{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ODL_69{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_42{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_43{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_45{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+test report: {errorrate_test=, add_test=, sum_test=, manhattandistance_test=, chebyshevdistance_test=, tanimotodistance_test=}
+mutant report: {SDL_45=, SDL_42=, SDL_43=, ASRS_30=, AOIS_191=, ASRS_32=, AOIS_192=, ASRS_31=, AOIS_193=, AOIS_194=, AOIS_195=, AOIS_196=, ASRS_29=, LOI_54=, LOI_55=, AOIU_23=, AOIU_24=, ODL_69=}
+MethodsFromMahoutTests
+
+
+======================================== Generating Original Test Results ========================================
+{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+
+
+======================================== Executing Mutants ========================================
+  AOIS_191{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_192{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_193{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_194{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_195{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_196{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_23{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_24{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_29{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_30{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_31{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_32{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_54{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_55{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ODL_69{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_42{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_43{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_45{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+test report: {errorrate_test=, add_test=, sum_test=, manhattandistance_test=, chebyshevdistance_test=, tanimotodistance_test=}
+mutant report: {SDL_45=, SDL_42=, SDL_43=, ASRS_30=, AOIS_191=, ASRS_32=, AOIS_192=, ASRS_31=, AOIS_193=, AOIS_194=, AOIS_195=, AOIS_196=, ASRS_29=, LOI_54=, LOI_55=, AOIU_23=, AOIU_24=, ODL_69=}
+MethodsFromMahoutTests
+
+
+======================================== Generating Original Test Results ========================================
+{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+
+
+======================================== Executing Mutants ========================================
+  AOIS_191{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_192{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_193{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_194{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_195{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_196{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_23{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_24{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_29{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_30{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_31{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_32{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_54{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_55{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ODL_69{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_42{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_43{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_45{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+test report: {errorrate_test=, add_test=, sum_test=, manhattandistance_test=, chebyshevdistance_test=, tanimotodistance_test=}
+mutant report: {SDL_45=, SDL_42=, SDL_43=, ASRS_30=, AOIS_191=, ASRS_32=, AOIS_192=, ASRS_31=, AOIS_193=, AOIS_194=, AOIS_195=, AOIS_196=, ASRS_29=, LOI_54=, LOI_55=, AOIU_23=, AOIU_24=, ODL_69=}
+MethodsFromMahoutTests
+
+
+======================================== Generating Original Test Results ========================================
+{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+
+
+======================================== Executing Mutants ========================================
+  AOIS_191{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_192{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_193{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_194{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_195{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_196{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_23{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_24{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_29{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_30{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_31{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_32{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_54{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_55{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ODL_69{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_42{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_43{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_45{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+test report: {errorrate_test=, add_test=, sum_test=, manhattandistance_test=, chebyshevdistance_test=, tanimotodistance_test=}
+mutant report: {SDL_45=, SDL_42=, SDL_43=, ASRS_30=, AOIS_191=, ASRS_32=, AOIS_192=, ASRS_31=, AOIS_193=, AOIS_194=, AOIS_195=, AOIS_196=, ASRS_29=, LOI_54=, LOI_55=, AOIU_23=, AOIU_24=, ODL_69=}
+MethodsFromMahoutTests
+
+
+======================================== Generating Original Test Results ========================================
+{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+
+
+======================================== Executing Mutants ========================================
+  AOIS_191{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_192{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_193{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_194{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_195{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_196{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_23{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_24{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_29{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_30{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_31{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_32{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_54{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_55{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ODL_69{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_42{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_43{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_45{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+test report: {errorrate_test=, add_test=, sum_test=, manhattandistance_test=, chebyshevdistance_test=, tanimotodistance_test=}
+mutant report: {SDL_45=, SDL_42=, SDL_43=, ASRS_30=, AOIS_191=, ASRS_32=, AOIS_192=, ASRS_31=, AOIS_193=, AOIS_194=, AOIS_195=, AOIS_196=, ASRS_29=, LOI_54=, LOI_55=, AOIU_23=, AOIU_24=, ODL_69=}
+MethodsFromMahoutTests
+
+
+======================================== Generating Original Test Results ========================================
+{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+
+
+======================================== Executing Mutants ========================================
+  AOIS_191{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_192{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_193{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_194{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_195{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_196{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_23{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_24{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_29{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_30{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_31{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_32{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_54{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_55{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ODL_69{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_42{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_43{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_45{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+test report: {errorrate_test=, add_test=, sum_test=, manhattandistance_test=, chebyshevdistance_test=, tanimotodistance_test=}
+mutant report: {SDL_45=, SDL_42=, SDL_43=, ASRS_30=, AOIS_191=, ASRS_32=, AOIS_192=, ASRS_31=, AOIS_193=, AOIS_194=, AOIS_195=, AOIS_196=, ASRS_29=, LOI_54=, LOI_55=, AOIU_23=, AOIU_24=, ODL_69=}
+MethodsFromMahoutTests
+
+
+======================================== Generating Original Test Results ========================================
+{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+
+
+======================================== Executing Mutants ========================================
+  AOIS_191{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_192{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_193{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_194{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_195{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIS_196{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_23{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  AOIU_24{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_29{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_30{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_31{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ASRS_32{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_54{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  LOI_55{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  ODL_69{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_42{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_43{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+  SDL_45{errorrate_test=pass, add_test=pass, sum_test=pass, manhattandistance_test=pass, chebyshevdistance_test=pass, tanimotodistance_test=pass}
+test report: {errorrate_test=, add_test=, sum_test=, manhattandistance_test=, chebyshevdistance_test=, tanimotodistance_test=}
+mutant report: {SDL_45=, SDL_42=, SDL_43=, ASRS_30=, AOIS_191=, ASRS_32=, AOIS_192=, ASRS_31=, AOIS_193=, AOIS_194=, AOIS_195=, AOIS_196=, ASRS_29=, LOI_54=, LOI_55=, AOIU_23=, AOIU_24=, ODL_69=}
