@@ -160,15 +160,6 @@ public class MethodsFromColtTests extends TestClass {
         
         System.out.println(" >>complete");
     }
-    /*
-    //@Test
-    public void sampleKurtosisStandardError_test() {
-        System.out.print("TEST: sampleKurtosisStandardError");
-	int arg1 = getInt();
-        //double r1 = MethodsFromColt.sampleKurtosisStandardError(arg1);
-        System.out.println(" >>complete");
-    }
-    */
 
     //@Test
     public void sampleSkew_test() {
@@ -211,21 +202,6 @@ public class MethodsFromColtTests extends TestClass {
         
         System.out.println(" >>complete");
     }
-    /*
-    //@Test
-    public void trimmedMean_test() {
-        System.out.print("TEST: trimmedMean");
-        //input array must be sorted ascending, ints must be valid from/to indices
-        int from = getInt();
-        int to = getInt();
-        int size = getInt() + from + to;
-        double[] arr = getDoubleArray(size);
-        Arrays.sort(arr);
-	double arg2 = getDouble();
-        //double r1 = MethodsFromColt.trimmedMean(arr, arg2, from, to);
-        System.out.println(" >>complete");
-    }
-    */
 
     //@Test
     public void weightedMean_test() {
@@ -261,28 +237,6 @@ public class MethodsFromColtTests extends TestClass {
 
         System.out.println(" >>complete");
     }
-    /*
-    //@Test
-    public void binomial_test() {
-        //pass small values for reasonable completion times
-        int max = 100;
-        System.out.print("TEST: binomial");
-	double arg1 = getNextDouble();
-	long arg2 = (long)getNextDouble();
-        //double r1 = MethodsFromColt.binomial(arg1, arg2);
-        System.out.println(" >>complete");
-    }
-    */
-
-    /*
-    //@Test
-    public void link_test() {
-        System.out.print("TEST: link");
-	double arg1 = getDouble();
-        //double r1 = MethodsFromColt.link(arg1);
-        System.out.println(" >>complete");
-    }
-    */
 
     @Test
     public void winsorizedMean_test() {
@@ -300,16 +254,6 @@ public class MethodsFromColtTests extends TestClass {
 
         System.out.println(" >>complete");
     }
-    /*
-    //@Test
-    public void geometricPdf_test() {
-        System.out.print("TEST: geometricPdf");
-	int arg1 = getInt();
-	double arg2 = getDouble();
-        //double r1 = MethodsFromColt.geometricPdf(arg1, arg2);
-        System.out.println(" >>complete");
-    }
-    */
 
     @Test
     public void kurtosis_test() {
@@ -323,15 +267,6 @@ public class MethodsFromColtTests extends TestClass {
         
         System.out.println(" >>complete");
     }
-    /*
-    //@Test
-    public void logGamma_test() {
-        System.out.print("TEST: logGamma");
-	double arg1 = getDouble();
-        //double r1 = MethodsFromColt.logGamma(arg1);
-        System.out.println(" >>complete");
-    }
-    */
 
     @Test
     public void pooledMean_test() {
@@ -381,32 +316,6 @@ public class MethodsFromColtTests extends TestClass {
         
         System.out.println(" >>complete");
     }
-    /*
-    //@Test
-    public void rankInterpolated_test() {
-        System.out.print("TEST: rankInterpolated");
-        //input array should be sorted
-        double[] arr = getDoubleArray();
-        Arrays.sort(arr);
-	double arg2 = getDouble();
-	int arg3 = getInt();
-        //double r1 = MethodsFromColt.rankInterpolated(arr, arg2, arg3);
-        System.out.println(" >>complete");
-    }
-    */
-
-    /*
-    //@Test
-    public void sampleWeightedVariance_test() {
-        System.out.print("TEST: sampleWeightedVariance");
-        //arrays should be same size
-        int size = getInt();
-	double[] arg1 = getDoubleArray(size);
-	double[] arg2 = getDoubleArray(size);
-        //double r1 = MethodsFromColt.sampleWeightedVariance(arg1, arg2);
-        System.out.println(" >>complete");
-    }
-    */
 
     @Test
     public void skew_test() {

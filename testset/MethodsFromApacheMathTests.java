@@ -9,18 +9,6 @@ public class MethodsFromApacheMathTests extends TestClass {
         return super.testThis(test, "MethodsFromApacheMath", function, args);
     }    
 	 
-    /*
-    //@Test
-    public void distance_test() {
-        //arrays should be same size
-        int size = getInt() + 1;
-	double[] arg1 = getDoubleArray(size);
-	double[] arg2 = getDoubleArray(size);
-        //double r1 = MethodsFromApacheMath.distance(arg1, arg2);
-    }
-    */
-
-
     @Test
     public void distance1_test() {
         //arrays should be same size
@@ -88,18 +76,6 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("inv failure", testThis("inv", "ebeMultiply", firstArg, secondArg));
     }
 
-    /*
-    //@Test
-    public void ebeSubtract_test() {
-        //Most execution paths require arrays of matching size
-        int arraySize = getInt();
-	double[] arg1 = getDoubleArray(arraySize);
-	double[] arg2 = getDoubleArray(arraySize);
-        //double[] r1 = MethodsFromApacheMath.ebeSubtract(arg1, arg2);
-    }
-    */
-
-
     @Test
     public void safeNorm_test() {
         double[] orig = getDoubleArray();
@@ -155,30 +131,6 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("mult failure", testThis("mult", "calculateAbsoluteDifferences", orig));
         assertTrue("inv failure", testThis("inv", "calculateAbsoluteDifferences", orig));
     }
-
-    /*
-    //@Test
-    public void calculateDifferences_test() {
-        //Arrays must be same length
-        int size = getInt();
-	double[] arg1 = getDoubleArray(size);
-	double[] arg2 = getDoubleArray(size);
-        //double[] r1 = MethodsFromApacheMath.calculateDifferences(arg1, arg2);
-    }
-    */
-
-
-    /*
-    //@Test
-    public void computeDividedDifference_test() {
-        //Arrays must be same length
-        int size = getInt();
-	double[] arg1 = getDoubleArray(size);
-	double[] arg2 = getDoubleArray(size);
-        //double[] r1 = MethodsFromApacheMath.computeDividedDifference(arg1, arg2);
-    }
-    */
-
 
     @Test
     public void computeCanberraDistance_test() {
@@ -250,18 +202,6 @@ public class MethodsFromApacheMathTests extends TestClass {
        assertTrue("inv failure", testThis("inv", "meanDifference", arg1, arg2));
    }
 
-    /*
-   //@Test
-   public void varianceDifference_test() {
-       //inputs must have matching lengths of at least 2
-       int size = getInt() + 2;
-       double[] arg1 = getDoubleArray(size);
-       double[] arg2 = getDoubleArray(size);
-       //double r1 = MethodsFromApacheMath.varianceDifference(arg1, arg2);
-   }
-    */
-
-
    //@Test
    public void equals_test() {
         //most code paths require same-length inputs
@@ -272,33 +212,6 @@ public class MethodsFromApacheMathTests extends TestClass {
 
 	assertTrue("inc failure", testThis("inc", "equals", arg1, arg2));
    }
-
-   /* Doesn't make sense
-   //@Test
-   public void checkNonNegative_test() {
-        double[] orig = getDoubleArray();
-        //boolean r1 = MethodsFromApacheMath.checkNonNegative(orig);
-
-        //add
-        int c = getInt();
-        double[] addIn = add(orig, c);
-        boolean addOut = MethodsFromApacheMath.checkNonNegative(addIn);
-        assertTrue("add failure", addTest(r1, addOut));
-   }
-   */
-
-   /* Doesn't make sense
-   @Test
-   public void checkPositive_test() {
-	double[] arg1 = getDoubleArray();
-        //boolean r1 = MethodsFromApacheMath.checkPositive(arg1);
-	
-	assertTrue("mult failure", testThis("mult", "checkPositive", arg1));
-	assertTrue("inc failure", testThis("inc", "checkPositive", arg1));
-	assertTrue("perm failure", testThis("perm", "checkPositive", arg1));
-	assertTrue("inv failure", testThis("inv", "checkPositive", arg1));
-   }
-   */
 
    @Test
    public void chiSquare_test() {
@@ -316,21 +229,6 @@ public class MethodsFromApacheMathTests extends TestClass {
         assertTrue("inc failure", testThis("inc", "chiSquare", arg1, arg2));
         assertTrue("inv failure", testThis("inv", "chiSquare", arg1, arg2));
    }
-
-    /*
-  //@Test
-  public void evaluateSemiVariance_test() {
-        int start = getInt();
-        int length = getInt() + 2;
-        int size = getInt() + start + length + 1;
-	double[] arg1 = getDoubleArray(size);
-	double arg2 = getDouble();
-	boolean arg3 = getBoolean();
-	boolean arg4 = getBoolean();
-        //double r1 = MethodsFromApacheMath.evaluateSemiVariance(arg1, arg2, arg3, arg4, start, length);
-  }
-    */
-
 
   @Test
   public void partition_test() {

@@ -22,18 +22,6 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("inv failure", testThis("inv", "add_values", orig));
     }
 
-    /*
-    //@Test
-    public void add_two_array_values_test() {
-        //System.out.println("TEST: add_two_array_values");
-	int[] arg1 = getIntArray();
-	int arg2 = getInt();
-	int arg3 = getInt();
-        //double r1 = MethodCollection2.add_two_array_values(arg1, arg2, arg3);
-    }
-    */
-
-
     @Test
     public void bubble_test() {
         //System.out.println("TEST: bubble");
@@ -78,20 +66,6 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("inv failure", testThis("inv", "selection_sort", orig));
     }
 
-    /*
-    //@Test
-    public void add_values_in_two_arrays_test() {
-        //System.out.println("TEST: add_values_in_two_arrays");
-        //Arrays should be same size
-        int arraySize = getInt();
-	int[] arg1 = getIntArray(arraySize);
-	int[] arg2 = getIntArray(arraySize);
-	int arg3 = getInt();
-        //int r1 = MethodCollection2.add_values_in_two_arrays(arg1, arg2, arg3);
-    }
-    */
-
-
     @Test
     public void dot_product_test() {
         //System.out.println("TEST: dot_product");
@@ -129,18 +103,6 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("inv failure", testThis("inv", "set_min_val", arg1, arg2));
     }
 
-    /*
-    //@Test
-    public void get_array_value_test() {
-        //System.out.println("TEST: get_array_value");
-	int[] arg1 = getIntArray();
-	int arg2 = getInt();
-        //int r1 = MethodCollection2.get_array_value(arg1, arg2);
-        assertTrue("SHOULD BE TRUE", true);
-    }
-    */
-
-
     @Test
     public void find_min_test() {
         //System.out.println("TEST: find_min");
@@ -153,19 +115,6 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("perm failure", testThis("perm", "find_min", orig));
         assertTrue("inv failure", testThis("inv", "find_min", orig));
     }
-
-    /*
-    //@Test
-    public void find_diff_test() {
-        //System.out.println("TEST: find_diff");
-        //Arrays should be same size
-        int arraySize = getInt();
-	int[] arg1 = getIntArray(arraySize);
-	int[] arg2 = getIntArray(arraySize);
-        //int[] r1 = MethodCollection2.find_diff(arg1, arg2);
-    }
-    */
-
 
     @Test
     public void array_copy_test() {
@@ -231,29 +180,6 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("perm failure", testThis("perm", "average", orig));
         assertTrue("inv failure", testThis("inv", "average", orig));
     }
-
-    /*
-    //@Test
-    public void dec_array_test() {
-        //System.out.println("TEST: dec_array");
-	int[] arg1 = getIntArray();
-	int arg2 = getInt();
-        //int[] r1 = MethodCollection2.dec_array(arg1, arg2);
-    }
-    */
-
-
-    /*
-    //@Test
-    public void expr1_test() {
-        //System.out.println("TEST: expr1");
-        //First arg should be nonzero
-	double arg1 = getDouble();
-	double arg2 = getDouble();
-        //double r1 = MethodCollection2.expr1(arg1, arg2);
-    }
-    */
-
 
     @Test
     public void find_max_test() {
@@ -344,18 +270,6 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("inv failure", testThis("inv", "find_median", orig));
     }
 
-    /*
-    //@Test
-    public void cartesian_product_test() {
-        //This method can be quite slow - use smaller inputs
-        //System.out.println("TEST: cartesian_product");
-	int[] arg1 = getIntArray(MAX/10);
-	int[] arg2 = getIntArray(MAX/10);
-        //int[][] r1 = MethodCollection2.cartesian_product(arg1, arg2);
-    }
-    */
-
-
     @Test
     public void reverse_test() {
         //System.out.println("TEST: reverse");
@@ -366,33 +280,6 @@ public class MethodCollection2Tests extends TestClass {
         assertTrue("mult failure", testThis("mult", "reverse", orig));
         assertTrue("inv failure", testThis("inv", "reverse", orig));
     }
-
-    /*
-    //@Test
-    public void check_equal_tolerance_test() {
-        //System.out.println("TEST: check_equal_tolerance");
-        //most execution paths require same size arrays
-        int arraySize = getInt();
-	double[] arg1 = getDoubleArray(arraySize);
-	double[] arg2 = getDoubleArray(arraySize);
-	double arg3 = getDouble();
-        //boolean r1 = MethodCollection2.check_equal_tolerance(arg1, arg2, arg3);
-    }
-    */
-
-
-    /*
-    //@Test
-    public void check_equal_test() {
-        //System.out.println("TEST: check_equal");
-        //most execution paths require same size arrays
-        int arraySize = getInt();
-	int[] arg1 = getIntArray(arraySize);
-	int[] arg2 = getIntArray(arraySize);
-        //boolean r1 = MethodCollection2.check_equal(arg1, arg2);
-    }
-    */
-
 
     @Test
     public void weighted_average_test() {
@@ -490,26 +377,6 @@ public class MethodCollection2Tests extends TestClass {
 
 	assertTrue("inv failure", testThis("inv", "elementwise_equal", arg1, arg2));
     }
-
-    /*
-    //@Test
-    public void elementwise_not_equal_test() {
-        //System.out.println("TEST: elementwise_not_equal");
-        //Arrays should be same size
-        int arraySize = getInt();
-        int[] orig1 = getIntArray(arraySize);
-        int[] orig2 = getIntArray(arraySize);
-        boolean[] r1 = MethodCollection2.elementwise_not_equal(orig1, orig2);
-
-        //add - does this make any sense?
-        //int c = getInt();
-        //int[] addIn1 = add(orig1, c);
-        //int[] addIn2 = add(orig2, c);
-        //boolean[] addOut = MethodCollection2.elementwise_not_equal(addIn1, addIn2);
-        assertTrue("add failure", r1, addOut);
-
-    }
-    */
 
     @Test
     public void hamming_dist_test() {
