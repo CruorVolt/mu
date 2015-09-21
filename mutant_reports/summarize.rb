@@ -1,8 +1,11 @@
 @mr = "aggregate"
 
+@mutant_types = [ "AORB", "AORS", "AOIU", "AOIS", "AODU",
+    "AODS", "ROR", "COR", "COD", "COI", "SOR", "LOR",
+    "LOI", "LOD", "ASRS", "SDL", "VDL", "CDL", "ODL" ]
+
 @header = [
-    "class", "method", "mr", "run", "mutant_score", 
-    "total_live", "total_killed",
+    "class", "method", "mr", "run",
     "AORB_live", "AORB_killed",
     "AORS_live", "AORS_killed",
     "AOIU_live", "AOIU_killed",
@@ -21,7 +24,8 @@
     "SDL_live", "SDL_killed",
     "VDL_live", "VDL_killed",
     "CDL_live", "CDL_killed",
-    "ODL_live", "ODL_killed"]
+    "ODL_live", "ODL_killed",
+    "total_live", "total_killed", "mutant_score"]
 
 def parse_file(file)
     print "Parsing #{file}\n"
@@ -29,20 +33,46 @@ def parse_file(file)
     class_name = file_name.split(".")[0]
     method_name = file_name.split(".")[1]
 
-    print "Class: #{class_name}\n"
-    print "Method: #{method_name}\n"
+    #print "Class: #{class_name}\n"
+    #print "Method: #{method_name}\n"
 
     in_file= File.open(file, "r")
-    out_file = File.open( "#{class_name}_#{@mr}", "w")
+    out_file = File.open( "#{class_name}_#{@mr}.csv", "a")
 
-    out_file.puts(@header.join ",")
+    if File.zero? out_file 
+        puts "WRITING #{class_name} HEADER"
+        out_file.puts(@header.join ",") 
+    end
+
+    run_count = 1
 
     begin
+        run_map = {} #test => pass?
         loop do 
             line = in_file.readline
+
+            if (line.include? "Generating Original Test Results")
+                in_file.readline.split(/[{},]/).each do |part|
+                    if part.length > 2
+                        test = part.split /\=/
+                        #puts "PART: #{part}, TEST - #{test}"
+                        run_map[test[0].lstrip] = (test[1] == "pass") ? true : false
+                    end
+                end
+                #print run_map
+            end
+
             if (line.include? "Executing Mutants")
+
                 live_map = {}
                 killed_map = {}
+                write_line = [ class_name, method_name, @mr, run_count ]
+                total_live = 0
+                total_killed = 0
+
+                total_live2 = 0
+                total_killed2 = 0
+
                 loop do 
                     new_line = in_file.readline
                     if (new_line.include? "test report")
@@ -57,10 +87,14 @@ def parse_file(file)
                         
                         tests.each do |test|
                             results = test.lstrip.split /\=/
-                            if results[1] != "pass"
-                                live = false
-                            end
-                            #print "#{results}\n"
+                            passed = (results[1] == "pass") ? true : false
+                            live = false if passed != run_map[results[0]]
+                        end
+
+                        if live
+                            total_live2 += 1
+                        else
+                            total_killed2 += 1
                         end
 
                         update_map = live ? live_map : killed_map
@@ -70,13 +104,39 @@ def parse_file(file)
                             update_map[mutant_label] = 1
                         end
                     end
-                    #this run done
-                    
+                    #this line done
+
                 end
+
+                @mutant_types.each do |type|
+
+                    if live_map.has_key? type
+                        write_line << live_map[type]
+                        total_live += live_map[type]
+                    else
+                        write_line << 0
+                    end
+
+                    if killed_map.has_key? type
+                        write_line << killed_map[type]
+                        total_killed += killed_map[type]
+                    else
+                        write_line << 0
+                    end
+                end
+                #write totals
+                write_line << total_live                
+                write_line << total_killed                
+                mutant_score = ((total_killed.to_f) / (total_killed + total_live))
+                write_line << "%.2f" % mutant_score
+                out_file.puts write_line.join ","
+                run_count += 1
             end
         end
     rescue EOFError
         #print "next File!\n"
+    ensure 
+        out_file.close
     end
 
 end
@@ -88,8 +148,10 @@ def parse_dir(dir)
     end
 end
 
+system("./trunc.sh")
+
 here = File.dirname(__FILE__)
-=begin
+
 dirs = Dir.entries(here).select do |entry| 
 	File.directory? File.join(here, entry) and !(entry =='.' || entry == '..') 
 end
@@ -97,7 +159,6 @@ end
 dirs.each do |directory|
     parse_dir directory
 end
-=end
 
-parse_file File.join(here, "aggregate", "MethodCollection2.add_values")
+#parse_file File.join(here, "aggregate", "MethodCollection2.add_values")
 
