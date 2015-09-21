@@ -9,9 +9,15 @@ import Test.MethodsFromApacheMath;
 import Test.MethodsFromColt;
 import Test.MethodsFromMahout;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.ErrorCollector;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.*;
 
 public class TestClass {
+
+    @Rule
+    public ErrorCollector collector = new ErrorCollector();
 
     public static Random rand = new Random();
     public static int CONSTANT_INT = TestClass.getInt(); //dependent on rand

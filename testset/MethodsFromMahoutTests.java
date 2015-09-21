@@ -1,6 +1,7 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 import Test.MethodsFromMahout;
+import static org.hamcrest.Matchers.equalTo;
 
 public class MethodsFromMahoutTests extends TestClass {
     
@@ -16,10 +17,11 @@ public class MethodsFromMahoutTests extends TestClass {
 	double[] arg2 = getDoubleArray(size);
         //double r1 = MethodsFromMahout.manhattanDistance(arg1, arg2);
 
-        assertTrue("mult failure", testThis("mult", "manhattanDistance", arg1, arg2));
-        assertTrue("exc failure", testThis("exc", "manhattanDistance", arg1, arg2));
-        assertTrue("inc failure", testThis("inc", "manhattanDistance", arg1, arg2));
-        assertTrue("inv failure", testThis("inv", "manhattanDistance", arg1, arg2));
+        String fail = "";
+        collector.checkThat(fail += "mult failure&", testThis("mult", "manhattanDistance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "manhattanDistance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "manhattanDistance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "manhattanDistance", arg1, arg2), equalTo(true));
     }
     @Test
     public void chebyshevdistance_test() {
@@ -29,7 +31,8 @@ public class MethodsFromMahoutTests extends TestClass {
 	double[] arg2 = getDoubleArray(size);
         //double r1 = MethodsFromMahout.chebyshevDistance(arg1, arg2);
 
-	assertTrue("mult failure", testThis("mult", "chebyshevDistance", arg1, arg2));
+        String fail = "";
+	collector.checkThat(fail += "mult failure&", testThis("mult", "chebyshevDistance", arg1, arg2), equalTo(true));
     }
     @Test
     public void tanimotodistance_test() {
@@ -39,19 +42,21 @@ public class MethodsFromMahoutTests extends TestClass {
 	double[] arg2 = getDoubleArray(size);
         //double r1 = MethodsFromMahout.tanimotoDistance(arg1, arg2);
 
-	assertTrue("mult failure", testThis("mult", "tanimotoDistance", arg1, arg2));
+        String fail = "";
+	collector.checkThat(fail += "mult failure&", testThis("mult", "tanimotoDistance", arg1, arg2), equalTo(true));
     }
     @Test
     public void sum_test() {
         int[] orig = getIntArray();
         //int r1 = MethodsFromMahout.sum(orig);
         
-        assertTrue("add failure", testThis("add", "sum", orig));
-        assertTrue("mult failure", testThis("mult", "sum", orig));
-        assertTrue("exc failure", testThis("exc", "sum", orig));
-        assertTrue("inc failure", testThis("inc", "sum", orig));
-        assertTrue("perm failure", testThis("perm", "sum", orig));
-        assertTrue("inv failure", testThis("inv", "sum", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "sum", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "sum", orig), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "sum", orig), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "sum", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "sum", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "sum", orig), equalTo(true));
     }
     @Test
     public void add_test() {
@@ -61,9 +66,10 @@ public class MethodsFromMahoutTests extends TestClass {
         int[] orig2 = getIntArray(size);
         //int[] r1 = MethodsFromMahout.add(orig1, orig2);
 
-        assertTrue("add failure", testThis("add", "add", orig1, orig2)); //this one only!
-        assertTrue("mult failure", testThis("mult", "add", orig1, orig2)); //this one only!
-        assertTrue("inv failure", testThis("inv", "add", orig1, orig2)); //this one only!
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "add", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "add", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "add", orig1, orig2), equalTo(true));
     }
 
     @Test
@@ -74,10 +80,11 @@ public class MethodsFromMahoutTests extends TestClass {
         double[] orig2 = getDoubleArray(size);
         //double r1 = MethodsFromMahout.errorRate(orig1, orig2);
 
-        assertTrue("add failure", testThis("add", "errorRate", orig1, orig2));
-        assertTrue("mult failure", testThis("mult", "errorRate", orig1, orig2));
-        assertTrue("perm failure", testThis("perm", "errorRate", orig1, orig2));
-        assertTrue("inv failure", testThis("inv", "errorRate", orig1, orig2));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "errorRate", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "errorRate", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "errorRate", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "errorRate", orig1, orig2), equalTo(true));
     }
 
 }

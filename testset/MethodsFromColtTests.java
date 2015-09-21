@@ -2,6 +2,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import Test.MethodsFromColt;
 import java.util.Arrays;
+import static org.hamcrest.Matchers.equalTo;
 
 public class MethodsFromColtTests extends TestClass {
 
@@ -20,7 +21,8 @@ public class MethodsFromColtTests extends TestClass {
         double fourthArg = getDouble();
         //double r1 = MethodsFromColt.autoCorrelation(orig, lag, getDouble(), getDouble());
 
-        assertTrue("add failure", testThis("add", "autoCorrelation", orig, lag, thirdArg, fourthArg));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "autoCorrelation", orig, lag, thirdArg, fourthArg), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -36,9 +38,10 @@ public class MethodsFromColtTests extends TestClass {
         double secondArg = getDouble();
         //int r1 = MethodsFromColt.binarySearchFromTo(arr, secondArg, low, high);
 
-        assertTrue("add failure", testThis("add", "binarySearchFromTo", arr, secondArg, low, high));
-        assertTrue("mult failure", testThis("mult", "binarySearchFromTo", arr, secondArg, low, high));
-        assertTrue("inv failure", testThis("inv", "binarySearchFromTo", arr, secondArg, low, high));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "binarySearchFromTo", arr, secondArg, low, high), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "binarySearchFromTo", arr, secondArg, low, high), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "binarySearchFromTo", arr, secondArg, low, high), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -51,9 +54,10 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig2 = getDoubleArray(size);
         //double r1 = MethodsFromColt.covariance(orig1, orig2);
 
-        assertTrue("add failure", testThis("add", "covariance", orig1, orig2));
-        assertTrue("mult failure", testThis("mult", "covariance", orig1, orig2));
-        assertTrue("inv failure", testThis("inv", "covariance", orig1, orig2));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "covariance", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "covariance", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "covariance", orig1, orig2), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -65,7 +69,8 @@ public class MethodsFromColtTests extends TestClass {
 	double[] arg1 = getDoubleArray(size);
         //double r1 = MethodsFromColt.durbinWatson(arg1);
 
-        assertTrue("mult failure", testThis("mult", "durbinWatson", arg1));
+        String fail = "";
+        collector.checkThat(fail += "mult failure&", testThis("mult", "durbinWatson", arg1), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -76,7 +81,8 @@ public class MethodsFromColtTests extends TestClass {
         double arg2 = getDouble();
         //double r1 = MethodsFromColt.lag1(orig, arg2);
 
-        assertTrue("add failure", testThis("add", "lag1", orig, arg2));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "lag1", orig, arg2), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -86,9 +92,10 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig = getDoubleArray();
         //double r1 = MethodsFromColt.max(orig);
 
-        assertTrue("add failure", testThis("add", "max", orig));
-        assertTrue("mult failure", testThis("mult", "max", orig));
-        assertTrue("inv failure", testThis("inv", "max", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "max", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "max", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "max", orig), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -99,10 +106,11 @@ public class MethodsFromColtTests extends TestClass {
         double secondArg = getDouble();
         //double r1 = MethodsFromColt.meanDeviation(orig, secondArg);
 
-        assertTrue("add failure", testThis("add", "meanDeviation", orig, secondArg));
-        assertTrue("add failure", testThis("mult", "meanDeviation", orig, secondArg));
-        assertTrue("perm failure", testThis("perm", "meanDeviation", orig, secondArg));
-        assertTrue("inv failure", testThis("inv", "meanDeviation", orig, secondArg));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "meanDeviation", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "add failure&", testThis("mult", "meanDeviation", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "meanDeviation", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "meanDeviation", orig, secondArg), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -112,10 +120,11 @@ public class MethodsFromColtTests extends TestClass {
 	double[] arg1 = getDoubleArray();
         //double r1 = MethodsFromColt.min(arg1);
 
-        assertTrue("mult failure", testThis("mult", "min", arg1));
-        assertTrue("inc failure", testThis("inc", "min", arg1));
-        assertTrue("perm failure", testThis("perm", "min", arg1));
-        assertTrue("inv failure", testThis("inv", "min", arg1));
+        String fail = "";
+        collector.checkThat(fail += "mult failure&", testThis("mult", "min", arg1), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "min", arg1), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "min", arg1), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "min", arg1), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -125,10 +134,11 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig = getDoubleArray();
         //double r1 = MethodsFromColt.product(orig);
         
-        assertTrue("add failure", testThis("add", "product", orig));
-        assertTrue("mult failure", testThis("mult", "product", orig));
-        assertTrue("perm failure", testThis("perm", "product", orig));
-        assertTrue("inv failure", testThis("inv", "product", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "product", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "product", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "product", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "product", orig), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -141,9 +151,10 @@ public class MethodsFromColtTests extends TestClass {
         double secondArg = getNextDouble();
         //double r1 = MethodsFromColt.quantile(arr, secondArg);
 
-        assertTrue("add failure", testThis("add", "quantile", arr, secondArg));
-        assertTrue("mult failure", testThis("mult", "quantile", arr, secondArg));
-        assertTrue("inv failure", testThis("inv", "quantile", arr, secondArg));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "quantile", arr, secondArg), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "quantile", arr, secondArg), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "quantile", arr, secondArg), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -155,8 +166,9 @@ public class MethodsFromColtTests extends TestClass {
         double arg3 = getDouble();
         //double r1 = MethodsFromColt.sampleKurtosis(arg1, arg2, arg3);
 
-        assertTrue("add failure", testThis("add", "sampleKurtosis", arg1, arg2, arg3));
-        assertTrue("perm failure", testThis("perm", "sampleKurtosis", arg1, arg2, arg3));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "sampleKurtosis", arg1, arg2, arg3), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "sampleKurtosis", arg1, arg2, arg3), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -169,9 +181,10 @@ public class MethodsFromColtTests extends TestClass {
         double thirdArg = getDouble();
         //double r1 = MethodsFromColt.sampleSkew(firstArg, secondArg, thirdArg);
 
-        assertTrue("add failure", testThis("add", "sampleSkew", firstArg, secondArg, thirdArg));
-        assertTrue("perm failure", testThis("perm", "sampleSkew", firstArg, secondArg, thirdArg));
-        assertTrue("inv failure", testThis("inv", "sampleSkew", firstArg, secondArg, thirdArg));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "sampleSkew", firstArg, secondArg, thirdArg), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "sampleSkew", firstArg, secondArg, thirdArg), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "sampleSkew", firstArg, secondArg, thirdArg), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -182,10 +195,11 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig = getDoubleArray();
         //double r1 = MethodsFromColt.sampleVariance(orig, secondArg);
 
-        assertTrue("add failure", testThis("add", "sampleVariance", orig, secondArg));
-        assertTrue("mult failure", testThis("mult", "sampleVariance", orig, secondArg));
-        assertTrue("perm failure", testThis("perm", "sampleVariance", orig, secondArg));
-        assertTrue("inv failure", testThis("inv", "sampleVariance", orig, secondArg));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "sampleVariance", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "sampleVariance", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "sampleVariance", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "sampleVariance", orig, secondArg), equalTo(true));
     }
     @Test
     public void sumOfLogarithms_test() {
@@ -193,12 +207,13 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig = getDoubleArray();
         //double r1 = MethodsFromColt.sumOfLogarithms(orig);
 
-        assertTrue("add failure", testThis("add", "sumOfLogarithms", orig));
-        assertTrue("mult failure", testThis("mult", "sumOfLogarithms", orig));
-        assertTrue("exc failure", testThis("exc", "sumOfLogarithms", orig));
-        assertTrue("inc failure", testThis("inc", "sumOfLogarithms", orig));
-        assertTrue("perm failure", testThis("perm", "sumOfLogarithms", orig));
-        assertTrue("inv failure", testThis("inv", "sumOfLogarithms", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "sumOfLogarithms", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "sumOfLogarithms", orig), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "sumOfLogarithms", orig), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "sumOfLogarithms", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "sumOfLogarithms", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "sumOfLogarithms", orig), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -212,9 +227,10 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig2 = getDoubleArray(size);
         //double r1 = MethodsFromColt.weightedMean(orig1, orig2);
 
-        assertTrue("add failure", testThis("add", "weightedMean", orig1, orig2));
-        assertTrue("perm failure", testThis("perm", "weightedMean", orig1, orig2));
-        assertTrue("inv failure", testThis("inv", "weightedMean", orig1, orig2));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "weightedMean", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "weightedMean", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "weightedMean", orig1, orig2), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -231,9 +247,10 @@ public class MethodsFromColtTests extends TestClass {
 	int arg4 = getInt(minsize2);
         //int r1 = MethodsFromColt.binarySearchFromTo(arg1, arg2, arg3, arg4);
 
-        assertTrue("add failure", testThis("add", "binarySearchFromTo", arg1, arg2, arg3, arg4));
-        assertTrue("mult failure", testThis("mult", "binarySearchFromTo", arg1, arg2, arg3, arg4));
-        assertTrue("inv failure", testThis("inv", "binarySearchFromTo", arg1, arg2, arg3, arg4));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "binarySearchFromTo", arg1, arg2, arg3, arg4), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "binarySearchFromTo", arg1, arg2, arg3, arg4), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "binarySearchFromTo", arg1, arg2, arg3, arg4), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -249,8 +266,9 @@ public class MethodsFromColtTests extends TestClass {
         Arrays.sort(arr);
         //double r1 = MethodsFromColt.winsorizedMean(arr, from, to);
 
-        assertTrue("add failure", testThis("add", "winsorizedMean", arr, from, to));
-        assertTrue("mult failure", testThis("mult", "winsorizedMean", arr, from, to));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "winsorizedMean", arr, from, to), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "winsorizedMean", arr, from, to), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -261,9 +279,10 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig = getDoubleArray();
         //double r1 = MethodsFromColt.kurtosis(orig);
         
-        assertTrue("add failure", testThis("add", "kurtosis", orig));
-        assertTrue("mult failure", testThis("mult", "kurtosis", orig));
-        assertTrue("perm failure", testThis("perm", "kurtosis", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "kurtosis", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "kurtosis", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "kurtosis", orig), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -277,10 +296,11 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig2 = getDoubleArray(size);
         //double r1 = MethodsFromColt.pooledMean(orig1, orig2);
 
-        assertTrue("add failure", testThis("add", "pooledMean", orig1, orig2));
-        assertTrue("mult failure", testThis("mult", "pooledMean", orig1, orig2));
-        assertTrue("perm failure", testThis("perm", "pooledMean", orig1, orig2));
-        assertTrue("inv failure", testThis("inv", "pooledMean", orig1, orig2));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "pooledMean", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "pooledMean", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "pooledMean", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "pooledMean", orig1, orig2), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -293,9 +313,10 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig2 = getDoubleArray(size);
         //double r1 = MethodsFromColt.pooledVariance(orig1, orig2);
 
-        assertTrue("add failure", testThis("add", "pooledVariance", orig1, orig2));
-        assertTrue("mult failure", testThis("mult", "pooledVariance", orig1, orig2));
-        assertTrue("perm failure", testThis("perm", "pooledVariance", orig1, orig2));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "pooledVariance", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "pooledVariance", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "pooledVariance", orig1, orig2), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -308,11 +329,12 @@ public class MethodsFromColtTests extends TestClass {
         double first = getDouble();
         //double r1 = MethodsFromColt.polevl(first, orig, size);
 
-        assertTrue("add failure", testThis("add", "polevl", first, orig, size));
-        assertTrue("mult failure", testThis("mult", "polevl", first, orig, size));
-        assertTrue("exc failure", testThis("exc", "polevl", first, orig, size));
-        assertTrue("inc failure", testThis("inc", "polevl", first, orig, size));
-        assertTrue("inv failure", testThis("inv", "polevl", first, orig, size));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "polevl", first, orig, size), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "polevl", first, orig, size), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "polevl", first, orig, size), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "polevl", first, orig, size), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "polevl", first, orig, size), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -323,9 +345,10 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig = getDoubleArray();
         //double r1 = MethodsFromColt.skew(orig);
 
-        assertTrue("add failure", testThis("add", "skew", orig));
-        assertTrue("mult failure", testThis("mult", "skew", orig));
-        assertTrue("perm failure", testThis("perm", "skew", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "skew", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "skew", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "skew", orig), equalTo(true));
     }
     @Test
     public void standardize_test() {
@@ -333,10 +356,11 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig = getDoubleArray();
         //double[] r1 = MethodsFromColt.standardize(orig);
 
-        assertTrue("add failure", testThis("add", "standardize", orig));
-        assertTrue("mult failure", testThis("mult", "standardize", orig));
-        assertTrue("perm failure", testThis("perm", "standardize", orig));
-        assertTrue("inv failure", testThis("inv", "standardize", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "standardize", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "standardize", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "standardize", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "standardize", orig), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -349,7 +373,8 @@ public class MethodsFromColtTests extends TestClass {
 	double[] arg2 = getDoubleArray(size);
         //double r1 = MethodsFromColt.weightedRMS(arg1, arg2);
 
-	assertTrue("inv failure", testThis("inv", "weightedRMS", arg1, arg2));
+        String fail = "";
+	collector.checkThat(fail += "inv failure&", testThis("inv", "weightedRMS", arg1, arg2), equalTo(true));
 
         System.out.println(" >>complete");
     }
@@ -359,10 +384,11 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig = getDoubleArray();
         //double r1 = MethodsFromColt.harmonicMean(orig);
 
-        assertTrue("add failure", testThis("add", "harmonicMean", orig));
-        assertTrue("mult failure", testThis("mult", "harmonicMean", orig));
-        assertTrue("perm failure", testThis("perm", "harmonicMean", orig));
-        assertTrue("inv failure", testThis("inv", "harmonicMean", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "harmonicMean", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "harmonicMean", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "harmonicMean", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "harmonicMean", orig), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -374,10 +400,11 @@ public class MethodsFromColtTests extends TestClass {
 	double arg3 = getDouble();
         //double r1 = MethodsFromColt.sumOfPowerOfDeviations(arg1, arg2, arg3);
 
-        assertTrue("mult failure", testThis("mult", "sumOfPowerOfDeviations", arg1, arg2, arg3));
-        assertTrue("exc failure", testThis("exc", "sumOfPowerOfDeviations", arg1, arg2, arg3));
-        assertTrue("inc failure", testThis("inc", "sumOfPowerOfDeviations", arg1, arg2, arg3));
-        assertTrue("inv failure", testThis("inv", "sumOfPowerOfDeviations", arg1, arg2, arg3));
+        String fail = "";
+        collector.checkThat(fail += "mult failure&", testThis("mult", "sumOfPowerOfDeviations", arg1, arg2, arg3), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "sumOfPowerOfDeviations", arg1, arg2, arg3), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "sumOfPowerOfDeviations", arg1, arg2, arg3), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "sumOfPowerOfDeviations", arg1, arg2, arg3), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -388,8 +415,9 @@ public class MethodsFromColtTests extends TestClass {
         int secondArg = getInt();
         //double[] r1 = MethodsFromColt.power(orig, secondArg);
         
-        assertTrue("add failure", testThis("add", "power", orig, secondArg));
-        assertTrue("inv failure", testThis("inv", "power", orig, secondArg));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "power", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "power", orig, secondArg), equalTo(true));
         
         System.out.println(" >>complete");
     }
@@ -399,9 +427,10 @@ public class MethodsFromColtTests extends TestClass {
         double[] orig = getDoubleArray();
         //double[] r1 = MethodsFromColt.square(orig);
 
-        assertTrue("add failure", testThis("add", "square", orig));
-        assertTrue("mult failure", testThis("mult", "square", orig));
-        assertTrue("inv failure", testThis("inv", "square", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "square", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "square", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "square", orig), equalTo(true));
         
         System.out.println(" >>complete");
     }

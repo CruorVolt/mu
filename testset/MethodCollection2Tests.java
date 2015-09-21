@@ -1,6 +1,8 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 import Test.MethodCollection2;
+import org.junit.rules.ErrorCollector;
+import static org.hamcrest.Matchers.equalTo;
 
 public class MethodCollection2Tests extends TestClass {
 
@@ -14,12 +16,13 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //int r1 = MethodCollection2.add_values(orig);
 
-        assertTrue("add failure", testThis("add", "add_values", orig));
-        assertTrue("mult failure", testThis("mult", "add_values", orig));
-        assertTrue("exc failure", testThis("exc", "add_values", orig));
-        assertTrue("inc failure", testThis("inc", "add_values", orig));
-        assertTrue("perm failure", testThis("perm", "add_values", orig));
-        assertTrue("inv failure", testThis("inv", "add_values", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "add_values", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "add_values", orig), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "add_values", orig), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "add_values", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "add_values", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "add_values", orig), equalTo(true));
     }
 
     @Test
@@ -28,9 +31,10 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //int[] r1 = MethodCollection2.bubble(orig);
 
-        assertTrue("add failure", testThis("add", "bubble", orig));
-        assertTrue("mult failure", testThis("mult", "bubble", orig));
-        assertTrue("inv failure", testThis("inv", "bubble", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "bubble", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "bubble", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "bubble", orig), equalTo(true));
     }
 
     @Test
@@ -39,8 +43,9 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray();
         //int[] r1 = MethodCollection2.shell_sort(arg1);
 
-        assertTrue("mult failure", testThis("mult", "shell_sort", arg1));
-        assertTrue("inv failure", testThis("inv", "shell_sort", arg1));
+        String fail = "";
+        collector.checkThat(fail += "mult failure&", testThis("mult", "shell_sort", arg1), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "shell_sort", arg1), equalTo(true));
     }
 
     //@Test
@@ -50,9 +55,10 @@ public class MethodCollection2Tests extends TestClass {
 	int arg2 = getInt();
         //int r1 = MethodCollection2.sequential_search(arg1, arg2);
 
-	assertTrue("exc failure", testThis("exc", "sequential_search", arg1, arg2));
-	assertTrue("inc failure", testThis("inc", "sequential_search", arg1, arg2));
-	assertTrue("perm failure", testThis("perm", "sequential_search", arg1, arg2));
+        String fail = "";
+	collector.checkThat(fail += "exc failure&", testThis("exc", "sequential_search", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "inc failure&", testThis("inc", "sequential_search", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "perm failure&", testThis("perm", "sequential_search", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -61,9 +67,10 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //int[] r1 = MethodCollection2.selection_sort(orig);
 
-        assertTrue("add failure", testThis("add", "selection_sort", orig));
-        assertTrue("mult failure", testThis("mult", "selection_sort", orig));
-        assertTrue("inv failure", testThis("inv", "selection_sort", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "selection_sort", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "selection_sort", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "selection_sort", orig), equalTo(true));
     }
 
     @Test
@@ -75,9 +82,10 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         //int r1 = MethodCollection2.dot_product(arg1, arg2);
 
-        assertTrue("mult failure", testThis("mult", "dot_product", arg1, arg2));
-        assertTrue("exc failure", testThis("exc", "dot_product", arg1, arg2));
-        assertTrue("inc failure", testThis("inc", "dot_product", arg1, arg2));
+        String fail = "";
+        collector.checkThat(fail += "mult failure&", testThis("mult", "dot_product", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "dot_product", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "dot_product", arg1, arg2), equalTo(true));
     }
 
     //@Test
@@ -87,7 +95,8 @@ public class MethodCollection2Tests extends TestClass {
         int arg2 = getInt();
         //int[] r1 = MethodCollection2.array_calc1(arg1, arg2);
 
-        assertTrue("add failure", testThis("add", "array_calc1", arg1, arg2));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "array_calc1", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -97,10 +106,11 @@ public class MethodCollection2Tests extends TestClass {
         int arg2 = getInt();
         //int[] r1 = MethodCollection2.set_min_val(arg1, arg2);
         
-        assertTrue("add failure", testThis("add", "set_min_val", arg1, arg2));
-        assertTrue("mult failure", testThis("mult", "set_min_val", arg1, arg2));
-        assertTrue("perm failure", testThis("perm", "set_min_val", arg1, arg2)); //okay to fail on original
-        assertTrue("inv failure", testThis("inv", "set_min_val", arg1, arg2));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "set_min_val", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "set_min_val", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "set_min_val", arg1, arg2), equalTo(true)); //okay to fail on original
+        collector.checkThat(fail += "inv failure&", testThis("inv", "set_min_val", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -109,11 +119,12 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //int r1 = MethodCollection2.find_min(orig);
 
-        assertTrue("add failure", testThis("add", "find_min", orig)); //okay to fail on original
-        assertTrue("mult failure", testThis("mult", "find_min", orig));
-        assertTrue("inc failure", testThis("inc", "find_min", orig));
-        assertTrue("perm failure", testThis("perm", "find_min", orig));
-        assertTrue("inv failure", testThis("inv", "find_min", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "find_min", orig), equalTo(true)); //okay to fail on original
+        collector.checkThat(fail += "mult failure&", testThis("mult", "find_min", orig), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "find_min", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "find_min", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "find_min", orig), equalTo(true));
     }
 
     @Test
@@ -122,9 +133,10 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //int[] r1 = MethodCollection2.array_copy(orig);
 
-        assertTrue("add failure", testThis("add", "array_copy", orig));
-        assertTrue("mult failure", testThis("mult", "array_copy", orig));
-        assertTrue("inv failure", testThis("inv", "array_copy", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "array_copy", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "array_copy", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "array_copy", orig), equalTo(true));
     }
 
     @Test
@@ -136,10 +148,11 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         //double r1 = MethodCollection2.find_euc_dist(arg1, arg2);
 
-        assertTrue("mult failure", testThis("mult", "find_euc_dist", arg1, arg2));
-        assertTrue("exc failure", testThis("exc", "find_euc_dist", arg1, arg2));
-        assertTrue("inc failure", testThis("inc", "find_euc_dist", arg1, arg2));
-        assertTrue("inv failure", testThis("inv", "find_euc_dist", arg1, arg2));
+        String fail = "";
+        collector.checkThat(fail += "mult failure&", testThis("mult", "find_euc_dist", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "find_euc_dist", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "find_euc_dist", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "find_euc_dist", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -148,10 +161,11 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //double r1 = MethodCollection2.find_magnitude(orig);
 
-        assertTrue("add failure", testThis("add", "find_magnitude", orig));
-        assertTrue("mult failure", testThis("mult", "find_magnitude", orig));
-        assertTrue("inc failure", testThis("inc", "find_magnitude", orig));
-        assertTrue("inv failure", testThis("inv", "find_magnitude", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "find_magnitude", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "find_magnitude", orig), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "find_magnitude", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "find_magnitude", orig), equalTo(true));
     }
 
     @Test
@@ -163,10 +177,11 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         //double r1 = MethodCollection2.manhattan_dist(arg1, arg2);
 
-	assertTrue("mult failure", testThis("mult", "manhattan_dist", arg1, arg2));
-	assertTrue("exc failure", testThis("exc", "manhattan_dist", arg1, arg2));
-	assertTrue("inc failure", testThis("inc", "manhattan_dist", arg1, arg2));
-	assertTrue("inv failure", testThis("inv", "manhattan_dist", arg1, arg2));
+        String fail = "";
+	collector.checkThat(fail += "mult failure&", testThis("mult", "manhattan_dist", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "exc failure&", testThis("exc", "manhattan_dist", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "inc failure&", testThis("inc", "manhattan_dist", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "inv failure&", testThis("inv", "manhattan_dist", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -175,10 +190,11 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //double r1 = MethodCollection2.average(orig);
    
-        assertTrue("add failure", testThis("add", "average", orig));
-        assertTrue("mult failure", testThis("mult", "average", orig));
-        assertTrue("perm failure", testThis("perm", "average", orig));
-        assertTrue("inv failure", testThis("inv", "average", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "average", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "average", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "average", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "average", orig), equalTo(true));
     }
 
     @Test
@@ -187,10 +203,11 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //int r1 = MethodCollection2.find_max(orig);
 
-        assertTrue("add failure", testThis("add", "find_max", orig));
-        assertTrue("mult failure", testThis("mult", "find_max", orig));
-        assertTrue("perm failure", testThis("perm", "find_max", orig));
-        assertTrue("inv failure", testThis("inv", "find_max", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "find_max", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "find_max", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "find_max", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "find_max", orig), equalTo(true));
     }
 
     @Test
@@ -200,12 +217,13 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray(getInt() + 3);
         //int r1 = MethodCollection2.find_max2(orig);
 
-        assertTrue("add failure", testThis("add", "find_max2", orig));
-        assertTrue("mult failure", testThis("mult", "find_max2", orig));
-        assertTrue("exc failure", testThis("exc", "find_max2", orig));
-        assertTrue("inc failure", testThis("inc", "find_max2", orig));
-        assertTrue("perm failure", testThis("perm", "find_max2", orig));
-        assertTrue("inv failure", testThis("inv", "find_max2", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "find_max2", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "find_max2", orig), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "find_max2", orig), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "find_max2", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "find_max2", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "find_max2", orig), equalTo(true));
     }
 
     @Test
@@ -214,10 +232,11 @@ public class MethodCollection2Tests extends TestClass {
         double[] orig = getDoubleArray();
         //double r1 = MethodCollection2.variance(orig);
 
-        assertTrue("add failure", testThis("add", "variance", orig));
-        assertTrue("mult failure", testThis("mult", "variance", orig));
-        assertTrue("perm failure", testThis("perm", "variance", orig));
-        assertTrue("inv failure", testThis("inv", "variance", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "variance", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "variance", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "variance", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "variance", orig), equalTo(true));
     }
 
     @Test
@@ -226,9 +245,10 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //int[] r1 = MethodCollection2.insertion_sort(orig);
 
-        assertTrue("add failure", testThis("add", "insertion_sort", orig));
-        assertTrue("mult failure", testThis("mult", "insertion_sort", orig));
-        assertTrue("inv failure", testThis("inv", "insertion_sort", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "insertion_sort", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "insertion_sort", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "insertion_sort", orig), equalTo(true));
     }
 
     @Test
@@ -237,12 +257,13 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //double r1 = MethodCollection2.geometric_mean(orig);
 
-        assertTrue("add failure", testThis("add", "geometric_mean", orig));
-        assertTrue("mult failure", testThis("mult", "geometric_mean", orig));
-        assertTrue("exc failure", testThis("exc", "geometric_mean", orig));
-        assertTrue("inc failure", testThis("inc", "geometric_mean", orig)); //okay to fail
-        assertTrue("perm failure", testThis("perm", "geometric_mean", orig));
-        assertTrue("inv failure", testThis("inv", "geometric_mean", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "geometric_mean", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "geometric_mean", orig), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "geometric_mean", orig), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "geometric_mean", orig), equalTo(true)); //okay to fail
+        collector.checkThat(fail += "perm failure&", testThis("perm", "geometric_mean", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "geometric_mean", orig), equalTo(true));
     }
 
     @Test
@@ -254,8 +275,9 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         //double r1 = MethodCollection2.mean_absolute_error(arg1, arg2);
 
-        assertTrue("mult failure", testThis("mult", "mean_absolute_error", arg1, arg2));
-        assertTrue("inv failure", testThis("inv", "mean_absolute_error", arg1, arg2));
+        String fail = "";
+        collector.checkThat(fail += "mult failure&", testThis("mult", "mean_absolute_error", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "mean_absolute_error", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -264,10 +286,11 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //double r1 = MethodCollection2.find_median(orig);
 
-        assertTrue("add failure", testThis("add", "find_median", orig));
-        assertTrue("mult failure", testThis("mult", "find_median", orig));
-        assertTrue("perm failure", testThis("perm", "find_median", orig));
-        assertTrue("inv failure", testThis("inv", "find_median", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "find_median", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "find_median", orig), equalTo(true));
+        collector.checkThat(fail += "perm failure&", testThis("perm", "find_median", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "find_median", orig), equalTo(true));
     }
 
     @Test
@@ -276,9 +299,10 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig = getIntArray();
         //int[] r1 = MethodCollection2.reverse(orig);
         
-        assertTrue("add failure", testThis("add", "reverse", orig));
-        assertTrue("mult failure", testThis("mult", "reverse", orig));
-        assertTrue("inv failure", testThis("inv", "reverse", orig));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "reverse", orig), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "reverse", orig), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "reverse", orig), equalTo(true));
     }
 
     @Test
@@ -290,8 +314,9 @@ public class MethodCollection2Tests extends TestClass {
         double[] orig2 = getDoubleArray(arraySize);
         //double r1 = MethodCollection2.weighted_average(orig1, orig2);
 
-        assertTrue("add failure", testThis("add", "weighted_average", orig1, orig2));
-        assertTrue("mult failure", testThis("mult", "weighted_average", orig1, orig2));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "weighted_average", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "weighted_average", orig1, orig2), equalTo(true));
     }
 
     //@Test
@@ -301,9 +326,10 @@ public class MethodCollection2Tests extends TestClass {
 	int arg2 = getInt();
         //int r1 = MethodCollection2.count_k(arg1, arg2);
 
-	assertTrue("exc failure", testThis("exc", "count_k", arg1, arg2));
-	assertTrue("inc failure", testThis("inc", "count_k", arg1, arg2));
-	assertTrue("perm failure", testThis("perm", "count_k", arg1, arg2));
+        String fail = "";
+	collector.checkThat(fail += "exc failure&", testThis("exc", "count_k", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "inc failure&", testThis("inc", "count_k", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "perm failure&", testThis("perm", "count_k", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -314,9 +340,10 @@ public class MethodCollection2Tests extends TestClass {
         int thirdArg = getInt();
         //int[] r1 = MethodCollection2.clip(orig, secondArg, thirdArg);
 
-        assertTrue("add failure", testThis("add", "clip", orig, secondArg, thirdArg));
-        assertTrue("mult failure", testThis("mult", "clip", orig, secondArg, thirdArg));
-        assertTrue("inv failure", testThis("inv", "clip", orig, secondArg, thirdArg));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "clip", orig, secondArg, thirdArg), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "clip", orig, secondArg, thirdArg), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "clip", orig, secondArg, thirdArg), equalTo(true));
     }
 
     @Test
@@ -328,7 +355,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         //int[] r1 = MethodCollection2.elementwise_max(arg1, arg2);
 	
-	assertTrue("mult failure", testThis("mult", "elementwise_max", arg1, arg2));
+        String fail = "";
+	collector.checkThat(fail += "mult failure&", testThis("mult", "elementwise_max", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -340,7 +368,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         //int[] r1 = MethodCollection2.elementwise_min(arg1, arg2);
 
-        assertTrue("mult failure", testThis("mult", "elementwise_min", arg1, arg2));
+        String fail = "";
+        collector.checkThat(fail += "mult failure&", testThis("mult", "elementwise_min", arg1, arg2), equalTo(true));
     }
 
     //@Test
@@ -349,10 +378,11 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray();
         //int r1 = MethodCollection2.count_non_zeroes(arg1);
 
-	assertTrue("exc failure", testThis("exc", "count_non_zeroes", arg1));
-	assertTrue("inc failure", testThis("inc", "count_non_zeroes", arg1));
-	assertTrue("perm failure", testThis("perm", "count_non_zeroes", arg1));
-	assertTrue("inv failure", testThis("inv", "count_non_zeroes", arg1));
+        String fail = "";
+	collector.checkThat(fail += "exc failure&", testThis("exc", "count_non_zeroes", arg1), equalTo(true));
+	collector.checkThat(fail += "inc failure&", testThis("inc", "count_non_zeroes", arg1), equalTo(true));
+	collector.checkThat(fail += "perm failure&", testThis("perm", "count_non_zeroes", arg1), equalTo(true));
+	collector.checkThat(fail += "inv failure&", testThis("inv", "count_non_zeroes", arg1), equalTo(true));
     }
 
     //@Test
@@ -361,9 +391,10 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg1 = getIntArray();
         //int r1 = MethodCollection2.cnt_zeroes(arg1);
 
-	assertTrue("exc failure", testThis("exc", "cnt_zeroes", arg1));
-	assertTrue("inc failure", testThis("inc", "cnt_zeroes", arg1));
-	assertTrue("perm failure", testThis("perm", "cnt_zeroes", arg1));
+        String fail = "";
+	collector.checkThat(fail += "exc failure&", testThis("exc", "cnt_zeroes", arg1), equalTo(true));
+	collector.checkThat(fail += "inc failure&", testThis("inc", "cnt_zeroes", arg1), equalTo(true));
+	collector.checkThat(fail += "perm failure&", testThis("perm", "cnt_zeroes", arg1), equalTo(true));
     }
 
     //@Test
@@ -375,7 +406,8 @@ public class MethodCollection2Tests extends TestClass {
 	int[] arg2 = getIntArray(arraySize);
         //boolean[] r1 = MethodCollection2.elementwise_equal(arg1, arg2);
 
-	assertTrue("inv failure", testThis("inv", "elementwise_equal", arg1, arg2));
+        String fail = "";
+	collector.checkThat(fail += "inv failure&", testThis("inv", "elementwise_equal", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -387,11 +419,12 @@ public class MethodCollection2Tests extends TestClass {
         int[] orig2 = getIntArray(arraySize);
         //int r1 = MethodCollection2.hamming_dist(orig1, orig2);
 
-        assertTrue("add failure", testThis("add", "hamming_dist", orig1, orig2));
-        assertTrue("mult failure", testThis("mult", "hamming_dist", orig1, orig2));
-        assertTrue("exc failure", testThis("exc", "hamming_dist", orig1, orig2));
-        assertTrue("inc failure", testThis("inc", "hamming_dist", orig1, orig2));
-        assertTrue("inv failure", testThis("inv", "hamming_dist", orig1, orig2));
+        String fail = "";
+        collector.checkThat(fail += "add failure&", testThis("add", "hamming_dist", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "mult failure&", testThis("mult", "hamming_dist", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "exc failure&", testThis("exc", "hamming_dist", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "inc failure&", testThis("inc", "hamming_dist", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "inv failure&", testThis("inv", "hamming_dist", orig1, orig2), equalTo(true));
     }
 
 }
