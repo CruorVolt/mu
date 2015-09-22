@@ -19,10 +19,10 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double r1 = MethodsFromApacheMath.distance1(arg1, arg2);
 
         String fail = "";
-        collector.checkThat(fail += "mult failure&", testThis("mult", "distance", arg1, arg2), equalTo(true));
-        collector.checkThat(fail += "exc failure&", testThis("exc", "distance", arg1, arg2), equalTo(true));
-        collector.checkThat(fail += "inc failure&", testThis("inc", "distance", arg1, arg2), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "distance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "distance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "exc&", testThis("exc", "distance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inc&", testThis("inc", "distance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "distance", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -34,10 +34,10 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double r1 = MethodsFromApacheMath.distanceInf(arg1, arg2);
 
         String fail = "";
-	collector.checkThat(fail += "mult failure&", testThis("mult", "distanceInf", arg1, arg2), equalTo(true));
-	collector.checkThat(fail += "exc failure&", testThis("exc", "distanceInf", arg1, arg2), equalTo(true));
-	collector.checkThat(fail += "inc failure&", testThis("inc", "distanceInf", arg1, arg2), equalTo(true));
-	collector.checkThat(fail += "inv failure&", testThis("inv", "distanceInf", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "mult&", testThis("mult", "distanceInf", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "exc&", testThis("exc", "distanceInf", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "inc&", testThis("inc", "distanceInf", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "inv&", testThis("inv", "distanceInf", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -49,9 +49,9 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double[] r1 = MethodsFromApacheMath.ebeAdd(orig1, orig2);
 
         String fail = "";
-        collector.checkThat(fail += "add failure&", testThis("add", "ebeAdd", orig1, orig2), equalTo(true));
-        collector.checkThat(fail += "mult failure&", testThis("mult", "ebeAdd", orig1, orig2), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "ebeAdd", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "add&", testThis("add", "ebeAdd", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "ebeAdd", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "ebeAdd", orig1, orig2), equalTo(true));
     }
 
     @Test
@@ -63,9 +63,9 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double[] r1 = MethodsFromApacheMath.ebeDivide(orig1, orig2);
 
         String fail = "";
-        collector.checkThat(fail += "add failure&", testThis("add", "ebeDivide", orig1, orig2), equalTo(true));
-        collector.checkThat(fail += "mult failure&", testThis("mult", "ebeDivide", orig1, orig2), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "ebeDivide", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "add&", testThis("add", "ebeDivide", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "ebeDivide", orig1, orig2), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "ebeDivide", orig1, orig2), equalTo(true));
     }
 
     @Test
@@ -77,9 +77,9 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double[] r1 = MethodsFromApacheMath.ebeMultiply(firstArg, secondArg);
 
         String fail = "";
-        collector.checkThat(fail += "add failure&", testThis("add", "ebeMultiply", firstArg, secondArg), equalTo(true));
-        collector.checkThat(fail += "mult failure&", testThis("mult", "ebeMultiply", firstArg, secondArg), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "ebeMultiply", firstArg, secondArg), equalTo(true));
+        collector.checkThat(fail += "add&", testThis("add", "ebeMultiply", firstArg, secondArg), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "ebeMultiply", firstArg, secondArg), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "ebeMultiply", firstArg, secondArg), equalTo(true));
     }
 
     @Test
@@ -88,9 +88,9 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double r1 = MethodsFromApacheMath.safeNorm(orig);
         
         String fail = "";
-        collector.checkThat(fail += "add failure&", testThis("add", "safeNorm", orig), equalTo(true));
-        collector.checkThat(fail += "mult failure&", testThis("mult", "safeNorm", orig), equalTo(true));
-        collector.checkThat(fail += "perm failure&", testThis("perm", "safeNorm", orig), equalTo(true));
+        collector.checkThat(fail += "add&", testThis("add", "safeNorm", orig), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "safeNorm", orig), equalTo(true));
+        collector.checkThat(fail += "perm&", testThis("perm", "safeNorm", orig), equalTo(true));
     }
 
     @Test
@@ -100,9 +100,9 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double[] r1 = MethodsFromApacheMath.scale(arg1, orig);
 
         String fail = "";
-        collector.checkThat(fail += "add failure&", testThis("add", "scale", arg1, orig), equalTo(true));
-        collector.checkThat(fail += "mult failure&", testThis("mult", "scale", arg1, orig), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "scale", arg1, orig), equalTo(true));
+        collector.checkThat(fail += "add&", testThis("add", "scale", arg1, orig), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "scale", arg1, orig), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "scale", arg1, orig), equalTo(true));
     }
 
     @Test
@@ -111,10 +111,10 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double r1 = MethodsFromApacheMath.entropy(orig);
 
         String fail = "";
-        collector.checkThat(fail += "add failure&", testThis("add", "entropy", orig), equalTo(true));
-        collector.checkThat(fail += "mult failure&", testThis("mult", "entropy", orig), equalTo(true));
-        collector.checkThat(fail += "perm failure&", testThis("perm", "entropy", orig), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "entropy", orig), equalTo(true));
+        collector.checkThat(fail += "add&", testThis("add", "entropy", orig), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "entropy", orig), equalTo(true));
+        collector.checkThat(fail += "perm&", testThis("perm", "entropy", orig), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "entropy", orig), equalTo(true));
     }
 
     @Test
@@ -126,8 +126,8 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double r1 = MethodsFromApacheMath.g(arg1, arg2);
 
         String fail = "";
-        collector.checkThat(fail += "mult failure&", testThis("mult", "g", arg1, arg2), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "g", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "g", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "g", arg1, arg2), equalTo(true));
         
     }
 
@@ -138,9 +138,9 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double[] r1 = MethodsFromApacheMath.calculateAbsoluteDifferences(orig);
         
         String fail = "";
-        collector.checkThat(fail += "add failure&", testThis("add", "calculateAbsoluteDifferences", orig), equalTo(true));
-        collector.checkThat(fail += "mult failure&", testThis("mult", "calculateAbsoluteDifferences", orig), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "calculateAbsoluteDifferences", orig), equalTo(true));
+        collector.checkThat(fail += "add&", testThis("add", "calculateAbsoluteDifferences", orig), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "calculateAbsoluteDifferences", orig), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "calculateAbsoluteDifferences", orig), equalTo(true));
     }
 
     @Test
@@ -152,10 +152,10 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double r1 = MethodsFromApacheMath.computeCanberraDistance(arg1, arg2);
 
         String fail = "";
-        collector.checkThat(fail += "mult failure&", testThis("mult", "computeCanberraDistance", arg1, arg2), equalTo(true));
-        collector.checkThat(fail += "exc failure&", testThis("exc", "computeCanberraDistance", arg1, arg2), equalTo(true));
-        collector.checkThat(fail += "inc failure&", testThis("inc", "computeCanberraDistance", arg1, arg2), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "computeCanberraDistance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "computeCanberraDistance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "exc&", testThis("exc", "computeCanberraDistance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inc&", testThis("inc", "computeCanberraDistance", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "computeCanberraDistance", arg1, arg2), equalTo(true));
     }
 
     @Test
@@ -166,10 +166,10 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double r1 = MethodsFromApacheMath.evaluateHoners(orig, secondArg);
 
         String fail = "";
-        collector.checkThat(fail += "add failure&", testThis("add", "evaluateHoners", orig, secondArg), equalTo(true));
-        collector.checkThat(fail += "mult failure&", testThis("mult", "evaluateHoners", orig, secondArg), equalTo(true));
-        collector.checkThat(fail += "inc failure&", testThis("inc", "evaluateHoners", orig, secondArg), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "evaluateHoners", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "add&", testThis("add", "evaluateHoners", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "evaluateHoners", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "inc&", testThis("inc", "evaluateHoners", orig, secondArg), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "evaluateHoners", orig, secondArg), equalTo(true));
     }
 
     @Test
@@ -183,9 +183,9 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double r1 = MethodsFromApacheMath.evaluateInternal(firstArg, secondArg, thirdArg);
 
         String fail = "";
-        collector.checkThat(fail += "add failure&", testThis("add", "evaluateInternal", firstArg, secondArg, thirdArg), equalTo(true));
-        collector.checkThat(fail += "mult failure&", testThis("mult", "evaluateInternal", firstArg, secondArg, thirdArg), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "evaluateInternal", firstArg, secondArg, thirdArg), equalTo(true));
+        collector.checkThat(fail += "add&", testThis("add", "evaluateInternal", firstArg, secondArg, thirdArg), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "evaluateInternal", firstArg, secondArg, thirdArg), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "evaluateInternal", firstArg, secondArg, thirdArg), equalTo(true));
     }
 
    @Test
@@ -198,11 +198,11 @@ public class MethodsFromApacheMathTests extends TestClass {
        //double r1 = MethodsFromApacheMath.evaluateNewton(firstArg, secondArg, thirdArg);
 
         String fail = "";
-       collector.checkThat(fail += "add failure&", testThis("add", "evaluateNewton", firstArg, secondArg, thirdArg), equalTo(true));
-       collector.checkThat(fail += "mult failure&", testThis("mult", "evaluateNewton", firstArg, secondArg, thirdArg), equalTo(true));
-       collector.checkThat(fail += "exc failure&", testThis("exc", "evaluateNewton", firstArg, secondArg, thirdArg), equalTo(true));
-       collector.checkThat(fail += "inc failure&", testThis("inc", "evaluateNewton", firstArg, secondArg, thirdArg), equalTo(true));
-       collector.checkThat(fail += "inv failure&", testThis("inv", "evaluateNewton", firstArg, secondArg, thirdArg), equalTo(true));
+       collector.checkThat(fail += "add&", testThis("add", "evaluateNewton", firstArg, secondArg, thirdArg), equalTo(true));
+       collector.checkThat(fail += "mult&", testThis("mult", "evaluateNewton", firstArg, secondArg, thirdArg), equalTo(true));
+       collector.checkThat(fail += "exc&", testThis("exc", "evaluateNewton", firstArg, secondArg, thirdArg), equalTo(true));
+       collector.checkThat(fail += "inc&", testThis("inc", "evaluateNewton", firstArg, secondArg, thirdArg), equalTo(true));
+       collector.checkThat(fail += "inv&", testThis("inv", "evaluateNewton", firstArg, secondArg, thirdArg), equalTo(true));
    }
 
    @Test
@@ -214,8 +214,8 @@ public class MethodsFromApacheMathTests extends TestClass {
        //double r1 = MethodsFromApacheMath.meanDifference(arg1, arg2);
 
         String fail = "";
-       collector.checkThat(fail += "mult failure&", testThis("mult", "meanDifference", arg1, arg2), equalTo(true));
-       collector.checkThat(fail += "inv failure&", testThis("inv", "meanDifference", arg1, arg2), equalTo(true));
+       collector.checkThat(fail += "mult&", testThis("mult", "meanDifference", arg1, arg2), equalTo(true));
+       collector.checkThat(fail += "inv&", testThis("inv", "meanDifference", arg1, arg2), equalTo(true));
    }
 
    //@Test
@@ -227,7 +227,7 @@ public class MethodsFromApacheMathTests extends TestClass {
         //boolean r1 = MethodsFromApacheMath.equals(arg1, arg2);
 
         String fail = "";
-	collector.checkThat(fail += "inc failure&", testThis("inc", "equals", arg1, arg2), equalTo(true));
+	collector.checkThat(fail += "inc&", testThis("inc", "equals", arg1, arg2), equalTo(true));
    }
 
    @Test
@@ -242,10 +242,10 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double r1 = MethodsFromApacheMath.chiSquare(arg1, arg2);
 
         String fail = "";
-        collector.checkThat(fail += "mult failure&", testThis("mult", "chiSquare", arg1, arg2), equalTo(true));
-        collector.checkThat(fail += "exc failure&", testThis("exc", "chiSquare", arg1, arg2), equalTo(true));
-        collector.checkThat(fail += "inc failure&", testThis("inc", "chiSquare", arg1, arg2), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "chiSquare", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "chiSquare", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "exc&", testThis("exc", "chiSquare", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inc&", testThis("inc", "chiSquare", arg1, arg2), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "chiSquare", arg1, arg2), equalTo(true));
    }
 
   @Test
@@ -258,9 +258,9 @@ public class MethodsFromApacheMathTests extends TestClass {
         //int r1 = MethodsFromApacheMath.partition(arr, begin, end, pivot);
 
         String fail = "";
-        collector.checkThat(fail += "add failure&", testThis("add", "partition", arr, begin, end, pivot), equalTo(true));
-        collector.checkThat(fail += "mult failure&", testThis("mult", "partition", arr, begin, end, pivot), equalTo(true));
-        collector.checkThat(fail += "inv failure&", testThis("inv", "partition", arr, begin, end, pivot), equalTo(true));
+        collector.checkThat(fail += "add&", testThis("add", "partition", arr, begin, end, pivot), equalTo(true));
+        collector.checkThat(fail += "mult&", testThis("mult", "partition", arr, begin, end, pivot), equalTo(true));
+        collector.checkThat(fail += "inv&", testThis("inv", "partition", arr, begin, end, pivot), equalTo(true));
   }
 
   @Test
@@ -274,9 +274,9 @@ public class MethodsFromApacheMathTests extends TestClass {
         //double r1 = MethodsFromApacheMath.evaluateWeightedProduct(arg1, arg2, start, length);
 
         String fail = "";
-	collector.checkThat(fail += "mult failure&", testThis("mult", "evaluateWeightedProduct", arg1, arg2, start, length), equalTo(true));
-	collector.checkThat(fail += "exc failure&", testThis("exc", "evaluateWeightedProduct", arg1, arg2, start, length), equalTo(true));
-	collector.checkThat(fail += "inc failure&", testThis("inc", "evaluateWeightedProduct", arg1, arg2, start, length), equalTo(true));
+	collector.checkThat(fail += "mult&", testThis("mult", "evaluateWeightedProduct", arg1, arg2, start, length), equalTo(true));
+	collector.checkThat(fail += "exc&", testThis("exc", "evaluateWeightedProduct", arg1, arg2, start, length), equalTo(true));
+	collector.checkThat(fail += "inc&", testThis("inc", "evaluateWeightedProduct", arg1, arg2, start, length), equalTo(true));
   }
 
 }
