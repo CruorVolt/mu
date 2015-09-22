@@ -55,8 +55,8 @@ def parse_file(file)
                 in_file.readline.split(/[{},]/).each do |part|
                     if part.length > 2
                         test = part.split /\=/
-                        #puts "PART: #{part}, TEST - #{test}"
-                        run_map[test[0].lstrip] = (test[1] == "pass") ? true : false
+                        #puts "TEST - #{test}"
+                        run_map[test[0].strip] = get_failures(test[1])
                     end
                 end
                 #print run_map
@@ -87,8 +87,8 @@ def parse_file(file)
                         
                         tests.each do |test|
                             results = test.lstrip.split /\=/
-                            passed = (results[1] == "pass") ? true : false
-                            live = false if passed != run_map[results[0]]
+                            live = compare_failures(get_failures(results[1]), run_map[results[0]])
+                            if (!live) then break end
                         end
 
                         if live
@@ -141,6 +141,31 @@ def parse_file(file)
 
 end
 
+def get_failures(result_string)
+    # find_max2_test: 226; add failure&mult failure&exc failure&inc failure&perm failure&
+    failures = []
+    if result_string == "pass"
+        return failures
+    end
+    result_string.split(/;/)[1].split(/&/).map(&:strip)
+end
+
+def compare_failures(original, mutant, mr = @mr)
+    #print "\n\n#1)#{original}\n2) #{mutant}"
+    if original == mutant
+        return true
+    elsif mr == "aggregate"
+        # failure here means ANY mr failed - don't match specifics
+        return (((original.length == 0) and (mutant.length == 0)) or ((original.length != 0) and (mutant.length != 0)))
+    else
+        if original.include? mr
+            return mutant.include? mr
+        else
+            return !(mutant.include? mr)
+        end
+    end
+end
+
 def parse_dir(dir)
     print dir
     Dir.foreach(dir) do |file|
@@ -148,6 +173,7 @@ def parse_dir(dir)
     end
 end
 
+=begin
 system("./trunc.sh")
 
 here = File.dirname(__FILE__)
@@ -159,6 +185,9 @@ end
 dirs.each do |directory|
     parse_dir directory
 end
+=end
 
-#parse_file File.join(here, "aggregate", "MethodCollection2.add_values")
+system("cat /dev/null > test_results_aggregate.csv")
+here = File.dirname(__FILE__)
+parse_file File.join(here, "test_results.add_values")
 
