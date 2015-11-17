@@ -1,0 +1,262 @@
+library(plyr)
+
+collapse <- function(frame) {
+  newframe = data.frame(
+    class = frame$class,
+    method = frame$method,
+    mr = frame$mr,
+    AORB = (frame$AORB_killed / (frame$AORB_live + frame$AORB_killed)),
+    AORS = (frame$AORS_killed / (frame$AORS_live + frame$AORS_killed)),
+    AOIU = (frame$AOIU_killed / (frame$AOIU_live + frame$AOIU_killed)),
+    AOIS = (frame$AOIS_killed / (frame$AOIS_live + frame$AOIS_killed)),
+    AODU = (frame$AODU_killed / (frame$AODU_live + frame$AODU_killed)),
+    AODU = (frame$AODU_killed / (frame$AODU_live + frame$AODU_killed)),
+    AODS = (frame$AODS_killed / (frame$AODS_live + frame$AODS_killed)),
+    ROR = (frame$ROR_killed / (frame$ROR_live + frame$ROR_killed)),
+    COR = (frame$COR_killed / (frame$COR_live + frame$COR_killed)),
+    COD = (frame$COD_killed / (frame$COD_live + frame$COD_killed)),
+    COI = (frame$COI_killed / (frame$COI_live + frame$COI_killed)),
+    SOR = (frame$SOR_killed / (frame$SOR_live + frame$SOR_killed)),
+    LOR = (frame$LOR_killed / (frame$LOR_live + frame$LOR_killed)),
+    LOI = (frame$LOI_killed / (frame$LOI_live + frame$LOI_killed)),
+    LOD = (frame$LOD_killed / (frame$LOD_live + frame$LOD_killed)),
+    ASRS = (frame$ASRS_killed / (frame$ASRS_live + frame$ASRS_killed)),
+    SDL = (frame$SDL_killed / (frame$SDL_live + frame$SDL_killed)),
+    VDL = (frame$VDL_killed / (frame$VDL_live + frame$VDL_killed)),
+    CDL = (frame$CDL_killed / (frame$CDL_live + frame$CDL_killed)),
+    ODL = (frame$ODL_killed / (frame$ODL_live + frame$ODL_killed)),
+    total_live = frame$total_live,
+    total_killed = frame$total_killed,
+    total_score = frame$mutant_score
+  )
+  return(aggregate( newframe[, 4:26], list(newframe$class, newframe$method, newframe$mr), mean))
+}
+
+mr_breakout <- function(x) {
+  newframe <- data.frame(
+    Class = x$class,
+    MR = x$mr,
+    Arithmetic = x$AO_killed / (x$AO_killed + x$AO_live),
+    Relational = x$RO_killed / (x$RO_killed + x$RO_live),
+    Conditional = x$CO_killed / (x$CO_killed + x$CO_live),
+    Shift = x$SO_killed / (x$SO_killed + x$SO_live),
+    Logical = x$LO_killed / (x$LO_killed + x$LO_live),
+    Assignment = x$AS_killed / (x$AS_killed + x$AS_live),
+    Deletion = x$DL_killed / (x$DL_killed + x$DL_live)
+  )
+  return(newframe)
+}
+
+
+apache_agg = read.csv("MethodsFromApacheMath_aggregate.csv")
+apache_add = read.csv("MethodsFromApacheMath_add.csv")
+apache_mult = read.csv("MethodsFromApacheMath_mult.csv")
+apache_perm = read.csv("MethodsFromApacheMath_perm.csv")
+apache_inc = read.csv("MethodsFromApacheMath_inc.csv")
+apache_inv = read.csv("MethodsFromApacheMath_inv.csv")
+apache_exc = read.csv("MethodsFromApacheMath_exc.csv")
+
+coll2_agg = read.csv("MethodCollection2_aggregate.csv")
+coll2_add = read.csv("MethodCollection2_add.csv")
+coll2_mult = read.csv("MethodCollection2_mult.csv")
+coll2_perm = read.csv("MethodCollection2_perm.csv")
+coll2_inc = read.csv("MethodCollection2_inc.csv")
+coll2_inv = read.csv("MethodCollection2_inv.csv")
+coll2_exc = read.csv("MethodCollection2_exc.csv")
+
+colt_agg = read.csv("MethodsFromColt_aggregate.csv")
+colt_add = read.csv("MethodsFromColt_add.csv")
+colt_mult = read.csv("MethodsFromColt_mult.csv")
+colt_perm = read.csv("MethodsFromColt_perm.csv")
+colt_inc = read.csv("MethodsFromColt_inc.csv")
+colt_inv = read.csv("MethodsFromColt_inv.csv")
+colt_exc = read.csv("MethodsFromColt_exc.csv")
+
+mahout_agg = read.csv("MethodsFromMahout_aggregate.csv")
+mahout_add = read.csv("MethodsFromMahout_add.csv")
+mahout_mult = read.csv("MethodsFromMahout_mult.csv")
+mahout_perm = read.csv("MethodsFromMahout_perm.csv")
+mahout_inc = read.csv("MethodsFromMahout_inc.csv")
+mahout_inv = read.csv("MethodsFromMahout_inv.csv")
+mahout_exc = read.csv("MethodsFromMahout_exc.csv")
+
+sax_agg = data.frame(
+  class = rep("SAXS", 3),
+  mutant_score = c(1.0, 0.833, 0.914)
+)
+
+apache_combined = rbind(apache_agg, apache_add, apache_mult, apache_perm, apache_inc, apache_inv, apache_exc)
+coll2_combined = rbind(coll2_agg, coll2_add, coll2_mult, coll2_perm, coll2_inc, coll2_inv, coll2_exc)
+colt_combined = rbind(colt_agg, colt_add, colt_mult, colt_perm, colt_inc, colt_inv, colt_exc)
+mahout_combined = rbind(mahout_agg, mahout_add, mahout_mult, mahout_perm, mahout_inc, mahout_inv, mahout_exc)
+
+#agg_combined = rbind.fill(coll2_agg, colt_agg, apache_agg, sax_agg, mahout_agg)
+#remove mahout
+agg_combined = rbind.fill(coll2_agg, colt_agg, apache_agg, sax_agg)
+
+#add_combined = rbind(coll2_add, colt_add, apache_add, mahout_add)
+#mult_combined = rbind(coll2_mult, colt_mult, apache_mult, mahout_mult)
+#perm_combined = rbind(coll2_perm, colt_perm, apache_perm, mahout_perm)
+#exc_combined = rbind(coll2_exc, colt_exc, apache_exc, mahout_exc)
+#inc_combined = rbind(coll2_inc, colt_inc, apache_inc, mahout_inc)
+#inv_combined = rbind(coll2_inv, colt_inv, apache_inv, mahout_inv)
+#remove mahout
+add_combined = rbind(coll2_add, colt_add, apache_add)
+mult_combined = rbind(coll2_mult, colt_mult, apache_mult)
+perm_combined = rbind(coll2_perm, colt_perm, apache_perm)
+exc_combined = rbind(coll2_exc, colt_exc, apache_exc)
+inc_combined = rbind(coll2_inc, colt_inc, apache_inc)
+inv_combined = rbind(coll2_inv, colt_inv, apache_inv)
+
+MRs_combined = rbind(add_combined, mult_combined, perm_combined, exc_combined, inc_combined, inv_combined)
+
+#boxplot(total_score ~ Group.1, data = agg_combined, ylab = "Fault Detection Score", main = "Aggregate MRs")
+#boxplot(total_score ~ Group.3, data = MRs_combined, ylab = "Fault Detection Score", main = "Metamorphic Relations")
+#boxplot(total_score ~ Group.1, data = MRs_combined, ylab = "Fault Detection Score", main = "Individual MRs - Overall")
+
+#boxplot(total_score ~ Group.1, data = add_combined, ylab = "Fault Detection Score", main = "Individual MR: add", ylim=c(0,1.0))
+#boxplot(total_score ~ Group.1, data = mult_combined, ylab = "Fault Detection Score", main = "Individual MR: mult", ylim=c(0,1.0))
+#boxplot(total_score ~ Group.1, data = perm_combined, ylab = "Fault Detection Score", main = "Individual MR: perm", ylim=c(0,1.0))
+#boxplot(total_score ~ Group.1, data = inc_combined, ylab = "Fault Detection Score", main = "Individual MR: inc", ylim=c(0,1.0))
+#boxplot(total_score ~ Group.1, data = inv_combined, ylab = "Fault Detection Score", main = "Individual MR: inv", ylim=c(0,1.0))
+#boxplot(total_score ~ Group.1, data = exc_combined, ylab = "Fault Detection Score", main = "Individual MR: exc", ylim=c(0,1.0))
+
+#Aggregate MRs
+boxplot(mutant_score ~ class, data = agg_combined,ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
+
+#Individual MRs - Overall
+#rbind in the saxs data
+saxs_mrs <- data.frame(
+  class = rep("SAXS", 7),
+  mr = c("inv", "inc", "mult", "exc", "inc", "exc", "perm"),
+  mutant_score = c(0.789, 0.579, 0.895, 0.632, 0.815, 0.833, 0.914)
+)
+MRs_combined = rbind.fill(MRs_combined, saxs_mrs)
+boxplot(mutant_score ~ mr, data = MRs_combined, ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
+
+#boxplot(mutant_score ~ mr, data = coll2_combined, ylab = "Fault Detection Score", main = "MethodCollection2", ylim = c(-0.1, 1.1))
+#boxplot(mutant_score ~ mr, data = colt_combined, ylab = "Fault Detection Score", main = "MethodsFromColt", ylim = c(-0.1, 1.1))
+#boxplot(mutant_score ~ mr, data = apache_combined, ylab = "Fault Detection Score", main = "MethodsFromApacheMath", ylim = c(-0.1, 1.1))
+#boxplot(mutant_score ~ mr, data = mahout_combined, ylab = "Fault Detection Score", main = "MethodsFromMahout", ylim = c(-0.1, 1.1))
+
+#boxplot( (MRs_combined$total_exceptions / (MRs_combined$total_live + MRs_combined$total_killed)) ~ MRs_combined$class, ylim = c(0,4), ylab = "Percentage of Mutants", main="Mutant Exception Rates")
+#boxplot( (MRs_combined$total_timeouts / (MRs_combined$total_live + MRs_combined$total_killed)) ~ MRs_combined$class, ylim = c(0,2), ylab = "Percentage of Mutants", main="Mutant Time-out Rates")
+
+
+#boxplot(mutant_score ~ mr, data = subset(MRs_combined, class != "MethodsFromMahout"), ylab = "Fault Detection Score", main = "Individual MRs - Overall (Without Mahout)", ylim = c(-0.1, 1.1))
+
+mc2_mean <- mean(MRs_combined$mutant_score[MRs_combined$class=="MethodCollection2"], na.rm = TRUE)
+apache_mean <- mean(MRs_combined$mutant_score[MRs_combined$class=="MethodsFromApacheMath"], na.rm = TRUE)
+colt_mean <- mean(MRs_combined$mutant_score[MRs_combined$class=="MethodsFromColt"], na.rm = TRUE)
+mahout_mean <- mean(MRs_combined$mutant_score[MRs_combined$class=="MethodsFromMahout"], na.rm = TRUE)
+saxs_mean <- mean(MRs_combined$mutant_score[MRs_combined$class=="SAXS"], na.rm = TRUE)
+
+types <- read.csv("TYPES.csv")
+sax_types = data.frame(
+  Class = rep("SAXS", 10),
+  MutantType = c("arithmetic", "conditional", "logical", "assignment", "arithmetic", "conditional", "logical", "assignment", "arithmetic", "assignment"),
+  Score = c(0.7368421052631579,
+            0.05263157894736842,
+            0.05263157894736842,
+            0.15789473684210525,
+            0.7407407407407407,
+            0.037037037037037035,
+            0.037037037037037035,
+            0.018518518518518517,
+            0.8705035971223022,
+            0.04316546762589928)
+)
+types <- rbind.fill(types, sax_types)
+boxplot(types$Score ~ types$MutantType)
+
+#################################################################################
+#Turn these into barplot and get the different average versions
+
+
+
+#new averages for MR types
+m2_set = subset(types, Class == "MethodCollection2")
+apache_set = subset(types, Class == "MethodsFromApacheMath")
+colt_set = subset(types, Class == "MethodsFromColt")
+mahout_set = subset(types, Class == "MethodsFromMahout")
+sax_set = subset(types, Class == "SAXS")
+
+m2_arithmetic = mean(subset(m2_set, MutantType == "arithmetic")$Score, na.rm = TRUE)
+m2_assignment = mean(subset(m2_set, MutantType == "assignment")$Score, na.rm = TRUE)
+m2_conditional = mean(subset(m2_set, MutantType == "conditional")$Score, na.rm = TRUE)
+m2_deletion = mean(subset(m2_set, MutantType == "deletion")$Score, na.rm = TRUE)
+m2_logical = mean(subset(m2_set, MutantType == "logical")$Score, na.rm = TRUE)
+m2_relational = mean(subset(m2_set, MutantType == "relational")$Score, na.rm = TRUE)
+
+apache_arithmetic = mean(subset(apache_set, MutantType == "arithmetic")$Score, na.rm = TRUE)
+apache_assignment = mean(subset(apache_set, MutantType == "assignment")$Score, na.rm = TRUE)
+apache_conditional = mean(subset(apache_set, MutantType == "conditional")$Score, na.rm = TRUE)
+apache_deletion = mean(subset(apache_set, MutantType == "deletion")$Score, na.rm = TRUE)
+apache_logical = mean(subset(apache_set, MutantType == "logical")$Score, na.rm = TRUE)
+apache_relational = mean(subset(apache_set, MutantType == "relational")$Score, na.rm = TRUE)
+
+colt_arithmetic = mean(subset(colt_set, MutantType == "arithmetic")$Score, na.rm = TRUE)
+colt_assignment = mean(subset(colt_set, MutantType == "assignment")$Score, na.rm = TRUE)
+colt_conditional = mean(subset(colt_set, MutantType == "conditional")$Score, na.rm = TRUE)
+colt_deletion = mean(subset(colt_set, MutantType == "deletion")$Score, na.rm = TRUE)
+colt_logical = mean(subset(colt_set, MutantType == "logical")$Score, na.rm = TRUE)
+colt_relational = mean(subset(colt_set, MutantType == "relational")$Score, na.rm = TRUE)
+
+mahout_arithmetic = mean(subset(mahout_set, MutantType == "arithmetic")$Score, na.rm = TRUE)
+mahout_assignment = mean(subset(mahout_set, MutantType == "assignment")$Score, na.rm = TRUE)
+mahout_conditional = mean(subset(mahout_set, MutantType == "conditional")$Score, na.rm = TRUE)
+mahout_deletion = mean(subset(mahout_set, MutantType == "deletion")$Score, na.rm = TRUE)
+mahout_logical = mean(subset(mahout_set, MutantType == "logical")$Score, na.rm = TRUE)
+mahout_relational = mean(subset(mahout_set, MutantType == "relational")$Score, na.rm = TRUE)
+
+sax_arithmetic = mean(subset(sax_set, MutantType == "arithmetic")$Score, na.rm = TRUE)
+sax_assignment = mean(subset(sax_set, MutantType == "assignment")$Score, na.rm = TRUE)
+sax_conditional = mean(subset(sax_set, MutantType == "conditional")$Score, na.rm = TRUE)
+sax_deletion = mean(subset(sax_set, MutantType == "deletion")$Score, na.rm = TRUE)
+sax_logical = mean(subset(sax_set, MutantType == "logical")$Score, na.rm = TRUE)
+sax_relational = mean(subset(sax_set, MutantType == "relational")$Score, na.rm = TRUE)
+
+arithmetic_means = c(sax_arithmetic, colt_arithmetic, apache_arithmetic, m2_arithmetic)
+assignment_means = c(sax_assignment, colt_assignment, apache_assignment, m2_assignment)
+conditional_means = c(sax_conditional, colt_conditional, apache_conditional, m2_conditional)
+deletion_means = c(sax_deletion, colt_deletion, apache_deletion, m2_deletion)
+logical_means = c(sax_logical, colt_logical, apache_logical, m2_logical)
+relational_means = c(sax_relational, colt_relational, apache_relational, m2_relational)
+
+type_means <- data.frame(
+    Score = c(arithmetic_means, assignment_means, conditional_means, deletion_means, logical_means, relational_means),
+    MutantType = c(rep("arithmetic", 5), rep("assignment", 5), rep("conditional", 5), rep("deletion", 5), rep("logical", 5), rep("relational", 5))
+)
+
+boxplot(type_means$Score ~ type_means$MutantType)
+barplot(c(
+  mean(arithmetic_means, na.rm=TRUE),
+  mean(deletion_means, na.rm=TRUE),
+  mean(relational_means, na.rm=TRUE),
+  mean(assignment_means, na.rm=TRUE),
+  mean(logical_means, na.rm=TRUE),
+  mean(conditional_means, na.rm=TRUE)
+), names.arg = c("arithmetic", "deletion", "relational", "assignment", "logical", "conditional"))
+
+boxplot(mutant_score ~ class, data = agg_combined,ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
+
+#okay, agg mrs now
+m2_agg_mean <- mean(subset(agg_combined, class == "MethodCollection2")$mutant_score, na.rm=TRUE)
+apache_agg_mean <- mean(subset(agg_combined, class == "ApacheMath")$mutant_score, na.rm=TRUE)
+mahout_agg_mean <- mean(subset(agg_combined, class == "Mahout")$mutant_score, na.rm=TRUE)
+colt_agg_mean <- mean(subset(agg_combined, class == "Colt")$mutant_score, na.rm=TRUE)
+sax_agg_mean <- mean(subset(agg_combined, class == "SAXS")$mutant_score, na.rm=TRUE)
+
+barplot(c(colt_agg_mean, sax_agg_mean, apache_agg_mean, m2_agg_mean),
+        names.arg = c("Colt", "SAX", "ApacheMath", "Collection2"),
+        ylim=c(0,1), ylab="Fault Detection Score")
+
+#last thing - across individual mrs
+boxplot(mutant_score ~ mr, data = MRs_combined, ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
+
+s_arithmetic = subset(types, MutantType == "arithmetic")$Score
+s_assignment = subset(types, MutantType == "assignment")$Score
+s_conditional = subset(types, MutantType == "conditional")$Score
+s_deletion = subset(types, MutantType == "deletion")$Score
+s_logical = subset(types, MutantType == "logical")$Score
+s_relational = subset(types, MutantType == "relational")$Score

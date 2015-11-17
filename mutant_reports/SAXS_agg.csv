@@ -1,0 +1,4 @@
+class,function,mutant_score
+SAXS,calculateDistance,1.0
+SAXS,findGyrationRadius,0.8333333333333334
+SAXS,scatterSample,0.9136690647482014
