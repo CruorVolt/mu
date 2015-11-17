@@ -1,3 +1,13 @@
 .DS_STORE
 bin/
 classes/
+*.jar
+*.class
+jacoco-0.7.6-20151116.213627-34/coverage/
+jacoco-0.7.6-20151116.213627-34/doc/
+jacoco-0.7.6-20151116.213627-34/index.html
+jacoco-0.7.6-20151116.213627-34/test
+jacoco-0.7.6-20151116.213627-34/jacoco.exec
+result
+src/mujava
+src/com
