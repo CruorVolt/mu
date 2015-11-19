@@ -10,9 +10,8 @@ CSV.foreach("SAXSResultsOnly.csv") do |row|
 
     if !funcs.has_key? row[0]
         newmap = {}
-        newmap["good"] = 0
-        newmap["seen"] = []
-        types.each { |type| newmap[type] = 0 }
+        newmap["good"] = []
+        types.each { |type| newmap[type] = [] }
         funcs[row[0]] = newmap
     end
 
@@ -22,23 +21,26 @@ CSV.foreach("SAXSResultsOnly.csv") do |row|
         type = types[types.index entry[0..1]]
         if type.nil? then puts "Type not parsed for #{entry}" end
         if row[1] == "good"
-            thismap["good"] +=1
+            thismap["good"] << entry
         else
-            thismap[type] += 1 unless thismap["seen"].include? entry
-            thismap["seen"] << entry
+            thismap[type] << entry unless thismap[type].include? entry
         end
     end
 
 end
 
-#pp funcs
+pp funcs
 
 funcs.keys.each do |func|
     good = funcs[func]["good"]
     funcs[func].keys.each do |type|
-        if type != "good" and type != "seen"
+        if type != "good"
             val = funcs[func][type]
-            puts "#{func}-#{type}: #{funcs[func][type].to_f / good}" unless val == 0
+            good_examples = 0
+            good.each do |thisone|
+                good_examples += 1 unless (types[types.index thisone[0..1]] != type)
+            end
+            puts "#{func}-#{type}: #{funcs[func][type].size.to_f / good_examples.to_f}" unless good_examples == 0
         end
     end
 end

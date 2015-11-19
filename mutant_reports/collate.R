@@ -153,18 +153,20 @@ saxs_mean <- mean(MRs_combined$mutant_score[MRs_combined$class=="SAXS"], na.rm =
 
 types <- read.csv("TYPES.csv")
 sax_types = data.frame(
-  Class = rep("SAXS", 10),
-  MutantType = c("arithmetic", "conditional", "logical", "assignment", "arithmetic", "conditional", "logical", "assignment", "arithmetic", "assignment"),
-  Score = c(0.7368421052631579,
-            0.05263157894736842,
-            0.05263157894736842,
-            0.15789473684210525,
-            0.7407407407407407,
-            0.037037037037037035,
-            0.037037037037037035,
-            0.018518518518518517,
-            0.8705035971223022,
-            0.04316546762589928)
+  Class = rep("SAXS", 12),
+  MutantType = c("arithmetic", "conditional", "logical", "assignment", "arithmetic", "conditional", "logical", "assignment", "arithmetic", "conditional", "logical", "assignment"),
+  Score = c(1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.816,
+            1.0,
+            1.0,
+            1.0,
+            0.9237,
+            0.0,
+            0.0,
+            1.0)
 )
 types <- rbind.fill(types, sax_types)
 boxplot(types$Score ~ types$MutantType)
@@ -225,10 +227,10 @@ relational_means = c(sax_relational, colt_relational, apache_relational, m2_rela
 
 type_means <- data.frame(
     Score = c(arithmetic_means, assignment_means, conditional_means, deletion_means, logical_means, relational_means),
-    MutantType = c(rep("arithmetic", 5), rep("assignment", 5), rep("conditional", 5), rep("deletion", 5), rep("logical", 5), rep("relational", 5))
+    MutantType = c(rep("arithmetic", 4), rep("assignment", 4), rep("conditional", 4), rep("deletion", 4), rep("logical", 4), rep("relational", 4))
 )
 
-boxplot(type_means$Score ~ type_means$MutantType)
+boxplot(type_means$Score ~ type_means$MutantType, ylab="Fault Detection Score")
 barplot(c(
   mean(arithmetic_means, na.rm=TRUE),
   mean(deletion_means, na.rm=TRUE),
@@ -236,9 +238,9 @@ barplot(c(
   mean(assignment_means, na.rm=TRUE),
   mean(logical_means, na.rm=TRUE),
   mean(conditional_means, na.rm=TRUE)
-), names.arg = c("arithmetic", "deletion", "relational", "assignment", "logical", "conditional"))
+), xpd=FALSE, ylim = c(0.5, 1.0), names.arg = c("arithmetic", "deletion", "relational", "assignment", "logical", "conditional"))
 
-boxplot(mutant_score ~ class, data = agg_combined,ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
+boxplot(mutant_score ~ class, data = agg_combined,ylab = "Fault Detection Score", ylim = c(0.4, 1.1))
 
 #okay, agg mrs now
 m2_agg_mean <- mean(subset(agg_combined, class == "MethodCollection2")$mutant_score, na.rm=TRUE)
@@ -249,7 +251,7 @@ sax_agg_mean <- mean(subset(agg_combined, class == "SAXS")$mutant_score, na.rm=T
 
 barplot(c(colt_agg_mean, sax_agg_mean, apache_agg_mean, m2_agg_mean),
         names.arg = c("Colt", "SAX", "ApacheMath", "Collection2"),
-        ylim=c(0,1), ylab="Fault Detection Score")
+        ylim=c(0.75,1), ylab="Fault Detection Score", xpd=FALSE)
 
 #last thing - across individual mrs
 boxplot(mutant_score ~ mr, data = MRs_combined, ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
@@ -260,3 +262,50 @@ s_conditional = subset(types, MutantType == "conditional")$Score
 s_deletion = subset(types, MutantType == "deletion")$Score
 s_logical = subset(types, MutantType == "logical")$Score
 s_relational = subset(types, MutantType == "relational")$Score
+
+#plot eath mutant type across libs
+barplot(c(sax_assignment, m2_assignment, apache_assignment, colt_assignment),
+        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        ylim=c(0.5,1), main="Assignment Mutants", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(sax_conditional, m2_conditional, apache_conditional, colt_conditional),
+        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        ylim=c(0.5,1), main="Conditional Mutants", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(sax_deletion, m2_deletion, apache_deletion, colt_deletion),
+        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        ylim=c(0.5,1), main="Deletion Mutants", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(sax_logical, m2_logical, apache_logical, colt_logical),
+        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        ylim=c(0.5,1), main="Logical Mutants", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(sax_relational, m2_relational, apache_relational, colt_relational),
+        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        ylim=c(0.5,1), main="Relational Mutants", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(sax_arithmetic, m2_arithmetic, apache_arithmetic, colt_arithmetic),
+        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        ylim=c(0.5,1), main="Arithmetic Mutants", xpd=FALSE, ylab="Fault Detection Score")
+
+#and now each MR across libs
+sax_add <- subset(saxs_mrs, mr == "add")
+sax_mult <- subset(saxs_mrs, mr == "mult")
+sax_perm <- subset(saxs_mrs, mr == "perm")
+sax_inv <- subset(saxs_mrs, mr == "inv")
+sax_exc <- subset(saxs_mrs, mr == "exc")
+sax_inc <- subset(saxs_mrs, mr == "inc")
+
+barplot(c(mean(coll2_add$mutant_score, na.rm=TRUE), mean(apache_add$mutant_score, na.rm=TRUE), mean(sax_add$mutant_score, na.rm=TRUE), mean(colt_add$mutant_score, na.rm=TRUE)),
+    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    main = "MR: add", ylab = "Fault Detection Score", ylim=c(0,1))
+barplot(c(mean(coll2_mult$mutant_score, na.rm=TRUE), mean(apache_mult$mutant_score, na.rm=TRUE), mean(sax_mult$mutant_score, na.rm=TRUE), mean(colt_mult$mutant_score, na.rm=TRUE)),
+    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    main = "MR: mult", ylab = "Fault Detection Score", ylim=c(0,1))
+barplot(c(mean(coll2_perm$mutant_score, na.rm=TRUE), mean(apache_perm$mutant_score, na.rm=TRUE), mean(sax_perm$mutant_score, na.rm=TRUE), mean(colt_perm$mutant_score, na.rm=TRUE)),
+    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    main = "MR: perm", ylab = "Fault Detection Score", ylim=c(0,1))
+barplot(c(mean(coll2_inv$mutant_score, na.rm=TRUE), mean(apache_inv$mutant_score, na.rm=TRUE), mean(sax_inv$mutant_score, na.rm=TRUE), mean(colt_inv$mutant_score, na.rm=TRUE)),
+    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    main = "MR: inv", ylab = "Fault Detection Score", ylim=c(0,1))
+barplot(c(mean(coll2_exc$mutant_score, na.rm=TRUE), mean(apache_exc$mutant_score, na.rm=TRUE), mean(sax_exc$mutant_score, na.rm=TRUE), mean(colt_exc$mutant_score, na.rm=TRUE)),
+    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    main = "MR: exc", ylab = "Fault Detection Score", ylim=c(0,1))
+barplot(c(mean(coll2_inc$mutant_score, na.rm=TRUE), mean(apache_inc$mutant_score, na.rm=TRUE), mean(sax_inc$mutant_score, na.rm=TRUE), mean(colt_inc$mutant_score, na.rm=TRUE)),
+    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    main = "MR: inc", ylab = "Fault Detection Score", ylim=c(0,1))
