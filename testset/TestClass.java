@@ -19,6 +19,7 @@ public class TestClass {
     @Rule
     public ErrorCollector collector = new ErrorCollector();
 
+    public static long permSeed = 12345; //Use this to initialize the Random in the perm functions
     public static Random rand = new Random(0);
     public static int CONSTANT_INT = TestClass.getInt(); //dependent on rand
     public static final int MAX = 100;
@@ -259,7 +260,7 @@ public class TestClass {
     public static int[] perm(int[] original) {
         int temp, index;
         int[] permuted = Arrays.copyOf(original, original.length);
-        Random r = new Random();
+        Random r = new Random(permSeed);
         for (int i = original.length - 1; i > 0; i--) {
             index = r.nextInt(i+1);
             temp = permuted[i];
@@ -273,7 +274,7 @@ public class TestClass {
         int index;
         double temp;
         double[] permuted = Arrays.copyOf(original, original.length);
-        Random r = new Random();
+        Random r = new Random(permSeed);
         for (int i = original.length - 1; i > 0; i--) {
             index = r.nextInt(i+1);
             temp = permuted[i];
@@ -506,8 +507,7 @@ public class TestClass {
             for (int j = 0; j < size2; j++) {
                 arr[i][j] = rand.nextLong();
             }
-        }
-        return arr;
+        } return arr;
     }
 
 /*//////////////////////////////////////////////////////////////////////
