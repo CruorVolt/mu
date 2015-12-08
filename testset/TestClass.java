@@ -19,7 +19,7 @@ public class TestClass {
     @Rule
     public ErrorCollector collector = new ErrorCollector();
 
-    public static Random rand = new Random();
+    public static Random rand = new Random(0);
     public static int CONSTANT_INT = TestClass.getInt(); //dependent on rand
     public static final int MAX = 100;
 
@@ -510,7 +510,135 @@ public class TestClass {
         return arr;
     }
 
+/*//////////////////////////////////////////////////////////////////////
+    testThisPre(): trucated version of testThis that only performs the pre-test
+*///////////////////////////////////////////////////////////////////////
+    public boolean testThisPre(String test, String thisClass, String function, Object... args) {
 
+        boolean passed = false;
+        //thisClass = "Test." + thisClass; //All /src classes are in Test package
+
+        //find the correct function to execute - That long function is going to cause problems
+        Class[] argClasses = new Class[args.length];
+        Class argClass;
+        for (int i = 0; i < argClasses.length; i++) {
+            argClass = args[i].getClass();
+            if (argClass == Integer.class) {
+                argClasses[i] = int.class;
+            } else if (argClass == Double.class) {
+                argClasses[i] = double.class;
+            } else if (argClass.getComponentType() == int.class) {
+                argClasses[i] = int[].class;
+                args[i] = Arrays.copyOf((int[])args[i], ((int[])args[i]).length);
+            } else if (argClass.getComponentType() == double.class) {
+                argClasses[i] = double[].class;
+                args[i] = Arrays.copyOf((double[])args[i], ((double[])args[i]).length);
+            } else {
+                System.out.println("PROBLEM - NO CLASS ASSIGNED");
+            }
+        }
+        //Get the method being tested
+        try {
+            Class<?> clazz = Class.forName(thisClass);
+            //All constructors should be default
+            Constructor<?> construct = clazz.getConstructor();
+            Object inst = construct.newInstance();
+            Method func = clazz.getMethod(function, argClasses);
+                //Get the test support functions
+                Class type = null;
+                try {
+                    //takes arg classes as input - THERE MAY BE MORE THAN ONE PERMUTE FUNCTION PER TEST
+                    Method[] permuteFuncs = new Method[argClasses.length];
+                    for (int j = 0; j < argClasses.length; j++) {
+                        permuteFuncs[j] = TestClass.class.getMethod(test, argClasses[j]); 
+                    }
+                    //takes return types as input and all have two matching args
+                    type = func.getReturnType();
+                    Method MRTestFunc = TestClass.class.getMethod(test + "Test", type, type);
+
+                    //get original return value
+                    Object return1 = func.invoke(inst, args);
+                    //That's it, we don't actuall care what the return value is, just that we got this far
+                } catch(NoSuchMethodException e) {
+                    System.out.println("TESTTHIS EXCEPTION: NO SUCH METHOD: "+ test + "Test(" + type + "," + type + ")");
+                    e.printStackTrace();
+                }
+        } catch(Exception e) {
+            System.out.print("&exception." + function + "." + test);
+            e.printStackTrace();
+        }
+        return true;
+    } //testThisPre
+
+/*//////////////////////////////////////////////////////////////////////
+    testThisPost(): truncated version of testThis that only performs the post-test
+*///////////////////////////////////////////////////////////////////////
+    public boolean testThisPost(String test, String thisClass, String function, Object... args) {
+        boolean passed = false;
+        //find the correct function to execute - That long function is going to cause problems
+        Class[] argClasses = new Class[args.length];
+        Class argClass;
+        for (int i = 0; i < argClasses.length; i++) {
+            argClass = args[i].getClass();
+            if (argClass == Integer.class) {
+                argClasses[i] = int.class;
+            } else if (argClass == Double.class) {
+                argClasses[i] = double.class;
+            } else if (argClass.getComponentType() == int.class) {
+                argClasses[i] = int[].class;
+                args[i] = Arrays.copyOf((int[])args[i], ((int[])args[i]).length);
+            } else if (argClass.getComponentType() == double.class) {
+                argClasses[i] = double[].class;
+                args[i] = Arrays.copyOf((double[])args[i], ((double[])args[i]).length);
+            } else {
+                System.out.println("PROBLEM - NO CLASS ASSIGNED");
+            }
+        }
+        //Get the method being tested
+        try {
+            Class<?> clazz = Class.forName(thisClass);
+            //All constructors should be default
+            Constructor<?> construct = clazz.getConstructor();
+            Object inst = construct.newInstance();
+
+            Method func = clazz.getMethod(function, argClasses);
+
+                //Get the test support functions
+                Class type = null;
+                try {
+                    //takes arg classes as input - THERE MAY BE MORE THAN ONE PERMUTE FUNCTION PER TEST
+                    Method[] permuteFuncs = new Method[argClasses.length];
+                    for (int j = 0; j < argClasses.length; j++) {
+                        permuteFuncs[j] = TestClass.class.getMethod(test, argClasses[j]); 
+                    }
+                    //takes return types as input and all have two matching args
+                    type = func.getReturnType();
+                    Method MRTestFunc = TestClass.class.getMethod(test + "Test", type, type);
+                    //skip the original execution since we only care about the post-test
+                    //Object return1 = func.invoke(inst, args);
+
+                    //modify arguments
+                    Object[] permutedArgs = new Object[args.length];
+                    for (int j = 0; j < args.length; j++) {
+                        permutedArgs[j] = permuteFuncs[j].invoke(null, args[j]);
+                    }
+                    //get modified return value
+                    Object return2 = func.invoke(inst, permutedArgs);
+                    //okay, we're done, don't care what the value is
+                } catch(NoSuchMethodException e) {
+                    System.out.println("TESTTHIS EXCEPTION: NO SUCH METHOD: "+ test + "Test(" + type + "," + type + ")");
+                    e.printStackTrace();
+                }
+
+        } catch(Exception e) {
+            //report exceptions seperately
+            System.out.print("&exception." + function + "." + test);
+            e.printStackTrace();
+        }
+
+        //System.out.println("testThis() Exiting with " + passed);
+        return passed;
+    }
     public static void main(String[] args) {
 
         TestClass tester = new TestClass();
