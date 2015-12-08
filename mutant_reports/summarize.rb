@@ -18,6 +18,11 @@
 @inc = [ "sumOfPowerOfDeviations", "manhattan_dist", "evaluateNewton", "add_values", "sum", "manhattanDistance", "checkPositive", "distance1", "count_k", "equals", "count_non_zeroes", "computeCanberraDistance", "eucleadianDistance", "find_min", "sequential_search", "dot_product", "polevl", "sumOfLogarithms", "distanceInf", "find_max2", "min", "cnt_zeroes", "evaluateWeightedProduct", "chiSquare", "geometric_mean", "evaluateHoners", "hamming_dist", "find_euc_dist", "checkNonNegative", "find_magnitude"].map(&:downcase)
 @perm = [ "weightedMean", "sampleKurtosis", "variance", "errorRate", "pooledMean", "sumOfLogarithms", "harmonicMean", "safeNorm", "find_median", "kurtosis", "standardize", "sampleSkew", "sum", "find_max", "find_min", "sequential_search", "checkNonNegative", "product", "entropy", "geometric_mean", "count_non_zeroes", "add_values", "set_min_val", "find_max2", "min", "select", "checkPositive", "cnt_zeroes", "average", "skew", "sampleVariance", "meanDeviation", "count_k", "pooledVariance"].map(&:downcase)
 @inv = [ "weightedRMS", "binarySearchFromTo", "eucleadianDistance", "reverse", "ebeAdd", "add_values", "find_min", "quantile", "clip", "standardize", "manhattanDistance", "product", "sumOfLogarithms", "meanDeviation", "add", "set_min_val", "ebeDivide", "checkNonNegative", "calculateAbsoluteDifferences", "array_copy", "find_euc_dist", "evaluateInternal", "insertion_sort", "min", "count_non_zeroes", "sampleSkew", "selection_sort", "polevl", "variance", "find_magnitude", "distance1", "checkPositive", "elementwise_not_equal", "computeCanberraDistance", "geometric_mean", "ebeMultiply", "power", "sum", "evaluateNewton", "errorRate", "hamming_dist", "chiSquare", "find_max2", "partition", "covariance", "distanceInf", "square", "evaluateHoners", "mean_absolute_error", "bubble", "meanDifference", "entropy", "sumOfPowerOfDeviations", "select", "pooledMean", "manhattan_dist", "find_median", "scale", "find_max", "max", "g", "harmonicMean", "sampleVariance", "average", "shell_sort", "elementwise_equal", "weightedMean"].map(&:downcase)
+@add_mult = (@add + @mult).uniq.map(&:downcase)
+@add_mult_inc = (@add + @mult + @inc).uniq.map(&:downcase)
+@add_mult_inc_perm = (@add + @mult + @inc + @perm).uniq.map(&:downcase)
+@add_mult_inc_perm_exc = (@add + @mult + @inc + @perm + @exc).uniq.map(&:downcase)
+@all = (@add + @mult + @inc + @perm + @exc + @inv).uniq.map(&:downcase)
 
 def parse_file(file)
     print "Parsing #{file}\n"
@@ -191,23 +196,33 @@ def get_failures(result_string)
     if result_string == "pass"
         return failures
     end
-    result_string.split(/;/)[1].split(/&/).map(&:strip)
+    under_consideration = ["add", "mult"]
+    case @mr
+    when "add_mult_inc"
+        under_consideration << "inc"
+    when "add_mult_inc_perm"
+        under_consideration << "inc" << "perm"
+    when "add_mult_inc_perm_exc"
+        under_consideration << "inc" << "perm" << "exc"
+    end
+    result_string.split(/;/)[1].split(/&/).map(&:strip).keep_if { |x| under_consideration.include? x }
 end
 
 def compare_failures(original, mutant, mr = @mr)
     if original == mutant
         return true
-    elsif mr == "aggregate"
+    else
+    #elsif mr == "aggregate"
         # failure here means ANY mr failed - don't match specifics
         return (((original.length == 0) and (mutant.length == 0)) or ((original.length != 0) and (mutant.length != 0)))
-    else
-        if original.include? mr
-            #print "\n\nOriginal: #{original}\nMutant: #{mutant}\nlive: #{mutant.include? mr}\n\n"
-            return mutant.include? mr
-        else
-            #print "\n\nOriginal: #{original}\nMutant: #{mutant}\nlive: #{!(mutant.include? mr)}\n\n"
-            return !(mutant.include? mr)
-        end
+    #else
+        #if original.include? mr
+            ##print "\n\nOriginal: #{original}\nMutant: #{mutant}\nlive: #{mutant.include? mr}\n\n"
+            #return mutant.include? mr
+        #else
+            ##print "\n\nOriginal: #{original}\nMutant: #{mutant}\nlive: #{!(mutant.include? mr)}\n\n"
+            #return !(mutant.include? mr)
+        #end
     end
 end
 
@@ -234,6 +249,7 @@ def get_mutant_method(mutant_id, class_name)
     return nil
 end
 
+=begin
 ["aggregate", "add", "mult", "perm", "inv", "inc", "exc"].each do |relation|
     @mr = relation
     puts "SUMMARIZING #{@mr}"
@@ -252,6 +268,7 @@ end
         parse_dir directory
     end
 end
+=end
     
 #@mr = "aggregate"
 #system("cat /dev/null > MethodCollection2_aggregate.csv")
@@ -260,3 +277,21 @@ end
 
 #print get_mutant_method("AORS_12", "MethodCollection2")
 
+["add_mult", "add_mult_inc", "add_mult_inc_perm", "add_mult_inc_perm_exc", "all"].each do |relation|
+    @mr = relation
+    puts "SUMMARIZING #{@mr}"
+
+    ["MethodCollection2", "ApacheMath", "MethodsFromColt", "MethodsFromMahout"].each do |prefix|
+        system("cat /dev/null > #{prefix}_#{@mr}.csv")
+    end
+    
+    here = File.dirname(__FILE__)
+    
+    dirs = Dir.entries(here).select do |entry| 
+	    File.directory? File.join(here, entry) and !(entry =='.' || entry == '..') 
+    end
+    
+    dirs.each do |directory|
+        parse_dir directory
+    end
+end

@@ -56,6 +56,7 @@ apache_inc = read.csv("MethodsFromApacheMath_inc.csv")
 apache_inv = read.csv("MethodsFromApacheMath_inv.csv")
 apache_exc = read.csv("MethodsFromApacheMath_exc.csv")
 
+
 coll2_agg = read.csv("MethodCollection2_aggregate.csv")
 coll2_add = read.csv("MethodCollection2_add.csv")
 coll2_mult = read.csv("MethodCollection2_mult.csv")
@@ -64,6 +65,7 @@ coll2_inc = read.csv("MethodCollection2_inc.csv")
 coll2_inv = read.csv("MethodCollection2_inv.csv")
 coll2_exc = read.csv("MethodCollection2_exc.csv")
 
+
 colt_agg = read.csv("MethodsFromColt_aggregate.csv")
 colt_add = read.csv("MethodsFromColt_add.csv")
 colt_mult = read.csv("MethodsFromColt_mult.csv")
@@ -71,6 +73,7 @@ colt_perm = read.csv("MethodsFromColt_perm.csv")
 colt_inc = read.csv("MethodsFromColt_inc.csv")
 colt_inv = read.csv("MethodsFromColt_inv.csv")
 colt_exc = read.csv("MethodsFromColt_exc.csv")
+
 
 mahout_agg = read.csv("MethodsFromMahout_aggregate.csv")
 mahout_add = read.csv("MethodsFromMahout_add.csv")
@@ -93,6 +96,11 @@ mahout_combined = rbind(mahout_agg, mahout_add, mahout_mult, mahout_perm, mahout
 #agg_combined = rbind.fill(coll2_agg, colt_agg, apache_agg, sax_agg, mahout_agg)
 #remove mahout
 agg_combined = rbind.fill(coll2_agg, colt_agg, apache_agg, sax_agg)
+
+
+
+
+
 
 #add_combined = rbind(coll2_add, colt_add, apache_add, mahout_add)
 #mult_combined = rbind(coll2_mult, colt_mult, apache_mult, mahout_mult)
@@ -122,7 +130,7 @@ MRs_combined = rbind(add_combined, mult_combined, perm_combined, exc_combined, i
 #boxplot(total_score ~ Group.1, data = exc_combined, ylab = "Fault Detection Score", main = "Individual MR: exc", ylim=c(0,1.0))
 
 #Aggregate MRs
-boxplot(mutant_score ~ class, data = agg_combined,ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
+#boxplot(mutant_score ~ class, data = agg_combined,ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
 
 #Individual MRs - Overall
 #rbind in the saxs data
@@ -132,7 +140,7 @@ saxs_mrs <- data.frame(
   mutant_score = c(0.789, 0.579, 0.895, 0.632, 0.815, 0.833, 0.914)
 )
 MRs_combined = rbind.fill(MRs_combined, saxs_mrs)
-boxplot(mutant_score ~ mr, data = MRs_combined, ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
+#boxplot(mutant_score ~ mr, data = MRs_combined, ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
 
 #boxplot(mutant_score ~ mr, data = coll2_combined, ylab = "Fault Detection Score", main = "MethodCollection2", ylim = c(-0.1, 1.1))
 #boxplot(mutant_score ~ mr, data = colt_combined, ylab = "Fault Detection Score", main = "MethodsFromColt", ylim = c(-0.1, 1.1))
@@ -169,7 +177,7 @@ sax_types = data.frame(
             1.0)
 )
 types <- rbind.fill(types, sax_types)
-boxplot(types$Score ~ types$MutantType)
+#boxplot(types$Score ~ types$MutantType)
 
 #################################################################################
 #Turn these into barplot and get the different average versions
@@ -232,13 +240,14 @@ type_means <- data.frame(
 
 boxplot(type_means$Score ~ type_means$MutantType, ylab="Fault Detection Score")
 barplot(c(
-  mean(arithmetic_means, na.rm=TRUE),
-  mean(deletion_means, na.rm=TRUE),
-  mean(relational_means, na.rm=TRUE),
   mean(assignment_means, na.rm=TRUE),
+  mean(deletion_means, na.rm=TRUE),
+  mean(arithmetic_means, na.rm=TRUE),
+  mean(relational_means, na.rm=TRUE),
   mean(logical_means, na.rm=TRUE),
   mean(conditional_means, na.rm=TRUE)
-), xpd=FALSE, ylim = c(0.5, 1.0), names.arg = c("arithmetic", "deletion", "relational", "assignment", "logical", "conditional"))
+), ylab="Fault Detection Score", xpd=FALSE, ylim = c(0.75, 1.0), 
+names.arg = c("assignment", "deletion", "arithmetic", "relational", "logical", "conditional"))
 
 boxplot(mutant_score ~ class, data = agg_combined,ylab = "Fault Detection Score", ylim = c(0.4, 1.1))
 
@@ -256,32 +265,27 @@ barplot(c(colt_agg_mean, sax_agg_mean, apache_agg_mean, m2_agg_mean),
 #last thing - across individual mrs
 boxplot(mutant_score ~ mr, data = MRs_combined, ylab = "Fault Detection Score", ylim = c(-0.1, 1.1))
 
-s_arithmetic = subset(types, MutantType == "arithmetic")$Score
-s_assignment = subset(types, MutantType == "assignment")$Score
-s_conditional = subset(types, MutantType == "conditional")$Score
-s_deletion = subset(types, MutantType == "deletion")$Score
-s_logical = subset(types, MutantType == "logical")$Score
-s_relational = subset(types, MutantType == "relational")$Score
-
 #plot eath mutant type across libs
+par(mfrow=c(2,3))
 barplot(c(sax_assignment, m2_assignment, apache_assignment, colt_assignment),
-        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        names.arg = c("SAX", "MC2", "Apache", "Colt"),
         ylim=c(0.5,1), main="Assignment Mutants", xpd=FALSE, ylab="Fault Detection Score")
 barplot(c(sax_conditional, m2_conditional, apache_conditional, colt_conditional),
-        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        names.arg = c("SAX", "MC2", "Apache", "Colt"),
         ylim=c(0.5,1), main="Conditional Mutants", xpd=FALSE, ylab="Fault Detection Score")
 barplot(c(sax_deletion, m2_deletion, apache_deletion, colt_deletion),
-        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        names.arg = c("SAX", "MC2", "Apache", "Colt"),
         ylim=c(0.5,1), main="Deletion Mutants", xpd=FALSE, ylab="Fault Detection Score")
 barplot(c(sax_logical, m2_logical, apache_logical, colt_logical),
-        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        names.arg = c("SAX", "MC2", "Apache", "Colt"),
         ylim=c(0.5,1), main="Logical Mutants", xpd=FALSE, ylab="Fault Detection Score")
 barplot(c(sax_relational, m2_relational, apache_relational, colt_relational),
-        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        names.arg = c("SAX", "MC2", "Apache", "Colt"),
         ylim=c(0.5,1), main="Relational Mutants", xpd=FALSE, ylab="Fault Detection Score")
 barplot(c(sax_arithmetic, m2_arithmetic, apache_arithmetic, colt_arithmetic),
-        names.arg = c("SAX", "MethodCollection2", "Apache", "Colt"),
+        names.arg = c("SAX", "MC2", "Apache", "Colt"),
         ylim=c(0.5,1), main="Arithmetic Mutants", xpd=FALSE, ylab="Fault Detection Score")
+par(mfrow=c(1,1))
 
 #and now each MR across libs
 sax_add <- subset(saxs_mrs, mr == "add")
@@ -291,21 +295,270 @@ sax_inv <- subset(saxs_mrs, mr == "inv")
 sax_exc <- subset(saxs_mrs, mr == "exc")
 sax_inc <- subset(saxs_mrs, mr == "inc")
 
+par(mfrow=c(2,3))
 barplot(c(mean(coll2_add$mutant_score, na.rm=TRUE), mean(apache_add$mutant_score, na.rm=TRUE), mean(sax_add$mutant_score, na.rm=TRUE), mean(colt_add$mutant_score, na.rm=TRUE)),
-    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    names.arg = c("MC2", "Apache", "SAX", "Colt"),
     main = "MR: add", ylab = "Fault Detection Score", ylim=c(0,1))
 barplot(c(mean(coll2_mult$mutant_score, na.rm=TRUE), mean(apache_mult$mutant_score, na.rm=TRUE), mean(sax_mult$mutant_score, na.rm=TRUE), mean(colt_mult$mutant_score, na.rm=TRUE)),
-    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    names.arg = c("MC2", "Apache", "SAX", "Colt"),
     main = "MR: mult", ylab = "Fault Detection Score", ylim=c(0,1))
 barplot(c(mean(coll2_perm$mutant_score, na.rm=TRUE), mean(apache_perm$mutant_score, na.rm=TRUE), mean(sax_perm$mutant_score, na.rm=TRUE), mean(colt_perm$mutant_score, na.rm=TRUE)),
-    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    names.arg = c("MC2", "Apache", "SAX", "Colt"),
     main = "MR: perm", ylab = "Fault Detection Score", ylim=c(0,1))
 barplot(c(mean(coll2_inv$mutant_score, na.rm=TRUE), mean(apache_inv$mutant_score, na.rm=TRUE), mean(sax_inv$mutant_score, na.rm=TRUE), mean(colt_inv$mutant_score, na.rm=TRUE)),
-    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    names.arg = c("MC2", "Apache", "SAX", "Colt"),
     main = "MR: inv", ylab = "Fault Detection Score", ylim=c(0,1))
 barplot(c(mean(coll2_exc$mutant_score, na.rm=TRUE), mean(apache_exc$mutant_score, na.rm=TRUE), mean(sax_exc$mutant_score, na.rm=TRUE), mean(colt_exc$mutant_score, na.rm=TRUE)),
-    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    names.arg = c("MC2", "Apache", "SAX", "Colt"),
     main = "MR: exc", ylab = "Fault Detection Score", ylim=c(0,1))
 barplot(c(mean(coll2_inc$mutant_score, na.rm=TRUE), mean(apache_inc$mutant_score, na.rm=TRUE), mean(sax_inc$mutant_score, na.rm=TRUE), mean(colt_inc$mutant_score, na.rm=TRUE)),
-    names.arg = c("MethodCollection2", "Apache", "SAX", "Colt"),
+    names.arg = c("MC2", "Apache", "SAX", "Colt"),
     main = "MR: inc", ylab = "Fault Detection Score", ylim=c(0,1))
+par(mfrow=c(1,1))
+
+par(mfrow=c(2,2))
+barplot(
+    c(mean(coll2_add$mutant_score,na.rm=TRUE),mean(coll2_mult$mutant_score,na.rm=TRUE),mean(coll2_perm$mutant_score,na.rm=TRUE),mean(coll2_inv$mutant_score,na.rm=TRUE),mean(coll2_inc$mutant_score,na.rm=TRUE),mean(coll2_exc$mutant_score,na.rm=TRUE)),
+    names.arg = c("ADD", "MULT", "PERM", "INV", "INC", "EXC"),
+    main = "MethodCollection2", ylab = "Fault Detection Score", ylim=c(0,1)
+)
+barplot(
+    c(mean(apache_add$mutant_score,na.rm=TRUE),mean(apache_mult$mutant_score,na.rm=TRUE),mean(apache_perm$mutant_score,na.rm=TRUE),mean(apache_inv$mutant_score,na.rm=TRUE),mean(apache_inc$mutant_score,na.rm=TRUE),mean(apache_exc$mutant_score,na.rm=TRUE)),
+    names.arg = c("ADD", "MULT", "PERM", "INV", "INC", "EXC"),
+    main = "ApacheMath", ylab = "Fault Detection Score", ylim=c(0,1)
+)
+barplot(
+    c(mean(sax_add$mutant_score,na.rm=TRUE),mean(sax_mult$mutant_score,na.rm=TRUE),mean(sax_perm$mutant_score,na.rm=TRUE),mean(sax_inv$mutant_score,na.rm=TRUE),mean(sax_inc$mutant_score,na.rm=TRUE),mean(sax_exc$mutant_score,na.rm=TRUE)),
+    names.arg = c("ADD", "MULT", "PERM", "INV", "INC", "EXC"),
+    main = "SAXS", ylab = "Fault Detection Score", ylim=c(0,1)
+)
+barplot(
+    c(mean(colt_add$mutant_score,na.rm=TRUE),mean(colt_mult$mutant_score,na.rm=TRUE),mean(colt_perm$mutant_score,na.rm=TRUE),mean(colt_inv$mutant_score,na.rm=TRUE),mean(colt_inc$mutant_score,na.rm=TRUE),mean(colt_exc$mutant_score,na.rm=TRUE)),
+    names.arg = c("ADD", "MULT", "PERM", "INV", "INC", "EXC"),
+    main = "Colt", ylab = "Fault Detection Score", ylim=c(0,1)
+)
+par(mfrow=c(1,1))
+
+s_arithmetic = subset(types, MutantType == "arithmetic")
+s_assignment = subset(types, MutantType == "assignment")
+s_conditional = subset(types, MutantType == "conditional")
+s_deletion = subset(types, MutantType == "deletion")
+s_logical = subset(types, MutantType == "logical")
+s_relational = subset(types, MutantType == "relational")
+
+
+add_arithmetic = mean(subset(s_arithmetic, MR == "add")$Score, na.rm = TRUE)
+mult_arithmetic = mean(subset(s_arithmetic, MR == "mult")$Score, na.rm = TRUE)
+perm_arithmetic = mean(subset(s_arithmetic, MR == "perm")$Score, na.rm = TRUE)
+inv_arithmetic = mean(subset(s_arithmetic, MR == "inv")$Score, na.rm = TRUE)
+exc_arithmetic = mean(subset(s_arithmetic, MR == "exc")$Score, na.rm = TRUE)
+inc_arithmetic = mean(subset(s_arithmetic, MR == "inc")$Score, na.rm = TRUE)
+
+add_assignment = mean(subset(s_assignment, MR == "add")$Score, na.rm = TRUE)
+mult_assignment = mean(subset(s_assignment, MR == "mult")$Score, na.rm = TRUE)
+perm_assignment = mean(subset(s_assignment, MR == "perm")$Score, na.rm = TRUE)
+inv_assignment = mean(subset(s_assignment, MR == "inv")$Score, na.rm = TRUE)
+exc_assignment = mean(subset(s_assignment, MR == "exc")$Score, na.rm = TRUE)
+inc_assignment = mean(subset(s_assignment, MR == "inc")$Score, na.rm = TRUE)
+
+add_conditional = mean(subset(s_conditional, MR == "add")$Score, na.rm = TRUE)
+mult_conditional = mean(subset(s_conditional, MR == "mult")$Score, na.rm = TRUE)
+perm_conditional = mean(subset(s_conditional, MR == "perm")$Score, na.rm = TRUE)
+inv_conditional = mean(subset(s_conditional, MR == "inv")$Score, na.rm = TRUE)
+exc_conditional = mean(subset(s_conditional, MR == "exc")$Score, na.rm = TRUE)
+inc_conditional = mean(subset(s_conditional, MR == "inc")$Score, na.rm = TRUE)
+
+add_deletion = mean(subset(s_deletion, MR == "add")$Score, na.rm = TRUE)
+mult_deletion = mean(subset(s_deletion, MR == "mult")$Score, na.rm = TRUE)
+perm_deletion = mean(subset(s_deletion, MR == "perm")$Score, na.rm = TRUE)
+inv_deletion = mean(subset(s_deletion, MR == "inv")$Score, na.rm = TRUE)
+exc_deletion = mean(subset(s_deletion, MR == "exc")$Score, na.rm = TRUE)
+inc_deletion = mean(subset(s_deletion, MR == "inc")$Score, na.rm = TRUE)
+
+add_logical = mean(subset(s_logical, MR == "add")$Score, na.rm = TRUE)
+mult_logical = mean(subset(s_logical, MR == "mult")$Score, na.rm = TRUE)
+perm_logical = mean(subset(s_logical, MR == "perm")$Score, na.rm = TRUE)
+inv_logical = mean(subset(s_logical, MR == "inv")$Score, na.rm = TRUE)
+exc_logical = mean(subset(s_logical, MR == "exc")$Score, na.rm = TRUE)
+inc_logical = mean(subset(s_logical, MR == "inc")$Score, na.rm = TRUE)
+
+add_relational = mean(subset(s_relational, MR == "add")$Score, na.rm = TRUE)
+mult_relational = mean(subset(s_relational, MR == "mult")$Score, na.rm = TRUE)
+perm_relational = mean(subset(s_relational, MR == "perm")$Score, na.rm = TRUE)
+inv_relational = mean(subset(s_relational, MR == "inv")$Score, na.rm = TRUE)
+exc_relational = mean(subset(s_relational, MR == "exc")$Score, na.rm = TRUE)
+inc_relational = mean(subset(s_relational, MR == "inc")$Score, na.rm = TRUE)
+
+par(mfrow=c(2,3))
+barplot(c(add_assignment, mult_assignment, perm_assignment, inv_assignment, exc_assignment, inc_assignment),
+        names.arg = c("ADD", "MULT", "PERM", "INV", "EXC", "INC"),
+        ylim=c(0.4,1), main="Assignment Mutants", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(add_conditional, mult_conditional, perm_conditional, inv_conditional, exc_conditional, inc_conditional),
+        names.arg = c("ADD", "MULT", "PERM", "INV", "EXC", "INC"),
+        ylim=c(0.4,1), main="Conditional Mutants", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(add_deletion, mult_deletion, perm_deletion, inv_deletion, exc_deletion, inc_deletion),
+        names.arg = c("ADD", "MULT", "PERM", "INV", "EXC", "INC"),
+        ylim=c(0.4,1), main="Deletion Mutants", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(add_logical, mult_logical, perm_logical, inv_logical, exc_logical, inc_logical),
+        names.arg = c("ADD", "MULT", "PERM", "INV", "EXC", "INC"),
+        ylim=c(0.4,1), main="Logical Mutants", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(add_relational, mult_relational, perm_relational, inv_relational, exc_relational, inc_relational),
+        names.arg = c("ADD", "MULT", "PERM", "INV", "EXC", "INC"),
+        ylim=c(0.4,1), main="Relational Mutants", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(add_arithmetic, mult_arithmetic, perm_arithmetic, inv_arithmetic, exc_arithmetic, inc_arithmetic),
+        names.arg = c("ADD", "MULT", "PERM", "INV", "EXC", "INC"),
+        ylim=c(0.4,1), main="Arithmetic Mutants", xpd=FALSE, ylab="Fault Detection Score")
+par(mfrow=c(1,1))
+
+par(mfrow=c(2,3))
+barplot(c(add_assignment, add_conditional, add_deletion, add_logical, add_relational, add_arithmetic),
+        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
+        ylim=c(0.4,1), main="MR: add", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(mult_assignment, mult_conditional, mult_deletion, mult_logical, mult_relational, mult_arithmetic),
+        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
+        ylim=c(0.4,1), main="MR: mult", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(perm_assignment, perm_conditional, perm_deletion, perm_logical, perm_relational, perm_arithmetic),
+        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
+        ylim=c(0.4,1), main="MR: perm", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(inv_assignment, inv_conditional, inv_deletion, inv_logical, inv_relational, inv_arithmetic),
+        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
+        ylim=c(0.4,1), main="MR: inv", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(inc_assignment, inc_conditional, inc_deletion, inc_logical, inc_relational, inc_arithmetic),
+        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
+        ylim=c(0.4,1), main="MR: inc", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(exc_assignment, exc_conditional, exc_deletion, exc_logical, exc_relational, exc_arithmetic),
+        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
+        ylim=c(0.4,1), main="MR: exc", xpd=FALSE, ylab="Fault Detection Score")
+par(mfrow=c(1,1))
+
+colt_add_and_mult = read.csv("MethodsFromColt_add_and_mult.csv")
+coll2_add_and_mult = read.csv("MethodCollection2_add_and_mult.csv")
+apache_add_and_mult = read.csv("MethodsFromApacheMath_add_and_mult.csv")
+
+colt_add_mult_inc = read.csv("MethodsFromColt_add_mult_inc.csv")
+coll2_add_mult_inc = read.csv("MethodCollection2_add_mult_inc.csv")
+apache_add_mult_inc = read.csv("MethodsFromApacheMath_add_mult_inc.csv")
+
+colt_add_mult_inc_perm = read.csv("MethodsFromColt_add_mult_inc_perm.csv")
+coll2_add_mult_inc_perm = read.csv("MethodCollection2_add_mult_inc_perm.csv")
+apache_add_mult_inc_perm = read.csv("MethodsFromApacheMath_add_mult_inc_perm.csv")
+
+
+colt_add_mult_inc_perm_exc = read.csv("MethodsFromColt_add_mult_inc_perm_exc.csv")
+coll2_add_mult_inc_perm_exc = read.csv("MethodCollection2_add_mult_inc_perm_exc.csv")
+apache_add_mult_inc_perm_exc = read.csv("MethodsFromApacheMath_add_mult_inc_perm_exc.csv")
+
+colt_all = read.csv("MethodsFromColt_all.csv")
+coll2_all = read.csv("MethodCollection2_all.csv")
+apache_all = read.csv("MethodsFromApacheMath_all.csv")
+
+add_and_mult_all = rbind.fill(colt_add_and_mult, coll2_add_and_mult, apache_add_and_mult, sax_mult)
+add_mult_inc_all = c(colt_add_mult_inc$mutant_score, coll2_add_mult_inc$mutant_score, apache_add_mult_inc$mutant_score, 0.94, 0.81, 0.0)
+add_mult_inc_perm_all = c(colt_add_mult_inc_perm$mutant_score, coll2_add_mult_inc_perm$mutant_score, apache_add_mult_inc_perm$mutant_score, 0.94, 0.81, 0.91)
+add_mult_inc_perm_exc_all = c(colt_add_mult_inc_perm_exc$mutant_score, coll2_add_mult_inc_perm_exc$mutant_score, apache_add_mult_inc_perm_exc$mutant_score, 0.94, 0.81, 0.91)
+all_all = c(colt_all$mutant_score, coll2_all$mutant_score, apache_all$mutant_score, 1.0, 0.81, 0.91)
+
+add_and_mult_combined = mean(c(
+  mean(replace(colt_add_and_mult$mutant_score, is.na(colt_add_and_mult$mutant_score), 0), na.rm=TRUE),
+  mean(replace(coll2_add_and_mult$mutant_score, is.na(coll2_add_and_mult$mutant_score), 0), na.rm=TRUE),
+  mean(replace(apache_add_and_mult$mutant_score, is.na(apache_add_and_mult$mutant_score), 0), na.rm=TRUE),
+  mean(replace(sax_mult$mutant_score, na.rm=TRUE)
+))
+add_mult_inc_combined = mean(c(
+  mean(replace(colt_add_mult_inc$mutant_score, is.na(colt_add_mult_inc$mutant_score), 0), na.rm=TRUE),
+  mean(replace(coll2_add_mult_inc$mutant_score, is.na(coll2_add_mult_inc$mutant_score), 0), na.rm=TRUE),
+  mean(replace(apache_add_mult_inc$mutant_score, is.na(apache_add_mult_inc$mutant_score), 0), na.rm=TRUE),
+  mean(0.94, 0.81, 0.0)
+))
+add_mult_inc_perm_combined = mean(c(
+  mean(replace(colt_add_mult_inc_perm$mutant_score, is.na(colt_add_mult_inc_perm$mutant_score), 0), na.rm=TRUE),
+  mean(replace(coll2_add_mult_inc_perm$mutant_score, is.na(coll2_add_mult_inc_perm$mutant_score), 0), na.rm=TRUE),
+  mean(replace(apache_add_mult_inc_perm$mutant_score, is.na(apache_add_mult_inc_perm$mutant_score), 0), na.rm=TRUE),
+  mean(0.94,0.81,0.91)
+))
+add_mult_inc_perm_exc_combined = mean(c(
+  mean(replace(colt_add_mult_inc_perm_exc$mutant_score, is.na(colt_add_mult_inc_perm_exc$mutant_score), 0), na.rm=TRUE),
+  mean(replace(coll2_add_mult_inc_perm_exc$mutant_score, is.na(coll2_add_mult_inc_perm_exc$mutant_score), 0), na.rm=TRUE),
+  mean(replace(apache_add_mult_inc_perm_exc$mutant_score, is.na(apache_add_mult_inc_perm_exc$mutant_score), 0), na.rm=TRUE),
+  mean(0.94,0.83,0.91)
+))
+all_combined = mean(c(
+  mean(colt_all$mutant_score, na.rm=TRUE),
+  mean(coll2_all$mutant_score, na.rm=TRUE),
+  mean(apache_all$mutant_score, na.rm=TRUE),
+  mean(1.0,0.83,0.91)
+))
+
+barplot(
+  c(
+    mean(agg_combined$mutant_score, na.rm=TRUE),
+    add_and_mult_combined,
+    mean(add_combined$mutant_score, na.rm=TRUE),
+    mean(mult_combined$mutant_score, na.rm=TRUE)
+  ),
+  names.arg = c("Aggregate", "ADD & MULT", "ADD", "MULT"),
+  ylab = "Fault Detection Score",
+  ylim = c(0.8,1.0),
+  xpd=FALSE
+)
+
+barplot(
+  c(
+    mean(add_combined$mutant_score, na.rm=TRUE),
+    add_and_mult_combined,
+    add_mult_inc_combined,
+    add_mult_inc_perm_combined,
+    add_mult_inc_perm_exc_combined,
+    mean(agg_combined$mutant_score, na.rm=TRUE)
+  ),
+  names.arg = c(
+    "add",
+    "add\nmult",
+    "add\nmult\ninc",
+    "add\nmult\ninc\nperm",
+    "add\nmult\ninc\nperm\nexc",
+    "all"
+  ),
+  ylim = c(0.85,0.95), xpd=FALSE
+)
+
+%It's looking valid, folks
+barplot(
+  c(
+    mean(add_combined$mutant_score, na.rm=TRUE),
+    add_and_mult_combined,
+    mean(add_mult_inc_all, na.rm=TRUE),
+    mean(add_mult_inc_perm_all, na.rm=TRUE),
+    mean(add_mult_inc_perm_exc_all, na.rm=TRUE),
+    mean(agg_combined$mutant_score, na.rm=TRUE)
+  ),
+  names.arg = c(
+    "add",
+    "add\nmult",
+    "add\nmult\ninc",
+    "add\nmult\ninc\nperm",
+    "add\nmult\ninc\nperm\nexc",
+    "all"
+  ),
+  ylim = c(0.85,0.95), xpd=FALSE
+)
+
+mean(c(
+  mean(apache_agg$mutant_score, na.rm=TRUE),
+  mean(coll2_agg$mutant_score, na.rm=TRUE), 
+  mean(apache_agg$mutant_score, na.rm=TRUE), 
+  mean(sax_agg$mutant_score, na.rm=TRUE)
+))
+mean(agg_combined$mutant_score, na.rm=TRUE)
+mean(add_and_mult_all$mutant_score, na.rm=TRUE)
+
+add_mean <- mean(add_combined$mutant_score, na.rm=TRUE)
+mult_mean <- mean(mult_combined$mutant_score, na.rm=TRUE)
+perm_mean <- mean(perm_combined$mutant_score, na.rm=TRUE)
+inv_mean <- mean(inv_combined$mutant_score, na.rm=TRUE)
+inc_mean <- mean(inc_combined$mutant_score, na.rm=TRUE)
+exc_mean <- mean(exc_combined$mutant_score, na.rm=TRUE)
+
+barplot(c(add_mean, mult_mean, inc_mean, perm_mean, exc_mean, inv_mean), ylim=c(0.4,0.9), xpd=FALSE,
+        names.arg=c("ADD", "MULT", "INC", "PERM", "EXC", "INV"),
+        ylab="Fault Detection Score")
