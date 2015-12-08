@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MethodsFromColt.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jacoco_ant</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">MethodsFromColt.java</span></div><h1>MethodsFromColt.java</h1><pre class="source lang-java linenums">import java.util.Random;
+import java.util.Arrays;
+
+import org.apache.commons.math3.stat.StatUtils;
+import org.apache.commons.math3.stat.descriptive.*;
+
+
+
+
+
+
+<span class="nc" id="L12">public class MethodsFromColt {</span>
+	/**
+	 * Returns the auto-correlation of a data sequence.
+	 */
+	
+	public static double autoCorrelation(double[] data, int lag, double mean, double variance) {
+<span class="nc" id="L18">		int N = data.length;</span>
+		//if (lag &gt;= N) throw new IllegalArgumentException(&quot;Lag is too large&quot;);
+
+		//double[] elements = data.elements();
+<span class="nc" id="L22">		double run = 0;</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">		for( int i=lag; i&lt;N; ++i)</span>
+<span class="nc" id="L24">			run += (data[i]-mean)*(data[i-lag]-mean);</span>
+	  
+<span class="nc" id="L26">		return (run/(N-lag)) / variance;</span>
+	}
+	
+	/**
+	 * Searches the receiver for the specified value using
+	 * the binary search algorithm. The receiver must be sorted into ascending order
+	 * according to the &lt;i&gt;natural ordering&lt;/i&gt; of its elements (as by the sort method)
+	 * prior to making this call.  
+	 * If it is not sorted, the results are undefined: in particular, the call
+	 * may enter an infinite loop.  If the receiver contains multiple elements
+	 * equal to the specified object, there is no guarantee which instance
+	 * will be found.
+	 *
+	 *
+	 * @param key the value to be searched for.
+	 * @param from the leftmost search position, inclusive.
+	 * @param to the rightmost search position, inclusive.
+	 * @return index of the search key, if it is contained in the receiver;
+	 *	       otherwise, &lt;tt&gt;(-(&lt;i&gt;insertion point&lt;/i&gt;) - 1)&lt;/tt&gt;.  The &lt;i&gt;insertion
+	 *	       point&lt;/i&gt; is defined as the the point at which the value would
+	 * 	       be inserted into the receiver: the index of the first
+	 *	       element greater than the key, or &lt;tt&gt;receiver.size()&lt;/tt&gt;, if all
+	 *	       elements in the receiver are less than the specified key.  Note
+	 *	       that this guarantees that the return value will be &amp;gt;= 0 if
+	 *	       and only if the key is found.
+	 * @see Comparable
+	 * @see java.util.Arrays
+	 */
+	
+	public static int binarySearchFromTo(double[] elements,double key, int from, int to) {
+<span class="nc" id="L56">		int low = from;</span>
+<span class="nc" id="L57">		int high = to;</span>
+
+<span class="nc bnc" id="L59" title="All 2 branches missed.">		while (low &lt;= high) {</span>
+<span class="nc" id="L60">			int mid =(low + high)/2;</span>
+<span class="nc" id="L61">			double midVal = elements[mid];</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">			if (midVal&lt;key)</span>
+<span class="nc" id="L63">				low = mid + 1;</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">			else if (midVal&gt;key)</span>
+<span class="nc" id="L65">				high = mid - 1;</span>
+			//int cmp = ((Comparable)midVal).compareTo(key);
+
+			//if (cmp &lt; 0) low = mid + 1;
+			//else if (cmp &gt; 0) high = mid - 1;
+<span class="nc" id="L70">			else return mid; // key found</span>
+<span class="nc" id="L71">		}</span>
+<span class="nc" id="L72">		return -(low + 1);  // key not found.</span>
+	}
+
+
+	/**
+	 * Performs a logical &lt;b&gt;AND&lt;/b&gt; of the receiver with another bit vector (A = A &amp; B).
+	 * The receiver is modified so that a bit in it has the
+	 * value &lt;code&gt;true&lt;/code&gt; if and only if it already had the 
+	 * value &lt;code&gt;true&lt;/code&gt; and the corresponding bit in the other bit vector
+	 * argument has the value &lt;code&gt;true&lt;/code&gt;.
+	 *
+	 * @param   other   a bit vector.
+	 * @throws IllegalArgumentException if &lt;tt&gt;size() &amp;gt; other.size()&lt;/tt&gt;.
+	 */
+	/*
+	public void and(long[] theBits, long[] otherBits) {
+		//if (this == other) return;
+		//checkSize(other);
+		//final long[] theBits = this.bits; // cached for speed.
+		//final long[] otherBits = other.bits; //cached for speed.
+		if (theBits.length!=otherBits.length) throw new IllegalArgumentException(&quot;Size not equal&quot;);
+		for(int i=theBits.length; --i &gt;= 0;) theBits[i] &amp;= otherBits[i];
+	}
+	*/
+
+	/**
+	 * Clears all of the bits in receiver whose corresponding
+	 * bit is set in the other bitvector (A = A \ B).
+	 * In other words, determines the difference (A=A\B) between two bitvectors.
+	 *
+	 * @param   other   a bitvector with which to mask the receiver.
+	 * @throws IllegalArgumentException if &lt;tt&gt;size() &amp;gt; other.size()&lt;/tt&gt;.
+	 */
+	/*
+	public void andNot(long[] theBits,long[] otherBits) {
+		//checkSize(other);
+		//final long[] theBits = this.bits; // cached for speed.
+		//final long[] otherBits = other.bits; //cached for speed.
+		if (theBits.length!=otherBits.length) throw new IllegalArgumentException(&quot;Size not equal&quot;);
+		for(int i=theBits.length; --i &gt;= 0;) theBits[i] &amp;= ~otherBits[i];
+	}*/
+	
+	
+	/**
+	 * Returns the covariance of two data sequences, which is 
+	 * &lt;tt&gt;cov(x,y) = (1/(size()-1)) * Sum((x[i]-mean(x)) * (y[i]-mean(y)))&lt;/tt&gt;.
+	 * See the &lt;A HREF=&quot;http://www.cquest.utoronto.ca/geog/ggr270y/notes/not05efg.html&quot;&gt; math definition&lt;/A&gt;.
+	 */
+	public static double covariance(double[] elements1, double[] elements2) {
+<span class="nc" id="L121">		int size = elements1.length;</span>
+		//if (size != elements2.length || size == 0) throw new IllegalArgumentException();
+		//double[] elements1 = data1.elements();
+		//double[] elements2 = data2.elements();
+		
+<span class="nc" id="L126">		double sumx=elements1[0], sumy=elements2[0], Sxy=0;</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">		for (int i=1; i&lt;size; ++i) {</span>
+<span class="nc" id="L128">			double x = elements1[i];</span>
+<span class="nc" id="L129">			double y = elements2[i];</span>
+<span class="nc" id="L130">			sumx += x;</span>
+<span class="nc" id="L131">			Sxy += (x - sumx/(i+1))*(y - sumy/i);</span>
+<span class="nc" id="L132">			sumy += y;</span>
+			// Exercise for the reader: Why does this give us the right answer?
+		}
+<span class="nc" id="L135">		return Sxy/(size-1);</span>
+	}
+	
+	/**
+	 * Durbin-Watson computation.
+	 */
+	public static double durbinWatson(double[] elements) {
+<span class="nc" id="L142">		int size = elements.length;</span>
+		//if (size &lt; 2) throw new IllegalArgumentException(&quot;data sequence must contain at least two values.&quot;);
+
+		//double[] elements = data.elements();
+<span class="nc" id="L146">		double run = 0;</span>
+		//double run_sq = 0;
+		//run_sq = elements[0] * elements[0];
+<span class="nc bnc" id="L149" title="All 2 branches missed.">		for(int i=1; i&lt;size; ++i) {</span>
+<span class="nc" id="L150">			double x = elements[i] - elements[i-1];</span>
+<span class="nc" id="L151">			run += x*x;</span>
+			//run_sq += elements[i] * elements[i];
+		}
+<span class="nc" id="L154">		return run;</span>
+		//return run / run_sq;
+	}
+	
+	/**
+	 * Returns the lag-1 autocorrelation of a dataset; 
+	 * Note that this method has semantics different from &lt;tt&gt;autoCorrelation(..., 1)&lt;/tt&gt;;
+	 */
+	public static double lag1(double[] elements, double mean) {
+<span class="nc" id="L163">		int size = elements.length;</span>
+		//double[]  = data.elements();
+		double r1 ;
+<span class="nc" id="L166">		double q = 0 ;</span>
+<span class="nc" id="L167">		double v = (elements[0] - mean) * (elements[0] - mean) ;</span>
+
+<span class="nc bnc" id="L169" title="All 2 branches missed.">		for (int i = 1; i &lt; size ; i++) {</span>
+<span class="nc" id="L170">			double delta0 = (elements[i-1] - mean);</span>
+<span class="nc" id="L171">			double delta1 = (elements[i] - mean);</span>
+<span class="nc" id="L172">			q += (delta0 * delta1 - q)/(i + 1);</span>
+<span class="nc" id="L173">			v += (delta1 * delta1 - v)/(i + 1);</span>
+		}
+
+<span class="nc" id="L176">		r1 = q / v ;</span>
+<span class="nc" id="L177">		return r1;</span>
+	}
+	/**
+	 * Returns the largest member of a data sequence.
+	 */
+	public static double max(double[] elements) {
+<span class="nc" id="L183">		int size = elements.length;</span>
+		//if (size==0) throw new IllegalArgumentException();
+		
+		//double[] elements = data.elements();
+<span class="nc" id="L187">		double max = elements[size-1];</span>
+<span class="nc bnc" id="L188" title="All 2 branches missed.">		for (int i = size-1; --i &gt;= 0;) {</span>
+<span class="nc bnc" id="L189" title="All 2 branches missed.">			if (elements[i] &gt; max) max = elements[i];</span>
+		}
+
+<span class="nc" id="L192">		return max;</span>
+	}
+	
+	/**
+	 * Returns the mean deviation of a dataset.
+	 * That is &lt;tt&gt;Sum (Math.abs(data[i]-mean)) / data.size())&lt;/tt&gt;.
+	 */
+	public static double meanDeviation(double[] elements, double mean) {
+		//double[] elements = data.elements();
+<span class="nc" id="L201">		int size = elements.length;</span>
+<span class="nc" id="L202">		double sum=0;</span>
+<span class="nc bnc" id="L203" title="All 2 branches missed.">		for (int i=size; --i &gt;= 0;) sum += Math.abs(elements[i]-mean);</span>
+<span class="nc" id="L204">		return sum/size;</span>
+	}
+	
+	/**
+	 * Returns the smallest member of a data sequence.
+	 */
+	public static double min(double[] elements) {
+<span class="nc" id="L211">		int size = elements.length;</span>
+		//if (size==0) throw new IllegalArgumentException();
+		
+		//double[] elements = data.elements();
+<span class="nc" id="L215">		double min = elements[size-1];</span>
+<span class="nc bnc" id="L216" title="All 2 branches missed.">		for (int i = size-1; --i &gt;= 0;) {</span>
+<span class="nc bnc" id="L217" title="All 2 branches missed.">			if (elements[i] &lt; min) min = elements[i];</span>
+		}
+
+<span class="nc" id="L220">		return min;</span>
+	}
+	
+	/**
+	 * Returns the product of a data sequence, which is &lt;tt&gt;Prod( data[i] )&lt;/tt&gt;.
+	 * In other words: &lt;tt&gt;data[0]*data[1]*...*data[data.size()-1]&lt;/tt&gt;.
+	 * Note that you may easily get numeric overflows.
+	 */
+	public static double product(double[] elements) {
+<span class="nc" id="L229">		int size =elements.length;</span>
+		//double[] elements = data.elements();
+		
+<span class="nc" id="L232">		double product = 1;</span>
+<span class="nc bnc" id="L233" title="All 2 branches missed.">		for (int i=size; --i &gt;= 0;) product *= elements[i];</span>
+		
+<span class="nc" id="L235">		return product;</span>
+	}
+	/**
+	 * Returns the &lt;tt&gt;phi-&lt;/tt&gt;quantile; that is, an element &lt;tt&gt;elem&lt;/tt&gt; for which holds that &lt;tt&gt;phi&lt;/tt&gt; percent of data elements are less than &lt;tt&gt;elem&lt;/tt&gt;.
+	 * The quantile need not necessarily be contained in the data sequence, it can be a linear interpolation.
+	 * @param sortedData the data sequence; &lt;b&gt;must be sorted ascending&lt;/b&gt;.
+	 * @param phi the percentage; must satisfy &lt;tt&gt;0 &amp;lt;= phi &amp;lt;= 1&lt;/tt&gt;.
+	 */
+	
+	public static double quantile( double[] sortedElements, double phi) {
+		//double[] sortedElements = sortedData.elements();
+<span class="nc" id="L246">		int n = sortedElements.length;</span>
+		
+<span class="nc" id="L248">		double index = phi * (n - 1) ;</span>
+<span class="nc" id="L249">		int lhs = (int)index ;</span>
+<span class="nc" id="L250">		double delta = index - lhs ;</span>
+		double result;
+
+<span class="nc bnc" id="L253" title="All 2 branches missed.">		if (n == 0) return 0.0 ;</span>
+
+<span class="nc bnc" id="L255" title="All 2 branches missed.">		if (lhs == n - 1) {</span>
+<span class="nc" id="L256">			result = sortedElements[lhs] ;</span>
+		}
+		else {
+<span class="nc" id="L259">			result = (1 - delta) * sortedElements[lhs] + delta * sortedElements[lhs + 1] ;</span>
+		}
+
+<span class="nc" id="L262">		return result ;</span>
+	}
+	
+	
+	/**
+	 * Returns the sample kurtosis (aka excess) of a data sequence.
+	 *
+	 * Ref: R.R. Sokal, F.J. Rohlf, Biometry: the principles and practice of statistics
+	 * in biological research (W.H. Freeman and Company, New York, 1998, 3rd edition)
+	 * p. 114-115.
+	 *
+	 * @param size the number of elements of the data sequence.
+	 * @param moment4 the fourth central moment, which is &lt;tt&gt;moment(data,4,mean)&lt;/tt&gt;.
+	 * @param sampleVariance the &lt;b&gt;sample variance&lt;/b&gt;.
+	 */
+	public static double sampleKurtosis(int size, double moment4, double sampleVariance) {
+<span class="nc" id="L278">		 int    n=size;</span>
+<span class="nc" id="L279">		 double s2=sampleVariance; // (y-ymean)^2/(n-1)</span>
+<span class="nc" id="L280">		 double m4 = moment4*n;    // (y-ymean)^4</span>
+<span class="nc" id="L281">		 return m4*n*(n+1) / ((n-1)*(n-2)*(n-3)*s2*s2)</span>
+			  - 3.0*(n-1)*(n-1)/((n-2)*(n-3));
+	}
+	/**
+	 * Return the standard error of the sample kurtosis.
+	 *
+	 * Ref: R.R. Sokal, F.J. Rohlf, Biometry: the principles and practice of statistics
+	 * in biological research (W.H. Freeman and Company, New York, 1998, 3rd edition)
+	 * p. 138.
+	 *
+	 * @param size the number of elements of the data sequence.
+	 */
+/*
+	public static double sampleKurtosisStandardError(int size) {
+		 int n=size;
+		 return Math.sqrt( 24.0*n*(n-1)*(n-1)/((n-3)*(n-2)*(n+3)*(n+5)) );
+	}
+*/
+	/**
+	 * Returns the sample skew of a data sequence.
+	 *
+	 * Ref: R.R. Sokal, F.J. Rohlf, Biometry: the principles and practice of statistics
+	 * in biological research (W.H. Freeman and Company, New York, 1998, 3rd edition)
+	 * p. 114-115.
+	 *
+	 * @param size the number of elements of the data sequence.
+	 * @param moment3 the third central moment, which is &lt;tt&gt;moment(data,3,mean)&lt;/tt&gt;.
+	 * @param sampleVariance the &lt;b&gt;sample variance&lt;/b&gt;.
+	 */
+	public static double sampleSkew(int size, double moment3, double sampleVariance) {
+<span class="nc" id="L311">		 int    n=size;</span>
+<span class="nc" id="L312">		 double s=Math.sqrt(sampleVariance); // sqrt( (y-ymean)^2/(n-1) )</span>
+<span class="nc" id="L313">		 double m3 = moment3*n;    // (y-ymean)^3</span>
+<span class="nc" id="L314">		 return n*m3 / ((n-1)*(n-2)*s*s*s);</span>
+	}
+	/**
+	 * Returns the sample variance of a data sequence.
+	 * That is &lt;tt&gt;Sum ( (data[i]-mean)^2 ) / (data.size()-1)&lt;/tt&gt;.
+	 */
+	public static double sampleVariance(double[] elements, double mean) {
+		//double[] elements = data.elements();
+<span class="nc" id="L322">		int size = elements.length;	</span>
+<span class="nc" id="L323">		double sum = 0 ;</span>
+		// find the sum of the squares 
+<span class="nc bnc" id="L325" title="All 2 branches missed.">		for (int i = size; --i &gt;= 0; ) {</span>
+<span class="nc" id="L326">			double delta = elements[i] - mean;</span>
+<span class="nc" id="L327">			sum += delta * delta;</span>
+<span class="nc" id="L328">		}</span>
+
+<span class="nc" id="L330">		return sum / (size-1);</span>
+	}
+	/**
+	 * Returns the sum of logarithms of a data sequence, which is &lt;tt&gt;Sum( Log(data[i])&lt;/tt&gt;.
+	 * @param data the data sequence.
+	 * @param from the index of the first data element (inclusive).
+	 * @param to the index of the last data element (inclusive).
+	 */
+	
+	public static double sumOfLogarithms(double[] elements) {
+		//double[] elements = data.elements();
+<span class="nc" id="L341">		double logsum = 0;</span>
+<span class="nc bnc" id="L342" title="All 2 branches missed.">		for (int i=0;i&lt;elements.length;i++) logsum += Math.log(elements[i]);</span>
+<span class="nc" id="L343">		return logsum;</span>
+	}
+	
+	/**
+	 * Returns the trimmed mean of a sorted data sequence.
+	 *
+	 * @param sortedData the data sequence; &lt;b&gt;must be sorted ascending&lt;/b&gt;.
+	 * @param mean the mean of the (full) sorted data sequence.
+	 * @left the number of leading elements to trim.
+	 * @right the number of trailing elements to trim.
+	 */
+	
+/*
+	public static double trimmedMean(double[] sortedElements, double mean, int left, int right) {
+		int N = sortedElements.length;
+		//if (N==0) throw new IllegalArgumentException(&quot;Empty data.&quot;);
+		//if (left+right &gt;= N) throw new IllegalArgumentException(&quot;Not enough data.&quot;);
+
+		//double[] sortedElements = sortedData.elements();
+		int N0=N;
+		for(int i=0; i&lt;left; ++i)
+			mean += (mean-sortedElements[i])/(--N);
+		for(int i=0; i&lt;right; ++i)
+			mean += (mean-sortedElements[N0-1-i])/(--N);
+		return mean;
+	}
+*/
+	
+	
+	/**
+	 * Returns the weighted mean of a data sequence.
+	 * That is &lt;tt&gt; Sum (data[i] * weights[i]) / Sum ( weights[i] )&lt;/tt&gt;.
+	 */
+	public static double weightedMean(double[] elements, double[] theWeights) {
+<span class="nc" id="L377">		int size = elements.length;</span>
+		//if (size != theWeights.length || size == 0) throw new IllegalArgumentException();
+		
+		//double[] elements = data.elements();
+		//double[] theWeights = weights.elements();
+<span class="nc" id="L382">		double sum = 0.0;</span>
+<span class="nc" id="L383">		double weightsSum = 0.0;</span>
+<span class="nc bnc" id="L384" title="All 2 branches missed.">		for (int i=size; --i &gt;= 0; ) {</span>
+<span class="nc" id="L385">			double w = theWeights[i];</span>
+<span class="nc" id="L386">			sum += elements[i] * w;</span>
+<span class="nc" id="L387">			weightsSum += w;</span>
+<span class="nc" id="L388">		}</span>
+
+<span class="nc" id="L390">		return sum/weightsSum;</span>
+	}
+	
+	/**
+	 * Searches the list for the specified value using
+	 * the binary search algorithm.  The list must &lt;strong&gt;must&lt;/strong&gt; be
+	 * sorted (as by the sort method) prior to making this call.  If
+	 * it is not sorted, the results are undefined: in particular, the call
+	 * may enter an infinite loop.  If the list contains multiple elements
+	 * equal to the specified key, there is no guarantee which of the multiple elements
+	 * will be found.
+	 *
+	 * @param list the list to be searched.
+	 * @param key the value to be searched for.
+	 * @param from the leftmost search position, inclusive.
+	 * @param to the rightmost search position, inclusive.
+	 * @return index of the search key, if it is contained in the list;
+	 *	       otherwise, &lt;tt&gt;(-(&lt;i&gt;insertion point&lt;/i&gt;) - 1)&lt;/tt&gt;.  The &lt;i&gt;insertion
+	 *	       point&lt;/i&gt; is defined as the the point at which the value would
+	 * 	       be inserted into the list: the index of the first
+	 *	       element greater than the key, or &lt;tt&gt;list.length&lt;/tt&gt;, if all
+	 *	       elements in the list are less than the specified key.  Note
+	 *	       that this guarantees that the return value will be &amp;gt;= 0 if
+	 *	       and only if the key is found.
+	 * @see java.util.Arrays
+	 */
+	
+	public static int binarySearchFromTo(int[] list, int key, int from, int to) {
+		int midVal;
+<span class="nc bnc" id="L419" title="All 2 branches missed.">		while (from &lt;= to) {</span>
+<span class="nc" id="L420">			int mid = (from + to) / 2;</span>
+<span class="nc" id="L421">			midVal = list[mid];</span>
+<span class="nc bnc" id="L422" title="All 2 branches missed.">			if (midVal &lt; key) from = mid + 1;</span>
+<span class="nc bnc" id="L423" title="All 2 branches missed.">			else if (midVal &gt; key) to = mid - 1;</span>
+<span class="nc" id="L424">			else return mid; // key found</span>
+<span class="nc" id="L425">		}</span>
+<span class="nc" id="L426">		return -(from + 1);  // key not found.</span>
+
+		/*
+		// even for very short lists (0,1,2,3 elems) this is only 10% faster
+		while (from&lt;=to &amp;&amp; list[from++] &lt; key) ;
+		if (from&lt;=to) {
+			if (list[--from] == key) return from;
+		}
+		return -(from + 1);
+		*/
+	}
+	
+	/**
+	 * Efficiently returns the binomial coefficient, often also referred to as &quot;n over k&quot; or &quot;n choose k&quot;.
+	 * The binomial coefficient is defined as &lt;tt&gt;(n * n-1 * ... * n-k+1 ) / ( 1 * 2 * ... * k )&lt;/tt&gt;.
+	 * &lt;ul&gt;
+	 * &lt;li&gt;k&lt;0&lt;tt&gt;: &lt;tt&gt;0&lt;/tt&gt;.
+	 * &lt;li&gt;k==0&lt;tt&gt;: &lt;tt&gt;1&lt;/tt&gt;.
+	 * &lt;li&gt;k==1&lt;tt&gt;: &lt;tt&gt;n&lt;/tt&gt;.
+	 * &lt;li&gt;else: &lt;tt&gt;(n * n-1 * ... * n-k+1 ) / ( 1 * 2 * ... * k )&lt;/tt&gt;.
+	 * &lt;/ul&gt;
+	 * @return the binomial coefficient.
+	 */
+	
+/*
+	public static double binomial(double n, long k) {
+		if (k&lt;0) return 0;
+		if (k==0) return 1;
+		if (k==1) return n;
+		
+		// binomial(n,k) = (n * n-1 * ... * n-k+1 ) / ( 1 * 2 * ... * k )
+		double a = n-k+1;
+		double b = 1;
+		double binomial = 1;
+		for (long i=k; i-- &gt; 0; ) {
+			binomial *= (a++) / (b++);
+		}
+		return binomial;
+	}
+*/
+	
+	/**
+	 * Evaluates the series of Chebyshev polynomials Ti at argument x/2.
+	 * The series is given by
+	 * &lt;pre&gt;
+	 *        N-1
+	 *         - '
+	 *  y  =   &gt;   coef[i] T (x/2)
+	 *         -            i
+	 *        i=0
+	 * &lt;/pre&gt;
+	 * Coefficients are stored in reverse order, i.e. the zero
+	 * order term is last in the array.  Note N is the number of
+	 * coefficients, not the order.
+	 * &lt;p&gt;
+	 * If coefficients are for the interval a to b, x must
+	 * have been transformed to x -&gt; 2(2x - b - a)/(b-a) before
+	 * entering the routine.  This maps x from (a, b) to (-1, 1),
+	 * over which the Chebyshev polynomials are defined.
+	 * &lt;p&gt;
+	 * If the coefficients are for the inverted interval, in
+	 * which (a, b) is mapped to (1/b, 1/a), the transformation
+	 * required is x -&gt; 2(2ab/x - b - a)/(b-a).  If b is infinity,
+	 * this becomes x -&gt; 4a/x - 1.
+	 * &lt;p&gt;
+	 * SPEED:
+	 * &lt;p&gt;
+	 * Taking advantage of the recurrence properties of the
+	 * Chebyshev polynomials, the routine requires one more
+	 * addition per loop than evaluating a nested polynomial of
+	 * the same degree.
+	 *
+	 * @param x argument to the polynomial.
+	 * @param coef the coefficients of the polynomial.
+	 * @param N the number of coefficients.
+	 */
+	/*
+	public static double chbevl( double x, double coef[], int N ) throws ArithmeticException {
+		double b0, b1, b2;
+
+		int p = 0;
+		int i;
+
+		b0 = coef[p++];
+		b1 = 0.0;
+		i = N - 1;
+
+		do {
+			b2 = b1;
+			b1 = b0;
+			b0 = x * b1  -  b2  + coef[p++];
+		} while( --i &gt; 0);
+
+		return( 0.5*(b0-b2) );
+	}*/
+	
+	
+	
+	/**
+	 * Returns the factorial of the argument.
+	 */
+	/*
+	static private double fac2(int j) {
+		long i = j;
+		if (j &lt; 0) i = Math.abs(j);
+		
+		double d = 1.0;
+		while (i &gt; 1) d *= i--;
+		
+		if (j &lt; 0) return -d;
+		else return d;
+	}
+	*/
+	/**
+	   * Computes the binomial logistic inverse link function.
+	   *
+	   * @param r The value to transform.
+	   * @return The logit of r.
+	   */
+/*
+	  public static double link(double r) {
+	    if (r &lt; 0.0) {
+	      double s = Math.exp(r);
+	      return s / (1.0 + s);
+	    } else {
+	      double s = Math.exp(-r);
+	      return 1.0 / (1.0 + s);
+	    }
+	  }
+*/
+	  
+	  /**
+	   * Returns the winsorized mean of a sorted data sequence.
+	   *
+	   * @param sortedData the data sequence; &lt;b&gt;must be sorted ascending&lt;/b&gt;.
+	   * @param mean the mean of the (full) sorted data sequence.
+	   * @left the number of leading elements to trim.
+	   * @right the number of trailing elements to trim.
+	   */
+	  public static double winsorizedMean(double[] sortedElements, int left, int right) {
+<span class="nc" id="L566">	  	int N = sortedElements.length;</span>
+	  	//if (N==0) throw new IllegalArgumentException(&quot;Empty data.&quot;);
+	  	//if (left+right &gt;= N) throw new IllegalArgumentException(&quot;Not enough data.&quot;);
+
+	  	//double[] sortedElements = sortedData.elements();
+<span class="nc" id="L571">	  	 double sum=0;</span>
+<span class="nc bnc" id="L572" title="All 2 branches missed.">		  for(int i=0;i&lt;sortedElements.length;i++)</span>
+		  {
+<span class="nc" id="L574">			  sum+=sortedElements[i];</span>
+			  
+			  
+		  }
+<span class="nc" id="L578">		  double mean = sum / sortedElements.length;</span>
+
+<span class="nc" id="L580">	  	double leftElement = sortedElements[left];</span>
+<span class="nc bnc" id="L581" title="All 2 branches missed.">	  	for(int i=0; i&lt;left; ++i)</span>
+<span class="nc" id="L582">	  		mean += (leftElement-sortedElements[i])/N;</span>
+
+<span class="nc" id="L584">	  	double rightElement = sortedElements[N-1-right];</span>
+<span class="nc bnc" id="L585" title="All 2 branches missed.">	  	for(int i=0; i&lt;right; ++i)</span>
+<span class="nc" id="L586">	  		mean += (rightElement-sortedElements[N-1-i])/N;</span>
+
+<span class="nc" id="L588">	  	return mean;</span>
+	  }
+	  /**
+	   * Returns the probability distribution function of the discrete geometric distribution.
+	   * &lt;p&gt;
+	   * &lt;tt&gt;p(k) = p * (1-p)^k&lt;/tt&gt; for &lt;tt&gt; k &amp;gt;= 0&lt;/tt&gt;.
+	   * &lt;p&gt;
+	   * @param k the argument to the probability distribution function.
+	   * @param p the parameter of the probability distribution function.
+	   */
+/*
+	  public static double geometricPdf(int k, double p) {
+	  	//if (k&lt;0) throw new IllegalArgumentException();
+	  	return p * Math.pow(1-p,k);
+	  }
+*/
+	  
+	  /**
+	   * Returns the kurtosis (aka excess) of a data sequence.
+	   * @param moment4 the fourth central moment, which is &lt;tt&gt;moment(data,4,mean)&lt;/tt&gt;.
+	   * @param standardDeviation the standardDeviation.
+	   */
+	  public static double kurtosis(double[] data) {
+<span class="nc" id="L611">		  double sum=0;</span>
+<span class="nc" id="L612">		  double sumPD=0;</span>
+<span class="nc" id="L613">		  double sumSq=0;</span>
+<span class="nc bnc" id="L614" title="All 2 branches missed.">		  for(int i=0;i&lt;data.length;i++)</span>
+		  {
+<span class="nc" id="L616">			  sum+=data[i];</span>
+<span class="nc" id="L617">			  sumSq+=data[i]*data[i];</span>
+			  
+		  }
+<span class="nc" id="L620">		  double mean = sum / data.length;</span>
+<span class="nc" id="L621">		  double standardDeviation=Math.sqrt((sumSq-mean*sum)/data.length);</span>
+<span class="nc bnc" id="L622" title="All 2 branches missed.">		  for(int i=0;i&lt;data.length;i++)</span>
+		  {
+<span class="nc" id="L624">			  sumPD+=Math.pow((data[i]-mean),4);</span>
+			  
+		  }
+<span class="nc" id="L627">		  double moment4= sumPD / data.length;</span>
+<span class="nc" id="L628">	  	return -3 + moment4 / (standardDeviation * standardDeviation * standardDeviation * standardDeviation);</span>
+	  }
+	  
+	  /**
+	   * Returns the value ln(Gamma(xx) for xx &gt; 0.  Full accuracy is obtained for 
+	   * xx &gt; 1. For 0 &lt; xx &lt; 1. the reflection formula (6.1.4) can be used first.
+	   * (Adapted from Numerical Recipes in C)
+	   */
+/*
+	  public static double logGamma(double xx) {
+		  double[] cof = { // for method logGamma() 
+					76.18009172947146,-86.50532032941677,
+					24.01409824083091, -1.231739572450155,
+					0.1208650973866179e-2, -0.5395239384953e-5};
+	  	double x = xx - 1.0;
+	  	double tmp = x + 5.5;
+	  	tmp -= (x + 0.5) * Math.log(tmp);
+	  	double ser = 1.000000000190015;
+
+	  	double[] coeff = cof;
+	  	for (int j = 0; j &lt;= 5; j++ ) {
+	  		x++;
+	  		ser += coeff[j]/x;
+	  	}
+	  	return -tmp + Math.log(2.5066282746310005*ser);
+	  }
+*/
+	  /**
+	   * Returns the pooled mean of two data sequences.
+	   * That is &lt;tt&gt;(size1 * mean1 + size2 * mean2) / (size1 + size2)&lt;/tt&gt;.
+	   *
+	   * @param size1 the number of elements in data sequence 1.
+	   * @param mean1 the mean of data sequence 1.
+	   * @param size2 the number of elements in data sequence 2.
+	   * @param mean2 the mean of data sequence 2.
+	   */
+	  public static double pooledMean(double[] data1, double[] data2) {
+	  	
+<span class="nc" id="L666">		  double sum1=0;</span>
+<span class="nc bnc" id="L667" title="All 2 branches missed.">		  for(int i=0;i&lt;data1.length;i++)</span>
+		  {
+<span class="nc" id="L669">			  sum1+=data1[i];</span>
+			  
+		  }
+<span class="nc" id="L672">		  double mean1 = sum1 / data1.length;</span>
+		  
+<span class="nc" id="L674">		  double sum2=0;</span>
+<span class="nc bnc" id="L675" title="All 2 branches missed.">		  for(int i=0;i&lt;data2.length;i++)</span>
+		  {
+<span class="nc" id="L677">			  sum2+=data2[i];</span>
+			  
+		  }
+<span class="nc" id="L680">		  double mean2 = sum2 / data2.length;</span>
+<span class="nc" id="L681">		  return (data1.length * mean1 + data2.length * mean2) / (data1.length + data2.length);</span>
+	  }
+	  /**
+	   * Returns the pooled variance of two data sequences.
+	   * That is &lt;tt&gt;(size1 * variance1 + size2 * variance2) / (size1 + size2)&lt;/tt&gt;;
+	   *
+	   * @param size1 the number of elements in data sequence 1.
+	   * @param variance1 the variance of data sequence 1.
+	   * @param size2 the number of elements in data sequence 2.
+	   * @param variance2 the variance of data sequence 2.
+	   */
+	  public static double pooledVariance(double[] data1, double[] data2) {
+	  	
+<span class="nc" id="L694">		  double sum1=0;</span>
+<span class="nc" id="L695">		  double sumSq1=0;</span>
+<span class="nc bnc" id="L696" title="All 2 branches missed.">		  for(int i=0;i&lt;data1.length;i++)</span>
+		  {
+<span class="nc" id="L698">			  sum1+=data1[i];</span>
+<span class="nc" id="L699">			  sumSq1+=data1[i]*data1[i];</span>
+			  
+		  }
+<span class="nc" id="L702">		  double mean1 = sum1 / data1.length;</span>
+<span class="nc" id="L703">		  double var1=(sumSq1-mean1*sum1)/data1.length;</span>
+		  
+<span class="nc" id="L705">		  double sum2=0;</span>
+<span class="nc" id="L706">		  double sumSq2=0;</span>
+<span class="nc bnc" id="L707" title="All 2 branches missed.">		  for(int i=0;i&lt;data2.length;i++)</span>
+		  {
+<span class="nc" id="L709">			  sum2+=data2[i];</span>
+<span class="nc" id="L710">			  sumSq2+=data2[i]*data2[i];</span>
+			  
+		  }
+<span class="nc" id="L713">		  double mean2 = sum2 / data2.length;</span>
+<span class="nc" id="L714">		  double var2=(sumSq2-mean2*sum2)/data2.length;</span>
+<span class="nc" id="L715">		  return (data1.length * var1 + data2.length * var2) / (data1.length + data2.length);</span>
+	  }
+	  
+	  /**
+	   * Evaluates the given polynomial of degree &lt;tt&gt;N&lt;/tt&gt; at &lt;tt&gt;x&lt;/tt&gt;.
+	   * &lt;pre&gt;
+	   *                     2          N
+	   * y  =  C  + C x + C x  +...+ C x
+	   *        0    1     2          N
+	   *
+	   * Coefficients are stored in reverse order:
+	   *
+	   * coef[0] = C  , ..., coef[N] = C  .
+	   *            N                   0
+	   * &lt;/pre&gt;
+	   * In the interest of speed, there are no checks for out of bounds arithmetic.
+	   *
+	   * @param x argument to the polynomial.
+	   * @param coef the coefficients of the polynomial.
+	   * @param N the degree of the polynomial.
+	   */
+	  public static double polevl( double x, double coef[], int N ) throws ArithmeticException {
+	  	double ans;
+<span class="nc" id="L738">	  	ans = coef[0];</span>
+
+<span class="nc bnc" id="L740" title="All 2 branches missed.">	  	for(int i=1; i&lt;=N; i++) ans = ans*x+coef[i];</span>
+
+<span class="nc" id="L742">	  	return ans;</span>
+	  }
+	  
+	  /**
+	   * Returns the linearly interpolated number of elements in a list less or equal to a given element.
+	   * The rank is the number of elements &lt;= element.
+	   * Ranks are of the form &lt;tt&gt;{0, 1, 2,..., sortedList.size()}&lt;/tt&gt;.
+	   * If no element is &lt;= element, then the rank is zero.
+	   * If the element lies in between two contained elements, then linear interpolation is used and a non integer value is returned.
+	   *
+	   * @param sortedList the list to be searched (must be sorted ascending).
+	   * @param element the element to search for.
+	   * @return the rank of the element.
+	   */
+/*
+	  public static double rankInterpolated(double[] sortedList, double element,int index) {
+	  	//int index = sortedList.binarySearch(element);
+	  	if (index &gt;= 0) { // element found
+	  		// skip to the right over multiple occurances of element.
+	  		int to = index+1;
+	  		int s = sortedList.length;
+	  		while (to&lt;s &amp;&amp; sortedList[to]==element) to++;
+	  		return to;
+	  	}
+	  	
+	  	// element not found
+	  	int insertionPoint = -index-1;
+	  	if (insertionPoint == 0 || insertionPoint==sortedList.length) return insertionPoint;
+
+	  	double from = sortedList[insertionPoint-1];
+	  	double to = sortedList[insertionPoint];
+	  	double delta = (element-from) / (to-from); //linear interpolation
+	  	return insertionPoint + delta;
+	  }
+*/
+	  /**
+	   * Returns the sample weighted variance of a data sequence.
+	   * That is &lt;tt&gt;(sumOfSquaredProducts  -  sumOfProducts * sumOfProducts / sumOfWeights) / (sumOfWeights - 1)&lt;/tt&gt;.
+	   *
+	   * @param sumOfWeights &lt;tt&gt;== Sum( weights[i] )&lt;/tt&gt;. 
+	   * @param sumOfProducts &lt;tt&gt;== Sum( data[i] * weights[i] )&lt;/tt&gt;.
+	   * @param sumOfSquaredProducts &lt;tt&gt;== Sum( data[i] * data[i] * weights[i] )&lt;/tt&gt;.
+	   */
+/*
+	  public static double sampleWeightedVariance(double[] data, double[] weights) {
+		  double sumOfWeights=0;
+		  double sumOfProducts=0;
+		  double sumOfSquaredProducts=0;
+		  for(int i=0;i&lt;data.length;i++)
+	  		{
+			  sumOfWeights+=weights[i];
+			  sumOfProducts+=data[i] * weights[i];
+			  sumOfSquaredProducts+=data[i] * data[i] * weights[i];
+	  		}
+		  
+		  return (sumOfSquaredProducts  -  sumOfProducts * sumOfProducts / sumOfWeights) / (sumOfWeights - 1);
+	  }
+*/
+	
+	  /**
+	   * Returns the skew of a data sequence.
+	   * @param moment3 the third central moment, which is &lt;tt&gt;moment(data,3,mean)&lt;/tt&gt;.
+	   * @param standardDeviation the standardDeviation.
+	   */
+	  public static double skew(double[] data) {
+<span class="nc" id="L807">		  double sum=0;</span>
+<span class="nc" id="L808">		  double sumPD=0;</span>
+<span class="nc" id="L809">		  double sumSq=0;</span>
+<span class="nc bnc" id="L810" title="All 2 branches missed.">		  for(int i=0;i&lt;data.length;i++)</span>
+		  {
+<span class="nc" id="L812">			  sum+=data[i];</span>
+<span class="nc" id="L813">			  sumSq+=data[i]*data[i];</span>
+			  
+		  }
+<span class="nc" id="L816">		  double mean = sum / data.length;</span>
+<span class="nc" id="L817">		  double standardDeviation=Math.sqrt((sumSq-mean*sum)/data.length);</span>
+<span class="nc bnc" id="L818" title="All 2 branches missed.">		  for(int i=0;i&lt;data.length;i++)</span>
+		  {
+<span class="nc" id="L820">			  sumPD+=Math.pow((data[i]-mean),3);</span>
+			  
+		  }
+<span class="nc" id="L823">		  double moment3= sumPD / data.length;</span>
+<span class="nc" id="L824">	  	  return moment3 / (standardDeviation * standardDeviation * standardDeviation);</span>
+	  }
+	  
+	  /**
+	   * Modifies a data sequence to be standardized.
+	   * Changes each element &lt;tt&gt;data[i]&lt;/tt&gt; as follows: &lt;tt&gt;data[i] = (data[i]-mean)/standardDeviation&lt;/tt&gt;.
+	   */
+	  public static double[] standardize(double[] data) {
+	  	//double[] elements = data.elements();
+<span class="nc" id="L833">		  double sum=0;</span>
+<span class="nc" id="L834">		  double sumSq=0;</span>
+<span class="nc bnc" id="L835" title="All 2 branches missed.">		  for(int i=0;i&lt;data.length;i++)</span>
+		  {
+<span class="nc" id="L837">			  sum+=data[i];</span>
+<span class="nc" id="L838">			  sumSq+=data[i]*data[i];</span>
+			  
+		  }
+<span class="nc" id="L841">		  double mean = sum / data.length;</span>
+<span class="nc" id="L842">		  double sd=Math.sqrt((sumSq-mean*sum)/data.length);</span>
+<span class="nc bnc" id="L843" title="All 2 branches missed.">	  	for (int i=0; i&lt; data.length;i++) data[i] = (data[i]-mean)/sd;</span>
+<span class="nc" id="L844">	  	return data;</span>
+	  }
+	  
+	  /**
+	   * Returns the weighted RMS (Root-Mean-Square) of a data sequence.
+	   * That is &lt;tt&gt;Sum( data[i] * data[i] * weights[i]) / Sum( data[i] * weights[i] )&lt;/tt&gt;,
+	   * or in other words &lt;tt&gt;sumOfProducts / sumOfSquaredProducts&lt;/tt&gt;.
+	   *
+	   * @param sumOfProducts &lt;tt&gt;== Sum( data[i] * weights[i] )&lt;/tt&gt;.
+	   * @param sumOfSquaredProducts &lt;tt&gt;== Sum( data[i] * data[i] * weights[i] )&lt;/tt&gt;.
+	   */
+	  public static double weightedRMS(double[] data, double[] weights) {
+<span class="nc" id="L856">		  double sumOfProducts=0;</span>
+<span class="nc" id="L857">		  double sumOfSquaredProducts=0;</span>
+<span class="nc bnc" id="L858" title="All 2 branches missed.">		  for(int i=0;i&lt;data.length;i++)</span>
+		  {
+<span class="nc" id="L860">			  sumOfProducts+=data[i]*weights[i];</span>
+<span class="nc" id="L861">			  sumOfSquaredProducts=data[i]*data[i]*weights[i];</span>
+		  }
+			  
+<span class="nc" id="L864">		  	return sumOfProducts / sumOfSquaredProducts;</span>
+	}
+	  /*
+	  * Returns the harmonic mean of a data sequence.
+	  *
+	  * @param size the number of elements in the data sequence.
+	  * @param sumOfInversions &lt;tt&gt;Sum( 1.0 / data[i])&lt;/tt&gt;.
+	  */
+	 public static double harmonicMean(double[] data) {
+<span class="nc" id="L873">		 double sumOfInversions=0;</span>
+<span class="nc bnc" id="L874" title="All 2 branches missed.">		 for(int i=0;i&lt;data.length;i++)</span>
+		 {
+<span class="nc" id="L876">			 sumOfInversions+=1/data[i];</span>
+		 }
+		 
+<span class="nc" id="L879">	 	return data.length / sumOfInversions;</span>
+	 }
+	 
+	 public static double sumOfPowerOfDeviations(double[] data,int k,double c)
+	 {
+<span class="nc" id="L884">		 double sum=0;</span>
+<span class="nc bnc" id="L885" title="All 2 branches missed.">		 for(int i=0;i&lt;data.length;i++)</span>
+		 {
+<span class="nc" id="L887">			 sum+=Math.pow(data[i]-c,k);</span>
+		 }
+<span class="nc" id="L889">		 return sum;</span>
+	 }
+	 public static double[] power(double[] data,int k)
+	 {
+<span class="nc bnc" id="L893" title="All 2 branches missed.">		 for(int i=0;i&lt;data.length;i++)</span>
+		 {
+<span class="nc" id="L895">			 data[i]=Math.pow(data[i],k);</span>
+		 }
+<span class="nc" id="L897">		 return data;</span>
+	 }
+	 public static double[] square(double[] data)
+	 {
+<span class="nc bnc" id="L901" title="All 2 branches missed.">		 for(int i=0;i&lt;data.length;i++)</span>
+		 {
+<span class="nc" id="L903">			 data[i]=data[i]*data[i];</span>
+		 }
+<span class="nc" id="L905">		 return data;</span>
+	 }
+	 
+	
+	public static void main(String[] args)
+	{
+<span class="nc" id="L911">		double[] d={12,13,25,11,10};</span>
+<span class="nc" id="L912">		System.out.println(durbinWatson(d));</span>
+		
+<span class="nc" id="L914">		double[] d1={25,11,12,13,10};</span>
+<span class="nc" id="L915">		System.out.println(durbinWatson(d1));</span>
+
+		/*
+		//for (MRChecker.MR mr : MRChecker.MR.values())
+		//{
+			 //System.out.println(&quot;Checking MR:&quot;+mr);
+			 //System.out.println(&quot;-------------------&quot;);
+			 int cntEq=0;
+			 int cntGt=0;
+			 int cntLt=0;
+			 int probs=0;
+			 for(int j=0;j&lt;100;j++)
+			 {
+				Random randSize=new Random();
+				int size=randSize.nextInt(99)+3;
+				//double[] d=(double[])MRChecker.createArrayInput(Double.TYPE, size);
+				//Arrays.sort(d);
+				double k=randSize.nextDouble()*1000;
+				long l=randSize.nextLong();
+				//double mean=StatUtils.mean(d);
+				//double sd=Math.sqrt(StatUtils.variance(d));
+				//Random rand=new Random();
+				//int randomNum1 = rand.nextInt(d.length/2);
+				//int randomNum2 = rand.nextInt(d.length/2);
+				double r1=link(k);
+				//System.out.println(&quot;Init:&quot;+k);
+				double f=(Double)MRChecker.createFollowupInput(k,MRChecker.MR.inv);
+				//System.out.println(&quot;Follow:&quot;+f);
+				//double[] df=(double[])MRChecker.createFollowupInput(d,MR.add);
+				//Arrays.sort(df);
+				//double mean2=StatUtils.mean(df);
+				//double sd2=Math.sqrt(StatUtils.variance(df));
+				double r2=link(f);
+				int r=MRChecker.checkResult(r1, r2);
+				
+				if(r==0)
+					 cntEq++;
+				 if(r==1)
+					 cntGt++;
+				 if(r==-1)
+					 cntLt++;
+				 if(r==-2 || r==-3)
+					 probs++;
+			 }
+			 System.out.println(&quot;Num equal=&quot;+cntEq);
+			 System.out.println(&quot;Num gt=&quot;+cntGt);
+			 System.out.println(&quot;Num lt=&quot;+cntLt);
+			 System.out.println(&quot;Num probs=&quot;+probs);
+			 System.out.println(&quot;&quot;);
+		//}
+		*/		
+		
+<span class="nc" id="L967">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201511160932</span></div></body></html>

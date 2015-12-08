@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MethodsFromApacheMath.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jacoco_ant</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">MethodsFromApacheMath.java</span></div><h1>MethodsFromApacheMath.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">public class MethodsFromApacheMath {</span>
+	 
+    /**
+     * Calculates the L&lt;sub&gt;2&lt;/sub&gt; (Euclidean) distance between two points.
+     *
+     * @param p1 the first point
+     * @param p2 the second point
+     * @return the L&lt;sub&gt;2&lt;/sub&gt; distance between the two points
+     */
+/*
+    public static double distance(double[] p1, double[] p2) {
+        double sum = 0;
+        for (int i = 0; i &lt; p1.length; i++) {
+            final double dp = p1[i] - p2[i];
+            sum += dp * dp;
+        }
+        return Math.sqrt(sum);
+    }
+*/
+    
+    /**
+     * Calculates the L&lt;sub&gt;1&lt;/sub&gt; (sum of abs) distance between two points.
+     *
+     * @param p1 the first point
+     * @param p2 the second point
+     * @return the L&lt;sub&gt;1&lt;/sub&gt; distance between the two points
+     */
+    public static double distance1(double[] p1, double[] p2) {
+<span class="nc" id="L29">        double sum = 0;</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        for (int i = 0; i &lt; p1.length; i++) {</span>
+<span class="nc" id="L31">            sum += Math.abs(p1[i] - p2[i]);</span>
+        }
+<span class="nc" id="L33">        return sum;</span>
+    }
+    /**
+     * Calculates the L&lt;sub&gt;&amp;infin;&lt;/sub&gt; (max of abs) distance between two points.
+     *
+     * @param p1 the first point
+     * @param p2 the second point
+     * @return the L&lt;sub&gt;&amp;infin;&lt;/sub&gt; distance between the two points
+     */
+    public static double distanceInf(double[] p1, double[] p2) {
+<span class="nc" id="L43">        double max = 0;</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        for (int i = 0; i &lt; p1.length; i++) {</span>
+<span class="nc" id="L45">            max = Math.max(max, Math.abs(p1[i] - p2[i]));</span>
+        }
+<span class="nc" id="L47">        return max;</span>
+    }
+    /**
+     * Creates an array whose contents will be the element-by-element
+     * addition of the arguments.
+     *
+     * @param a First term of the addition.
+     * @param b Second term of the addition.
+     * @return a new array {@code r} where {@code r[i] = a[i] + b[i]}.
+     * @throws DimensionMismatchException if the array lengths differ.
+     * @since 3.1
+     */
+    public static double[] ebeAdd(double[] a, double[] b) {
+<span class="nc bnc" id="L60" title="All 2 branches missed.">        if (a.length != b.length) {</span>
+<span class="nc" id="L61">            return null;</span>
+        }
+
+<span class="nc" id="L64">        final double[] result = a.clone();</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="nc" id="L66">            result[i] += b[i];</span>
+        }
+<span class="nc" id="L68">        return result;</span>
+    }
+    
+    /**
+     * Creates an array whose contents will be the element-by-element
+     * division of the first argument by the second.
+     *
+     * @param a Numerator of the division.
+     * @param b Denominator of the division.
+     * @return a new array {@code r} where {@code r[i] = a[i] / b[i]}.
+     * @throws DimensionMismatchException if the array lengths differ.
+     * @since 3.1
+     */
+    public static double[] ebeDivide(double[] a, double[] b) {
+<span class="nc bnc" id="L82" title="All 2 branches missed.">        if (a.length != b.length) {</span>
+<span class="nc" id="L83">            return null;</span>
+        }
+
+<span class="nc" id="L86">        final double[] result = a.clone();</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="nc" id="L88">            result[i] /= b[i];</span>
+        }
+<span class="nc" id="L90">        return result;</span>
+    }
+    /**
+     * Creates an array whose contents will be the element-by-element
+     * multiplication of the arguments.
+     *
+     * @param a First factor of the multiplication.
+     * @param b Second factor of the multiplication.
+     * @return a new array {@code r} where {@code r[i] = a[i] * b[i]}.
+     * @throws DimensionMismatchException if the array lengths differ.
+     * @since 3.1
+     */
+    public static double[] ebeMultiply(double[] a, double[] b) {
+<span class="nc bnc" id="L103" title="All 2 branches missed.">        if (a.length != b.length) {</span>
+<span class="nc" id="L104">            return null;</span>
+        }
+
+<span class="nc" id="L107">        final double[] result = a.clone();</span>
+<span class="nc bnc" id="L108" title="All 2 branches missed.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="nc" id="L109">            result[i] *= b[i];</span>
+        }
+<span class="nc" id="L111">        return result;</span>
+    }
+    /**
+     * Creates an array whose contents will be the element-by-element
+     * subtraction of the second argument from the first.
+     *
+     * @param a First term.
+     * @param b Element to be subtracted.
+     * @return a new array {@code r} where {@code r[i] = a[i] - b[i]}.
+     * @throws DimensionMismatchException if the array lengths differ.
+     * @since 3.1
+     */
+/*
+    public static double[] ebeSubtract(double[] a, double[] b)
+        {
+        if (a.length != b.length) {
+            return null;
+        }
+
+        final double[] result = a.clone();
+        for (int i = 0; i &lt; a.length; i++) {
+            result[i] -= b[i];
+        }
+        return result;
+    }
+*/
+    
+    public static double safeNorm(double[] v) {
+<span class="nc" id="L139">        double rdwarf = 3.834e-20;</span>
+<span class="nc" id="L140">        double rgiant = 1.304e+19;</span>
+<span class="nc" id="L141">        double s1 = 0;</span>
+<span class="nc" id="L142">        double s2 = 0;</span>
+<span class="nc" id="L143">        double s3 = 0;</span>
+<span class="nc" id="L144">        double x1max = 0;</span>
+<span class="nc" id="L145">        double x3max = 0;</span>
+<span class="nc" id="L146">        double floatn = v.length;</span>
+<span class="nc" id="L147">        double agiant = rgiant / floatn;</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">        for (int i = 0; i &lt; v.length; i++) {</span>
+<span class="nc" id="L149">            double xabs = Math.abs(v[i]);</span>
+<span class="nc bnc" id="L150" title="All 4 branches missed.">            if (xabs &lt; rdwarf || xabs &gt; agiant) {</span>
+<span class="nc bnc" id="L151" title="All 2 branches missed.">                if (xabs &gt; rdwarf) {</span>
+<span class="nc bnc" id="L152" title="All 2 branches missed.">                    if (xabs &gt; x1max) {</span>
+<span class="nc" id="L153">                        double r = x1max / xabs;</span>
+<span class="nc" id="L154">                        s1= 1 + s1 * r * r;</span>
+<span class="nc" id="L155">                        x1max = xabs;</span>
+<span class="nc" id="L156">                    } else {</span>
+<span class="nc" id="L157">                        double r = xabs / x1max;</span>
+<span class="nc" id="L158">                        s1 += r * r;</span>
+<span class="nc" id="L159">                    }</span>
+                } else {
+<span class="nc bnc" id="L161" title="All 2 branches missed.">                    if (xabs &gt; x3max) {</span>
+<span class="nc" id="L162">                        double r = x3max / xabs;</span>
+<span class="nc" id="L163">                        s3= 1 + s3 * r * r;</span>
+<span class="nc" id="L164">                        x3max = xabs;</span>
+<span class="nc" id="L165">                    } else {</span>
+<span class="nc bnc" id="L166" title="All 2 branches missed.">                        if (xabs != 0) {</span>
+<span class="nc" id="L167">                            double r = xabs / x3max;</span>
+<span class="nc" id="L168">                            s3 += r * r;</span>
+<span class="nc" id="L169">                        }</span>
+                    }
+                }
+            } else {
+<span class="nc" id="L173">                s2 += xabs * xabs;</span>
+            }
+        }
+        double norm;
+<span class="nc bnc" id="L177" title="All 2 branches missed.">        if (s1 != 0) {</span>
+<span class="nc" id="L178">            norm = x1max * Math.sqrt(s1 + (s2 / x1max) / x1max);</span>
+        } else {
+<span class="nc bnc" id="L180" title="All 2 branches missed.">            if (s2 == 0) {</span>
+<span class="nc" id="L181">                norm = x3max * Math.sqrt(s3);</span>
+            } else {
+<span class="nc bnc" id="L183" title="All 2 branches missed.">                if (s2 &gt;= x3max) {</span>
+<span class="nc" id="L184">                    norm = Math.sqrt(s2 * (1 + (x3max / s2) * (x3max * s3)));</span>
+                } else {
+<span class="nc" id="L186">                    norm = Math.sqrt(x3max * ((s2 / x3max) + (x3max * s3)));</span>
+                }
+            }
+        }
+<span class="nc" id="L190">        return norm;</span>
+    }
+    /**
+     * Create a copy of an array scaled by a value.
+     *
+     * @param arr Array to scale.
+     * @param val Scalar.
+     * @return scaled copy of array with each entry multiplied by val.
+     * @since 3.2
+     */
+    public static double[] scale(double val, final double[] arr) {
+<span class="nc" id="L201">        double[] newArr = new double[arr.length];</span>
+<span class="nc bnc" id="L202" title="All 2 branches missed.">        for (int i = 0; i &lt; arr.length; i++) {</span>
+<span class="nc" id="L203">            newArr[i] = arr[i] * val;</span>
+        }
+<span class="nc" id="L205">        return newArr;</span>
+    }
+    
+    
+    /**
+     * Calculates the &lt;a href=
+     * &quot;http://en.wikipedia.org/wiki/Entropy_%28information_theory%29&quot;&gt;Shannon
+     * entropy&lt;/a&gt; for 2 Dimensional Matrix.  The value returned is the entropy
+     * of the vector formed by concatenating the rows (or columns) of {@code k}
+     * to form a vector. See {@link #entropy(long[])}.
+     *
+     * @param k 2 Dimensional Matrix of long values (for ex. the counts of a
+     * trials)
+     * @return Shannon Entropy of the given Matrix
+     *
+     */
+    /*
+    private static double entropy(final long[][] k) {
+        double h = 0d;
+        double sum_k = 0d;
+        for (int i = 0; i &lt; k.length; i++) {
+            for (int j = 0; j &lt; k[i].length; j++) {
+                sum_k += (double) k[i][j];
+            }
+        }
+        for (int i = 0; i &lt; k.length; i++) {
+            for (int j = 0; j &lt; k[i].length; j++) {
+                if (k[i][j] != 0) {
+                    final double p_ij = (double) k[i][j] / sum_k;
+                    h += p_ij * Math.log(p_ij);
+                }
+            }
+        }
+        return -h;
+    }*/
+    /**
+     * Calculates the &lt;a href=&quot;http://en.wikipedia.org/wiki/Entropy_%28information_theory%29&quot;&gt;
+     * Shannon entropy&lt;/a&gt; for a vector.  The values of {@code k} are taken to be
+     * incidence counts of the values of a random variable. What is returned is &lt;br/&gt;
+     * &amp;sum;p&lt;sub&gt;i&lt;/sub&gt;log(p&lt;sub&gt;i&lt;/sub&gt;&lt;br/&gt;
+     * where p&lt;sub&gt;i&lt;/sub&gt; = k[i] / (sum of elements in k)
+     *
+     * @param k Vector (for ex. Row Sums of a trials)
+     * @return Shannon Entropy of the given Vector
+     *
+     */
+    public static double entropy(final double[] k) {
+<span class="nc" id="L252">        double h = 0d;</span>
+<span class="nc" id="L253">        double sum_k = 0d;</span>
+<span class="nc bnc" id="L254" title="All 2 branches missed.">        for (int i = 0; i &lt; k.length; i++) {</span>
+<span class="nc" id="L255">            sum_k += (double) k[i];</span>
+        }
+<span class="nc bnc" id="L257" title="All 2 branches missed.">        for (int i = 0; i &lt; k.length; i++) {</span>
+<span class="nc bnc" id="L258" title="All 2 branches missed.">            if (k[i] != 0) {</span>
+<span class="nc" id="L259">                final double p_i = (double) k[i] / sum_k;</span>
+<span class="nc" id="L260">                h += p_i * Math.log(p_i);</span>
+            }
+        }
+<span class="nc" id="L263">        return -h;</span>
+    }
+    /**
+     * Computes the &lt;a href=&quot;http://en.wikipedia.org/wiki/G-test&quot;&gt;G statistic
+     * for Goodness of Fit&lt;/a&gt; comparing {@code observed} and {@code expected}
+     * frequency counts.
+     *
+     * &lt;p&gt;This statistic can be used to perform a G test (Log-Likelihood Ratio
+     * Test) evaluating the null hypothesis that the observed counts follow the
+     * expected distribution.&lt;/p&gt;
+     *
+     * &lt;p&gt;&lt;strong&gt;Preconditions&lt;/strong&gt;: &lt;ul&gt;
+     * &lt;li&gt;Expected counts must all be positive. &lt;/li&gt;
+     * &lt;li&gt;Observed counts must all be &amp;ge; 0. &lt;/li&gt;
+     * &lt;li&gt;The observed and expected arrays must have the same length and their
+     * common length must be at least 2. &lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;
+     *
+     * &lt;p&gt;If any of the preconditions are not met, a
+     * {@code MathIllegalArgumentException} is thrown.&lt;/p&gt;
+     *
+     * &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;This implementation rescales the
+     * {@code expected} array if necessary to ensure that the sum of the
+     * expected and observed counts are equal.&lt;/p&gt;
+     *
+     * @param observed array of observed frequency counts
+     * @param expected array of expected frequency counts
+     * @return G-Test statistic
+     * @throws NotPositiveException if {@code observed} has negative entries
+     * @throws NotStrictlyPositiveException if {@code expected} has entries that
+     * are not strictly positive
+     * @throws DimensionMismatchException if the array lengths do not match or
+     * are less than 2.
+     */
+    public static double g(final double[] expected, final double[] observed){
+            //throws NotPositiveException, NotStrictlyPositiveException,
+           // DimensionMismatchException {
+
+        /*if (expected.length &lt; 2) {
+            throw new DimensionMismatchException(expected.length, 2);
+        }
+        if (expected.length != observed.length) {
+            throw new DimensionMismatchException(expected.length, observed.length);
+        }
+        MathArrays.checkPositive(expected);
+        MathArrays.checkNonNegative(observed);*/
+
+<span class="nc" id="L309">        double sumExpected = 0d;</span>
+<span class="nc" id="L310">        double sumObserved = 0d;</span>
+<span class="nc bnc" id="L311" title="All 2 branches missed.">        for (int i = 0; i &lt; observed.length; i++) {</span>
+<span class="nc" id="L312">            sumExpected += expected[i];</span>
+<span class="nc" id="L313">            sumObserved += observed[i];</span>
+        }
+<span class="nc" id="L315">        double ratio = 1d;</span>
+<span class="nc" id="L316">        boolean rescale = false;</span>
+<span class="nc bnc" id="L317" title="All 2 branches missed.">        if (Math.abs(sumExpected - sumObserved) &gt; 10E-6) {</span>
+<span class="nc" id="L318">            ratio = sumObserved / sumExpected;</span>
+<span class="nc" id="L319">            rescale = true;</span>
+        }
+<span class="nc" id="L321">        double sum = 0d;</span>
+<span class="nc bnc" id="L322" title="All 2 branches missed.">        for (int i = 0; i &lt; observed.length; i++) {</span>
+<span class="nc bnc" id="L323" title="All 2 branches missed.">            final double dev = rescale ?</span>
+<span class="nc" id="L324">                    Math.log((double) observed[i] / (ratio * expected[i])) :</span>
+<span class="nc" id="L325">                        Math.log((double) observed[i] / expected[i]);</span>
+<span class="nc" id="L326">            sum += ((double) observed[i]) * dev;</span>
+        }
+<span class="nc" id="L328">        return 2d * sum;</span>
+    }
+    /**
+     * Calculates |z[i]| for all i
+     *
+     * @param z sample
+     * @return |z|
+     * @throws NullArgumentException if {@code z} is {@code null}
+     * @throws NoDataException if {@code z} is zero-length.
+     */
+    public static double[] calculateAbsoluteDifferences(double[] z){
+       // throws NullArgumentException, NoDataException {
+
+<span class="nc bnc" id="L341" title="All 2 branches missed.">        if (z == null) {</span>
+<span class="nc" id="L342">            return null;</span>
+        }
+
+<span class="nc bnc" id="L345" title="All 2 branches missed.">        if (z.length == 0) {</span>
+<span class="nc" id="L346">        	return null;</span>
+        }
+
+<span class="nc" id="L349">        final double[] zAbs = new double[z.length];</span>
+
+<span class="nc bnc" id="L351" title="All 2 branches missed.">        for (int i = 0; i &lt; z.length; ++i) {</span>
+<span class="nc" id="L352">            zAbs[i] = Math.abs(z[i]);</span>
+        }
+
+<span class="nc" id="L355">        return zAbs;</span>
+    }
+    /**
+     * Calculates y[i] - x[i] for all i
+     *
+     * @param x first sample
+     * @param y second sample
+     * @return z = y - x
+     */
+/*
+    public static double[] calculateDifferences(final double[] x, final double[] y) {
+
+        final double[] z = new double[x.length];
+
+        for (int i = 0; i &lt; x.length; ++i) {
+            z[i] = y[i] - x[i];
+        }
+
+        return z;
+    }
+*/
+    
+
+    /**
+     * Return a copy of the divided difference array.
+     * &lt;p&gt;
+     * The divided difference array is defined recursively by &lt;pre&gt;
+     * f[x0] = f(x0)
+     * f[x0,x1,...,xk] = (f[x1,...,xk] - f[x0,...,x[k-1]]) / (xk - x0)
+     * &lt;/pre&gt;&lt;/p&gt;
+     * &lt;p&gt;
+     * The computational complexity is O(N^2).&lt;/p&gt;
+     *
+     * @param x Interpolating points array.
+     * @param y Interpolating values array.
+     * @return a fresh copy of the divided difference array.
+     * @throws DimensionMismatchException if the array lengths are different.
+     * @throws NumberIsTooSmallException if the number of points is less than 2.
+     * @throws NonMonotonicSequenceException
+     * if {@code x} is not sorted in strictly increasing order.
+     */
+/*
+    public static double[] computeDividedDifference(final double x[], final double y[]){
+        //throws DimensionMismatchException,
+        //       NumberIsTooSmallException,
+         //      NonMonotonicSequenceException {
+        //PolynomialFunctionLagrangeForm.verifyInterpolationArray(x, y, true);
+
+        final double[] divdiff = y.clone(); // initialization
+
+        final int n = x.length;
+        final double[] a = new double [n];
+        a[0] = divdiff[0];
+        for (int i = 1; i &lt; n; i++) {
+            for (int j = 0; j &lt; n-i; j++) {
+                final double denominator = x[j+i] - x[j];
+                divdiff[j] = (divdiff[j+1] - divdiff[j]) / denominator;
+            }
+            a[i] = divdiff[0];
+        }
+
+        return a;
+    }
+*/
+    /** {@inheritDoc} */
+    public static double computeCanberraDistance(double[] a, double[] b) {
+<span class="nc" id="L421">        double sum = 0;</span>
+<span class="nc bnc" id="L422" title="All 2 branches missed.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="nc" id="L423">            final double num = Math.abs(a[i] - b[i]);</span>
+<span class="nc" id="L424">            final double denom = Math.abs(a[i]) + Math.abs(b[i]);</span>
+<span class="nc bnc" id="L425" title="All 4 branches missed.">            sum += num == 0.0 &amp;&amp; denom == 0.0 ? 0.0 : num / denom;</span>
+        }
+<span class="nc" id="L427">        return sum;</span>
+    }
+    /**
+     * Uses Horner's Method to evaluate the polynomial with the given coefficients at
+     * the argument.
+     *
+     * @param coefficients Coefficients of the polynomial to evaluate.
+     * @param argument Input value.
+     * @return the value of the polynomial.
+     * @throws NoDataException if {@code coefficients} is empty.
+     * @throws NullArgumentException if {@code coefficients} is {@code null}.
+     */
+    public static double evaluateHoners(double[] coefficients, double argument){
+        //throws NullArgumentException, NoDataException {
+       // MathUtils.checkNotNull(coefficients);
+<span class="nc" id="L442">        int n = coefficients.length;</span>
+<span class="nc" id="L443">        double result = coefficients[n - 1];</span>
+<span class="nc bnc" id="L444" title="All 2 branches missed.">        for (int j = n - 2; j &gt;= 0; j--) {</span>
+<span class="nc" id="L445">            result = argument * result + coefficients[j];</span>
+        }
+<span class="nc" id="L447">        return result;</span>
+    }
+    /**
+     * Evaluate the Lagrange polynomial using
+     * &lt;a href=&quot;http://mathworld.wolfram.com/NevillesAlgorithm.html&quot;&gt;
+     * Neville's Algorithm&lt;/a&gt;. It takes O(n^2) time.
+     *
+     * @param x Interpolating points array.
+     * @param y Interpolating values array.
+     * @param z Point at which the function value is to be computed.
+     * @return the function value.
+     * @throws DimensionMismatchException if {@code x} and {@code y} have
+     * different lengths.
+     * @throws org.apache.commons.math3.exception.NonMonotonicSequenceException
+     * if {@code x} is not sorted in strictly increasing order.
+     * @throws NumberIsTooSmallException if the size of {@code x} is less
+     * than 2.
+     */
+    public static double evaluateInternal(double x[], double y[], double z) {
+<span class="nc" id="L466">        int nearest = 0;</span>
+<span class="nc" id="L467">        final int n = x.length;</span>
+<span class="nc" id="L468">        final double[] c = new double[n];</span>
+<span class="nc" id="L469">        final double[] d = new double[n];</span>
+<span class="nc" id="L470">        double min_dist = Double.POSITIVE_INFINITY;</span>
+<span class="nc bnc" id="L471" title="All 2 branches missed.">        for (int i = 0; i &lt; n; i++) {</span>
+            // initialize the difference arrays
+<span class="nc" id="L473">            c[i] = y[i];</span>
+<span class="nc" id="L474">            d[i] = y[i];</span>
+            // find out the abscissa closest to z
+<span class="nc" id="L476">            final double dist = Math.abs(z - x[i]);</span>
+<span class="nc bnc" id="L477" title="All 2 branches missed.">            if (dist &lt; min_dist) {</span>
+<span class="nc" id="L478">                nearest = i;</span>
+<span class="nc" id="L479">                min_dist = dist;</span>
+            }
+        }
+
+        // initial approximation to the function value at z
+<span class="nc" id="L484">        double value = y[nearest];</span>
+
+<span class="nc bnc" id="L486" title="All 2 branches missed.">        for (int i = 1; i &lt; n; i++) {</span>
+<span class="nc bnc" id="L487" title="All 2 branches missed.">            for (int j = 0; j &lt; n-i; j++) {</span>
+<span class="nc" id="L488">                final double tc = x[j] - z;</span>
+<span class="nc" id="L489">                final double td = x[i+j] - z;</span>
+<span class="nc" id="L490">                final double divider = x[j] - x[i+j];</span>
+                // update the difference arrays
+<span class="nc" id="L492">                final double w = (c[j+1] - d[j]) / divider;</span>
+<span class="nc" id="L493">                c[j] = tc * w;</span>
+<span class="nc" id="L494">                d[j] = td * w;</span>
+            }
+            // sum up the difference terms to get the final value
+<span class="nc bnc" id="L497" title="All 2 branches missed.">            if (nearest &lt; 0.5*(n-i+1)) {</span>
+<span class="nc" id="L498">                value += c[nearest];    // fork down</span>
+            } else {
+<span class="nc" id="L500">                nearest--;</span>
+<span class="nc" id="L501">                value += d[nearest];    // fork up</span>
+            }
+        }
+
+<span class="nc" id="L505">        return value;</span>
+    }
+    /**
+     * Evaluate the Newton polynomial using nested multiplication. It is
+     * also called &lt;a href=&quot;http://mathworld.wolfram.com/HornersRule.html&quot;&gt;
+     * Horner's Rule&lt;/a&gt; and takes O(N) time.
+     *
+     * @param a Coefficients in Newton form formula.
+     * @param c Centers.
+     * @param z Point at which the function value is to be computed.
+     * @return the function value.
+     * @throws NullArgumentException if any argument is {@code null}.
+     * @throws NoDataException if any array has zero length.
+     * @throws DimensionMismatchException if the size difference between
+     * {@code a} and {@code c} is not equal to 1.
+     */
+    public static double evaluateNewton(double a[], double c[], double z){
+        //throws NullArgumentException, DimensionMismatchException, NoDataException {
+        //verifyInputArray(a, c);
+
+<span class="nc" id="L525">        final int n = c.length-1;</span>
+<span class="nc" id="L526">        double value = a[n];</span>
+<span class="nc bnc" id="L527" title="All 2 branches missed.">        for (int i = n - 1; i &gt;= 0; i--) {</span>
+<span class="nc" id="L528">            value = a[i] + (z - c[i]) * value;</span>
+        }
+
+<span class="nc" id="L531">        return value;</span>
+    }
+   
+  
+   
+   
+   /**
+    * Returns the mean of the (signed) differences between corresponding elements of the
+    * input arrays -- i.e., sum(sample1[i] - sample2[i]) / sample1.length.
+    *
+    * @param sample1  the first array
+    * @param sample2  the second array
+    * @return mean of paired differences
+    * @throws DimensionMismatchException if the arrays do not have the same
+    * (positive) length.
+    * @throws NoDataException if the sample arrays are empty.
+    */
+   public static double meanDifference(final double[] sample1, final double[] sample2){
+   //throws DimensionMismatchException, NoDataException{
+	   
+<span class="nc" id="L551">	   double sumDifference=0;</span>
+<span class="nc bnc" id="L552" title="All 2 branches missed.">	   for(int i=0;i&lt;sample1.length;i++)</span>
+	   {
+<span class="nc" id="L554">		   sumDifference+=sample1[i]-sample2[i];</span>
+	   }
+<span class="nc" id="L556">       return sumDifference / sample1.length;</span>
+   }
+   /**
+    * Returns the variance of the (signed) differences between corresponding elements of the
+    * input arrays -- i.e., var(sample1[i] - sample2[i]).
+    *
+    * @param sample1  the first array
+    * @param sample2  the second array
+    * @param meanDifference   the mean difference between corresponding entries
+    * @see #meanDifference(double[],double[])
+    * @return variance of paired differences
+    * @throws DimensionMismatchException if the arrays do not have the same
+    * length.
+    * @throws NumberIsTooSmallException if the arrays length is less than 2.
+    */
+/*
+   public static double varianceDifference(final double[] sample1,
+           final double[] sample2){ 
+        		   //throws DimensionMismatchException,NumberIsTooSmallException {
+       double sum1 = 0d;
+       double sum2 = 0d;
+       double diff = 0d;
+       int n = sample1.length;
+       /*
+       if (n != sample2.length) {
+           throw new DimensionMismatchException(n, sample2.length);
+       }
+       if (n &lt; 2) {
+           throw new NumberIsTooSmallException(n, 2, true);
+       }*/
+/*
+       double sumDifference=0;
+	   for(int i=0;i&lt;n;i++)
+	   {
+		   sumDifference+=sample1[i]-sample2[i];
+	   }
+	   double meanDifference=sumDifference / n;
+       for (int i = 0; i &lt; n; i++) {
+           diff = sample1[i] - sample2[i];
+           sum1 += (diff - meanDifference) *(diff - meanDifference);
+           sum2 += diff - meanDifference;
+       }
+       return (sum1 - (sum2 * sum2 / n)) / (n - 1);
+   }
+*/
+   /**
+    * Returns {@code true} iff both arguments are {@code null} or have same
+    * dimensions and all their elements are equal as defined by
+    * {@link Precision#equals(double,double)}.
+    *
+    * @param x First array.
+    * @param y Second array.
+    * @return {@code true} if the values are both {@code null} or have same
+    * dimension and equal elements.
+    */
+/*
+   public static boolean equals(double[] x, double[] y) {
+       if ((x == null) || (y == null)) {
+           return !((x == null) ^ (y == null));
+       }
+       if (x.length != y.length) {
+           return false;
+       }
+       for (int i = 0; i &lt; x.length; ++i) {
+           if (Math.abs(y[i] - x[i])&gt; 0.0001) {
+               return false;
+           }
+       }
+       return true;
+   }
+*/
+   /**
+    * Check that all entries of the input array are &gt;= 0.
+    *
+    * @param in Array to be tested
+    * @throws NotPositiveException if any array entries are less than 0.
+    * @since 3.1
+    */
+/*
+   public static boolean checkNonNegative(final double[] in){
+       for (int i = 0; i &lt; in.length; i++) {
+           if (in[i] &lt; 0) {
+               return false;
+           }
+       }
+   	return true;
+   }
+*/
+   /**
+    * Check that all entries of the input array are strictly positive.
+    *
+    * @param in Array to be tested
+    * @throws NotStrictlyPositiveException if any entries of the array are not
+    * strictly positive.
+    * @since 3.1
+    */
+/*
+   public static boolean checkPositive(final double[] in){
+       for (int i = 0; i &lt; in.length; i++) {
+           if (in[i] &lt;= 0) {
+               return false;
+           }
+       }
+       return true;
+   }
+*/
+   /**
+    * Computes the &lt;a href=&quot;http://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm&quot;&gt;
+    * Chi-Square statistic&lt;/a&gt; comparing &lt;code&gt;observed&lt;/code&gt; and &lt;code&gt;expected&lt;/code&gt;
+    * frequency counts.
+    * &lt;p&gt;
+    * This statistic can be used to perform a Chi-Square test evaluating the null
+    * hypothesis that the observed counts follow the expected distribution.&lt;/p&gt;
+    * &lt;p&gt;
+    * &lt;strong&gt;Preconditions&lt;/strong&gt;: &lt;ul&gt;
+    * &lt;li&gt;Expected counts must all be positive.
+    * &lt;/li&gt;
+    * &lt;li&gt;Observed counts must all be &amp;ge; 0.
+    * &lt;/li&gt;
+    * &lt;li&gt;The observed and expected arrays must have the same length and
+    * their common length must be at least 2.
+    * &lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;&lt;p&gt;
+    * If any of the preconditions are not met, an
+    * &lt;code&gt;IllegalArgumentException&lt;/code&gt; is thrown.&lt;/p&gt;
+    * &lt;p&gt;&lt;strong&gt;Note: &lt;/strong&gt;This implementation rescales the
+    * &lt;code&gt;expected&lt;/code&gt; array if necessary to ensure that the sum of the
+    * expected and observed counts are equal.&lt;/p&gt;
+    *
+    * @param observed array of observed frequency counts
+    * @param expected array of expected frequency counts
+    * @return chiSquare test statistic
+    * @throws NotPositiveException if &lt;code&gt;observed&lt;/code&gt; has negative entries
+    * @throws NotStrictlyPositiveException if &lt;code&gt;expected&lt;/code&gt; has entries that are
+    * not strictly positive
+    * @throws DimensionMismatchException if the arrays length is less than 2
+    */
+   public static double chiSquare(double[] expected, double[] observed){
+      // throws NotPositiveException, NotStrictlyPositiveException,
+      // DimensionMismatchException 
+
+       /*if (expected.length &lt; 2) {
+           throw new DimensionMismatchException(expected.length, 2);
+       }
+       if (expected.length != observed.length) {
+           throw new DimensionMismatchException(expected.length, observed.length);
+       }
+       MathArrays.checkPositive(expected);
+       MathArrays.checkNonNegative(observed);*/
+
+<span class="nc" id="L705">       double sumExpected = 0d;</span>
+<span class="nc" id="L706">       double sumObserved = 0d;</span>
+<span class="nc bnc" id="L707" title="All 2 branches missed.">       for (int i = 0; i &lt; observed.length; i++) {</span>
+<span class="nc" id="L708">           sumExpected += expected[i];</span>
+<span class="nc" id="L709">           sumObserved += observed[i];</span>
+       }
+<span class="nc" id="L711">       double ratio = 1.0d;</span>
+<span class="nc" id="L712">       boolean rescale = false;</span>
+<span class="nc bnc" id="L713" title="All 2 branches missed.">       if (Math.abs(sumExpected - sumObserved) &gt; 10E-6) {</span>
+<span class="nc" id="L714">           ratio = sumObserved / sumExpected;</span>
+<span class="nc" id="L715">           rescale = true;</span>
+       }
+<span class="nc" id="L717">       double sumSq = 0.0d;</span>
+<span class="nc bnc" id="L718" title="All 2 branches missed.">       for (int i = 0; i &lt; observed.length; i++) {</span>
+<span class="nc bnc" id="L719" title="All 2 branches missed.">           if (rescale) {</span>
+<span class="nc" id="L720">               final double dev = observed[i] - ratio * expected[i];</span>
+<span class="nc" id="L721">               sumSq += dev * dev / (ratio * expected[i]);</span>
+<span class="nc" id="L722">           } else {</span>
+<span class="nc" id="L723">               final double dev = observed[i] - expected[i];</span>
+<span class="nc" id="L724">               sumSq += dev * dev / expected[i];</span>
+           }
+       }
+<span class="nc" id="L727">       return sumSq;</span>
+
+   }
+   /**
+    * Algorithm inspired by
+    * http://www.fon.hum.uva.nl/Service/Statistics/Signed_Rank_Algorihms.html#C
+    * by Rob van Son, Institute of Phonetic Sciences &amp; IFOTT,
+    * University of Amsterdam
+    *
+    * @param Wmax largest Wilcoxon signed rank value
+    * @param N number of subjects (corresponding to x.length)
+    * @return two-sided exact p-value
+    */
+   /*
+   public static double calculateExactPValue(final double Wmax, final int N) {
+
+       // Total number of outcomes (equal to 2^N but a lot faster)
+       final int m = 1 &lt;&lt; N;
+
+       int largerRankSums = 0;
+
+       for (int i = 0; i &lt; m; ++i) {
+           int rankSum = 0;
+
+           // Generate all possible rank sums
+           for (int j = 0; j &lt; N; ++j) {
+
+               // (i &gt;&gt; j) &amp; 1 extract i's j-th bit from the right
+               if (((i &gt;&gt; j) &amp; 1) == 1) {
+                   rankSum += j + 1;
+               }
+           }
+
+           if (rankSum &gt;= Wmax) {
+               ++largerRankSums;
+           }
+       }
+
+       
+       return 2 * ((double) largerRankSums) / ((double) m);
+   }*/
+   /**
+    * &lt;p&gt;Returns the {@link SemiVariance} of the designated values against the cutoff
+    * in the given direction with the provided bias correction.&lt;/p&gt;
+    *
+    * &lt;p&gt;Returns &lt;code&gt;NaN&lt;/code&gt; if the array is empty and throws
+    * &lt;code&gt;IllegalArgumentException&lt;/code&gt; if the array is null.&lt;/p&gt;
+    *
+    * @param values the input array
+    * @param cutoff the reference point
+    * @param direction the {@link Direction} of the semivariance
+    * @param corrected the BiasCorrection flag
+    * @param start index of the first array element to include
+    * @param length the number of elements to include
+    * @return the SemiVariance
+    * @throws MathIllegalArgumentException if the parameters are not valid
+    *
+    */
+/*
+  public static double evaluateSemiVariance(final double[] values, final double cutoff, final boolean direction,
+          final boolean corrected, final int start, final int length){
+	   //throws MathIllegalArgumentException {
+  
+
+      //test(values, start, length);
+      if (values.length == 0) {
+          return Double.NaN;
+      } else {
+          if (values.length == 1) {
+              return 0.0;
+          } else {
+              final boolean booleanDirection = direction;
+
+              double dev = 0.0;
+              double sumsq = 0.0;
+              for (int i = start; i &lt; length; i++) {
+                  if ((values[i] &gt; cutoff) == booleanDirection) {
+                     dev = values[i] - cutoff;
+                     sumsq += dev * dev;
+                  }
+              }
+
+              if (corrected) {
+                  return sumsq / (length - 1.0);
+              } else {
+                  return sumsq / length;
+              }
+          }
+      }
+  }
+*/
+  /**
+   * Partition an array slice around a pivot
+   * &lt;p&gt;
+   * Partitioning exchanges array elements such that all elements
+   * smaller than pivot are before it and all elements larger than
+   * pivot are after it
+   * &lt;/p&gt;
+   * @param work data array
+   * @param begin index of the first element of the slice
+   * @param end index after the last element of the slice
+   * @param pivot initial index of the pivot
+   * @return index of the pivot after partition
+   */
+  public static int partition(final double[] work, final int begin, final int end, final int pivot) {
+
+<span class="nc" id="L833">      final double value = work[pivot];</span>
+<span class="nc" id="L834">      work[pivot] = work[begin];</span>
+
+<span class="nc" id="L836">      int i = begin + 1;</span>
+<span class="nc" id="L837">      int j = end - 1;</span>
+<span class="nc bnc" id="L838" title="All 2 branches missed.">      while (i &lt; j) {</span>
+<span class="nc bnc" id="L839" title="All 4 branches missed.">          while ((i &lt; j) &amp;&amp; (work[j] &gt; value)) {</span>
+<span class="nc" id="L840">              --j;</span>
+          }
+<span class="nc bnc" id="L842" title="All 4 branches missed.">          while ((i &lt; j) &amp;&amp; (work[i] &lt; value)) {</span>
+<span class="nc" id="L843">              ++i;</span>
+          }
+
+<span class="nc bnc" id="L846" title="All 2 branches missed.">          if (i &lt; j) {</span>
+<span class="nc" id="L847">              final double tmp = work[i];</span>
+<span class="nc" id="L848">              work[i++] = work[j];</span>
+<span class="nc" id="L849">              work[j--] = tmp;</span>
+<span class="nc" id="L850">          }</span>
+      }
+
+<span class="nc bnc" id="L853" title="All 4 branches missed.">      if ((i &gt;= end) || (work[i] &gt; value)) {</span>
+<span class="nc" id="L854">          --i;</span>
+      }
+<span class="nc" id="L856">      work[begin] = work[i];</span>
+<span class="nc" id="L857">      work[i]     = value;</span>
+<span class="nc" id="L858">      return i;</span>
+
+  }
+  /**
+   * &lt;p&gt;Returns the weighted product of the entries in the specified portion of
+   * the input array, or &lt;code&gt;Double.NaN&lt;/code&gt; if the designated subarray
+   * is empty.&lt;/p&gt;
+   *
+   * &lt;p&gt;Throws &lt;code&gt;MathIllegalArgumentException&lt;/code&gt; if any of the following are true:
+   * &lt;ul&gt;&lt;li&gt;the values array is null&lt;/li&gt;
+   *     &lt;li&gt;the weights array is null&lt;/li&gt;
+   *     &lt;li&gt;the weights array does not have the same length as the values array&lt;/li&gt;
+   *     &lt;li&gt;the weights array contains one or more infinite values&lt;/li&gt;
+   *     &lt;li&gt;the weights array contains one or more NaN values&lt;/li&gt;
+   *     &lt;li&gt;the weights array contains negative values&lt;/li&gt;
+   *     &lt;li&gt;the start and length arguments do not determine a valid array&lt;/li&gt;
+   * &lt;/ul&gt;&lt;/p&gt;
+   *
+   * &lt;p&gt;Uses the formula, &lt;pre&gt;
+   *    weighted product = &amp;prod;values[i]&lt;sup&gt;weights[i]&lt;/sup&gt;
+   * &lt;/pre&gt;
+   * that is, the weights are applied as exponents when computing the weighted product.&lt;/p&gt;
+   *
+   * @param values the input array
+   * @param weights the weights array
+   * @param begin index of the first array element to include
+   * @param length the number of elements to include
+   * @return the product of the values or 1 if length = 0
+   * @throws MathIllegalArgumentException if the parameters are not valid
+   * @since 2.1
+   */
+  public static double evaluateWeightedProduct(final double[] values, final double[] weights,
+      final int begin, final int length){ 
+   		   //throws MathIllegalArgumentException {
+<span class="nc" id="L892">      double product = Double.NaN;</span>
+      //if (test(values, weights, begin, length, true)) {
+<span class="nc" id="L894">          product = 1.0;</span>
+<span class="nc bnc" id="L895" title="All 2 branches missed.">          for (int i = begin; i &lt; begin + length; i++) {</span>
+<span class="nc" id="L896">              product *= Math.pow(values[i], weights[i]);</span>
+          }
+      //}
+<span class="nc" id="L899">      return product;</span>
+  }
+  
+  
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201511160932</span></div></body></html>

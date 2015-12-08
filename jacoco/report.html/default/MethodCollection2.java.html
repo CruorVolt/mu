@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MethodCollection2.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jacoco_ant</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">MethodCollection2.java</span></div><h1>MethodCollection2.java</h1><pre class="source lang-java linenums">// This is a mutant program.
+// Author : ysma
+
+<span class="fc" id="L4">public class MethodCollection2</span>
+{
+
+    public static  int add_values( int[] a )
+    {
+<span class="fc" id="L9">        System.out.println(&quot;Mutant Executed!&quot;);</span>
+<span class="fc" id="L10">        int sum = 0;</span>
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="fc" id="L12">            sum += a[i];</span>
+        }
+<span class="fc" id="L14">        return sum;</span>
+    }
+
+    public static  int[] bubble( int[] a )
+    {
+        int i;
+        int j;
+        int t;
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        for (i = a.length - 2; i &gt;= 0; i--) {</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">            for (j = 0; j &lt;= i; j++) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">                if (a[j] &gt; a[j + 1]) {</span>
+<span class="fc" id="L25">                    t = a[j];</span>
+<span class="fc" id="L26">                    a[j] = a[j + 1];</span>
+<span class="fc" id="L27">                    a[j + 1] = t;</span>
+                }
+            }
+        }
+<span class="fc" id="L31">        return a;</span>
+    }
+
+    public static  int[] shell_sort( int[] a )
+    {
+        int j;
+        int i;
+        int k;
+        int m;
+        int mid;
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        for (m = a.length / 2; m &gt; 0; m /= 2) {</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">            for (j = m; j &lt; a.length; j++) {</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">                for (i = j - m; i &gt;= 0; i -= m) {</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">                    if (a[i + m] &gt;= a[i]) {</span>
+<span class="fc" id="L45">                        break;</span>
+                    } else {
+<span class="fc" id="L47">                        mid = a[i];</span>
+<span class="fc" id="L48">                        a[i] = a[i + m];</span>
+<span class="fc" id="L49">                        a[i + m] = mid;</span>
+                    }
+                }
+            }
+        }
+<span class="fc" id="L54">        return a;</span>
+    }
+
+    public static  int sequential_search( int[] a, int key )
+    {
+        int i;
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        for (i = 0; i &lt; a.length; i++) {</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">            if (a[i] == key) {</span>
+<span class="nc" id="L62">                return i;</span>
+            }
+        }
+<span class="fc" id="L65">        return -1;</span>
+    }
+
+    public static  int[] selection_sort( int[] list )
+    {
+        int i;
+        int j;
+        int min;
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        for (i = 0; i &lt; list.length - 1; i++) {</span>
+<span class="fc" id="L74">            min = i;</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">            for (j = i + 1; j &lt; list.length; j++) {</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">                if (list[j] &lt; list[min]) {</span>
+<span class="fc" id="L77">                    min = j;</span>
+                }
+            }
+<span class="fc" id="L80">            int tmp = list[i];</span>
+<span class="fc" id="L81">            list[i] = list[min];</span>
+<span class="fc" id="L82">            list[min] = tmp;</span>
+        }
+<span class="fc" id="L84">        return list;</span>
+    }
+
+    public static  int dot_product( int[] a, int[] b )
+    {
+<span class="fc" id="L89">        int sum = 0;</span>
+        int i;
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        for (i = 0; i &lt; a.length; i++) {</span>
+<span class="fc" id="L92">            sum += a[i] * b[i];</span>
+        }
+<span class="fc" id="L94">        return sum;</span>
+    }
+
+    public static  int[] array_calc1( int[] a, int k )
+    {
+        int i;
+<span class="fc" id="L100">        int[] b = new int[a.length];</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        for (i = 0; i &lt; a.length; i++) {</span>
+<span class="fc" id="L102">            b[i] = a[i] / k;</span>
+        }
+<span class="fc" id="L104">        return b;</span>
+    }
+
+    public static  int[] set_min_val( int[] a, int k )
+    {
+        int i;
+<span class="fc bfc" id="L110" title="All 2 branches covered.">        for (i = 0; i &lt; a.length; i++) {</span>
+<span class="fc bfc" id="L111" title="All 2 branches covered.">            if (a[i] &lt; k) {</span>
+<span class="fc" id="L112">                a[i] = k;</span>
+            }
+        }
+<span class="fc" id="L115">        return a;</span>
+    }
+
+    public static  int find_min( int[] a )
+    {
+<span class="fc" id="L120">        int min = a[0];</span>
+        int i;
+<span class="fc bfc" id="L122" title="All 2 branches covered.">        for (i = 0; i &lt; a.length; i++) {</span>
+<span class="fc bfc" id="L123" title="All 2 branches covered.">            if (a[i] &lt; min) {</span>
+<span class="fc" id="L124">                min = a[i];</span>
+            }
+        }
+<span class="fc" id="L127">        return min;</span>
+    }
+
+    public static  int[] array_copy( int[] a )
+    {
+        int i;
+<span class="fc" id="L133">        int[] b = new int[a.length];</span>
+<span class="fc bfc" id="L134" title="All 2 branches covered.">        for (i = 0; i &lt; a.length; i++) {</span>
+<span class="fc" id="L135">            b[i] = a[i];</span>
+        }
+<span class="fc" id="L137">        return b;</span>
+    }
+
+    public static  double find_euc_dist( int[] a, int[] b )
+    {
+        int i;
+<span class="fc" id="L143">        double sum = 0;</span>
+<span class="fc bfc" id="L144" title="All 2 branches covered.">        for (i = 0; i &lt; a.length; i++) {</span>
+<span class="fc" id="L145">            sum += (a[i] - b[i]) * (a[i] - b[i]);</span>
+        }
+<span class="fc" id="L147">        double result = Math.sqrt( sum );</span>
+<span class="fc" id="L148">        return result;</span>
+    }
+
+    public static  double find_magnitude( int[] a )
+    {
+        int i;
+<span class="fc" id="L154">        double sum = 0;</span>
+<span class="fc bfc" id="L155" title="All 2 branches covered.">        for (i = 0; i &lt; a.length; i++) {</span>
+<span class="fc" id="L156">            sum += a[i] * a[i];</span>
+        }
+<span class="fc" id="L158">        double result = Math.sqrt( sum );</span>
+<span class="fc" id="L159">        return result;</span>
+    }
+
+    public static  double manhattan_dist( int[] a, int[] b )
+    {
+        int i;
+<span class="fc" id="L165">        double sum = 0;</span>
+<span class="fc bfc" id="L166" title="All 2 branches covered.">        for (i = 0; i &lt; a.length; i++) {</span>
+<span class="fc" id="L167">            sum += Math.abs( a[i] - b[i] );</span>
+        }
+<span class="fc" id="L169">        return sum;</span>
+    }
+
+    public static  double average( int[] a )
+    {
+<span class="fc" id="L174">        double sum = 0;</span>
+<span class="fc bfc" id="L175" title="All 2 branches covered.">        for (int i = 0; ++i &lt; a.length; i++) {</span>
+<span class="fc" id="L176">            sum += a[i];</span>
+        }
+<span class="fc" id="L178">        return sum / a.length;</span>
+    }
+
+    public static  int find_max( int[] a )
+    {
+<span class="fc" id="L183">        int max = a[0];</span>
+<span class="fc bfc" id="L184" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="fc bfc" id="L185" title="All 2 branches covered.">            if (a[i] &gt; max) {</span>
+<span class="fc" id="L186">                max = a[i];</span>
+            }
+        }
+<span class="fc" id="L189">        return max;</span>
+    }
+
+    public static  int find_max2( int[] a )
+    {
+<span class="fc" id="L194">        int max = a[0] + a[1];</span>
+<span class="fc bfc" id="L195" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length - 1; i++) {</span>
+<span class="fc bfc" id="L196" title="All 2 branches covered.">            if (a[i] + a[i + 1] &gt; max) {</span>
+<span class="fc" id="L197">                max = a[i] + a[i + 1];</span>
+            }
+        }
+<span class="fc" id="L200">        return max;</span>
+    }
+
+    public static  double variance( double[] x )
+    {
+<span class="fc" id="L205">        double sum = 0;</span>
+<span class="fc" id="L206">        double sum1 = 0;</span>
+<span class="fc" id="L207">        double var = 0;</span>
+<span class="fc" id="L208">        double avrg = 0;</span>
+<span class="fc bfc" id="L209" title="All 2 branches covered.">        for (int i = 0; i &lt; x.length; i++) {</span>
+<span class="fc" id="L210">            sum = sum + x[i];</span>
+        }
+<span class="fc" id="L212">        avrg = sum / (double) x.length;</span>
+<span class="fc bfc" id="L213" title="All 2 branches covered.">        for (int i = 0; i &lt; x.length; i++) {</span>
+<span class="fc" id="L214">            sum1 = sum1 + (x[i] - avrg) * (x[i] - avrg);</span>
+        }
+<span class="fc" id="L216">        var = sum1 / (double) x.length;</span>
+<span class="fc" id="L217">        return var;</span>
+    }
+
+    public static  int[] insertion_sort( int[] array )
+    {
+<span class="fc bfc" id="L222" title="All 2 branches covered.">        for (int i = 1; i &lt; array.length; i++) {</span>
+<span class="fc" id="L223">            int j = i;</span>
+<span class="fc" id="L224">            int B = array[i];</span>
+<span class="fc bfc" id="L225" title="All 4 branches covered.">            while (j &gt; 0 &amp;&amp; array[j - 1] &gt; B) {</span>
+<span class="fc" id="L226">                array[j] = array[j - 1];</span>
+<span class="fc" id="L227">                j--;</span>
+            }
+<span class="fc" id="L229">            array[j] = B;</span>
+        }
+<span class="fc" id="L231">        return array;</span>
+    }
+
+    public static  double geometric_mean( int[] a )
+    {
+<span class="fc" id="L236">        long product = 1;</span>
+<span class="fc bfc" id="L237" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="fc" id="L238">            product *= a[i];</span>
+        }
+<span class="fc" id="L240">        return Math.pow( product, (double) 1 / a.length );</span>
+    }
+
+    public static  double mean_absolute_error( int[] a, int[] b )
+    {
+<span class="fc" id="L245">        int sum = 0;</span>
+<span class="fc bfc" id="L246" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="fc" id="L247">            sum += Math.abs( a[i] - b[i] );</span>
+        }
+<span class="fc" id="L249">        return (double) sum / a.length;</span>
+    }
+
+    public static  double find_median( int[] a )
+    {
+<span class="fc" id="L254">        int k = a.length / 2 + 1;</span>
+<span class="fc" id="L255">        int minIndex = 0;</span>
+<span class="fc" id="L256">        int minValue = a[0];</span>
+<span class="fc bfc" id="L257" title="All 2 branches covered.">        for (int i = 0; i &lt; k; i++) {</span>
+<span class="fc" id="L258">            minIndex = i;</span>
+<span class="fc" id="L259">            minValue = a[i];</span>
+<span class="fc bfc" id="L260" title="All 2 branches covered.">            for (int j = i + 1; j &lt; a.length; j++) {</span>
+<span class="fc bfc" id="L261" title="All 2 branches covered.">                if (a[j] &lt; minValue) {</span>
+<span class="fc" id="L262">                    minIndex = j;</span>
+<span class="fc" id="L263">                    minValue = a[j];</span>
+                }
+            }
+<span class="fc" id="L266">            int temp = a[i];</span>
+<span class="fc" id="L267">            a[i] = a[minIndex];</span>
+<span class="fc" id="L268">            a[minIndex] = temp;</span>
+        }
+<span class="pc bpc" id="L270" title="1 of 2 branches missed.">        if (a.length % 2 == 0) {</span>
+<span class="fc" id="L271">            return (double) (a[a.length / 2 - 1] + a[a.length / 2]) / 2;</span>
+        } else {
+<span class="nc" id="L273">            return a[a.length / 2];</span>
+        }
+    }
+
+    public static  int[] reverse( int[] a )
+    {
+<span class="fc" id="L279">        int[] r = new int[a.length];</span>
+<span class="fc" id="L280">        int cnt = 0;</span>
+<span class="fc bfc" id="L281" title="All 2 branches covered.">        for (int i = a.length - 1; i &gt;= 0; i--) {</span>
+<span class="fc" id="L282">            r[cnt] = a[i];</span>
+<span class="fc" id="L283">            cnt++;</span>
+        }
+<span class="fc" id="L285">        return r;</span>
+    }
+
+    public static  double weighted_average( double[] a, double[] b )
+    {
+<span class="fc" id="L290">        double sum1 = 0;</span>
+<span class="fc" id="L291">        double sum2 = 0;</span>
+<span class="fc bfc" id="L292" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="fc" id="L293">            sum1 += a[i] * b[i];</span>
+<span class="fc" id="L294">            sum2 += b[i];</span>
+        }
+<span class="fc" id="L296">        return sum1 / sum2;</span>
+    }
+
+    public static  int count_k( int[] a, int k )
+    {
+<span class="fc" id="L301">        int cnt = 0;</span>
+<span class="fc bfc" id="L302" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="pc bpc" id="L303" title="1 of 2 branches missed.">            if (a[i] == k) {</span>
+<span class="nc" id="L304">                cnt++;</span>
+            }
+        }
+<span class="fc" id="L307">        return cnt;</span>
+    }
+
+    public static  int[] clip( int[] a, int lowerLim, int upperLim )
+    {
+<span class="fc" id="L312">        int[] r = new int[a.length];</span>
+<span class="fc bfc" id="L313" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="fc bfc" id="L314" title="All 2 branches covered.">            if (a[i] &lt; lowerLim) {</span>
+<span class="fc" id="L315">                r[i] = lowerLim;</span>
+            } else {
+<span class="pc bpc" id="L317" title="1 of 2 branches missed.">                if (a[i] &gt; upperLim) {</span>
+<span class="nc" id="L318">                    r[i] = upperLim;</span>
+                } else {
+<span class="fc" id="L320">                    r[i] = a[i];</span>
+                }
+            }
+        }
+<span class="fc" id="L324">        return r;</span>
+    }
+
+    public static  int[] elementwise_max( int[] a, int[] b )
+    {
+<span class="fc" id="L329">        int[] r = new int[a.length];</span>
+<span class="fc bfc" id="L330" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="fc bfc" id="L331" title="All 2 branches covered.">            if (a[i] &gt; b[i]) {</span>
+<span class="fc" id="L332">                r[i] = a[i];</span>
+            } else {
+<span class="fc" id="L334">                r[i] = b[i];</span>
+            }
+        }
+<span class="fc" id="L337">        return r;</span>
+    }
+
+    public static  int[] elementwise_min( int[] a, int[] b )
+    {
+<span class="fc" id="L342">        int[] r = new int[a.length];</span>
+<span class="fc bfc" id="L343" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="fc bfc" id="L344" title="All 2 branches covered.">            if (a[i] &lt; b[i]) {</span>
+<span class="fc" id="L345">                r[i] = a[i];</span>
+            } else {
+<span class="fc" id="L347">                r[i] = b[i];</span>
+            }
+        }
+<span class="fc" id="L350">        return r;</span>
+    }
+
+    public static  int count_non_zeroes( int[] a )
+    {
+<span class="fc" id="L355">        int cnt = 0;</span>
+<span class="fc bfc" id="L356" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="fc bfc" id="L357" title="All 2 branches covered.">            if (a[i] != 0) {</span>
+<span class="fc" id="L358">                cnt++;</span>
+            }
+        }
+<span class="fc" id="L361">        return cnt;</span>
+    }
+
+    public static  int cnt_zeroes( int[] a )
+    {
+<span class="fc" id="L366">        int cnt = 0;</span>
+<span class="fc bfc" id="L367" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="pc bpc" id="L368" title="1 of 2 branches missed.">            if (a[i] == 0) {</span>
+<span class="nc" id="L369">                cnt++;</span>
+            }
+        }
+<span class="fc" id="L372">        return cnt;</span>
+    }
+
+    public static  int hamming_dist( int[] a, int[] b )
+    {
+<span class="fc" id="L377">        int cnt = 0;</span>
+<span class="fc bfc" id="L378" title="All 2 branches covered.">        for (int i = 0; i &lt; a.length; i++) {</span>
+<span class="fc bfc" id="L379" title="All 2 branches covered.">            if (a[i] != b[i]) {</span>
+<span class="fc" id="L380">                cnt++;</span>
+            }
+        }
+<span class="fc" id="L383">        return cnt;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201511160932</span></div></body></html>

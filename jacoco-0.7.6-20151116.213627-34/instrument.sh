@@ -1,1 +1,0 @@
-java -cp "/Users/anders/mu_case_studies/src/:/Users/anders/mu_case_studies/testset/" -javaagent:/Users/anders/mu_case_studies/jacoco-0.7.6-20151116.213627-34/lib/jacocoagent.jar=append=false org.junit.runner.JUnitCore $1;

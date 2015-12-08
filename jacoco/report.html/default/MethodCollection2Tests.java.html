@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MethodCollection2Tests.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jacoco_ant</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">MethodCollection2Tests.java</span></div><h1>MethodCollection2Tests.java</h1><pre class="source lang-java linenums">import org.junit.Test;
+import static org.junit.Assert.*;
+//import Test.MethodCollection2;
+import org.junit.rules.ErrorCollector;
+import static org.hamcrest.Matchers.equalTo;
+
+<span class="nc" id="L7">public class MethodCollection2Tests extends TestClass {</span>
+
+    public boolean testThis(String test, String function, Object... args) {
+<span class="nc" id="L10">        return super.testThis(test, &quot;MethodCollection2&quot;, function, args);</span>
+    }    
+
+    @Test
+    public void existence_test() {
+<span class="nc" id="L15">        System.out.println(&quot;This test was executed!&quot;);</span>
+<span class="nc" id="L16">        assertTrue(&quot;TRUE!&quot;, true);</span>
+<span class="nc" id="L17">    }</span>
+
+    @Test
+    public void add_values_test() {
+        //System.out.print(&quot;&lt;add_values&gt;&quot;);
+<span class="nc" id="L22">        int[] orig = getIntArray();</span>
+        //int r1 = MethodCollection2.add_values(orig);
+
+<span class="nc" id="L25">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L26">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;add_values&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L27">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;add_values&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L28">        collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;add_values&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L29">        collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;add_values&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L30">        collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;add_values&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L31">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;add_values&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L32">    }</span>
+
+    @Test
+    public void bubble_test() {
+        //System.out.println(&quot;TEST: bubble&quot;);
+<span class="nc" id="L37">        int[] orig = getIntArray();</span>
+        //int[] r1 = MethodCollection2.bubble(orig);
+
+<span class="nc" id="L40">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L41">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;bubble&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L42">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;bubble&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L43">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;bubble&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L44">    }</span>
+
+    @Test
+    public void shell_sort_test() {
+        //System.out.println(&quot;TEST: shell_sort&quot;);
+<span class="nc" id="L49">	int[] arg1 = getIntArray();</span>
+        //int[] r1 = MethodCollection2.shell_sort(arg1);
+
+<span class="nc" id="L52">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L53">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;shell_sort&quot;, arg1), equalTo(true));</span>
+<span class="nc" id="L54">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;shell_sort&quot;, arg1), equalTo(true));</span>
+<span class="nc" id="L55">    }</span>
+
+    @Test
+    public void sequential_search_test() {
+        //System.out.println(&quot;TEST: sequential_search&quot;);
+<span class="nc" id="L60">	int[] arg1 = getIntArray();</span>
+<span class="nc" id="L61">	int arg2 = getInt();</span>
+        //int r1 = MethodCollection2.sequential_search(arg1, arg2);
+
+<span class="nc" id="L64">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L65">	collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;sequential_search&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L66">	collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;sequential_search&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L67">	collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;sequential_search&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L68">    }</span>
+
+    @Test
+    public void selection_sort_test() {
+        //System.out.println(&quot;TEST: selection_sort&quot;);
+<span class="nc" id="L73">        int[] orig = getIntArray();</span>
+        //int[] r1 = MethodCollection2.selection_sort(orig);
+
+<span class="nc" id="L76">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L77">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;selection_sort&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L78">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;selection_sort&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L79">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;selection_sort&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L80">    }</span>
+
+    @Test
+    public void dot_product_test() {
+        //System.out.println(&quot;TEST: dot_product&quot;);
+        //Arrays should be same size
+<span class="nc" id="L86">        int arraySize = getInt();</span>
+<span class="nc" id="L87">	int[] arg1 = getIntArray(arraySize);</span>
+<span class="nc" id="L88">	int[] arg2 = getIntArray(arraySize);</span>
+        //int r1 = MethodCollection2.dot_product(arg1, arg2);
+
+<span class="nc" id="L91">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L92">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;dot_product&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L93">        collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;dot_product&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L94">        collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;dot_product&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L95">    }</span>
+
+    @Test
+    public void array_calc1_test() {
+        //System.out.println(&quot;TEST: array_calc1&quot;);
+<span class="nc" id="L100">        int[] arg1 = getIntArray();</span>
+<span class="nc" id="L101">        int arg2 = getInt();</span>
+        //int[] r1 = MethodCollection2.array_calc1(arg1, arg2);
+
+<span class="nc" id="L104">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L105">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;array_calc1&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L106">    }</span>
+
+    @Test
+    public void set_min_val_test() {
+        //System.out.println(&quot;TEST: set_min_val&quot;);
+<span class="nc" id="L111">        int[] arg1 = getIntArray();</span>
+<span class="nc" id="L112">        int arg2 = getInt();</span>
+        //int[] r1 = MethodCollection2.set_min_val(arg1, arg2);
+        
+<span class="nc" id="L115">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L116">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;set_min_val&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L117">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;set_min_val&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L118">        collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;set_min_val&quot;, arg1, arg2), equalTo(true)); //okay to fail on original</span>
+<span class="nc" id="L119">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;set_min_val&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L120">    }</span>
+
+    @Test
+    public void find_min_test() {
+        //System.out.println(&quot;TEST: find_min&quot;);
+<span class="nc" id="L125">        int[] orig = getIntArray();</span>
+        //int r1 = MethodCollection2.find_min(orig);
+
+<span class="nc" id="L128">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L129">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;find_min&quot;, orig), equalTo(true)); //okay to fail on original</span>
+<span class="nc" id="L130">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;find_min&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L131">        collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;find_min&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L132">        collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;find_min&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L133">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;find_min&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L134">    }</span>
+
+    @Test
+    public void array_copy_test() {
+        //System.out.println(&quot;TEST: array_copy&quot;);
+<span class="nc" id="L139">        int[] orig = getIntArray();</span>
+        //int[] r1 = MethodCollection2.array_copy(orig);
+
+<span class="nc" id="L142">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L143">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;array_copy&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L144">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;array_copy&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L145">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;array_copy&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L146">    }</span>
+
+    @Test
+    public void find_euc_dist_test() {
+        //System.out.println(&quot;TEST: find_euc_dist&quot;);
+        //Arrays should be same size
+<span class="nc" id="L152">        int arraySize = getInt();</span>
+<span class="nc" id="L153">	int[] arg1 = getIntArray(arraySize);</span>
+<span class="nc" id="L154">	int[] arg2 = getIntArray(arraySize);</span>
+        //double r1 = MethodCollection2.find_euc_dist(arg1, arg2);
+
+<span class="nc" id="L157">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L158">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;find_euc_dist&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L159">        collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;find_euc_dist&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L160">        collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;find_euc_dist&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L161">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;find_euc_dist&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L162">    }</span>
+
+    @Test
+    public void find_magnitude_test() {
+        //System.out.println(&quot;TEST: find_magnitude&quot;);
+<span class="nc" id="L167">        int[] orig = getIntArray();</span>
+        //double r1 = MethodCollection2.find_magnitude(orig);
+
+<span class="nc" id="L170">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L171">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;find_magnitude&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L172">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;find_magnitude&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L173">        collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;find_magnitude&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L174">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;find_magnitude&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L175">    }</span>
+
+    @Test
+    public void manhattan_dist_test() {
+        //System.out.println(&quot;TEST: manhattan_dist&quot;);
+        //Arrays should be same size
+<span class="nc" id="L181">        int arraySize = getInt();</span>
+<span class="nc" id="L182">	int[] arg1 = getIntArray(arraySize);</span>
+<span class="nc" id="L183">	int[] arg2 = getIntArray(arraySize);</span>
+        //double r1 = MethodCollection2.manhattan_dist(arg1, arg2);
+
+<span class="nc" id="L186">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L187">	collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;manhattan_dist&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L188">	collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;manhattan_dist&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L189">	collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;manhattan_dist&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L190">	collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;manhattan_dist&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L191">    }</span>
+
+    @Test
+    public void average_test() {
+        //System.out.println(&quot;TEST: average&quot;);
+<span class="nc" id="L196">        int[] orig = getIntArray();</span>
+        //double r1 = MethodCollection2.average(orig);
+   
+<span class="nc" id="L199">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L200">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;average&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L201">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;average&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L202">        collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;average&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L203">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;average&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L204">    }</span>
+
+    @Test
+    public void find_max_test() {
+        //System.out.println(&quot;TEST: find_max&quot;);
+<span class="nc" id="L209">        int[] orig = getIntArray();</span>
+        //int r1 = MethodCollection2.find_max(orig);
+
+<span class="nc" id="L212">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L213">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;find_max&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L214">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;find_max&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L215">        collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;find_max&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L216">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;find_max&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L217">    }</span>
+
+    @Test
+    public void find_max2_test() {
+        //array should have at least 3 elements
+        //System.out.println(&quot;TEST: find_max2&quot;);
+<span class="nc" id="L223">        int[] orig = getIntArray(getInt() + 3);</span>
+        //int r1 = MethodCollection2.find_max2(orig);
+
+<span class="nc" id="L226">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L227">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;find_max2&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L228">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;find_max2&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L229">        collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;find_max2&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L230">        collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;find_max2&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L231">        collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;find_max2&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L232">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;find_max2&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L233">    }</span>
+
+    @Test
+    public void variance_test() {
+        //System.out.println(&quot;TEST: variance&quot;);
+<span class="nc" id="L238">        double[] orig = getDoubleArray();</span>
+        //double r1 = MethodCollection2.variance(orig);
+
+<span class="nc" id="L241">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L242">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;variance&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L243">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;variance&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L244">        collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;variance&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L245">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;variance&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L246">    }</span>
+
+    @Test
+    public void insertion_sort_test() {
+        //System.out.println(&quot;TEST: insertion_sort&quot;);
+<span class="nc" id="L251">        int[] orig = getIntArray();</span>
+        //int[] r1 = MethodCollection2.insertion_sort(orig);
+
+<span class="nc" id="L254">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L255">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;insertion_sort&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L256">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;insertion_sort&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L257">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;insertion_sort&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L258">    }</span>
+
+    @Test
+    public void geometric_mean_test() {
+        //System.out.println(&quot;TEST: geometric_mean&quot;);
+<span class="nc" id="L263">        int[] orig = getIntArray();</span>
+        //double r1 = MethodCollection2.geometric_mean(orig);
+
+<span class="nc" id="L266">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L267">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;geometric_mean&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L268">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;geometric_mean&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L269">        collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;geometric_mean&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L270">        collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;geometric_mean&quot;, orig), equalTo(true)); //okay to fail</span>
+<span class="nc" id="L271">        collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;geometric_mean&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L272">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;geometric_mean&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L273">    }</span>
+
+    @Test
+    public void mean_absolute_error_test() {
+        //System.out.println(&quot;TEST: mean_absolute_error&quot;);
+        //Arrays should be same size
+<span class="nc" id="L279">        int arraySize = getInt();</span>
+<span class="nc" id="L280">	int[] arg1 = getIntArray(arraySize);</span>
+<span class="nc" id="L281">	int[] arg2 = getIntArray(arraySize);</span>
+        //double r1 = MethodCollection2.mean_absolute_error(arg1, arg2);
+
+<span class="nc" id="L284">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L285">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;mean_absolute_error&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L286">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;mean_absolute_error&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L287">    }</span>
+
+    @Test
+    public void find_median_test() {
+        //System.out.println(&quot;TEST: find_median&quot;);
+<span class="nc" id="L292">        int[] orig = getIntArray();</span>
+        //double r1 = MethodCollection2.find_median(orig);
+
+<span class="nc" id="L295">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L296">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;find_median&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L297">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;find_median&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L298">        collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;find_median&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L299">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;find_median&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L300">    }</span>
+
+    @Test
+    public void reverse_test() {
+        //System.out.println(&quot;TEST: reverse&quot;);
+<span class="nc" id="L305">        int[] orig = getIntArray();</span>
+        //int[] r1 = MethodCollection2.reverse(orig);
+        
+<span class="nc" id="L308">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L309">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;reverse&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L310">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;reverse&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L311">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;reverse&quot;, orig), equalTo(true));</span>
+<span class="nc" id="L312">    }</span>
+
+    @Test
+    public void weighted_average_test() {
+        //System.out.println(&quot;TEST: weighted_average&quot;);
+        //Arrays should be same size
+<span class="nc" id="L318">        int arraySize = getInt();</span>
+<span class="nc" id="L319">        double[] orig1 = getDoubleArray(arraySize);</span>
+<span class="nc" id="L320">        double[] orig2 = getDoubleArray(arraySize);</span>
+        //double r1 = MethodCollection2.weighted_average(orig1, orig2);
+
+<span class="nc" id="L323">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L324">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;weighted_average&quot;, orig1, orig2), equalTo(true));</span>
+<span class="nc" id="L325">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;weighted_average&quot;, orig1, orig2), equalTo(true));</span>
+<span class="nc" id="L326">    }</span>
+
+    @Test
+    public void count_k_test() {
+        //System.out.println(&quot;TEST: count_k&quot;);
+<span class="nc" id="L331">	int[] arg1 = getIntArray();</span>
+<span class="nc" id="L332">	int arg2 = getInt();</span>
+        //int r1 = MethodCollection2.count_k(arg1, arg2);
+
+<span class="nc" id="L335">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L336">	collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;count_k&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L337">	collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;count_k&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L338">	collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;count_k&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L339">    }</span>
+
+    @Test
+    public void clip_test() {
+        //System.out.println(&quot;TEST: clip&quot;);
+<span class="nc" id="L344">        int[] orig = getIntArray();</span>
+<span class="nc" id="L345">        int secondArg = getInt();</span>
+<span class="nc" id="L346">        int thirdArg = getInt();</span>
+        //int[] r1 = MethodCollection2.clip(orig, secondArg, thirdArg);
+
+<span class="nc" id="L349">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L350">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;clip&quot;, orig, secondArg, thirdArg), equalTo(true));</span>
+<span class="nc" id="L351">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;clip&quot;, orig, secondArg, thirdArg), equalTo(true));</span>
+<span class="nc" id="L352">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;clip&quot;, orig, secondArg, thirdArg), equalTo(true));</span>
+<span class="nc" id="L353">    }</span>
+
+    @Test
+    public void elementwise_max_test() {
+        //System.out.println(&quot;TEST: elementwise_max&quot;);
+        //Arrays should be same size
+<span class="nc" id="L359">        int arraySize = getInt();</span>
+<span class="nc" id="L360">	int[] arg1 = getIntArray(arraySize);</span>
+<span class="nc" id="L361">	int[] arg2 = getIntArray(arraySize);</span>
+        //int[] r1 = MethodCollection2.elementwise_max(arg1, arg2);
+	
+<span class="nc" id="L364">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L365">	collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;elementwise_max&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L366">    }</span>
+
+    @Test
+    public void elementwise_min_test() {
+        //System.out.println(&quot;TEST: elementwise_min&quot;);
+        //Arrays should be same size
+<span class="nc" id="L372">        int arraySize = getInt();</span>
+<span class="nc" id="L373">	int[] arg1 = getIntArray(arraySize);</span>
+<span class="nc" id="L374">	int[] arg2 = getIntArray(arraySize);</span>
+        //int[] r1 = MethodCollection2.elementwise_min(arg1, arg2);
+
+<span class="nc" id="L377">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L378">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;elementwise_min&quot;, arg1, arg2), equalTo(true));</span>
+<span class="nc" id="L379">    }</span>
+
+    @Test
+    public void count_non_zeroes_test() {
+        //System.out.println(&quot;TEST: count_non_zeroes&quot;);
+<span class="nc" id="L384">	int[] arg1 = getIntArray();</span>
+        //int r1 = MethodCollection2.count_non_zeroes(arg1);
+
+<span class="nc" id="L387">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L388">	collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;count_non_zeroes&quot;, arg1), equalTo(true));</span>
+<span class="nc" id="L389">	collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;count_non_zeroes&quot;, arg1), equalTo(true));</span>
+<span class="nc" id="L390">	collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;count_non_zeroes&quot;, arg1), equalTo(true));</span>
+<span class="nc" id="L391">	collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;count_non_zeroes&quot;, arg1), equalTo(true));</span>
+<span class="nc" id="L392">    }</span>
+
+    @Test
+    public void cnt_zeroes_test() {
+        //System.out.println(&quot;TEST: cnt_zeroes&quot;);
+<span class="nc" id="L397">	int[] arg1 = getIntArray();</span>
+        //int r1 = MethodCollection2.cnt_zeroes(arg1);
+
+<span class="nc" id="L400">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L401">	collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;cnt_zeroes&quot;, arg1), equalTo(true));</span>
+<span class="nc" id="L402">	collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;cnt_zeroes&quot;, arg1), equalTo(true));</span>
+<span class="nc" id="L403">	collector.checkThat(fail += &quot;perm&amp;&quot;, testThis(&quot;perm&quot;, &quot;cnt_zeroes&quot;, arg1), equalTo(true));</span>
+<span class="nc" id="L404">    }</span>
+
+    @Test
+    public void hamming_dist_test() {
+        //System.out.println(&quot;TEST: hamming_dist&quot;);
+        //Arrays should be same size
+<span class="nc" id="L410">        int arraySize = getInt();</span>
+<span class="nc" id="L411">        int[] orig1 = getIntArray(arraySize);</span>
+<span class="nc" id="L412">        int[] orig2 = getIntArray(arraySize);</span>
+        //int r1 = MethodCollection2.hamming_dist(orig1, orig2);
+
+<span class="nc" id="L415">        String fail = &quot;&quot;;</span>
+<span class="nc" id="L416">        collector.checkThat(fail += &quot;add&amp;&quot;, testThis(&quot;add&quot;, &quot;hamming_dist&quot;, orig1, orig2), equalTo(true));</span>
+<span class="nc" id="L417">        collector.checkThat(fail += &quot;mult&amp;&quot;, testThis(&quot;mult&quot;, &quot;hamming_dist&quot;, orig1, orig2), equalTo(true));</span>
+<span class="nc" id="L418">        collector.checkThat(fail += &quot;exc&amp;&quot;, testThis(&quot;exc&quot;, &quot;hamming_dist&quot;, orig1, orig2), equalTo(true));</span>
+<span class="nc" id="L419">        collector.checkThat(fail += &quot;inc&amp;&quot;, testThis(&quot;inc&quot;, &quot;hamming_dist&quot;, orig1, orig2), equalTo(true));</span>
+<span class="nc" id="L420">        collector.checkThat(fail += &quot;inv&amp;&quot;, testThis(&quot;inv&quot;, &quot;hamming_dist&quot;, orig1, orig2), equalTo(true));</span>
+<span class="nc" id="L421">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201511160932</span></div></body></html>
