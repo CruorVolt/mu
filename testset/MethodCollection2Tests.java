@@ -7,7 +7,21 @@ import static org.hamcrest.Matchers.equalTo;
 public class MethodCollection2Tests extends TestClass {
 
     public boolean testThis(String test, String function, Object... args) {
-        return super.testThis(test, "MethodCollection2", function, args);
+        String testType = System.getProperty("test");
+        if (testType.equals("mr")) {
+            System.out.println("Executing standard test!");
+            System.exit(1);
+            return super.testThis(test, "MethodCollection2", function, args);
+        } else if (testType.equals("pre")) {
+            System.out.println("Executing pretest!");
+            System.exit(1);
+            return super.testThisPre(test, "MethodCollection2", function, args);
+        } else if (testType.equals("post")) {
+            System.out.println("Executing post test!");
+            System.exit(1);
+            return super.testThisPost(test, "MethodCollection2", function, args);
+        }
+        return true;
     }    
 
     @Test

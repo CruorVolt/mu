@@ -11,3 +11,5 @@ jacoco-0.7.6-20151116.213627-34/jacoco.exec
 result
 src/mujava
 src/com
+jacoco/jacoco.exec
+jacoco/report.*

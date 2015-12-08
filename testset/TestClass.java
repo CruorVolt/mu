@@ -635,10 +635,9 @@ public class TestClass {
             System.out.print("&exception." + function + "." + test);
             e.printStackTrace();
         }
+        return true;
+    } //testThisPost
 
-        //System.out.println("testThis() Exiting with " + passed);
-        return passed;
-    }
     public static void main(String[] args) {
 
         TestClass tester = new TestClass();

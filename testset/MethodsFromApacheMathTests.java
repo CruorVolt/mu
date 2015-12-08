@@ -7,7 +7,15 @@ import static org.hamcrest.Matchers.equalTo;
 public class MethodsFromApacheMathTests extends TestClass {
 
     public boolean testThis(String test, String function, Object... args) {
-        return super.testThis(test, "MethodsFromApacheMath", function, args);
+        String testType = System.getProperty("test");
+        if (testType.equals("mr")) {
+            return super.testThis(test, "MethodsFromApacheMath", function, args);
+        } else if (testType.equals("pre")) {
+            return super.testThisPre(test, "MethodsFromApacheMath", function, args);
+        } else if (testType.equals("post")) {
+            return super.testThisPost(test, "MethodsFromApacheMath", function, args);
+        }
+        return true;
     }    
 	 
     @Test
