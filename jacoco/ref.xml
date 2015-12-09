@@ -29,7 +29,7 @@
 
 			<!-- This task needs the collected execution data and ... -->
 			<executiondata>
-				<file file="/Users/anders/mu_case_studies/jacoco.exec" />
+				<file file="/Users/anders/mu_case_studies/jacoco/jacoco.exec" />
 			</executiondata>
 
 			<!-- the class files and optional source files ... -->

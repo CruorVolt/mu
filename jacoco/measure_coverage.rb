@@ -1,10 +1,13 @@
-@CLASS = "stream.SamLine"
+require 'nokogiri'
+
+@CLASS = "MethodCollection2"
+@TEST = "post" #options are "mr", "pre", "post"
+@base_dir = File.join("/Users","anders","mu_case_studies")
 
 def b_join(*args)
     File.join(@base_dir, *args)
 end
 
-@base_dir = File.join("/Users","anders","mu_case_studies")
 @test_location = b_join("testset")
 @src_location = b_join("src")
 
@@ -22,25 +25,49 @@ For each mutant:
 
 #get all the mutants - actually, we just need the classpath
 def parse_dir(dir)
+    output_file = File.open(b_join("jacoco", "report_#{@CLASS}_#{@TEST}.csv"), "w")
     Dir.foreach(dir) do |method_folder|
         method_path = File.join(dir, method_folder)
         if (!([".", ".."].include? method_folder) and File.directory?(method_path))
             Dir.foreach(method_path) do |mutant_folder|
                 classpath = File.join(method_path, mutant_folder) #this appears to be the classpath for the mutant
-                puts classpath
+                if (!([".", ".."].include? mutant_folder) and File.directory?(classpath))
+                    puts "MUTANT_FOLER: #{mutant_folder}"
             
-                #now we need to run the test...... let's build the command
-                agent_args = [
-                    "append=false", 
-                    "dumponexit=true", 
-                    "classdumpdir=#{b_join("mu_case_studies", "jacoco", "class_dump_dir")}",
-                    "destfile=#{b_join("jacoco", "jacoco.exec")}"
-                ]
-                #priority is argument ordered for classpath
-                invoke = "java -cp \"#{@test_location}:#{classpath}:#{@src_location}\" -javaagent:#{b_join("jacoco","lib","jacocoagent.jar")}=append=false,dumponexit=true,classdumpdir=/Users/anders/mu_case_studies/jacoco/class_dump_dir,destfile=/Users/anders/mu_case_studies/jacoco/jacoco.exec org.junit.runner.JUnitCore $1;"
+                    #now we need to run the test...... let's build the command
+                    invoke_arr = ["java"]
+                    invoke_arr << "-Dtest=#{@TEST}"
+                    invoke_arr << "-cp \"#{@test_location}:#{classpath}\""
+                    agent_args = [
+                        "append=false", 
+                        "dumponexit=true", 
+                        "classdumpdir=#{b_join("jacoco", "class_dump_dir")}",
+                        "destfile=#{b_join("jacoco", "jacoco.exec")}"
+                    ]
+                    invoke_arr << "-javaagent:#{b_join("jacoco","lib","jacocoagent.jar")}=#{agent_args.join ','}"
+                    invoke_arr << "org.junit.runner.JUnitCore"
+                    invoke_arr << "#{@CLASS}Tests"
+
+                    #now modify build.xml to report on these sources
+                    reference_build_xml = File.open("ref.xml", "r") { |ref| Nokogiri::XML(ref) }
+                    classfiles = (reference_build_xml.xpath "//classfiles")[0]
+                    sourcefiles = (reference_build_xml.xpath "//sourcefiles")[0]
+                    classfiles.add_child "<fileset dir=\"#{classpath}\" />\n"
+                    sourcefiles.add_child "<fileset dir=\"#{classpath}\" />\n"
+                    File.write("build.xml", reference_build_xml.to_xml)
+
+                    puts invoke_arr.join(' ')
+                    system invoke_arr.join(' ')
+                    system "ant -buildfile #{b_join('jacoco')}"
+                    File.open(b_join("jacoco", "report.csv"), "r") do |report|
+                        output_file.puts([mutant_folder,report.readlines[-1]].join ',')
+                    end
+                    exit
+                end
             end
         end
     end
+    output_file.close
 end
 
-parse_dir(b_join("result", "MethodCollection2", "traditional_mutants"))
+parse_dir(b_join("result", @CLASS, "traditional_mutants"))
