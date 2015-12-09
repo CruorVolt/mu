@@ -1,7 +1,8 @@
 require 'nokogiri'
+require 'timeout'
 
 @CLASS = "MethodCollection2"
-@TEST = "post" #options are "mr", "pre", "post"
+@TEST = "pre" #options are "mr", "pre", "post"
 @base_dir = File.join("/Users","anders","mu_case_studies")
 
 def b_join(*args)
@@ -57,12 +58,25 @@ def parse_dir(dir)
                     File.write("build.xml", reference_build_xml.to_xml)
 
                     puts invoke_arr.join(' ')
-                    system invoke_arr.join(' ')
-                    system "ant -buildfile #{b_join('jacoco')}"
-                    File.open(b_join("jacoco", "report.csv"), "r") do |report|
-                        output_file.puts([mutant_folder,report.readlines[-1]].join ',')
+                    pid = Process.spawn(invoke_arr.join(' '))
+                    begin
+                        Timeout.timeout(5) do 
+                            puts "Waiting for #{mutant_folder}"
+                            Process.wait(pid)
+                            puts "#{mutant_folder} finished"
+                        end
+                        system "ant -buildfile #{b_join('jacoco')}"
+                        File.open(b_join("jacoco", "report.csv"), "r") do |report|
+                            output_file.puts([mutant_folder,report.readlines[-1]].join ',')
+                        end
+                    rescue Timeout::Error
+                        puts "Mutant #{mutant_folder} timed out"
+                        Process.kill("SIGTERM", pid)
+                        File.open(b_join("jacoco", "report.csv"), "r") do |report|
+                            output_file.puts([mutant_folder,"timeout"].join ',')
+                        end
                     end
-                    exit
+
                 end
             end
         end
