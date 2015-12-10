@@ -1,1 +1,1 @@
-java -cp "openjava.jar:bin/" mujava.gui.RunTestMain
+java -Dtest=mr -cp "openjava.jar:bin/" mujava.gui.RunTestMain
