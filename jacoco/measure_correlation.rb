@@ -33,9 +33,8 @@ def parse_file(file)
                         live = true
                         parts = new_line.split /[{}]/
                         if parts[0] == "" then next end #erroneous unlabled result
-                        method_name = get_mutant_method(parts[0].strip.split(/[ &]/)[0], class_name)
                         mutant_label = parts[0].split(/&/)[0].lstrip #full mutant name
-                        mutants[mutant_label = {} unless mutants.has_key? mutant_label
+                        mutants[mutant_label] = {:live=>0, :dead=>0} unless mutants.has_key? mutant_label
                         exceptions = parts[0].split /&/
                         exception_map = {}
                         except = false
@@ -71,40 +70,14 @@ def parse_file(file)
                                 if (!live) then break end
                             end
                         end
-                        if mutants[mutant_label].has_key? "live"
-
+                        if live
+                            mutants[mutant_label][:live] += 1
+                        else
+                            mutants[mutant_label][:dead] += 1
+                        end
                     end
                     #this line done
-
                 end
-
-                @mutant_types.each do |type|
-
-                    if live_map.has_key? type
-                        write_line << live_map[type]
-                        total_live += live_map[type]
-                    else
-                        write_line << 0
-                    end
-
-                    if killed_map.has_key? type
-                        write_line << killed_map[type]
-                        total_killed += killed_map[type]
-                    else
-                        write_line << 0
-                    end
-                end
-                #write totals
-                write_line << timeout
-                write_line << subtle
-                write_line << total_live                
-                write_line << total_killed                
-                write_line << (total_killed.to_f) / subtle
-                mutant_score = ((total_killed.to_f) / (total_killed + total_live))
-                write_line << "%.2f" % mutant_score
-                run_count += 1
-                #print "Subtles:  #{subtle}\n"
-                #print "Timeouts: #{timeout}\n"
             end
         end
     rescue EOFError
