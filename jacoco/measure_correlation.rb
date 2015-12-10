@@ -235,47 +235,21 @@ def get_mutant_method(mutant_id, class_name)
     return nil
 end
 
-case ARGV[0]
-when "standard"
-    ["aggregate", "add", "mult", "perm", "inv", "inc", "exc"].each do |relation|
-        @mr = relation
-        puts "SUMMARIZING #{@mr}"
-    
-        ["MethodCollection2", "ApacheMath", "MethodsFromColt", "MethodsFromMahout"].each do |prefix|
-            system("cat /dev/null > #{prefix}_#{@mr}.csv")
-        end
-        
-        here = File.dirname(__FILE__)
-        
-        dirs = Dir.entries(here).select do |entry| 
-	        File.directory? File.join(here, entry) and !(entry =='.' || entry == '..') 
-        end
-        
-        dirs.each do |directory|
-            parse_dir directory
-        end
+["aggregate"].each do |relation|
+    @mr = relation
+    puts "SUMMARIZING #{@mr}"
+
+    ["MethodCollection2", "ApacheMath", "MethodsFromColt", "MethodsFromMahout"].each do |prefix|
+        system("cat /dev/null > #{prefix}_#{@mr}.csv")
     end
-when "combo"
-    ["add_mult", "add_mult_inc", "add_mult_inc_perm", "add_mult_inc_perm_exc", "all"].each do |relation|
-        @mr = relation
-        puts "SUMMARIZING #{@mr}"
     
-        ["MethodCollection2", "ApacheMath", "MethodsFromColt", "MethodsFromMahout"].each do |prefix|
-            system("cat /dev/null > #{prefix}_#{@mr}.csv")
-        end
-        
-        here = File.dirname(__FILE__)
-        
-        dirs = Dir.entries(here).select do |entry| 
-	        File.directory? File.join(here, entry) and !(entry =='.' || entry == '..') 
-        end
-        
-        dirs.each do |directory|
-            parse_dir directory
-        end
+    here = File.dirname(__FILE__)
+    
+    dirs = Dir.entries(here).select do |entry| 
+     File.directory? File.join(here, entry) and !(entry =='.' || entry == '..') 
     end
-else
-    puts "Invalid options"
-    puts "usage: ruby summarize.rb [run]"
-    puts "\t run is one of ['standard', 'combo']"
+    
+    dirs.each do |directory|
+        parse_dir directory
+    end
 end

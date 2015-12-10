@@ -1,8 +1,8 @@
 require 'nokogiri'
 require 'timeout'
 
-@CLASS = "MethodCollection2"
-@TEST = "pre" #options are "mr", "pre", "post"
+@CLASS = "MethodsFromColt"
+@TEST = "post" #options are "mr", "pre", "post"
 @base_dir = File.join("/Users","anders","mu_case_studies")
 
 def b_join(*args)
