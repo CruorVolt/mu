@@ -14,7 +14,6 @@ def parse_file(file)
     
     in_file= File.open(file, "r")
 
-    run_count = 1
     mutants = {}
 
     begin
@@ -77,15 +76,9 @@ def parse_file(file)
                         else
                             mutants[mutant_label][:dead] += 1
                         end
-
                     end
                     #this line done
-
                 end
-
-                run_count += 1
-                #print "Subtles:  #{subtle}\n"
-                #print "Timeouts: #{timeout}\n"
             end
         end
     rescue EOFError
