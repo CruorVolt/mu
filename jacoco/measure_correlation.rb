@@ -32,7 +32,7 @@ def parse_file(file)
                         live = true
                         parts = new_line.split /[{}]/
                         if parts[0] == "" then next end #erroneous unlabled result
-                        mutant_label = parts[0].split(/&/)[0].lstrip #full mutant name
+                        mutant_label = parts[0].split(/&/)[0].lstrip.split(' ')[0] #full mutant name
                         mutants[mutant_label] = {:live=>0, :dead=>0} unless mutants.has_key? mutant_label 
                         exceptions = parts[0].split /&/
                         #exception_map = {} #Let's just ignore exceptions for now
@@ -52,6 +52,7 @@ def parse_file(file)
                         if parts.length == 1 #timeout
                             #live = false #timeouts always die
                             #timeout += 1
+                            #mutants[mutant_label][:timeout] += 1
                             next #ignore timeouts
                         #elsif exception_map.has_key? method_name
                             #print "Exception_map has key - #{method_name}: #{exception_map[method_name]}\n"
@@ -61,13 +62,17 @@ def parse_file(file)
                             #end
                             #next #ingnore exceptions
                         elsif exceptions.length > 1
+                            #mutants[mutant_label][:timeout] += 1
                             next
                         else
                             tests = parts[1].split /,/
                             live = true
+                            known_failures = ["find_max2_test", "array_calc1_test", "geometric_mean_test", "set_min_val_test"]
                             tests.each do |test|
                                 results = test.lstrip.split /\=/
-                                if results[1] != "pass" then live = false end
+                                if results[1] != "pass" and !(known_failures.include? results[0])
+                                    live = false 
+                                end
                                 if (!live) then break end
                             end
                         end
@@ -92,6 +97,7 @@ mr_map = parse_file("report_MethodCollection2_mrs")
 
 mr_map.keys.each do |mut|
     puts "#{mut}: #{mr_map[mut]}"
+    
 end
 =begin
 pre_map = build_map("report_MethodCollection2_pre.csv")

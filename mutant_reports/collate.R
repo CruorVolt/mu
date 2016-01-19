@@ -240,16 +240,17 @@ type_means <- data.frame(
 
 boxplot(type_means$Score ~ type_means$MutantType, ylab="Fault Detection Score")
 barplot(c(
-  mean(assignment_means, na.rm=TRUE),
-  mean(deletion_means, na.rm=TRUE),
   mean(arithmetic_means, na.rm=TRUE),
   mean(relational_means, na.rm=TRUE),
+  mean(conditional_means, na.rm=TRUE),
   mean(logical_means, na.rm=TRUE),
-  mean(conditional_means, na.rm=TRUE)
+  mean(assignment_means, na.rm=TRUE),
+  mean(deletion_means, na.rm=TRUE)
 ), ylab="Fault Detection Score", xpd=FALSE, ylim = c(0.75, 1.0), 
-names.arg = c("assignment", "deletion", "arithmetic", "relational", "logical", "conditional"))
+names.arg = c("Arithmetic", "Relational", "Conditional", "Logical", "Assignment", "Deletion"))
 
-boxplot(mutant_score ~ class, data = agg_combined,ylab = "Fault Detection Score", ylim = c(0.4, 1.1))
+agg_combined$class = factor(agg_combined$class,c("SAXS", "Colt", "ApacheMath", "MethodCollection2"))
+boxplot(mutant_score ~ class, data = agg_combined,ylab = "Fault Detection Score", ylim=c(0.0,1.0))
 
 #okay, agg mrs now
 m2_agg_mean <- mean(subset(agg_combined, class == "MethodCollection2")$mutant_score, na.rm=TRUE)
@@ -316,28 +317,38 @@ barplot(c(mean(coll2_inc$mutant_score, na.rm=TRUE), mean(apache_inc$mutant_score
     main = "MR: inc", ylab = "Fault Detection Score", ylim=c(0,1))
 par(mfrow=c(1,1))
 
-par(mfrow=c(2,2))
-barplot(
-    c(mean(coll2_add$mutant_score,na.rm=TRUE),mean(coll2_mult$mutant_score,na.rm=TRUE),mean(coll2_perm$mutant_score,na.rm=TRUE),mean(coll2_inv$mutant_score,na.rm=TRUE),mean(coll2_inc$mutant_score,na.rm=TRUE),mean(coll2_exc$mutant_score,na.rm=TRUE)),
-    names.arg = c("ADD", "MULT", "PERM", "INV", "INC", "EXC"),
-    main = "MethodCollection2", ylab = "Fault Detection Score", ylim=c(0,1)
-)
-barplot(
-    c(mean(apache_add$mutant_score,na.rm=TRUE),mean(apache_mult$mutant_score,na.rm=TRUE),mean(apache_perm$mutant_score,na.rm=TRUE),mean(apache_inv$mutant_score,na.rm=TRUE),mean(apache_inc$mutant_score,na.rm=TRUE),mean(apache_exc$mutant_score,na.rm=TRUE)),
-    names.arg = c("ADD", "MULT", "PERM", "INV", "INC", "EXC"),
-    main = "ApacheMath", ylab = "Fault Detection Score", ylim=c(0,1)
-)
-barplot(
-    c(mean(sax_add$mutant_score,na.rm=TRUE),mean(sax_mult$mutant_score,na.rm=TRUE),mean(sax_perm$mutant_score,na.rm=TRUE),mean(sax_inv$mutant_score,na.rm=TRUE),mean(sax_inc$mutant_score,na.rm=TRUE),mean(sax_exc$mutant_score,na.rm=TRUE)),
-    names.arg = c("ADD", "MULT", "PERM", "INV", "INC", "EXC"),
-    main = "SAXS", ylab = "Fault Detection Score", ylim=c(0,1)
-)
-barplot(
-    c(mean(colt_add$mutant_score,na.rm=TRUE),mean(colt_mult$mutant_score,na.rm=TRUE),mean(colt_perm$mutant_score,na.rm=TRUE),mean(colt_inv$mutant_score,na.rm=TRUE),mean(colt_inc$mutant_score,na.rm=TRUE),mean(colt_exc$mutant_score,na.rm=TRUE)),
-    names.arg = c("ADD", "MULT", "PERM", "INV", "INC", "EXC"),
-    main = "Colt", ylab = "Fault Detection Score", ylim=c(0,1)
-)
-par(mfrow=c(1,1))
+#m <- matrix(c(1,2,3,4,5,5),nrow = 3,ncol = 2,byrow = TRUE)
+#layout(mat = m,heights = c(0.4,0.4,0.2))
+#par(mar = c(3,5,2,2))
+#barplot(
+#    c(mean(sax_perm$mutant_score,na.rm=TRUE),mean(sax_add$mutant_score,na.rm=TRUE),mean(sax_mult$mutant_score,na.rm=TRUE),mean(sax_inv$mutant_score,na.rm=TRUE),mean(sax_inc$mutant_score,na.rm=TRUE),mean(sax_exc$mutant_score,na.rm=TRUE)),
+#    names.arg = c("1", "2", "3", "4", "5", "6"),
+#    main = "SAXS", ylab = "Fault Detection Score", ylim=c(0,1)
+#)
+#par(mar = c(3,5,2,2))
+#barplot(
+#    c(mean(colt_perm$mutant_score,na.rm=TRUE),mean(colt_add$mutant_score,na.rm=TRUE),mean(colt_mult$mutant_score,na.rm=TRUE),mean(colt_inv$mutant_score,na.rm=TRUE),mean(colt_inc$mutant_score,na.rm=TRUE),mean(colt_exc$mutant_score,na.rm=TRUE)),
+#    names.arg = c("1", "2", "3", "4", "5", "6"),
+#    main = "Colt", ylab = "Fault Detection Score", ylim=c(0,1)
+#)
+#par(mar = c(3,5,2,2))
+#barplot(
+#    c(mean(apache_perm$mutant_score,na.rm=TRUE),mean(apache_add$mutant_score,na.rm=TRUE),mean(apache_mult$mutant_score,na.rm=TRUE),mean(apache_inv$mutant_score,na.rm=TRUE),mean(apache_inc$mutant_score,na.rm=TRUE),mean(apache_exc$mutant_score,na.rm=TRUE)),
+#    names.arg = c("1", "2", "3", "4", "5", "6"),
+#    main = "ApacheMath", ylab = "Fault Detection Score", ylim=c(0,1)
+#)
+#par(mar = c(3,5,2,2))
+#barplot(
+#    c(mean(coll2_perm$mutant_score,na.rm=TRUE),mean(coll2_add$mutant_score,na.rm=TRUE),mean(coll2_mult$mutant_score,na.rm=TRUE),mean(coll2_inv$mutant_score,na.rm=TRUE),mean(coll2_inc$mutant_score,na.rm=TRUE),mean(coll2_exc$mutant_score,na.rm=TRUE)),
+#    names.arg = c("1", "2", "3", "4", "5", "6"),
+#    main = "MethodCollection2", ylab = "Fault Detection Score", ylim=c(0,1)
+#)
+#par(mar=c(0,0,0,0))
+#plot(1, type = "n", axes=FALSE, xlab="", ylab="")
+#legend(x = "top",inset = 0,
+#       legend = c("1: Permutative", "2: Additive", "3: Multiplicative", 
+#            "4: Invertive", "5: Inclusive", "6: Exclusive"),
+#      cex=1.3, horiz = TRUE)
 
 s_arithmetic = subset(types, MutantType == "arithmetic")
 s_assignment = subset(types, MutantType == "assignment")
@@ -410,25 +421,32 @@ barplot(c(add_arithmetic, mult_arithmetic, perm_arithmetic, inv_arithmetic, exc_
         ylim=c(0.4,1), main="Arithmetic Mutants", xpd=FALSE, ylab="Fault Detection Score")
 par(mfrow=c(1,1))
 
+#REORDER HERE
 par(mfrow=c(2,3))
-barplot(c(add_assignment, add_conditional, add_deletion, add_logical, add_relational, add_arithmetic),
-        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
-        ylim=c(0.4,1), main="MR: add", xpd=FALSE, ylab="Fault Detection Score")
-barplot(c(mult_assignment, mult_conditional, mult_deletion, mult_logical, mult_relational, mult_arithmetic),
-        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
-        ylim=c(0.4,1), main="MR: mult", xpd=FALSE, ylab="Fault Detection Score")
-barplot(c(perm_assignment, perm_conditional, perm_deletion, perm_logical, perm_relational, perm_arithmetic),
-        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
-        ylim=c(0.4,1), main="MR: perm", xpd=FALSE, ylab="Fault Detection Score")
-barplot(c(inv_assignment, inv_conditional, inv_deletion, inv_logical, inv_relational, inv_arithmetic),
-        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
-        ylim=c(0.4,1), main="MR: inv", xpd=FALSE, ylab="Fault Detection Score")
-barplot(c(inc_assignment, inc_conditional, inc_deletion, inc_logical, inc_relational, inc_arithmetic),
-        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
-        ylim=c(0.4,1), main="MR: inc", xpd=FALSE, ylab="Fault Detection Score")
-barplot(c(exc_assignment, exc_conditional, exc_deletion, exc_logical, exc_relational, exc_arithmetic),
-        names.arg = c("Assignment", "Conditional", "Deletion", "Logical", "Relational", "Arithmetic"),
-        ylim=c(0.4,1), main="MR: exc", xpd=FALSE, ylab="Fault Detection Score")
+barplot(c(perm_arithmetic, perm_relational, perm_conditional, perm_logical, perm_assignment, perm_deletion),
+        names.arg = c("Arithmetic", "Relational", "Conditional", "Logical", "Assignment", "Deletion"),
+        ylim=c(0.4,1), main="MR: Permutative", xpd=FALSE, ylab="Fault Detection Score",
+        cex.names=0.9)
+barplot(c(add_arithmetic, add_relational, add_conditional, add_logical, add_assignment, add_deletion),
+        names.arg = c("Arithmetic", "Relational", "Conditional", "Logical", "Assignment", "Deletion"),
+        ylim=c(0.4,1), main="MR: Additive", xpd=FALSE, ylab="Fault Detection Score",
+        cex.names=0.9)
+barplot(c(mult_arithmetic, mult_relational, mult_conditional, mult_logical, mult_assignment, mult_deletion),
+        names.arg = c("Arithmetic", "Relational", "Conditional", "Logical", "Assignment", "Deletion"),
+        ylim=c(0.4,1), main="MR: Multiplicative", xpd=FALSE, ylab="Fault Detection Score",
+        cex.names=0.9)
+barplot(c(inv_arithmetic, inv_relational, inv_conditional, inv_logical, inv_assignment, inv_deletion),
+        names.arg = c("Arithmetic", "Relational", "Conditional", "Logical", "Assignment", "Deletion"),
+        ylim=c(0.4,1), main="MR: Invertive", xpd=FALSE, ylab="Fault Detection Score",
+        cex.names=0.9)
+barplot(c(inc_arithmetic, inc_relational, inc_conditional, inc_logical, inc_assignment, inc_deletion),
+        names.arg = c("Arithmetic", "Relational", "Conditional", "Logical", "Assignment", "Deletion"),
+        ylim=c(0.4,1), main="MR: Inclusive", xpd=FALSE, ylab="Fault Detection Score",
+        cex.names=0.9)
+barplot(c(exc_arithmetic, exc_relational, exc_conditional, exc_logical, exc_assignment, exc_deletion),
+        names.arg = c("Arithmetic", "Relational", "Conditional", "Logical", "Assignment", "Deletion"),
+        ylim=c(0.4,1), main="MR: Exclusive", xpd=FALSE, ylab="Fault Detection Score",
+        cex.names=0.9)
 par(mfrow=c(1,1))
 
 colt_add_and_mult = read.csv("MethodsFromColt_add_and_mult.csv")
@@ -459,27 +477,27 @@ add_mult_inc_perm_exc_all = c(colt_add_mult_inc_perm_exc$mutant_score, coll2_add
 all_all = c(colt_all$mutant_score, coll2_all$mutant_score, apache_all$mutant_score, 1.0, 0.81, 0.91)
 
 add_and_mult_combined = mean(c(
-  mean(replace(colt_add_and_mult$mutant_score, is.na(colt_add_and_mult$mutant_score), 0), na.rm=TRUE),
-  mean(replace(coll2_add_and_mult$mutant_score, is.na(coll2_add_and_mult$mutant_score), 0), na.rm=TRUE),
-  mean(replace(apache_add_and_mult$mutant_score, is.na(apache_add_and_mult$mutant_score), 0), na.rm=TRUE),
-  mean(replace(sax_mult$mutant_score, na.rm=TRUE)
+  mean(replace(colt_add_and_mult$mutant_score, is.na(colt_add_and_mult$mutant_score), 0)),
+  mean(replace(coll2_add_and_mult$mutant_score, is.na(coll2_add_and_mult$mutant_score), 0)),
+  mean(replace(apache_add_and_mult$mutant_score, is.na(apache_add_and_mult$mutant_score), 0)),
+  mean(sax_mult$mutant_score)
 ))
 add_mult_inc_combined = mean(c(
-  mean(replace(colt_add_mult_inc$mutant_score, is.na(colt_add_mult_inc$mutant_score), 0), na.rm=TRUE),
-  mean(replace(coll2_add_mult_inc$mutant_score, is.na(coll2_add_mult_inc$mutant_score), 0), na.rm=TRUE),
-  mean(replace(apache_add_mult_inc$mutant_score, is.na(apache_add_mult_inc$mutant_score), 0), na.rm=TRUE),
+  mean(replace(colt_add_mult_inc$mutant_score, is.na(colt_add_mult_inc$mutant_score), 0)),
+  mean(replace(coll2_add_mult_inc$mutant_score, is.na(coll2_add_mult_inc$mutant_score), 0)),
+  mean(replace(apache_add_mult_inc$mutant_score, is.na(apache_add_mult_inc$mutant_score), 0)),
   mean(0.94, 0.81, 0.0)
 ))
 add_mult_inc_perm_combined = mean(c(
-  mean(replace(colt_add_mult_inc_perm$mutant_score, is.na(colt_add_mult_inc_perm$mutant_score), 0), na.rm=TRUE),
-  mean(replace(coll2_add_mult_inc_perm$mutant_score, is.na(coll2_add_mult_inc_perm$mutant_score), 0), na.rm=TRUE),
-  mean(replace(apache_add_mult_inc_perm$mutant_score, is.na(apache_add_mult_inc_perm$mutant_score), 0), na.rm=TRUE),
+  mean(replace(colt_add_mult_inc_perm$mutant_score, is.na(colt_add_mult_inc_perm$mutant_score), 0)),
+  mean(replace(coll2_add_mult_inc_perm$mutant_score, is.na(coll2_add_mult_inc_perm$mutant_score), 0)),
+  mean(replace(apache_add_mult_inc_perm$mutant_score, is.na(apache_add_mult_inc_perm$mutant_score), 0)),
   mean(0.94,0.81,0.91)
 ))
 add_mult_inc_perm_exc_combined = mean(c(
-  mean(replace(colt_add_mult_inc_perm_exc$mutant_score, is.na(colt_add_mult_inc_perm_exc$mutant_score), 0), na.rm=TRUE),
-  mean(replace(coll2_add_mult_inc_perm_exc$mutant_score, is.na(coll2_add_mult_inc_perm_exc$mutant_score), 0), na.rm=TRUE),
-  mean(replace(apache_add_mult_inc_perm_exc$mutant_score, is.na(apache_add_mult_inc_perm_exc$mutant_score), 0), na.rm=TRUE),
+  mean(replace(colt_add_mult_inc_perm_exc$mutant_score, is.na(colt_add_mult_inc_perm_exc$mutant_score), 0)),
+  mean(replace(coll2_add_mult_inc_perm_exc$mutant_score, is.na(coll2_add_mult_inc_perm_exc$mutant_score), 0)),
+  mean(replace(apache_add_mult_inc_perm_exc$mutant_score, is.na(apache_add_mult_inc_perm_exc$mutant_score), 0)),
   mean(0.94,0.83,0.91)
 ))
 all_combined = mean(c(
@@ -522,26 +540,51 @@ barplot(
   ylim = c(0.85,0.95), xpd=FALSE
 )
 
-%It's looking valid, folks
+#It's looking valid, folks
+par(mar = c(0,2,1,1))
+m <- matrix(c(1,2),nrow = 2,ncol = 1,byrow = TRUE)
+layout(mat = m,heights = c(0.7,0.3))
 barplot(
-  c(
-    mean(add_combined$mutant_score, na.rm=TRUE),
-    add_and_mult_combined,
-    mean(add_mult_inc_all, na.rm=TRUE),
-    mean(add_mult_inc_perm_all, na.rm=TRUE),
-    mean(add_mult_inc_perm_exc_all, na.rm=TRUE),
-    mean(agg_combined$mutant_score, na.rm=TRUE)
-  ),
-  names.arg = c(
-    "add",
-    "add\nmult",
-    "add\nmult\ninc",
-    "add\nmult\ninc\nperm",
-    "add\nmult\ninc\nperm\nexc",
-    "all"
-  ),
+  c(0.883,0.893,0.9068882,0.9188067, 0.9188067,0.923),
+  names.arg = c("1","2","3","4","5","6"),
   ylim = c(0.85,0.95), xpd=FALSE
 )
+par(mar = c(1,1,0,1))
+plot(1, type = "n", axes=FALSE, xlab="", ylab="")
+legend(x = "top",
+       legend= c(
+         "1:\nAdditive",
+         "2:\nAdditive\nMultiplicative",
+         "3:\nAdditive\nMultiplicative\nInclusive",
+         "4:\nAdditive\nMultiplicative\nInclusive\nPermutative",
+         "5:\nAdditive\nMultiplicative\nInclusive\nPermutative\nExclusive",
+         "6:\nAdditive\nMultiplicative\nInclusive\nPermutative\nExclusive\nInvertive"
+       ), 
+  horiz=TRUE, cex = 0.7, inset = 0, bty="n", xjust=0.5, yjust=1
+)
+
+
+
+
+#It's looking valid, folks
+par(mar = c(9,5,5,5))
+mids <- barplot(
+  c(0.883,0.893,0.9068882,0.9188067, 0.9188067,0.923),
+  ylim = c(0.85,0.95), xpd=FALSE,
+  ylab="Mean Fault Detection Score",
+  xlab="", font.lab=2
+)
+axis(1, at=mids, labels=c("", "", "", "", "", ""))
+mtext(padj=0.2,"Additive", side=1, at=mids[1], line=2)
+mtext(padj=0.3,"Additive,\nMultiplicative", side=1, at=mids[2], line=2)
+mtext(padj=0.4,"Additive,\nMultiplicative,\nInclusive", side=1, at=mids[3], line=2)
+mtext(padj=0.5,"Additive,\nMultiplicative,\nInclusive,\nPermutative", side=1, at=mids[4], line=2)
+mtext(padj=0.6,"Additive,\nMultiplicative,\nInclusive,\nPermutative,\nExclusive", side=1, at=mids[5], line=2)
+mtext(padj=0.7,"Additive,\nMultiplicative,\nInclusive,\nPermutative,\nExclusive,\nInvertive", side=1, at=mids[6], line=2)
+mtext(font=2,padj=8,"Included MRs", side=1, at=3.6, line=2)
+
+
+
 
 mean(c(
   mean(apache_agg$mutant_score, na.rm=TRUE),
@@ -559,6 +602,8 @@ inv_mean <- mean(inv_combined$mutant_score, na.rm=TRUE)
 inc_mean <- mean(inc_combined$mutant_score, na.rm=TRUE)
 exc_mean <- mean(exc_combined$mutant_score, na.rm=TRUE)
 
-barplot(c(add_mean, mult_mean, inc_mean, perm_mean, exc_mean, inv_mean), ylim=c(0.4,0.9), xpd=FALSE,
-        names.arg=c("ADD", "MULT", "INC", "PERM", "EXC", "INV"),
+names.arg = c("Permutative", "Additive", "Multiplicative", "Invertive", "Inclusive", "Exclusive")
+
+barplot(c(perm_mean, add_mean, mult_mean, inv_mean, inc_mean, exc_mean ), ylim=c(0.0,1.0), xpd=FALSE,
+        names.arg = c("Permutative", "Additive", "Multiplicative", "Invertive", "Inclusive", "Exclusive"),
         ylab="Fault Detection Score")
